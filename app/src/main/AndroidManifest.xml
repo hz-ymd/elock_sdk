@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.national.btlock.sdk">
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 读写存储卡的权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 读取电话状态的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ElockSdk_demo"
+        tools:targetApi="31">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name="com.national.btlock.ui.face.FaceLivenessExpActivity"></activity>
+
+        <service android:name="com.national.core.bt.service.BleServiceM"></service>
+
+        <activity android:name="com.national.btlock.ui.LockShareActivity"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.LockListActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.ElockSdk_NoActionBar"></activity>
+
+        <activity android:name="com.national.btlock.ui.AuthListActivity"></activity>
+
+        <activity android:name="com.national.btlock.ui.LockShareExtendActivity"></activity>
+
+        <activity android:name="com.national.btlock.ui.LockDetailActivity"></activity>
+
+        <activity android:name="com.national.btlock.ui.SearchActivity"></activity>
+
+        <activity android:name="com.national.btlock.ui.BleComunicationInfoActivity"></activity>
+
+
+
+
+
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ElockSdk_NoActionBar" />
+
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

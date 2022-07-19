@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <!--    android:layout_height="fill_parent"-->
+
+    <com.national.btlock.ui.bannerview.CircleFlowIndicator
+        android:id="@+id/viewflowindic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|bottom"
+        app:activeColor="@color/blue"
+        android:padding="10dip"
+        app:fadeOut="1000"
+        app:inactiveType="fill" />
+
+    <com.national.btlock.ui.bannerview.ViewFlow
+        android:id="@+id/viewflow"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/viewflowindic"
+        app:sidebuffer="3" />
+
+
+</RelativeLayout>

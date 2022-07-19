@@ -1,0 +1,582 @@
+<resources>
+    <string name="app_name">Baidu-IDL-FaceSDK</string>
+    <string name="detect_no_face">未检测到人脸</string>
+    <string name="detect_face_in">把脸移入框内</string>
+    <string name="detect_zoom_in">请将脸部靠近一点</string>
+    <string name="detect_zoom_out">请将脸部离远一点</string>
+    <string name="detect_head_up">请略微抬头</string>
+    <string name="detect_head_down">请略微低头</string>
+    <string name="detect_head_left">请略微向左转头</string>
+    <string name="detect_head_right">请略微向右转头</string>
+    <string name="detect_occ_face">脸部有遮挡</string>
+    <string name="detect_occ_left_eye">左眼有遮挡</string>
+    <string name="detect_occ_right_eye">右眼有遮挡</string>
+    <string name="detect_occ_nose">鼻子有遮挡</string>
+    <string name="detect_occ_mouth">嘴部有遮挡</string>
+    <string name="detect_occ_left_check">左脸颊有遮挡</string>
+    <string name="detect_occ_right_check">右脸颊有遮挡</string>
+    <string name="detect_occ_chin">下巴有遮挡</string>
+    <string name="detect_low_light">请使环境光线再亮些</string>
+    <string name="detect_keep">请握稳手机，视线正对屏幕</string>
+    <string name="detect_standard">请正对手机</string>
+    <string name="detect_timeout">检测超时，请按照提示重试</string>
+    <string name="detect_left_eye_close">左眼未睁开</string>
+    <string name="detect_right_eye_close">右眼未睁开</string>
+    <string name="liveness_eye">眨眨眼</string>
+    <string name="liveness_mouth">张张嘴</string>
+    <string name="liveness_head_left">向左缓慢转头</string>
+    <string name="liveness_head_right">向右缓慢转头</string>
+    <string name="liveness_head_up">缓慢抬头</string>
+    <string name="liveness_head_down">缓慢低头</string>
+    <string name="liveness_good">非常好</string>
+
+    <!--home string-->
+    <string name="home_greet_txt">欢迎使用</string>
+    <string name="home_greet_sdk_txt">百度人脸采集SDK</string>
+    <string name="home_light_txt">识别光线适中</string>
+    <string name="home_light_explain_txt">请保证光线不要过暗或过亮</string>
+    <string name="home_handset_txt">请正对手机</string>
+    <string name="home_handset_explain_txt">保持您的脸出现在取景框内</string>
+    <string name="home_mask_txt">避免遮挡</string>
+    <string name="home_mask_explain_txt">请保持您的脸部清晰无遮挡</string>
+    <string name="home_but_txt">开始人脸采集</string>
+
+    <!--home agreement string-->
+    <string name="home_agreement_titlebar_txt">人脸采集协议</string>
+    <string name="home_agreement_functional_txt">功能说明</string>
+    <string name="home_agreement_functional_explain_txt">
+        为保障用户账户的安全，提供更好的服务，在提供部分产品及服务之前,
+        采用人脸核身验证功能对用户的身份进行认证，
+        用于验证操作人是否为账户持有者本人，
+        通过人脸识别结果评估是否为用户提供后续产品或服务。该功能会请求权威数据源进行身份信息确认。
+    </string>
+    <string name="home_agreement_functional_explain_old_txt">
+        该功能会请求权威数据源进行身份信息确认。
+    </string>
+    <string name="home_agreement_permission_txt">授权与许可</string>
+    <string name="home_agreement_permission_explain_txt">
+        如您点击“确认”或以其他方式选择接受本协议规则，则视为您在使用人脸识别服务时，
+        同意并授权、获取、使用您在申请过程中所提供的个人信息。
+    </string>
+    <string name="home_agreement_rmation_security_txt">信息安全声明</string>
+    <string name="home_agreement_rmation_security_explaoin_txt">
+        承诺对您的个人信息严格保密，并基于国家监管部门认可的加密算法进行数据加密传输，数据加密存储，
+        承诺尽到信息安全保护义务。
+    </string>
+
+    <!--setting string-->
+    <string name="setting_titlebar_txt">设置</string>
+    <string name="setting_prompt_txt">提示: 正式使用时，开发者可将前端设置功能隐藏</string>
+    <string name="setting_announcements_txt">语音播报</string>
+    <string name="setting_quality_txt">质量控制</string>
+    <string name="setting_live_detect_txt">活体检测</string>
+    <string name="setting_actionlive_txt">活体动作顺序随机</string>
+    <string name="setting_actionlive_blink_txt">眨眨眼</string>
+    <string name="setting_actionlive_shake_head_txt">左右摇头</string>
+    <string name="setting_actionlive_turn_left_txt">向左摇头</string>
+    <string name="setting_actionlive_turn_right_txt">向右摇头</string>
+    <string name="setting_actionlive_nod_txt">向下低头</string>
+    <string name="setting_actionlive_look_up_txt">向上抬头</string>
+    <string name="setting_actionlive_open_mouth_txt">张张嘴</string>
+    <string name="collect_bottom_txt">— 百度大脑技术支持 —</string>
+    <string name="camera_permission_required">需开启拍照权限后使用</string>
+    <string name="share_user">用户授权</string>
+    <string name="share_card">钥匙卡授权</string>
+    <string name="share_pwd">访客码授权</string>
+    <string name="more">更多功能</string>
+    <string name="lock_share_accout_input_none">请输入对方账号或手机号</string>
+    <string name="commit">确定</string>
+    <string name="click_open">点击开门</string>
+
+    <string name="auth_date_extend_txt">授权调整</string>
+    <string name="auth_get_back_txt">管理权收回</string>
+
+
+    <string name="auth_assignment_txt">权限转让</string>
+    <string name="auth_give_back_management_txt">管理权退还</string>
+    <string name="bind_lock">绑定门锁</string>
+    <string name="no_lock">暂无可用门锁</string>
+    <string name="app_share_manager">APP授权管理</string>
+    <string name="idcard_auth_manager">身份证授权管理</string>
+    <string name="card_auth_manager">钥匙卡授权管理</string>
+    <string name="auth_get_error">授权获取失败：</string>
+    <string name="txt_del_auth">解除授权</string>
+    <string name="del_auth_error">授权解除失败：</string>
+    <string name="del_auth_suc">授权解除成功</string>
+    <string name="refresh">刷新试试</string>
+    <string name="search">搜索</string>
+    <string name="share_idcard">身份证授权</string>
+    <string name="device_manager">设备管理</string>
+    <string name="device_data">数据查询</string>
+
+
+    <string name="server_error">网络异常</string>
+    <string name="server_error_json_exception">服务器错误（-3）</string>
+    <string name="server_error_">服务器错误（%s）</string>
+    <string name="network_error">当前网络不可用，请检查网络设置!</string>
+
+    <string name="network_error_hint">当前网络不可用，请检查网络设置</string>
+
+    <string name="server_valid_error">非法请求!</string>
+
+
+    <string name="scan_txt">扫一扫</string>
+    <string name="logout_txt">退出登录</string>
+    <string name="my_barcode_txt">我的e码</string>
+
+    <!--锁体版本更新-->
+    <string name="device_update_txt">锁体蓝牙模块升级</string>
+    <!--外设固件升级-->
+    <string name="device_update_outlines_txt">MCU升级</string>
+    <string name="device_update_lora_txt">LORA升级</string>
+
+    <!--  <string name="checkin_idcard_read_title">信息录入</string> -->
+
+    <string name="error_accout_no_input_none">请输入手机号码</string>
+    <string name="error_tel_no_input_none">请输入手机号码</string>
+
+    <string name="error_tel_no_input_error">请输入正确的手机号码</string>
+
+    <string name="hint_pwd_input">请输入登录密码</string>
+    <string name="hint_sms_code_input">请输入验证码</string>
+
+
+
+    <string name="btn_next_time">稍后再说</string>
+    <string name="btn_ok">确定</string>
+    <string name="btn_cancel">取消</string>
+
+    <string name="error_system">系统错误</string>
+    <string name="error_user_list_none">暂无登录记录</string>
+    <!--     APP -->
+    <string name="login_txt">登录</string>
+    <string name="register_txt">注册</string>
+
+    <string name="auth_idcard_face_take_txt">人脸检测</string>
+
+    <string name="login_by_face_txt">刷脸登录</string>
+    <string name="login_face_check_txt">刷脸验证</string>
+    <string name="login_by_sms_txt">短信验证码登录</string>
+    <string name="error_function_none">功能开发中，敬请期待</string>
+
+    <!--//暂无授权内容-->
+    <string name="error_auth_list_none">暂无授权内容</string>
+
+    <string name="error_open_record_list_none">暂无开门记录</string>
+
+    <string name="error_info_none">暂无设备内容</string>
+
+    <string name="tel_title">手机号码</string>
+
+    <string name="tel_account">账号</string>
+
+    <string name="lock_share_idcard_alias_title">姓名</string>
+    <string name="error_lock_share_idcard_alias_input_none">请输入姓名</string>
+    <string name="error_lock_share_account_input_none">请输入账号</string>
+    <string name="error_auth_idcard_nfc_input_none">请将身份证放入手机NFC读卡区读卡</string>
+
+    <!--授权开始日期-->
+    <string name="lock_share_start_date_title">授权开始时间</string>
+    <string name="error_lock_share_start_date_input_none">请输入开始时间</string>
+
+    <!--授权结束日期-->
+    <string name="lock_share_valid_period_title">授权结束时间</string>
+    <string name="error_lock_share_valid_period_input_none">请输入结束时间</string>
+    <string name="error_lock_share_valid_period_input_same">授权开始时间和结束时间不能相同</string>
+
+    <string name="sms_code_title">验证码</string>
+    <string name="set_pwd_title">登录密码</string>
+    <string name="set_pwd_again_title">确认密码</string>
+    <string name="get_sms_code_txt">获取验证码</string>
+    <string name="get_sms_code_resend">重新发送</string>
+
+    <string name="error_user_name_input_none">请输入登录用户名</string>
+    <string name="error_user_pwd_input_none">请输入登录密码</string>
+    <string name="error_sms_code_input_none">请输入验证码</string>
+
+    <!--请输入确认密码-->
+    <string name="error_user_pwd_again_input_none">请输入确认密码</string>
+
+    <string name="error_user_pwd_input">再次输入密码不一致</string>
+    <string name="auth_card_a_txt">钥匙卡授权</string>
+
+    <!--分享到微信-->
+    <string name="share_lock_to_weixin_txt">单次授权</string>
+    <string name="auth_lock_open_once_msg"
+        formatted="false"
+
+        >
+
+        单次开门授权\n\n
+        对方账户:%s\n
+        时间区间:\n
+        &#160;&#160;&#8201;&#160;&#160;&#8201;%s~\n
+        &#160;&#160;&#8201;&#160;&#160;&#8201;%s\n\n&#8201;【单次开门授权不可中途撤销！】\n
+
+
+
+    </string>
+    <!--是否要对[%s]进行单次开门授权？授权开门时间区间:\n%s到\n%s之间\n单次临时授权不可中途撤销\n临时授权单次有效-->
+
+
+
+    <string name="sync_data_txt">数据同步</string>
+    <string name="open_lock_txt">开门</string>
+    <string name="open_lock_by_mac_txt">开门(连接方式)</string>
+    <!--授权分享-->
+
+    <string name="lock_ver_update_txt">锁体更新</string>
+
+    <!--开门权限分享-->
+    <string name="share_lock_txt">APP授权</string>
+    <string name="share_lock_wx_txt">开门权限分享(分享到微信)</string>
+    <string name="delete_lock_txt">解除绑定</string>
+    <string name="auth_idcard_open_lock_txt">身份证授权</string>
+    <string name="auth_idcard_nfc_txt">身份证远程授权</string>
+    <string name="auth_idcard_nfc_txt2">远程授权</string>
+    <string name="delete_lock_hint">蓝牙扫描解绑需要先唤醒门锁</string>
+
+    <string name="add_lock_hint">蓝牙扫描绑定需要先唤醒门锁</string>
+    <string name="add_lock_by_scan_txt">二维码扫码绑定</string>
+    <string name="add_lock_by_blescan_txt">蓝牙扫描绑定</string>
+
+
+    <string name="lock_settings_idcard_mode_txt">强安全认证模式</string>
+    <string name="lock_settings_office_mode_txt">办公室模式</string>
+
+    <string name="lock_settings_auto_alive_mode_txt">省电模式</string>
+
+
+    <string name="delete_lock_by_select_txt">列表选择解绑</string>
+
+    <string name="delete_lock_by_scan_txt">二维码扫码解绑</string>
+    <string name="delete_lock_by_blescan_txt">蓝牙扫描解绑</string>
+
+    <!--授权延长-->
+
+
+
+    <string name="error_auth_assignment_input_none">请选择转让权限</string>
+    <string name="txt_same_time">授权时间与管理者一致</string>
+    <string name="auth_assignment_owner_txt">所有者权限</string>
+    <string name="auth_assignment_manager_txt">管理权限</string>
+    <!--添加身份证-->
+    <string name="auth_idcard_add_txt">身份证授权</string>
+    <string name="auth_idcard_delete_txt">授权管理</string>
+    <string name="management_auth_idcard_delete_txt">身份证授权管理</string>
+    <string name="management_auth_idcard_nfc_txt">身份证远程授权管理</string>
+
+
+    <string name="auth_idcard_a_txt">授权管理</string>
+    <string name="management_auth_idcard_a_txt">钥匙卡授权管理</string>
+
+    <!--添加分享-->
+    <string name="share_lock_add_txt">授权</string>
+    <string name="share_lock_delete_txt">授权管理</string>
+
+    <string name="management_share_lock_delete_txt">APP授权管理</string>
+    <string name="management_share_wx_txt">单次授权管理</string>
+    <string name="error_barcode_invalid">二维码格式错误\n%s</string>
+    <string name="error_barcode_check_invalid">二维码内容错误\n%s</string>
+
+    <!--<string name="account_verify_txt">开门</string>-->
+
+    <!--<string name="header_scrolling_behavior">com.hzbit.homestay.user.customer.widget.HeaderScrollingBehavior</string>-->
+    <!--<string name="header_float_behavior">com.hzbit.homestay.user.customer.widget.HeaderFloatBehavior</string>-->
+
+    <!--<string name="sid_txt">E码通</string>-->
+    <string name="idcard_verify_txt">人证比对</string>
+
+
+    <string name="account_verify_txt">实名认证</string>
+    <string name="test_txt">TEST</string>
+    <string name="lock_bind_txt">e锁添加</string>
+    <string name="splash_txt">开启您的智能生活</string>
+
+
+    <string name="lock_alias_input_title">e 锁名称</string>
+    <string name="error_lock_alias_input_none">请输入e锁名称</string>
+    <string name="error_lock_alias_input_none_hint">请输入e锁名称(带*为必填项)</string>
+
+    <string name="error_lock_city_input_none">请输入省/市/区/小区的内容(任何一项都不能为空)</string>
+    <string name="error_building_input_none">请输入楼号/单元/房号的内容(任何一项都不能为空)</string>
+
+    <string name="lock_addr_input_title">安装地址</string>
+    <string name="error_lock_addr_input_none">请输入详细地址</string>
+    <string name="error_lock_addr_input_none_hint">详细地址（必填项）</string>
+
+    <!--<string name="ocr_test_txt">OCR演示</string>-->
+
+    <string name="lock_share_accout_input_title">对方账户</string>
+    <string name="lock_share_accout_input_error">不能给自己授权</string>
+
+    <string name="error_phone_input">请输入正确的手机号码</string>
+
+    <string name="error_barcode_address_input_none">请点击右侧按钮输入</string>
+    <string name="barcode_address_input_title">地址库二维码</string>
+
+    <string name="idcard_name_input_title">姓名</string>
+    <string name="error_idcard_name_input_none">请输入姓名</string>
+    <string name="idcard_no_input_title">身份证号</string>
+    <string name="error_idcard_no_input_none">请输入身份证号码</string>
+    <string name="error_idcard_no_input_error">请输入正确的身份证号码</string>
+    <!--<string name="error_idcard_start_date_input_none">请输入开始时间</string>-->
+
+    <string name="face_verify_sucess">已认证</string>
+    <string name="face_verify_failed">未认证</string>
+
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="btn_next_txt">下一步</string>
+
+    <string name="ctid_btn_return">返回</string>
+
+
+    <string name="sid_tab_home_txt">首页</string>
+    <string name="sid_tab_me_txt">我的</string>
+
+    <string name="sid_tab_device_txt">设备</string>
+
+    <!--//授权详情及设置-->
+    <string name="device_detail_txt">详情及设置</string>
+    <string name="device_settings_txt">设置</string>
+
+    <string name="app_update_title">程序更新</string>
+    <!--e锁有最新版本：%s\n立即更新？-->
+    <string name="app_update_hint">检测到新版本：%s</string>
+    <string name="update_btn_txt">立即更新</string>
+
+
+    <string name="sid_me_change_tel_title">修改手机号</string>
+    <string name="sid_me_change_pwd_title">修改密码</string>
+
+
+    <string name="old_pwd_input_title">原密码</string>
+    <string name="error_old_pwd_input_none">请输入原密码</string>
+
+    <string name="new_pwd_input_title">新密码</string>
+    <string name="error_new_pwd_input_none">请输入至少6位的新密码</string>
+    <!--请输入新密码（≥6位）-->
+    <string name="new_pwd_input_again_title">确认密码</string>
+    <string name="error_new_pwd_input_again_none">请输入至少6位的确认密码</string>
+    <!--请输入确认密码（≥6位-->
+
+
+    <string name="error_new_pwd_input_not_equal">新密码输入不一致</string>
+    <string name="error_new_pwd_input_length_6">请输入至少6位的密码</string>
+
+    <string name="change_pwd_by_face_txt">刷脸修改</string>
+    <string name="settings_btn_txt">去设置</string>
+    <string name="sid_me_settings_txt">设置</string>
+    <string name="sid_me_settings_app_introduction">功能介绍</string>
+    <string name="sid_me_settings_app_version_check">检查更新</string>
+
+    <string name="sid_me_settings_app_version_txt">Ver %s</string>
+
+    <string formatted="false" name="app_version_txt">Ver %s %s</string>
+    <string name="sid_me_settings_app_version_check_msg">当前版本已经是最新版本</string>
+
+    <string name="sid_me_settings_app_introduction_txt">\u0009\u0009 e锁是由杭州比特信息技术有限公司开发的一款物联网APP应用。基于蓝牙通讯技术，实现智能开门，分享授权APP开门，授权身份证开门等功能。
+    </string>
+
+    <!--对方账户不存在或者尚未通关实名认证-->
+    <string name="error_account_not_verified">对方账户不存在</string>
+
+
+    <string name="ocr_adjust_direction">请选择身份证图片!</string>
+
+    <string name="detail_count">%d人</string>
+
+
+    <string name="cancle">取消</string>
+    <string name="title">请选择时间</string>
+    <!--<string name="commit">确定</string>-->
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+
+    <!--门锁处于连接状态，请稍后再试-->
+    <string name="error_status_connected">门锁忙，请稍后再试</string>
+
+
+    <string name="app_permission_required">e锁APP需要您开启下列权限：\n存储，位置，相机，电话，通讯录 \n\n(应用信息>权限)</string>
+
+    <string name="error_auth_datetime">授权期限超过管理权限的有效期限</string>
+
+
+
+    <string name="txt_me_manage">管理</string>
+
+    <string name="txt_management_sync_data">数据同步</string>
+    <string name="txt_management_lock_update">锁体升级</string>
+
+    <string name="txt_management_lock_config_read">配置读取</string>
+
+
+    <string name="txt_management_lora_net_search">LORA网络搜索</string>
+    <string name="txt_management_lock_restart">设备重启</string>
+    <string name="txt_management_lock_reset">设备重置</string>
+    <string name="txt_management_pt_reset">PT重置</string>
+
+    <string name="txt_management_sync_data_hint">数据同步需要先唤醒门锁</string>
+    <string name="txt_lock_open_hint">开门需要先唤醒门锁</string>
+
+
+    <string name="txt_me_my_account">我的账户</string>
+
+    <string name="txt_pay_title">充值</string>
+
+    <!--押金支付-->
+    <string name="txt_pay_deposit">服务费充值</string>
+
+    <string name="txt_pay_deposit2">押金充值</string>
+
+    <string name="txt_pay_deposit_btn">去充值</string>
+    <string name="txt_pay_deposit_btn_2">去支付</string>
+    <string name="txt_payment_notice">· 每把锁只需支付一次押金\n· 服务费不在押金内扣除，需另外缴纳\n</string>
+
+
+
+    <string name="txt_lock_name_filter_default">全部</string>
+    <string name="error_lock_names_none">暂无门锁列表</string>
+
+
+    <string name="device_select_by_name_txt">搜索</string>
+    <string name="device_select_by_name_hint_txt">请输入门锁名称</string>
+
+
+    <string name="error_lock_found_none_txt">未检测到智能锁，可以点击“点我试一试”重新尝试，如仍不行请确认：\na、门锁是否已激活唤醒？\nb、手机“位置信息”服务是否已打开？\nc、手机蓝牙是否被堵塞（请关闭蓝牙，再重新打开蓝牙）\nd、确认手机4G是否和蓝牙有冲突？（请尝试关闭4G）\ne、其他未知原因，请尝试重启手机或更换手机</string>
+
+    <string name="error_lock_open_found_none_txt">未检测到智能锁，可以点击“点我试一试”重新尝试，如仍不行请确认：\na、门锁是否已激活唤醒？\nb、手机“位置信息”服务是否已打开？\nc、手机蓝牙是否被堵塞（请关闭蓝牙，再重新打开蓝牙）\nd、确认手机4G是否和蓝牙有冲突？（请尝试关闭4G）\ne、其他未知原因，请尝试重启手机或更换手机</string>
+
+    <string name="error_lock_data_update_found_none_txt">未检测到智能锁，请确认：\na、门锁是否已激活唤醒？\nb、手机“位置信息”服务是否已打开？\nc、手机蓝牙是否被堵塞（请关闭蓝牙，再重新打开蓝牙）\nd、确认手机4G是否和蓝牙有冲突？（请尝试关闭4G）\ne、其他未知原因，请尝试重启手机或更换手机</string>
+
+
+    <string name="lock_open_hint_txt">开门需先唤醒门锁</string>
+    <string name="lock_open_list_none_txt">暂无缓存的门锁信息</string>
+
+    <string name="txt_usages_video">帮助视频</string>
+
+
+
+    <string name="error_abc_verification">账户异常，请退出后重新登录</string>
+    <string name="error_abc_verification2">账户异常，请重新登录</string>
+
+    <string name="txt_user_guiders">操作指南</string>
+
+    <string name="error_history_none">暂无历史记录</string>
+
+
+    <string name="error_offline_time_expired">联网失败，请确认网络连接状态后重试</string>
+
+    <string name="error_get_locklist">联网失败，请确认手机是否可以上网，否则将会影响开门！</string>
+
+    <string name="error_auth_time_expired">开门失败，请确认开门有效期</string>
+
+    <string name="error_expires_invalid">门锁服务有效期已到期，请充值</string>
+    <string name="chinese_money">¥ %.2f</string>
+    <string name="chinese_money_2">%.2f</string>
+    <string name="service_price">¥ %.4f/天</string>
+
+    <string name="state_deposit_force_stop">抱歉，您需要支付押金后才能开门</string>
+    <string name="state_pause">抱歉，当前门锁处于停机保号状态，只有门锁所有者才能开门</string>
+
+
+    <string name="txt_take_pic_hint">拍照识别</string>
+
+    <string name="txt_pwd_reset">重置密码</string>
+    <string name="txt_about">关于</string>
+    <string name="txt_about_version_detail">版本说明</string>
+    <string name="txt_about_download_barcode">下载二维码及分享</string>
+
+
+
+
+
+    <string name="txt_ocr_hint">手动输入或者点击[拍照识别]输入姓名和身份证号</string>
+
+    <string name="txt_by_nfc_hint">请将身份证放入手机的NFC读卡区进行读卡</string>
+    <string name="txt_by_lock_hint">请将身份证放入门锁的读卡区进行读卡</string>
+
+    <string name="error_nfc_closed">NFC方式需要开启手机的NFC功能</string>
+
+
+    <string name="error_abc_get_failed">秘钥获取失败</string>
+    <!--<string name="error_abc_get_failed">实名认证失败（秘钥获取失败）</string>-->
+
+    <string name="txt_sub_district_hint">小区（苑/农居点/建筑物）</string>
+
+
+    <string name="txt_waiting_for_wakeup">有数据需要同步，请勿远离...</string>
+    <string name="txt_lock_pwd">密码授权</string>
+
+    <string name="txt_lock_pwd_set">密码授权</string>
+
+    <string name="txt_lock_period_pwd_set">期限码授权</string>
+    <string name="txt_lock_period_pwd_manage">授权管理</string>
+
+
+    <!--分享 分享管理-->
+    <string name="txt_tmp_pwd_share">访客码授权</string>
+    <string name="txt_tmp_pwd_manage">授权管理</string>
+
+    <string name="txt_download_url_share">分享到微信</string>
+    <string name="txt_download_url_share_by_paste">获取下载链接</string>
+
+
+    <string name="txt_lock_pwd_set_strong_security_yes">随身码设置</string>
+    <string name="txt_lock_pwd_set_strong_security_no">密码设置</string>
+
+    <string name="error_lock_period_pwd_set_user_list_none">当前门锁没有被授权给其他用户</string>
+
+
+    <string name="txt_lock_pwd_set_title">随身码</string>
+    <!--<string name="txt_lock_pwd2_set_title">普通码</string>-->
+    <string name="txt_lock_pwd2_set_title">期限密码</string>
+
+    <!--//临时码授权-->
+    <string name="txt_grid_tmp_pwd_share">访客码授权</string>
+
+    <string name="error_lockpwd_input_none">请输入密码</string>
+
+    <!--新输入密码和原密码相同-->
+    <string name="error_lockpwd_input_same">密码无变更</string>
+
+    <string name="error_lockpwd_input_lenth">请输入6位长度的密码</string>
+
+    <string name="btn_update">修改</string>
+    <string name="btn_share">分享</string>
+    <string name="btn_delete">删除</string>
+
+    <string name="txt_delete_lock_pwd_share">解除分享</string>
+
+    <string name="error_list_none">暂无内容</string>
+
+    <string name="error_lockpwd_share_none">无可用临时码</string>
+
+    <string name="txt_lock_pwd_set_hint">重要说明：随身码需要定期激活（使用APP或者刷身份证方式开一次门），否则无法正常开门</string>
+    <string name="txt_lock_pwd_share_hint">重要说明：临时码为一次性开门密码，单次开门有效</string>
+
+    <string name="txt_lock_pwd_valid_once_only_hint">重要说明：勾选一次性密码，在授权时间内单次开门有效</string>
+
+
+    <string name="error_lockpwd_too_simple">输入密码过于简单，请重新输入</string>
+    <!--<string name="error_lock_share_idcard_alias_input_none">请输入姓名</string>-->
+
+
+
+    <string name="error_wx_pay_failed">微信支付失败(%s)</string>
+    <string name="wx_not_installed">微信未安装，无法完成支付</string>
+
+
+
+    <string name="txt_pwd_valid_once">一次性密码</string>
+
+    <string name="txt_pwd_name">备注信息</string>
+    <string name="error_pwd_name_input_none">请输入备注信息</string>
+
+
+    <string name="txt_my_message">我的消息</string>
+
+</resources>

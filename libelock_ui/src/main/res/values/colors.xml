@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#63B8FF</color>
+    <color name="purple_500">#1678ff</color>
+    <color name="purple_700">#1678ff</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="item_main_color">#ffffff</color>
+    <color name="item_main_color_selected">#63B8FF</color>
+
+    <color name="item_main_text_color">#63B8FF</color>
+    <color name="item_main_text_color_selected">#ffffff</color>
+
+    <color name="home_text_color_black">#000000</color>
+    <color name="home_text_color_white">#ffffff</color>
+    <color name="home_text_color_skyblue">#00BAF2</color>
+    <color name="homr_text_color_grey">#999999</color>
+
+    <color name="background">#FFFFFF</color>
+    <color name="collect_bottom_color">#CCCCCC</color>
+    <color name="agreement_content_color">#555555</color>
+
+
+
+
+    <color name="setting_quality_enter">#9EA0A3</color>
+    <color name="setting_quality_grey">#DCDDE0</color>
+    <color name="setting_quality_blue">#00BAF2</color>
+
+    <color name="blue">#1678ff</color>
+    <color name="deviders">#ededed</color>
+    <color name="ctid_main_bg">#d5d5d5</color>
+
+
+
+    <color name="common_bg">#2c404e</color>
+    <color name="common_bg_click">#602c404e</color>
+
+    <color name="blue2">#008dff</color>
+
+    <color name="splash_bg">#5c72b8</color>
+
+    <color name="orange_color_2">#1b82d2</color>
+    <color name="orange_color">#1b82d2</color>
+
+    <color name="color_intru">#2595c3</color>
+    <!--    2293cb-->
+
+    <color name="red">#ff0000</color>
+    <color name="red2">#b0ff0000</color>
+    <color name="color_room_service">#fa5f49</color>
+    <color name="color_logout">#a3abbe</color>
+    <color name="default_color">#1b82d2</color>
+
+    <color name="tab_content_color">#a8a8a8</color>
+
+    <color name="default_color_pressed">#1467a7</color>
+
+    <color name="light_black_b2">#e5e5e5</color>
+
+    <color name="result_view">#b0000000</color>
+
+    <color name="multi_device_mode">#c0d5d5d5</color>
+    <color name="tab_text_default">#545454</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorInitFloatBackground">#b0ffffff</color>
+    <color name="ctid_white">#FFFFFF</color>
+    <color name="ctid_black">#000000</color>
+    <color name="ctid_orange">#FF7F00</color>
+
+    <color name="item_pressed">#e1e1e1</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+
+    <color name="home_tab_bg">#F5F5F5</color>
+
+    <color name="barcode_txt">#cacaca</color>
+    <color name="barcode_bg">#242629</color>
+    <color name="timer_count_bg">#90e3170d</color>
+
+    <color name="split_line">#11112233</color>
+    <color name="text1">#1b82d2</color>
+    <color name="text2">#333333</color>
+    <color name="text3">#555555</color>
+
+    <!--fe6362-->
+    <!--开门按钮原来的颜色-->
+    <color name="rippelColor">#6f8798</color>
+    <color name="rippelColor0">#fdaf17</color>
+    <color name="rippelColor1">#25c0d6</color>
+    <color name="rippelColor2">#7b8c93</color>
+
+
+    <color name="bg_net_status">#ffeeee</color>
+    <color name="net_status_txt">#606062</color>
+    <color name="color_ali">#00a0e8</color>
+
+
+    <color name="color_pay_money">#ff5000</color>
+    <color name="color_introductions_bg">#f6f3ee</color>
+
+    <color name="secondary_text">#727272</color>
+    <color name="divider">#B6B6B6</color>
+</resources>

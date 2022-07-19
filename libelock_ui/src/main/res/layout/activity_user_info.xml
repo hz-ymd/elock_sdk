@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/white">
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/rl_app_register_title"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/orange_color_2"-->
+    <!--android:padding="20dp">-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="160dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:scaleType="centerInside"-->
+    <!--android:src="@drawable/icon_app_logo" />-->
+    <!--&lt;!&ndash;android:layout_marginTop="50dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;/>&ndash;&gt;-->
+    <!--</RelativeLayout>-->
+    <!--android:layout_below="@+id/rl_app_register_title"-->
+
+    <LinearLayout
+        android:id="@+id/ll_idcard_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lock_share_accout_input_title"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_detail" />
+        <!--android:id="@+id/id_lock_share_accout_input"-->
+        <EditText
+            android:id="@+id/id_lock_share_accout_input"
+
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/white_rectangle_bg"
+            android:gravity="center_vertical"
+            android:hint="@string/lock_share_accout_input_none"
+            android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="6dp"
+            android:textColor="@android:color/black"
+
+            android:textSize="@dimen/font_detail" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/ll_idcard_name_input"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/deviders" />
+
+
+    <TextView
+        android:id="@+id/text_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view4"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/blue"
+        android:textSize="12sp"></TextView>
+
+    <TextView
+
+        android:id="@+id/id_btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_tip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/btn_next_txt"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_detail" />
+
+</RelativeLayout>
