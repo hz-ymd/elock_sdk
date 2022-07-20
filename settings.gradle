@@ -17,4 +17,3 @@ dependencyResolutionManagement {
 rootProject.name = "ElockSdk_demo"
 include ':app'
 include ':libelock_ui'
-include ':faceplatform-release'

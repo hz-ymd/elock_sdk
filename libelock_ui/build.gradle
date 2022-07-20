@@ -4,18 +4,12 @@ plugins {
 }
 
 
-task generateSourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier 'sources'
-}
-
-
 android {
-    compileSdkVersion 27
+    compileSdkVersion 32
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 26
+        minSdk 21
+        targetSdk 32
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -45,6 +39,22 @@ android {
 
 }
 
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.airbnb.android:lottie:5.2.0'
+//    implementation project(path: ':faceplatform-release')
+//    implementation 'com.github.xuliang27091:faceplatform:release'
+    implementation 'com.github.xuliang27091:baiduFaceLib:1.0.0'
+
+//    implementation project(path: ':libELock')
+
+
+}
+
 afterEvaluate {
     publishing {
         def versionName = "1.0.2"
@@ -62,22 +72,12 @@ afterEvaluate {
 }
 
 
-dependencies {
-
-    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'com.airbnb.android:lottie:5.2.0'
-    implementation project(path: ':faceplatform-release')
-//    implementation 'com.github.xuliang27091:faceplatform:release'
-    implementation files('libs/elock-sdk-v1.2.1.jar')
-    implementation files('libs/elock-sdk-v1.2.1-hx.jar')
 
 
-//    implementation project(path: ':libELock')
 
 
-}
+
+
 
 
 
