@@ -5,14 +5,14 @@ plugins {
 android {
     compileSdk 32
 
-    signingConfigs {
-        release {
-            storeFile file('../key')
-            storePassword 'hzbit56771010'
-            keyAlias 'sdk'
-            keyPassword 'hzbit56771010'
-        }
-    }
+//    signingConfigs {
+//        release {
+//            storeFile file('../key')
+//            storePassword 'hzbit56771010'
+//            keyAlias 'sdk'
+//            keyPassword 'hzbit56771010'
+//        }
+//    }
 
     defaultConfig {
         applicationId "com.example.elocksdk"
@@ -27,17 +27,24 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-
-        debug {
-            signingConfig signingConfigs.release
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+//    buildTypes {
+//        release {
+//            signingConfig signingConfigs.release
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//
+//        debug {
+//            signingConfig signingConfigs.release
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

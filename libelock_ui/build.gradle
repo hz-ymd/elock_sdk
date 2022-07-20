@@ -3,6 +3,13 @@ plugins {
     id 'maven-publish'
 }
 
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+
 android {
     compileSdkVersion 27
 
@@ -36,17 +43,13 @@ android {
     }
 
 
-
-
-
-
 }
 
 afterEvaluate {
     publishing {
         def versionName = "1.0.2"
-        publications{
-            release(MavenPublication){
+        publications {
+            release(MavenPublication) {
                 from components.release // 表示发布 release（jitpack 都不会使用到）
 
                 // You can then customize attributes of the publication as shown below.
@@ -77,8 +80,4 @@ dependencies {
 }
 
 
-task generateSourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier 'sources'
-}
 
