@@ -38,6 +38,7 @@ import com.national.core.nw.entity.DeviceDetailEntity;
 import com.national.core.nw.entity.LockListEntity;
 import com.national.core.nw.it.OnProgressUpdateListener;
 import com.national.core.nw.it.OnResultListener;
+import com.wishare.core.HXCoreHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -458,6 +459,8 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
 
     public void initAppItem() {
+
+
         mList.clear();
         AppItem item = null;
         item = new AppItem();
