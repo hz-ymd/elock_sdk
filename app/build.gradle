@@ -4,9 +4,10 @@ plugins {
 
 android {
     compileSdk 32
+
     signingConfigs {
         release {
-            storeFile file('/Users/xuliang/Documents/hzbit/ElockSdk_demo/app/key')
+            storeFile file('../key')
             storePassword 'hzbit56771010'
             keyAlias 'sdk'
             keyPassword 'hzbit56771010'

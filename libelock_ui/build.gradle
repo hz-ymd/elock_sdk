@@ -36,6 +36,26 @@ android {
     }
 
 
+
+
+
+
+}
+
+afterEvaluate {
+    publishing {
+        def versionName = "1.0.2"
+        publications{
+            release(MavenPublication){
+                from components.release // 表示发布 release（jitpack 都不会使用到）
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.national.elock.sdk' // 这个是依赖库的组 id
+                artifactId = 'libelock' // 依赖库的名称（jitpack 都不会使用到）
+                version = versionName
+            }
+        }
+    }
 }
 
 
@@ -56,28 +76,9 @@ dependencies {
 
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                // Applies the component for the release build variant.
-                from components.release
 
-                // You can then customize attributes of the publication as shown below.
-                groupId = 'com.hzbit.module'
-                artifactId = 'releae'
-                version = '1.0'
-            }
-            // Creates a Maven publication called “debug”.
-//            debug(MavenPublication) {
-//                // Applies the component for the debug build variant.
-//                from components.debug
-//
-//                groupId = 'com.example.MyLibrary'
-//                artifactId = 'final-debug'
-//                version = '1.0'
-//            }
-        }
-    }
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
 }
+
