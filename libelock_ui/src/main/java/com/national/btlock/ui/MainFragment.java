@@ -38,7 +38,6 @@ import com.national.core.nw.entity.DeviceDetailEntity;
 import com.national.core.nw.entity.LockListEntity;
 import com.national.core.nw.it.OnProgressUpdateListener;
 import com.national.core.nw.it.OnResultListener;
-import com.wishare.core.HXCoreHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -338,8 +337,9 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                             public void onChange(int position) {
 
                                 if (getDetail) {
-                                    if (sliding_drawer.isOpened())
+                                    if (sliding_drawer.isOpened()) {
                                         getLockDetail();
+                                    }
                                 } else {
                                     getDetail = true;
                                 }
@@ -410,8 +410,9 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                             @Override
                             public void onChange(int position) {
                                 if (getDetail) {
-                                    if (sliding_drawer.isOpened())
+                                    if (sliding_drawer.isOpened()) {
                                         getLockDetail();
+                                    }
                                 } else {
                                     getDetail = true;
                                 }
@@ -689,12 +690,15 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         intent.putExtra("lockMac", lock.getMac());
         intent.putExtra("lock_auth_endtime", endTime);
         intent.putExtra("ownerType", lock.getOwnerType());
-        if (actionType.equals(LockType.LOCK_SHARE))
+        if (actionType.equals(LockType.LOCK_SHARE)) {
             startActivityForResult(intent, REQUEST_LOCK_SHARE);
-        if (actionType.equals(LockType.LOCK_DELETE))
+        }
+        if (actionType.equals(LockType.LOCK_DELETE)) {
             startActivityForResult(intent, REQUEST_LOCK_DELETE);
-        if (actionType.equals(LockType.LOCK_AUTH_CARD_A))
+        }
+        if (actionType.equals(LockType.LOCK_AUTH_CARD_A)) {
             startActivity(intent);
+        }
 
 
     }
@@ -702,10 +706,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
     private void show2ndConfirmDlg(LockListEntity.Lock lock, View layout, final String pwdTitle) {
         AlertDialog.Builder dlg = new AlertDialog.Builder(getActivity(), AlertDialog.THEME_HOLO_LIGHT);
-        if (layout != null)
+        if (layout != null) {
             dlg.setView(layout);
+        }
         dlg.setTitle(pwdTitle);
         dlg.setPositiveButton(pwdTitle, new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 giveBackManagement(lock, pwdTitle);
                 dialog.dismiss();
@@ -713,14 +719,16 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             }
         });
         dlg.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.dismiss();
             }
         });
         dlg.setCancelable(true);
 
-        if (!getActivity().isFinishing())
+        if (!getActivity().isFinishing()) {
             dlg.create().show();
+        }
 
     }
 
