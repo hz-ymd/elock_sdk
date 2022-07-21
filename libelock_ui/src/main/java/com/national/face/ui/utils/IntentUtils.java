@@ -1,4 +1,4 @@
-package com.baidu.idl.face.platform.ui.utils;
+package com.national.face.ui.utils;
 
 public class IntentUtils {
     private static IntentUtils instance = null;

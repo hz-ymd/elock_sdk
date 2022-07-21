@@ -1,4 +1,4 @@
-package com.baidu.idl.face.platform.ui.widget;
+package com.national.face.ui.widget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

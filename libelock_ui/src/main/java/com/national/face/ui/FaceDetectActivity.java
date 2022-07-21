@@ -1,7 +1,7 @@
 /**
  * Copyright (C) 2017 Baidu Inc. All rights reserved.
  */
-package com.baidu.idl.face.platform.ui;
+package com.national.face.ui;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -34,13 +34,13 @@ import com.baidu.idl.face.platform.FaceStatusNewEnum;
 import com.baidu.idl.face.platform.IDetectStrategy;
 import com.baidu.idl.face.platform.IDetectStrategyCallback;
 import com.baidu.idl.face.platform.model.ImageInfo;
-import com.baidu.idl.face.platform.ui.utils.BrightnessUtils;
-import com.baidu.idl.face.platform.ui.utils.CameraUtils;
-import com.baidu.idl.face.platform.ui.utils.VolumeUtils;
-import com.baidu.idl.face.platform.ui.widget.FaceDetectRoundView;
+import com.national.face.ui.utils.BrightnessUtils;
+import com.national.face.ui.utils.CameraUtils;
+import com.national.face.ui.utils.VolumeUtils;
+import com.national.face.ui.widget.FaceDetectRoundView;
 import com.baidu.idl.face.platform.utils.APIUtils;
 import com.baidu.idl.face.platform.utils.Base64Utils;
-import com.baidu.idl.face.platform.ui.utils.CameraPreviewUtils;
+import com.national.face.ui.utils.CameraPreviewUtils;
 import com.national.btlock.ui.R;
 
 import java.util.ArrayList;

@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.baidu.idl.face.platform.FaceSDKManager;
-import com.baidu.idl.face.platform.ui.BaseActivity;
-import com.baidu.idl.face.platform.ui.utils.IntentUtils;
-import com.baidu.idl.face.platform.ui.widget.CircleImageView;
+import com.national.face.ui.BaseActivity;
+import com.national.face.ui.utils.IntentUtils;
+import com.national.face.ui.widget.CircleImageView;
 import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.baidu.idl.face.platform.utils.BitmapUtils;
 import com.baidu.idl.face.platform.utils.DensityUtils;

@@ -1,4 +1,4 @@
-package com.baidu.idl.face.platform.ui;
+package com.national.face.ui;
 
 import android.Manifest;
 import android.app.Activity;

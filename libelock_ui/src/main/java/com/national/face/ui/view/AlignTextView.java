@@ -1,4 +1,4 @@
-package com.baidu.idl.face.platform.ui.view;
+package com.national.face.ui.view;
 
 import android.content.Context;
 import android.graphics.Canvas;

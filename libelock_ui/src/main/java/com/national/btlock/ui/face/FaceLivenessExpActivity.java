@@ -4,11 +4,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.baidu.idl.face.platform.FaceStatusNewEnum;
 import com.baidu.idl.face.platform.model.ImageInfo;
-import com.baidu.idl.face.platform.ui.FaceLivenessActivity;
+import com.national.face.ui.FaceLivenessActivity;
 import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.national.btlock.sdk.SdkHelper;
 import com.national.btlock.ui.face.widget.TimeoutDialog;
