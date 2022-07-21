@@ -50,7 +50,7 @@ dependencies {
 
 afterEvaluate {
     publishing {
-        def versionName = "1.0.2"
+        def versionName = "1.0.3"
         publications {
             release(MavenPublication) {
                 from components.release // 表示发布 release（jitpack 都不会使用到）
