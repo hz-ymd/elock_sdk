@@ -30,13 +30,14 @@ public class BleComunicationInfoActivity extends BaseActivity {
     String targetUserId, startData, endData;
 
     private static final int REQUEST_IDCARD_FRONT = 777;
-    String IMG_PATH_FRONT = getApplicationContext().getExternalFilesDir(null).getAbsolutePath() + "idcardFront.jpg";
+    String IMG_PATH_FRONT = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityOpenDoorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getIntent().getExtras() != null) {
@@ -99,7 +100,7 @@ public class BleComunicationInfoActivity extends BaseActivity {
                         Toast.makeText(BleComunicationInfoActivity.this, "进入拍照识别模式，请根据提示操作", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(BleComunicationInfoActivity.this, CameraActivity.class);
                         intent.putExtra(CameraActivity.KEY_NATIVE_ENABLE, false);
-
+                        IMG_PATH_FRONT = getExternalFilesDir(null).getAbsolutePath() + "idcardFront.jpg";
                         intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, IMG_PATH_FRONT);
                         intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
                         startActivityForResult(intent, REQUEST_IDCARD_FRONT);
