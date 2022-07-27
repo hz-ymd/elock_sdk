@@ -10,7 +10,7 @@ import android.widget.SlidingDrawer;
 
 public class MySlidingDrawer extends SlidingDrawer {
     private static final String TAG = "MySlidingDrawer";
-    private int mHandleId = 0;                //抽屉行为控件ID
+    private int mHandleId = 0;              //抽屉行为控件ID
     private int[] mTouchableIds = null;    //Handle 部分其他控件ID
 
     public int[] getTouchableIds() {
@@ -54,15 +54,13 @@ public class MySlidingDrawer extends SlidingDrawer {
     }
 
 
-
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         // 触摸位置转换为屏幕坐标
         int[] location = new int[2];
         int x = (int) event.getX();
         int y = (int) event.getY();
-        Log.d(TAG, "x:" + x + ",y:" + y);
         this.getLocationOnScreen(location);
-        Log.d(TAG, "location[0]:" + location[0] + ",location[1]:" + location[1]);
         x += location[0];
         y += location[1];
         // handle部分独立按钮
@@ -70,11 +68,9 @@ public class MySlidingDrawer extends SlidingDrawer {
             for (int id : mTouchableIds) {
                 View view = findViewById(id);
                 Rect rect = getRectOnScreen(view);
-                Log.d(TAG, "Touchable" + ":" + rect.toString());
 
                 if (rect.contains(x, y)) {
                     //return
-                    Log.d(TAG, "contain:" + id);
 //                    view.dispatchTouchEvent(event);
                     return false;
                 }
@@ -85,7 +81,6 @@ public class MySlidingDrawer extends SlidingDrawer {
         if (event.getAction() == MotionEvent.ACTION_DOWN && mHandleId != 0) {
             View view = findViewById(mHandleId);
             Rect rect = getRectOnScreen(view);
-            Log.d(TAG, "handle" + ":" + rect.toString());
             if (rect.contains(x, y)) {//点击抽屉控件时交由系统处理
                 Log.i("MySlidingDrawer", "Hit handle");
             } else {

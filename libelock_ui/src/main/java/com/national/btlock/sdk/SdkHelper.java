@@ -191,6 +191,7 @@ public class SdkHelper {
             return;
         }
         Intent intent = new Intent(context, FaceLivenessExpActivity.class);
+        intent.putExtra("type", "identification");
         intent.putExtra("name", name);
         intent.putExtra("idCardNo", idCardNo);
         context.startActivity(intent);
@@ -240,7 +241,7 @@ public class SdkHelper {
 
             @Override
             public void onError(String errorCode, String errorMsg) {
-                onError(errorCode, errorMsg);
+                callBack.onError(errorCode, errorMsg);
 
             }
         });

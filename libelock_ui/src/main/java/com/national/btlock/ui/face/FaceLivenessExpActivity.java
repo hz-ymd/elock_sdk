@@ -1,5 +1,6 @@
 package com.national.btlock.ui.face;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -7,12 +8,13 @@ import android.view.View;
 
 import com.baidu.idl.face.platform.FaceStatusNewEnum;
 import com.baidu.idl.face.platform.model.ImageInfo;
-import com.national.face.ui.FaceLivenessActivity;
 import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.national.btlock.sdk.SdkHelper;
 import com.national.btlock.ui.face.widget.TimeoutDialog;
 import com.national.core.SDKCoreHelper;
 import com.national.core.nw.it.OnResultListener;
+import com.national.btlock.face.ui.FaceLivenessActivity;
+import com.national.btlock.face.ui.utils.IntentUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,18 +27,19 @@ public class FaceLivenessExpActivity extends FaceLivenessActivity implements
         TimeoutDialog.OnTimeoutDialogClickListener {
 
     private TimeoutDialog mTimeoutDialog;
-
     String name, idCardNo;
-
+    String type;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 添加至销毁列表
-
         if (getIntent().getExtras() != null) {
-            name = getIntent().getExtras().getString("name");
-            idCardNo = getIntent().getExtras().getString("idCardNo");
+            type = getIntent().getStringExtra("type");
+            if (type.equals("identification")) {
+                name = getIntent().getExtras().getString("name");
+                idCardNo = getIntent().getExtras().getString("idCardNo");
+            }
         }
 
     }
@@ -72,7 +75,6 @@ public class FaceLivenessExpActivity extends FaceLivenessActivity implements
         if (imageCropMap != null && imageCropMap.size() > 0) {
             List<Map.Entry<String, ImageInfo>> list1 = new ArrayList<>(imageCropMap.entrySet());
             Collections.sort(list1, new Comparator<Map.Entry<String, ImageInfo>>() {
-
                 @Override
                 public int compare(Map.Entry<String, ImageInfo> o1,
                                    Map.Entry<String, ImageInfo> o2) {
@@ -129,29 +131,32 @@ public class FaceLivenessExpActivity extends FaceLivenessActivity implements
 //        intent.putExtra("destroyType", "FaceLivenessExpActivity");
 //        startActivity(intent);
 //        finish();
-        if (!TextUtils.isEmpty(bmpStr)) {
-            byte[] bytes = Base64Utils.decode(bmpStr, Base64Utils.NO_WRAP);
-            SDKCoreHelper.confirmPID(name, idCardNo, bytes, new OnResultListener() {
-                @Override
-                public void onSuccess(String jsonStr) {
-                    //Toast.makeText(FaceLivenessExpActivity.this, "实名认证成功", Toast.LENGTH_LONG).show();
-                    SdkHelper.getInstance().getCallBack().identificationSuc();
-                }
+        if (type.equals("identification")) {
+            if (!TextUtils.isEmpty(bmpStr)) {
+                byte[] bytes = Base64Utils.decode(bmpStr, Base64Utils.NO_WRAP);
+                SDKCoreHelper.confirmPID(name, idCardNo, bytes, new OnResultListener() {
+                    @Override
+                    public void onSuccess(String jsonStr) {
+                        //Toast.makeText(FaceLivenessExpActivity.this, "实名认证成功", Toast.LENGTH_LONG).show();
+                        SdkHelper.getInstance().getCallBack().identificationSuc();
+                    }
 
-                @Override
-                public void onError(String errorCode, String errorMsg) {
-
-                    //Toast.makeText(FaceLivenessExpActivity.this, "实名认证失败：" + errorMsg, Toast.LENGTH_LONG).show();
-                    Log.e(TAG, "confirmPID onError errorCode=" + errorCode + " errorMsg=" + errorMsg);
-                    SdkHelper.getInstance().getCallBack().identificationError(errorCode, errorMsg);
-                }
-            });
+                    @Override
+                    public void onError(String errorCode, String errorMsg) {
+                        //Toast.makeText(FaceLivenessExpActivity.this, "实名认证失败：" + errorMsg, Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "confirmPID onError errorCode=" + errorCode + " errorMsg=" + errorMsg);
+                        SdkHelper.getInstance().getCallBack().identificationError(errorCode, errorMsg);
+                    }
+                });
+            } else {
+                SdkHelper.getInstance().getCallBack().identificationError("100002", "人脸采集失败");
+            }
         } else {
-            SdkHelper.getInstance().getCallBack().identificationError("100002", "人脸采集失败");
+            IntentUtils.getInstance().setBitmap(bmpStr);
+            Intent intent = new Intent();
+            setResult(RESULT_OK, intent);
         }
         this.finish();
-
-
     }
 
     private void showMessageDialog() {

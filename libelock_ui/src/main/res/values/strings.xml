@@ -578,5 +578,12 @@
 
 
     <string name="txt_my_message">我的消息</string>
+    <string name="txt_auth_record_list">授权记录查询</string>
+    <string name="next">下一步</string>
+    <string name="target_tel_input_title">对方手机</string>
+    <string name="txt_lock_pwd_valid_once_only_real_hint">重要说明：勾选一次性密码，在授权时间内单次开门有效(强安全锁只能设置一次性密码)</string>
+    <string name="txt_tmp_invented_pwd_share">访客码授权</string>
+    <string name="cancel">退出</string>
+
 
 </resources>

@@ -6,7 +6,6 @@ plugins {
 
 android {
     compileSdkVersion 32
-
     defaultConfig {
         minSdk 21
         targetSdk 32
@@ -45,7 +44,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.airbnb.android:lottie:5.2.0'
-    implementation 'com.github.xuliang27091:baiduFaceLib:1.0.0'
+    compileOnly 'com.github.xuliang27091:baiduFaceLib:1.0.0'
+    compileOnly 'com.github.xuliang27091:CommonLibs:1.0.0'
+
 }
 
 afterEvaluate {

@@ -209,7 +209,6 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
                 case "用户授权":
                     goNext(AppConstants.LockType.LOCK_SHARE);
                     break;
-
                 default:
                     Toast.makeText(LockDetailActivity.this, "开发中，敬请期待", Toast.LENGTH_SHORT).show();
                     break;
@@ -252,7 +251,6 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
     }
 
     CheckBox chkBoxDeleteAll;
-
     private void show2ndConfirmDlg(View layout, final String pwdTitle) {
         AlertDialog.Builder dlg = new AlertDialog.Builder(LockDetailActivity.this, AlertDialog.THEME_HOLO_LIGHT);
         if (layout != null) {

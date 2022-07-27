@@ -33,6 +33,7 @@
 
         <activity android:name="com.national.btlock.ui.face.FaceLivenessExpActivity"></activity>
 
+
         <service android:name="com.national.core.bt.service.BleServiceM"></service>
 
         <activity android:name="com.national.btlock.ui.LockShareActivity"></activity>
@@ -52,9 +53,7 @@
 
         <activity android:name="com.national.btlock.ui.BleComunicationInfoActivity"></activity>
 
-
-
-
+        <activity android:name="com.national.btlock.ocr.ui.camera.CameraActivity"></activity>
 
 
         <activity

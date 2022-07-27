@@ -254,7 +254,7 @@ public class AuthListActivity extends BaseActivity implements AppConstants {
                 if (actionType.equals(LockType.LOCK_AUTH_IDCARD)) {
                     getIdCardAuth();
                 }
-                if (actionType.equals(LockType.LOCK_AUTH_IDCARD)) {
+                if (actionType.equals(LockType.LOCK_AUTH_CARD_A)) {
                     getCardAAuth();
                 }
             }

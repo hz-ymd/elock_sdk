@@ -1,7 +1,13 @@
 package com.national.btlock.ui;
 
+import android.Manifest;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,14 +18,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
+import com.baidu.idl.face.platform.FaceSDKManager;
+import com.baidu.idl.face.platform.utils.Base64Utils;
+import com.baidu.idl.face.platform.utils.DensityUtils;
 import com.national.btlock.ui.databinding.ActivityLockShareBinding;
+import com.national.btlock.ui.face.FaceLivenessExpActivity;
 import com.national.btlock.utils.TimeUtil;
 import com.national.btlock.widget.datepick.CustomDatePicker;
 import com.national.core.SDKCoreHelper;
 import com.national.btlock.utils.AppConstants;
 import com.national.core.nw.it.OnResultListener;
 import com.national.btlock.utils.DateTimeUtil;
+import com.national.btlock.face.ui.utils.IntentUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,6 +49,9 @@ public class LockShareActivity extends BaseActivity {
     String endTime;
     String action_type;
     String ownerType;
+    String authIdcardNeedRealName = "0";
+
+    private static final int REQUEST_FACE = 5555;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -85,7 +100,46 @@ public class LockShareActivity extends BaseActivity {
             llAssignmentType.setVisibility(View.GONE);
             binding.idIdcardAliasInputTitle.setText(R.string.lock_share_idcard_alias_title);
             binding.idIdcardAliasInput.setHint(R.string.error_lock_share_idcard_alias_input_none);
+        } else if (action_type.equals(AppConstants.LockType.LOCK_AUTH_IDCARD)) {
+            binding.rlTitle.setVisibility(View.VISIBLE);
+            chkSameEndTime.setVisibility(View.VISIBLE);
+            setTitle("身份证授权");
+            llAssignmentType.setVisibility(View.GONE);
+            binding.idBtnRegister.setText(R.string.next);
+            authIdcardNeedRealName = getIntent().getExtras().getString("authIdcardNeedRealName");
+            if (authIdcardNeedRealName.equals("1")) {
+                binding.llIdcardAliasInput.setVisibility(View.GONE);
+                AlertDialog.Builder dlg = new AlertDialog.Builder(LockShareActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                dlg.setMessage("请被授权人本人进行刷脸操作");//确定解除绑定？
+                dlg.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(final DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                        Intent in = new Intent(LockShareActivity.this, FaceLivenessExpActivity.class);
+                        in.putExtra("type", "authIdCard");
+                        startActivityForResult(in, REQUEST_FACE);
+                    }
+                });
+                dlg.setNegativeButton(getString(R.string.btn_next_time), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                        LockShareActivity.this.finish();
+                    }
+                });
+
+                dlg.setCancelable(false);
+                if (!isFinishing()) {
+                    dlg.create().show();
+                }
+            } else {
+                binding.llIdcardAliasInput.setVisibility(View.VISIBLE);
+                binding.idIdcardAliasInputTitle.setText(R.string.lock_share_idcard_alias_title);
+                binding.idIdcardAliasInput.setHint(R.string.error_lock_share_idcard_alias_input_none);
+            }
         }
+
+        initPermission();
     }
 
     LinearLayout llOwnerValidPeriod, llAssignmentType;
@@ -128,6 +182,27 @@ public class LockShareActivity extends BaseActivity {
             targetUserId = binding.idIdcardAliasInput.getText().toString();
             startData = tvStartDate.getText().toString();
             endData = tvEndDate.getText().toString();
+
+            if (action_type.equals(AppConstants.LockType.LOCK_AUTH_IDCARD)) {
+                if (authIdcardNeedRealName.equals("1") && TextUtils.isEmpty(bmpStr)) {
+                    Toast.makeText(LockShareActivity.this, "请先采集人脸照片", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (!authIdcardNeedRealName.equals("1") && TextUtils.isEmpty(targetUserId)) {
+                    Toast.makeText(LockShareActivity.this, getString(R.string.error_lock_share_idcard_alias_input_none), Toast.LENGTH_LONG).show();
+                    return;
+                }
+                Intent intent = new Intent(LockShareActivity.this, BleComunicationInfoActivity.class);
+                intent.putExtra("action_type", action_type);
+                intent.putExtra("lockMac", lockMac);
+                intent.putExtra("startData", startData);
+                intent.putExtra("endData", endData);
+                intent.putExtra("targetUserId", targetUserId);
+                intent.putExtra("authIdcardNeedRealName", authIdcardNeedRealName);
+                startActivity(intent);
+                finish();
+                return;
+            }
 
             if (TextUtils.isEmpty(targetUserId)) {
                 if (action_type.equals(AppConstants.LockType.LOCK_SHARE)) {
@@ -333,8 +408,87 @@ public class LockShareActivity extends BaseActivity {
         dlg.setNegativeButton("取消", (dialog, whichButton) -> dialog.dismiss());
         dlg.setCancelable(true);
 
-        if (!isFinishing())
+        if (!isFinishing()) {
             dlg.create().show();
+        }
+
+    }
+
+    String bmpStr;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == REQUEST_FACE) {
+            if (resultCode == RESULT_OK) {
+                bmpStr = IntentUtils.getInstance().getBitmap();
+                Bitmap bmp = base64ToBitmap(bmpStr);
+                bmp = FaceSDKManager.getInstance().scaleImage(bmp,
+                        DensityUtils.dip2px(getApplicationContext(), 100),
+                        DensityUtils.dip2px(getApplicationContext(), 100));
+
+                binding.idAvaterImg.setImageBitmap(bmp);
+            } else {
+                finish();
+            }
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private Bitmap base64ToBitmap(String base64Data) {
+        byte[] bytes = Base64Utils.decode(base64Data, Base64Utils.NO_WRAP);
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+    }
+
+
+    public void initPermission() {
+        boolean cameraSatePermission =
+                ActivityCompat.checkSelfPermission(LockShareActivity.this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        if (Build.VERSION.SDK_INT >= 23
+                && !cameraSatePermission) {
+            requestPermission();
+        } else {
+
+        }
+    }
+
+    private static final int REQUEST_PERMISSION = 1000;
+
+    String[] permsion = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
+
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(LockShareActivity.this
+                , permsion
+                , REQUEST_PERMISSION);
+
+    }
+
+    boolean isPermissionsNotGranted;
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_PERMISSION) {
+            if (grantResults.length == permsion.length) {
+                for (int result : grantResults) {
+                    if (result != PackageManager.PERMISSION_GRANTED) {
+                        isPermissionsNotGranted = true;
+
+                        break;
+                    }
+                }
+                if (isPermissionsNotGranted) {
+                } else {
+                }
+
+            } else {
+                Toast.makeText(getApplicationContext(), R.string.camera_permission_required, Toast.LENGTH_LONG).show();
+
+            }
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
 
     }
 }

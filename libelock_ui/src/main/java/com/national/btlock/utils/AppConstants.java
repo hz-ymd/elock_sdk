@@ -24,16 +24,10 @@ public interface AppConstants {
     String USER_TYPE = "user_type";
 
 
-
     boolean isDebug = true;
 
 
 //    String SDK_URL = "http://test.hzbit.cn:60002/ymd/sdk-service/user";
-
-
-
-
-
 
 
     interface LockType {
@@ -53,6 +47,7 @@ public interface AppConstants {
         String LOCK_AUTH_CARD_A = "lock_auth_card_a";
         String LOCK_AUTH_IDCARD_NFC = "lock_auth_idcard_nfc";
         String LOCK_AUTH_IDCARD = "lock_auth_idcard";
+        String LOCK_AUTH_IDCARD_BY_OCR = "lock_auth_idcard_by_ocr";
 
         String LOCK_VER_UPDATE = "lock_ver_update";
         String LOCK_VER_UPDATE_OUTLINES = "lock_ver_update_outlines";
@@ -78,6 +73,7 @@ public interface AppConstants {
         String O_U = "5"; //owner with power of openning the door
         String V = "6";
     }
+
     interface ExtendType {
         String Managerment = "1";
         String AUTH_APP = "2";

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"></FrameLayout>
 
-    <com.national.face.ui.widget.FaceDetectRoundView
+    <com.national.btlock.face.ui.widget.FaceDetectRoundView
         android:id="@+id/liveness_face_round"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

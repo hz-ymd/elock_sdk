@@ -28,6 +28,7 @@ import androidx.fragment.app.Fragment;
 import com.google.gson.Gson;
 import com.national.btlock.adapter.FunctionGridAdapter;
 import com.national.btlock.model.AppItem;
+import com.national.btlock.ocr.ui.camera.CameraActivity;
 import com.national.btlock.ui.bannerview.BannerView;
 import com.national.btlock.ui.bannerview.ViewFlowAdapter;
 import com.national.btlock.widget.MySlidingDrawer;
@@ -505,7 +506,16 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                 case "钥匙卡授权":
                     goNext(LockType.LOCK_AUTH_CARD_A);
                     break;
+                case "身份证授权":
+                    goNext(LockType.LOCK_AUTH_IDCARD);
+                    break;
+                case "访客码授权":
+                    goNext(LockType.LOCK_AUTH_IDCARD);
+                    break;
+                case "数据查询":
 
+
+                    break;
                 default:
                     Toast.makeText(getActivity(), "开发中，敬请期待", Toast.LENGTH_SHORT).show();
                     break;
@@ -640,7 +650,6 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             endTime = time[1];
             startTime = time[0];
         }
-
     }
 
 
@@ -650,7 +659,6 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         intent.putExtra("lock_auth_endtime", endTime);
         intent.putExtra("action_type", actionType);
         startActivityForResult(intent, REQUEST_LOCK_AUTH);
-
     }
 
     @Override
@@ -674,6 +682,15 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                 return;
             }
         }
+
+        if (actionType.equals(LockType.LOCK_AUTH_IDCARD)) {
+            if (lock.getOwnerType().equals(LockOwnerType.O)) {
+                Toast.makeText(getActivity(), "您没有权限", Toast.LENGTH_LONG).show();
+                return;
+            }
+        }
+
+
         String str = lock.getValidPeriodStr();
         String endTime = "长期";
 
@@ -690,14 +707,15 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         intent.putExtra("lockMac", lock.getMac());
         intent.putExtra("lock_auth_endtime", endTime);
         intent.putExtra("ownerType", lock.getOwnerType());
+        intent.putExtra("authIdcardNeedRealName", lock.getAuthIdcardNeedRealName());
         if (actionType.equals(LockType.LOCK_SHARE)) {
             startActivityForResult(intent, REQUEST_LOCK_SHARE);
         }
         if (actionType.equals(LockType.LOCK_DELETE)) {
             startActivityForResult(intent, REQUEST_LOCK_DELETE);
         }
-        if (actionType.equals(LockType.LOCK_AUTH_CARD_A)) {
-            startActivity(intent);
+        if (actionType.equals(LockType.LOCK_AUTH_CARD_A) || actionType.equals(LockType.LOCK_AUTH_IDCARD)) {
+            startActivityForResult(intent, REQUEST_LOCK_SHARE);
         }
 
 
@@ -758,24 +776,28 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == REQUEST_LOCK_DELETE && resultCode == getActivity().RESULT_OK) {
-            if (sliding_drawer.isOpened())
+            if (sliding_drawer.isOpened()) {
                 sliding_drawer.close();
+            }
             getLockList();
         }
 
-        if (requestCode == REQUEST_LOCK_SHARE && resultCode == getActivity().RESULT_OK) {
-            if (sliding_drawer.isOpened())
+        if (requestCode == REQUEST_LOCK_SHARE) {
+            if (sliding_drawer.isOpened()) {
                 getLockDetail();
+            }
         }
 
-        if (requestCode == REQ_EXTEND && resultCode == getActivity().RESULT_OK) {
-            if (sliding_drawer.isOpened())
+        if (requestCode == REQ_EXTEND) {
+            if (sliding_drawer.isOpened()) {
                 getLockDetail();
+            }
         }
 
         if (requestCode == REQUEST_LOCK_AUTH) {
-            if (sliding_drawer.isOpened())
+            if (sliding_drawer.isOpened()) {
                 getLockDetail();
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

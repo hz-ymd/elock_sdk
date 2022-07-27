@@ -3,5 +3,5 @@
     package="com.national.btlock.ui">
 
 
-
+    <uses-permission android:name="android.permission.CAMERA" />
 </manifest>

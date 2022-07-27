@@ -21,7 +21,7 @@
         android:layout_marginTop="96dp"
         android:layout_centerHorizontal="true">
 
-        <com.national.face.ui.widget.CircleImageView
+        <com.national.btlock.face.ui.widget.CircleImageView
             android:id="@+id/circle_head"
             android:layout_centerInParent="true"
             android:layout_width="97dp"
