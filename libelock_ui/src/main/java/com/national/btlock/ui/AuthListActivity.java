@@ -14,8 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.gson.Gson;
 import com.national.btlock.adapter.AuthListAdapter;
 import com.national.btlock.ui.databinding.ActivityAuthListBinding;
+import com.national.btlock.utils.DlgUtil;
 import com.national.core.SDKCoreHelper;
 import com.national.btlock.utils.AppConstants;
+import com.national.core.nw.entity.CommonEntity;
 import com.national.core.nw.entity.LockAuthListEntity;
 import com.national.core.nw.it.OnResultListener;
 
@@ -249,7 +251,33 @@ public class AuthListActivity extends BaseActivity implements AppConstants {
             @Override
             public void onSuccess(String jsonStr) {
                 dismissProgressDialog();
-                Toast.makeText(AuthListActivity.this, getString(R.string.del_auth_suc), Toast.LENGTH_LONG).show();
+                CommonEntity commonEntity = new Gson().fromJson(jsonStr, CommonEntity.class);
+                if (commonEntity != null) {
+                    if (commonEntity.getStatus().equals("1") && commonEntity.getMessage().contains("数据同步")) {
+                        AlertDialog.Builder dlg = new AlertDialog.Builder(AuthListActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                        dlg.setMessage(commonEntity.getMessage());
+                        dlg.setPositiveButton("数据同步", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                sycnData();
+                            }
+                        });
+                        dlg.setNegativeButton("稍后再说", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                            }
+                        });
+                        dlg.setCancelable(true);
+                        if (!isFinishing()) {
+                            dlg.create().show();
+                        }
+                    } else {
+                        DlgUtil.showToast(AuthListActivity.this, commonEntity.getMessage());
+                        finish();
+                    }
+                }
+
 
                 if (actionType.equals(LockType.LOCK_AUTH_IDCARD)) {
                     getIdCardAuth();
@@ -282,5 +310,12 @@ public class AuthListActivity extends BaseActivity implements AppConstants {
                 getCardAAuth();
             }
         }
+    }
+
+    public void sycnData() {
+        Intent intent = new Intent(AuthListActivity.this, BleComunicationInfoActivity.class);
+        intent.putExtra("action_type", AppConstants.LockType.LOCK_SYNC_TIME);
+        intent.putExtra("lockMac", lockMac);
+        startActivity(intent);
     }
 }

@@ -55,6 +55,8 @@
 
         <activity android:name="com.national.btlock.ocr.ui.camera.CameraActivity"></activity>
 
+        <activity android:name="com.national.btlock.ui.LockPwdShareActivity"></activity>
+
 
         <activity
             android:name=".LoginActivity"

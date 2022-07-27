@@ -21,6 +21,7 @@ public class MeFragment extends Fragment {
 
     private FragmentMeBinding binding;
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         MeViewModel meViewModel =

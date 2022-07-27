@@ -1,5 +1,7 @@
 package com.national.btlock.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,11 +13,14 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.baidu.idl.face.platform.utils.Base64Utils;
+import com.google.gson.Gson;
 import com.national.btlock.face.ui.utils.IntentUtils;
 import com.national.btlock.ocr.ui.camera.CameraActivity;
 import com.national.btlock.ui.databinding.ActivityOpenDoorBinding;
 import com.national.btlock.utils.AppConstants;
+import com.national.btlock.utils.DlgUtil;
 import com.national.core.SDKCoreHelper;
+import com.national.core.nw.entity.CommonEntity;
 import com.national.core.nw.it.OnProgressUpdateListener;
 import com.national.core.nw.it.OnResultListener;
 
@@ -70,7 +75,7 @@ public class BleComunicationInfoActivity extends BaseActivity {
             authCardA();
         } else if (actionType.equals(AppConstants.LockType.LOCK_AUTH_IDCARD)) {
             authIdCard();
-        } else if (actionType.equals(actionType.equals(AppConstants.LockType.LOCK_SYNC_TIME))) {
+        } else if (actionType.equals(AppConstants.LockType.LOCK_SYNC_TIME)) {
             sycnData();
         }
 
@@ -115,11 +120,41 @@ public class BleComunicationInfoActivity extends BaseActivity {
                     @Override
                     public void onSuccess(String s) {
                         Log.d(TAG, "onSuccess:" + s);
+                        CommonEntity commonEntity = new Gson().fromJson(s, CommonEntity.class);
+                        if (commonEntity != null) {
+
+                            if (commonEntity.getStatus().equals("1") && commonEntity.getMessage().contains("数据同步")) {
+                                AlertDialog.Builder dlg = new AlertDialog.Builder(BleComunicationInfoActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                                dlg.setMessage(commonEntity.getMessage());
+                                dlg.setPositiveButton("数据同步", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                                        sycnData();
+                                    }
+                                });
+                                dlg.setNegativeButton("稍后再说", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        BleComunicationInfoActivity.this.finish();
+                                    }
+                                });
+                                dlg.setCancelable(true);
+                                if (!isFinishing()) {
+                                    dlg.create().show();
+                                }
+                            } else {
+                                DlgUtil.showToast(BleComunicationInfoActivity.this, commonEntity.getMessage());
+                                finish();
+                            }
+                        }
                     }
 
                     @Override
                     public void onError(String s, String s1) {
                         Log.e(TAG, "onError:" + s1);
+                        DlgUtil.showToast(BleComunicationInfoActivity.this, "身份证授权失败" + s1);
+                        finish();
                     }
                 });
     }
@@ -196,8 +231,14 @@ public class BleComunicationInfoActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IDCARD_FRONT && resultCode == RESULT_OK) {
-            authIdCardByOcr(IMG_PATH_FRONT);
+        if (requestCode == REQUEST_IDCARD_FRONT) {
+            if (resultCode == RESULT_OK) {
+                binding.idReceive.setText("身份证授权中...");
+                authIdCardByOcr(IMG_PATH_FRONT);
+            } else {
+                DlgUtil.showToast(BleComunicationInfoActivity.this, "身份证授权失败");
+                finish();
+            }
         }
 
     }

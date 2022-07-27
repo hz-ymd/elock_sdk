@@ -141,7 +141,6 @@
     <string name="hint_sms_code_input">请输入验证码</string>
 
 
-
     <string name="btn_next_time">稍后再说</string>
     <string name="btn_ok">确定</string>
     <string name="btn_cancel">取消</string>
@@ -202,8 +201,7 @@
 
     <!--分享到微信-->
     <string name="share_lock_to_weixin_txt">单次授权</string>
-    <string name="auth_lock_open_once_msg"
-        formatted="false"
+    <string name="auth_lock_open_once_msg" formatted="false"
 
         >
 
@@ -217,7 +215,6 @@
 
     </string>
     <!--是否要对[%s]进行单次开门授权？授权开门时间区间:\n%s到\n%s之间\n单次临时授权不可中途撤销\n临时授权单次有效-->
-
 
 
     <string name="sync_data_txt">数据同步</string>
@@ -253,7 +250,6 @@
     <string name="delete_lock_by_blescan_txt">蓝牙扫描解绑</string>
 
     <!--授权延长-->
-
 
 
     <string name="error_auth_assignment_input_none">请选择转让权限</string>
@@ -372,7 +368,7 @@
 
     <string name="sid_me_settings_app_version_txt">Ver %s</string>
 
-    <string formatted="false" name="app_version_txt">Ver %s %s</string>
+    <string name="app_version_txt" formatted="false">Ver %s %s</string>
     <string name="sid_me_settings_app_version_check_msg">当前版本已经是最新版本</string>
 
     <string name="sid_me_settings_app_introduction_txt">\u0009\u0009 e锁是由杭州比特信息技术有限公司开发的一款物联网APP应用。基于蓝牙通讯技术，实现智能开门，分享授权APP开门，授权身份证开门等功能。
@@ -403,7 +399,6 @@
     <string name="app_permission_required">e锁APP需要您开启下列权限：\n存储，位置，相机，电话，通讯录 \n\n(应用信息>权限)</string>
 
     <string name="error_auth_datetime">授权期限超过管理权限的有效期限</string>
-
 
 
     <string name="txt_me_manage">管理</string>
@@ -437,7 +432,6 @@
     <string name="txt_payment_notice">· 每把锁只需支付一次押金\n· 服务费不在押金内扣除，需另外缴纳\n</string>
 
 
-
     <string name="txt_lock_name_filter_default">全部</string>
     <string name="error_lock_names_none">暂无门锁列表</string>
 
@@ -457,7 +451,6 @@
     <string name="lock_open_list_none_txt">暂无缓存的门锁信息</string>
 
     <string name="txt_usages_video">帮助视频</string>
-
 
 
     <string name="error_abc_verification">账户异常，请退出后重新登录</string>
@@ -489,9 +482,6 @@
     <string name="txt_about">关于</string>
     <string name="txt_about_version_detail">版本说明</string>
     <string name="txt_about_download_barcode">下载二维码及分享</string>
-
-
-
 
 
     <string name="txt_ocr_hint">手动输入或者点击[拍照识别]输入姓名和身份证号</string>
@@ -565,16 +555,14 @@
     <!--<string name="error_lock_share_idcard_alias_input_none">请输入姓名</string>-->
 
 
-
     <string name="error_wx_pay_failed">微信支付失败(%s)</string>
     <string name="wx_not_installed">微信未安装，无法完成支付</string>
 
 
-
     <string name="txt_pwd_valid_once">一次性密码</string>
 
-    <string name="txt_pwd_name">备注信息</string>
-    <string name="error_pwd_name_input_none">请输入备注信息</string>
+    <string name="txt_pwd_name">对方姓名</string>
+    <string name="error_pwd_name_input_none">请输入对方姓名</string>
 
 
     <string name="txt_my_message">我的消息</string>

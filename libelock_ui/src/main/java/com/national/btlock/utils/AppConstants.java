@@ -54,6 +54,7 @@ public interface AppConstants {
         String LOCK_VER_UPDATE_LORA = "lock_ver_update_lora";
         String LOCK_PWD_SET = "lock_pwd_set";
         String LOCK_TMP_PWD_SHARE = "lock_tmp_pwd_share";//临时码分享
+        String LOCK_LONG_PWD_SET = "lock_long_pwd_set";
     }
 
     interface LockPwdType {

@@ -1,5 +1,7 @@
 package com.national.btlock.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,10 +11,14 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.google.gson.Gson;
 import com.national.btlock.ui.databinding.ActivityShareExtendBinding;
+import com.national.btlock.utils.AppConstants;
+import com.national.btlock.utils.DlgUtil;
 import com.national.btlock.utils.TimeUtil;
 import com.national.btlock.widget.datepick.CustomDatePicker;
 import com.national.core.SDKCoreHelper;
+import com.national.core.nw.entity.CommonEntity;
 import com.national.core.nw.it.OnResultListener;
 import com.national.btlock.utils.DateTimeUtil;
 
@@ -93,10 +99,42 @@ public class LockShareExtendActivity extends BaseActivity {
             @Override
             public void onSuccess(String jsonStr) {
                 dismissProgressDialog();
-                Toast.makeText(LockShareExtendActivity.this, "授权调整成功", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent();
-                setResult(RESULT_OK, intent);
-                finish();
+                CommonEntity commonEntity = new Gson().fromJson(jsonStr, CommonEntity.class);
+                if (commonEntity != null) {
+                    if (commonEntity.getStatus().equals("1") && commonEntity.getMessage().contains("数据同步")) {
+                        AlertDialog.Builder dlg = new AlertDialog.Builder(LockShareExtendActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                        dlg.setMessage(commonEntity.getMessage());
+                        dlg.setPositiveButton("数据同步", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                Intent intent = new Intent();
+                                setResult(RESULT_OK, intent);
+                                sycnData();
+                            }
+                        });
+                        dlg.setNegativeButton("稍后再说", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                                Intent intent = new Intent();
+                                setResult(RESULT_OK, intent);
+                                finish();
+
+                            }
+                        });
+                        dlg.setCancelable(true);
+                        if (!isFinishing()) {
+                            dlg.create().show();
+                        }
+                    } else {
+                        Toast.makeText(LockShareExtendActivity.this, "授权调整成功", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent();
+                        setResult(RESULT_OK, intent);
+                        finish();
+                    }
+                }
+
+
             }
 
             @Override
@@ -143,5 +181,12 @@ public class LockShareExtendActivity extends BaseActivity {
                 , endStr); // 初始化日期格式请用：yyyy-MM-dd HH:mm，否则不能正常运行
         customDatePicker2.showSpecificTime(true); // 显示时和分
         customDatePicker2.setIsLoop(true); // 允许循环滚动
+    }
+
+    public void sycnData() {
+        Intent intent = new Intent(LockShareExtendActivity.this, BleComunicationInfoActivity.class);
+        intent.putExtra("action_type", AppConstants.LockType.LOCK_SYNC_TIME);
+        intent.putExtra("lockMac", lockMac);
+        startActivity(intent);
     }
 }

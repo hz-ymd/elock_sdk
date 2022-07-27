@@ -241,7 +241,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                         auth_app.setText("APP授权人数：" + deviceDetailEntity.getData().getAuthAppCount());
                         auth_idcard.setText("身份证授权人数：" + deviceDetailEntity.getData().getAuthIdcardCount());
                         auth_card.setText("钥匙卡授权人数：" + deviceDetailEntity.getData().getAuthCardACount());
-                        //auth_pwd.setText("访客码授权人数：" + deviceDetailEntity.getData().getAuthPwdCount());
+                        auth_pwd.setText("访客码授权人数：" + deviceDetailEntity.getData().getAuthPwdCount());
                     } else {
                         layout_auth.setVisibility(View.GONE);
 
@@ -510,7 +510,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                     goNext(LockType.LOCK_AUTH_IDCARD);
                     break;
                 case "访客码授权":
-                    goNext(LockType.LOCK_AUTH_IDCARD);
+                    goNext(LockType.LOCK_LONG_PWD_SET);
                     break;
                 case "数据查询":
 
@@ -670,6 +670,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
     private static final int REQUEST_LOCK_AUTH = 22222;
     private static final int REQUEST_LOCK_SHARE = 33333;
     private static final int REQ_EXTEND = 44444;
+    private static final int  REQUEST_LONG_PWD_SET=55555;
 
 
     public void goNext(String actionType) {
@@ -702,7 +703,13 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             endTime = time[1];
             startTime = time[0];
         }
-        Intent intent = new Intent(getActivity(), LockShareActivity.class);
+        Intent intent;
+        if (actionType.equals(LockType.LOCK_LONG_PWD_SET)){
+            intent = new Intent(getActivity(), LockPwdShareActivity.class);
+        }else{
+             intent = new Intent(getActivity(), LockShareActivity.class);
+        }
+
         intent.putExtra("action_type", actionType);
         intent.putExtra("lockMac", lock.getMac());
         intent.putExtra("lock_auth_endtime", endTime);
@@ -717,6 +724,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         if (actionType.equals(LockType.LOCK_AUTH_CARD_A) || actionType.equals(LockType.LOCK_AUTH_IDCARD)) {
             startActivityForResult(intent, REQUEST_LOCK_SHARE);
         }
+
+        if(actionType.equals(LockType.LOCK_LONG_PWD_SET)){
+            startActivityForResult(intent, REQUEST_LONG_PWD_SET);
+        }
+
+
 
 
     }
@@ -795,6 +808,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         }
 
         if (requestCode == REQUEST_LOCK_AUTH) {
+            if (sliding_drawer.isOpened()) {
+                getLockDetail();
+            }
+        }
+
+        if (requestCode==REQUEST_LONG_PWD_SET){
             if (sliding_drawer.isOpened()) {
                 getLockDetail();
             }

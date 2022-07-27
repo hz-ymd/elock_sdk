@@ -31,12 +31,16 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
+import com.google.gson.Gson;
 import com.national.btlock.utils.AppConstants;
 import com.national.btlock.utils.DateTimeUtil;
 import com.national.btlock.utils.DlgUtil;
 import com.national.btlock.utils.TimeUtil;
 import com.national.btlock.widget.datepick.CustomDatePicker;
 import com.national.core.SDKCoreHelper;
+import com.national.core.nw.entity.LongLockPwdEntity;
+import com.national.core.nw.it.OnResultListener;
+import com.national.core.utils.ToastUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -51,7 +55,6 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
     String lockMac;
     String actionType;
     int authListNo = 0;
-    String lockOwnerType = "";
     TextView id_hint;
 
     int btnClick = 0;
@@ -59,7 +62,6 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
 
     private CustomDatePicker customDatePicker1, customDatePicker2;
 
-    String lcokMac = "";
 
     private String getMaxDateText() {
 
@@ -193,20 +195,16 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.app_acitivity_lock_pwd_share);
 
+        setTitle("设备详情");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if (getIntent().getStringExtra("lock_owner_type") != null) {
-            lockOwnerType = getIntent().getStringExtra("lock_owner_type");
 
+        if (getIntent().getStringExtra("lockMac") != null) {
+            lockMac = getIntent().getStringExtra("lockMac");
         }
 
-
-        if (getIntent().getStringExtra("lcokMac") != null) {
-            lcokMac = getIntent().getStringExtra("mac");
-
-        }
-
-        if (getIntent().getStringExtra("lock_auth_need_real_name") != null) {
-            lock_auth_need_real_name = getIntent().getStringExtra("lock_auth_need_real_name");
+        if (getIntent().getStringExtra("authIdcardNeedRealName") != null) {
+            lock_auth_need_real_name = getIntent().getStringExtra("authIdcardNeedRealName");
         }
 
         if (getIntent() != null) {
@@ -313,7 +311,6 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
     CompoundButton.OnCheckedChangeListener mOnCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
             initDatePicker();
             tvEndDate.setText(getDefaultEndDate());
 
@@ -507,19 +504,41 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
 
     private void doLockShare() {
 
-        Map<String, String> requestParams = new HashMap<String, String>();
-        requestParams.put("targetUserId", edtAccount.getText().toString());
-        requestParams.put("lockMac", lockMac);
-        requestParams.put("startTime", tvStartDate.getText().toString());
-        requestParams.put("endTime", tvEndDate.getText().toString());
-        requestParams.put("remark", edtCardAlias.getText().toString());
 
+        String pwdType;
         if (chkPwdType.isChecked()) {
-            requestParams.put("pwdType", "0");
+            pwdType = "0";
         } else {
-            requestParams.put("pwdType", "1");
+            pwdType = "1";
+
         }
-//        model.doRequest(LoginModel.SHARE_LONG_LOCK_PWD, requestParams, null, null, true, true);
+        SDKCoreHelper.shareVistorPwd(lockMac, edtAccount.getText().toString(), tvStartDate.getText().toString()+":00",
+                tvEndDate.getText().toString()+":00", edtCardAlias.getText().toString(), pwdType, new OnResultListener() {
+                    @Override
+                    public void onSuccess(String s) {
+
+                        LongLockPwdEntity entity = new Gson().fromJson(s, LongLockPwdEntity.class);
+                        if (entity != null) {
+
+
+                            if (btnClick == 1) {
+                                sendSysMsg(edtAccount.getText().toString(), entity.getData().getPwdShareStr());
+//                        this.finish();
+                            } else if (btnClick == 2) {
+//                        MyApp.getInstance().doNothing = true;
+
+                                //wxShare.shareTxt(getString(R.string.txt_tmp_pwd_share), entity.getData().getPwdShareStr());
+//                        LockPwdShareActivity.this.finish();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onError(String s, String s1) {
+                        DlgUtil.showToast(LockPwdShareActivity.this, s1);
+
+                    }
+                });
     }
 
 
