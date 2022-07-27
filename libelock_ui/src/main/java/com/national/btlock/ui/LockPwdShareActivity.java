@@ -40,13 +40,10 @@ import com.national.btlock.widget.datepick.CustomDatePicker;
 import com.national.core.SDKCoreHelper;
 import com.national.core.nw.entity.LongLockPwdEntity;
 import com.national.core.nw.it.OnResultListener;
-import com.national.core.utils.ToastUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 
 
 //20190218
@@ -56,7 +53,6 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
     String actionType;
     int authListNo = 0;
     TextView id_hint;
-
     int btnClick = 0;
 
 
