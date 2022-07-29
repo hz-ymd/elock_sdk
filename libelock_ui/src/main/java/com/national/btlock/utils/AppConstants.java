@@ -22,6 +22,7 @@ public interface AppConstants {
     String LO = "Lontitude";
     String DECODE_MODE = "decode_mode";
     String USER_TYPE = "user_type";
+    String ACTION_LOGIN_AGAIN = "com.national.login.again";
 
 
     boolean isDebug = true;
@@ -55,6 +56,9 @@ public interface AppConstants {
         String LOCK_PWD_SET = "lock_pwd_set";
         String LOCK_TMP_PWD_SHARE = "lock_tmp_pwd_share";//临时码分享
         String LOCK_LONG_PWD_SET = "lock_long_pwd_set";
+
+
+        String GET_RECORD = "get_record";
     }
 
     interface LockPwdType {

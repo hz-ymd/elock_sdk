@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.national.btlock.ui.R;
 import com.national.btlock.utils.AppConstants;
+import com.national.btlock.widget.NoDoubleListener;
 import com.national.core.nw.entity.LockListEntity;
 
 import java.util.List;
@@ -132,9 +133,9 @@ public class LockListAdapter extends RecyclerView.Adapter<LockListAdapter.ViewHo
             holder.text_expired.setText("有效期至：" + entiy.getValidPeriodStr());
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View view) {
+            public void onNoDoubleClick(View view) {
                 if (onClickListener != null) {
                     onClickListener.onClick(position);
                 }
@@ -147,9 +148,9 @@ public class LockListAdapter extends RecyclerView.Adapter<LockListAdapter.ViewHo
             holder.image_open.setVisibility(View.VISIBLE);
         }
 
-        holder.image_open.setOnClickListener(new View.OnClickListener() {
+        holder.image_open.setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View view) {
+            public void onNoDoubleClick(View view) {
                 if (onClickListener != null) {
                     onClickListener.open(position);
                 }
@@ -158,9 +159,9 @@ public class LockListAdapter extends RecyclerView.Adapter<LockListAdapter.ViewHo
         String ownerType = entiy.getOwnerType();
         if (ownerType.equals(AppConstants.LockOwnerType.O) || ownerType.equals(AppConstants.LockOwnerType.O_U) || ownerType.equals(AppConstants.LockOwnerType.O_M)) {
             holder.assignment_auth.setVisibility(View.VISIBLE);
-            holder.assignment_auth.setOnClickListener(new View.OnClickListener() {
+            holder.assignment_auth.setOnClickListener(new NoDoubleListener() {
                 @Override
-                public void onClick(View view) {
+                public void onNoDoubleClick(View view) {
                     onClickListener.assignment(position);
 
                 }

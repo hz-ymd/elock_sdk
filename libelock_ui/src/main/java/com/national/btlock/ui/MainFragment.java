@@ -28,13 +28,12 @@ import androidx.fragment.app.Fragment;
 import com.google.gson.Gson;
 import com.national.btlock.adapter.FunctionGridAdapter;
 import com.national.btlock.model.AppItem;
-import com.national.btlock.ocr.ui.camera.CameraActivity;
 import com.national.btlock.ui.bannerview.BannerView;
 import com.national.btlock.ui.bannerview.ViewFlowAdapter;
+import com.national.btlock.utils.AppConstants;
 import com.national.btlock.widget.MySlidingDrawer;
 import com.national.btlock.widget.SimpleProgressDialog;
 import com.national.core.SDKCoreHelper;
-import com.national.btlock.utils.AppConstants;
 import com.national.core.nw.entity.DeviceDetailEntity;
 import com.national.core.nw.entity.LockListEntity;
 import com.national.core.nw.it.OnProgressUpdateListener;
@@ -63,7 +62,6 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
 
     public MainFragment() {
         // Required empty public constructor
@@ -99,8 +97,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
     BannerView bannerView;
     MySlidingDrawer sliding_drawer;
     View layout_no_lock;
-//    ProgressBar loading;
-
+    //    ProgressBar loading;
     ImageView image_list, image_search;
 
 
@@ -241,7 +238,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                         auth_app.setText("APP授权人数：" + deviceDetailEntity.getData().getAuthAppCount());
                         auth_idcard.setText("身份证授权人数：" + deviceDetailEntity.getData().getAuthIdcardCount());
                         auth_card.setText("钥匙卡授权人数：" + deviceDetailEntity.getData().getAuthCardACount());
-                        auth_pwd.setText("访客码授权人数：" + deviceDetailEntity.getData().getAuthPwdCount());
+                        auth_pwd.setText("访客码授权人数：" + deviceDetailEntity.getData().getAuthVistorPwdCount());
                     } else {
                         layout_auth.setVisibility(View.GONE);
 
@@ -499,6 +496,13 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
 
         grid_func.setOnItemClickListener((adapterView, view, i, l) -> {
+            long currentTime = System.currentTimeMillis();
+            if (currentTime - lastClickTime > MIN_CLICK_DELAY_TIME) {
+                lastClickTime = currentTime;
+            } else {
+                Log.w(TAG, "点击过快");
+                return;
+            }
             switch (mList.get(i).getAppName()) {
                 case "用户授权":
                     goNext(LockType.LOCK_SHARE);
@@ -513,8 +517,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                     goNext(LockType.LOCK_LONG_PWD_SET);
                     break;
                 case "数据查询":
-
-
+                    goNext(LockType.GET_RECORD);
                     break;
                 default:
                     Toast.makeText(getActivity(), "开发中，敬请期待", Toast.LENGTH_SHORT).show();
@@ -555,10 +558,10 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         item.setResId(R.drawable.icon_auth_idcard);
         mList.add(item);
 
-        item = new AppItem();
-        item.setAppName(getString(R.string.device_manager));
-        item.setResId(R.drawable.icon_auth_tmp);
-        mList.add(item);
+//        item = new AppItem();
+//        item.setAppName(getString(R.string.device_manager));
+//        item.setResId(R.drawable.icon_auth_tmp);
+//        mList.add(item);
 
 
         item = new AppItem();
@@ -572,18 +575,29 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
     CheckBox chkBoxDeleteAll;
     int actionType;
     LockListEntity.Lock lock;
+    public static final int MIN_CLICK_DELAY_TIME = 1000;
+    private long lastClickTime = 0;
 
     @Override
     public void onClick(View view) {
-
         if (lockList != null && lockList.size() != 0) {
             lock = lockList.get(bannerView.getPosition());
             setEndTime(lock);
         }
-
-
         int id = view.getId();
+
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastClickTime > MIN_CLICK_DELAY_TIME) {
+            lastClickTime = currentTime;
+        } else {
+            Log.w(TAG, "点击过快");
+            return;
+        }
+
         if (id == R.id.btn_refresh || id == R.id.image_refresh) {
+            if (sliding_drawer.isOpened()) {
+                sliding_drawer.close();
+            }
             getLockList();
         } else if (id == R.id.image_list) {
             Intent intent = new Intent(getActivity(), LockListActivity.class);
@@ -592,8 +606,6 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             Intent intent = new Intent(getActivity(), SearchActivity.class);
             startActivity(intent);
         } else if (lock != null) {
-
-
             if (id == R.id.assignment_take_back) {
                 //removeFlg 0:不删除 1:删除
                 actionType = 2;
@@ -635,6 +647,13 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                 goAuthList(lock.getMac(), LockType.LOCK_AUTH_IDCARD);
             } else if (id == R.id.auth_card) {
                 goAuthList(lock.getMac(), LockType.LOCK_AUTH_CARD_A);
+            } else if (id == R.id.auth_pwd) {
+
+                Intent intent = new Intent(getActivity(), LockPwdLongShareListActivity.class);
+                intent.putExtra("lock_mac", lock.getMac());
+                startActivity(intent);
+
+
             }
         }
     }
@@ -670,14 +689,13 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
     private static final int REQUEST_LOCK_AUTH = 22222;
     private static final int REQUEST_LOCK_SHARE = 33333;
     private static final int REQ_EXTEND = 44444;
-    private static final int  REQUEST_LONG_PWD_SET=55555;
+    private static final int REQUEST_LONG_PWD_SET = 55555;
 
 
     public void goNext(String actionType) {
         lock = lockList.get(bannerView.getPosition());
         if (actionType.equals(LockType.LOCK_SHARE) || actionType.equals(LockType.LOCK_AUTH_CARD_A)) {
             if (lock.getOwnerType().equals(LockOwnerType.M) || lock.getOwnerType().equals(LockOwnerType.O_M)) {
-
             } else {
                 Toast.makeText(getActivity(), "您没有权限", Toast.LENGTH_LONG).show();
                 return;
@@ -685,6 +703,20 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         }
 
         if (actionType.equals(LockType.LOCK_AUTH_IDCARD)) {
+            if (lock.getOwnerType().equals(LockOwnerType.O)) {
+                Toast.makeText(getActivity(), "您没有权限", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            if (lock.getOwnerType().equals(LockOwnerType.O_U) && lock.getOwnerType().equals(LockOwnerType.U)) {
+                if (lock.getAuthIdcardNeedRealName().equals("0")) {
+                    Toast.makeText(getActivity(), "您没有权限", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }
+
+        if (actionType.equals(LockType.LOCK_LONG_PWD_SET)) {
             if (lock.getOwnerType().equals(LockOwnerType.O)) {
                 Toast.makeText(getActivity(), "您没有权限", Toast.LENGTH_LONG).show();
                 return;
@@ -704,10 +736,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             startTime = time[0];
         }
         Intent intent;
-        if (actionType.equals(LockType.LOCK_LONG_PWD_SET)){
+        if (actionType.equals(LockType.LOCK_LONG_PWD_SET)) {
             intent = new Intent(getActivity(), LockPwdShareActivity.class);
-        }else{
-             intent = new Intent(getActivity(), LockShareActivity.class);
+        } else if (actionType.equals(LockType.GET_RECORD)) {
+            intent = new Intent(getActivity(), OperateRecordActivity.class);
+        } else {
+            intent = new Intent(getActivity(), LockShareActivity.class);
         }
 
         intent.putExtra("action_type", actionType);
@@ -725,11 +759,13 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             startActivityForResult(intent, REQUEST_LOCK_SHARE);
         }
 
-        if(actionType.equals(LockType.LOCK_LONG_PWD_SET)){
+        if (actionType.equals(LockType.LOCK_LONG_PWD_SET)) {
             startActivityForResult(intent, REQUEST_LONG_PWD_SET);
         }
 
-
+        if (actionType.equals(LockType.GET_RECORD)) {
+            startActivity(intent);
+        }
 
 
     }
@@ -813,7 +849,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             }
         }
 
-        if (requestCode==REQUEST_LONG_PWD_SET){
+        if (requestCode == REQUEST_LONG_PWD_SET) {
             if (sliding_drawer.isOpened()) {
                 getLockDetail();
             }

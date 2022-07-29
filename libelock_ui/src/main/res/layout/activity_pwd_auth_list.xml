@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_black_b2"
+
+    android:paddingBottom="6dp"
+    >
+
+
+
+
+    <!--android:background="@drawable/explore_line"-->
+    <TextView
+        android:id="@+id/id_lock_list_none_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/error_auth_list_none"
+        android:textSize="26sp"
+        android:textColor="@android:color/white"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        />
+
+
+    <ListView
+        android:id="@+id/id_serch_files_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:dividerHeight="0.5dp"
+        android:listSelector="#00000000"
+        />
+    <!--android:paddingTop="10dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_below="@+id/id_idcard_info_tips" -->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/id_add_lock"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginBottom="20dp"-->
+    <!--android:padding="10dp"-->
+    <!--android:src="@drawable/icon_lock_add"-->
+    <!--/>-->
+
+
+
+</RelativeLayout>

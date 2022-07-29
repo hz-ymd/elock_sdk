@@ -26,6 +26,7 @@ import com.baidu.idl.face.platform.utils.DensityUtils;
 import com.national.btlock.ui.databinding.ActivityLockShareBinding;
 import com.national.btlock.ui.face.FaceLivenessExpActivity;
 import com.national.btlock.utils.TimeUtil;
+import com.national.btlock.widget.NoDoubleListener;
 import com.national.btlock.widget.datepick.CustomDatePicker;
 import com.national.core.SDKCoreHelper;
 import com.national.btlock.utils.AppConstants;
@@ -138,8 +139,12 @@ public class LockShareActivity extends BaseActivity {
                 binding.idIdcardAliasInput.setHint(R.string.error_lock_share_idcard_alias_input_none);
             }
         }
+//        initPermission();
+    }
 
-        initPermission();
+    @Override
+    public void onNoDoubleClick(View v) {
+
     }
 
     LinearLayout llOwnerValidPeriod, llAssignmentType;
@@ -236,17 +241,17 @@ public class LockShareActivity extends BaseActivity {
 
         initDatePicker();
 
-        tvStartDate.setOnClickListener(new View.OnClickListener() {
+        tvStartDate.setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View view) {
+            public void onNoDoubleClick(View view) {
                 customDatePicker1.show(tvStartDate.getText().toString());
             }
         });
 
 
-        tvEndDate.setOnClickListener(new View.OnClickListener() {
+        tvEndDate.setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View view) {
+            public void onNoDoubleClick(View view) {
                 customDatePicker2.show(tvEndDate.getText().toString());
 
             }

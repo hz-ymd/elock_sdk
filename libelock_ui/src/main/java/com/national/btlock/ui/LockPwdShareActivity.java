@@ -32,6 +32,7 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 
 import com.google.gson.Gson;
+import com.national.btlock.model.StringResult;
 import com.national.btlock.utils.AppConstants;
 import com.national.btlock.utils.DateTimeUtil;
 import com.national.btlock.utils.DlgUtil;
@@ -499,8 +500,6 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
 
 
     private void doLockShare() {
-
-
         String pwdType;
         if (chkPwdType.isChecked()) {
             pwdType = "0";
@@ -508,17 +507,14 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
             pwdType = "1";
 
         }
-        SDKCoreHelper.shareVistorPwd(lockMac, edtAccount.getText().toString(), tvStartDate.getText().toString()+":00",
-                tvEndDate.getText().toString()+":00", edtCardAlias.getText().toString(), pwdType, new OnResultListener() {
+        SDKCoreHelper.shareVistorPwd(lockMac, edtAccount.getText().toString(), tvStartDate.getText().toString(),
+                tvEndDate.getText().toString(), edtCardAlias.getText().toString(), pwdType, new OnResultListener() {
                     @Override
                     public void onSuccess(String s) {
-
                         LongLockPwdEntity entity = new Gson().fromJson(s, LongLockPwdEntity.class);
                         if (entity != null) {
-
-
                             if (btnClick == 1) {
-                                sendSysMsg(edtAccount.getText().toString(), entity.getData().getPwdShareStr());
+                                sendSysMsg(edtAccount.getText().toString(), entity.getData());
 //                        this.finish();
                             } else if (btnClick == 2) {
 //                        MyApp.getInstance().doNothing = true;
@@ -593,10 +589,10 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
     }
 
 
-    @Override
-    public void onClick(View v) {
-//        Map<String, String> requestParams = new HashMap<String, String>();
 
+
+    @Override
+    public void onNoDoubleClick(View v) {
         int id = v.getId();
         if (id == R.id.id_select_address) {//                doContacts();
             boolean contactsPermission =
@@ -636,7 +632,6 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
 //                    showValidPeriodInput();
 //                }
         }
-
     }
 
 

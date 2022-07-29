@@ -42,6 +42,7 @@ import com.baidu.idl.face.platform.utils.APIUtils;
 import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.national.btlock.face.ui.utils.CameraPreviewUtils;
 import com.national.btlock.ui.R;
+import com.national.btlock.widget.NoDoubleListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -146,9 +147,9 @@ public class FaceDetectActivity extends Activity implements
         mSurfaceView.setLayoutParams(cameraFL);
         mFrameLayout.addView(mSurfaceView);
 
-        mRootView.findViewById(R.id.detect_close).setOnClickListener(new View.OnClickListener() {
+        mRootView.findViewById(R.id.detect_close).setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View v) {
+            public void onNoDoubleClick(View v) {
                 onBackPressed();
             }
         });
@@ -159,9 +160,9 @@ public class FaceDetectActivity extends Activity implements
         mSoundView = (ImageView) mRootView.findViewById(R.id.detect_sound);
         mSoundView.setImageResource(mIsEnableSound ?
                 R.mipmap.icon_titlebar_voice2 : R.drawable.collect_image_voice_selector);
-        mSoundView.setOnClickListener(new View.OnClickListener() {
+        mSoundView.setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View v) {
+            public void onNoDoubleClick(View v) {
                 mIsEnableSound = !mIsEnableSound;
                 mSoundView.setImageResource(mIsEnableSound ?
                         R.mipmap.icon_titlebar_voice2 : R.drawable.collect_image_voice_selector);

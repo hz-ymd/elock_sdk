@@ -54,4 +54,14 @@
     </style>
 
 
+    <style name="ButtonNormal" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/next_btn_style</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/font_detail</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--          <item name="android:textSize">@dimen/text_size_level3</item> -->
+
+    </style>
+
 </resources>

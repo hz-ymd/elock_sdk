@@ -1,8 +1,12 @@
 package com.national.btlock.sdk;
 
 
+import static com.national.btlock.utils.AppConstants.ACTION_LOGIN_AGAIN;
+
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.text.TextUtils;
 
 import com.baidu.idl.face.platform.FaceConfig;
@@ -45,7 +49,12 @@ public class SdkHelper {
      * @param licenseFileName 百度配置文件名称
      * @param callBack        初始化回调
      */
-    public void init(Context context, String appID, String appSecret, String licenseId, String licenseFileName, initCallBack callBack) {
+    public void init(Context context,
+                     String appID,
+                     String appSecret,
+                     String licenseId,
+                     String licenseFileName,
+                     initCallBack callBack) {
         SDKCoreHelper.init(context);
         this.context = context;
         this.appID = appID;
@@ -175,6 +184,17 @@ public class SdkHelper {
         return callBack;
     }
 
+
+    CallBack loginCallBack;
+
+    public void setLoginCallBack(CallBack callBack) {
+        this.loginCallBack = callBack;
+    }
+
+    public CallBack getLoginCallBack() {
+        return loginCallBack;
+    }
+
     /**
      * 实名认证
      *
@@ -184,7 +204,6 @@ public class SdkHelper {
      * @param callBack
      */
     public void identification(Context context, String name, String idCardNo, identificationCallBack callBack) {
-
         setCallBack(callBack);
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(idCardNo)) {
             callBack.identificationError("100001", "请输入姓名和身份证号");
@@ -229,10 +248,9 @@ public class SdkHelper {
      * @param userName 手机账号
      * @param callBack
      */
-    public void login(String userName, CallBack callBack) {
+    public void login(Context context, String userName, CallBack callBack) {
         String time = "" + System.currentTimeMillis();
         String sign = MD5.md5(appSecret + time);
-
         SDKCoreHelper.login(appID, userName, getNum(8) + "", time, sign, new OnResultListener() {
             @Override
             public void onSuccess(String jsonStr) {
@@ -241,8 +259,14 @@ public class SdkHelper {
 
             @Override
             public void onError(String errorCode, String errorMsg) {
-                callBack.onError(errorCode, errorMsg);
-
+                if (errorCode.equals("6100010")) {
+                    setLoginCallBack(callBack);
+                    Intent intent = new Intent(context, FaceLivenessExpActivity.class);
+                    intent.putExtra("type", "loginFaceCheck");
+                    context.startActivity(intent);
+                } else {
+                    callBack.onError(errorCode, errorMsg);
+                }
             }
         });
     }
@@ -258,6 +282,13 @@ public class SdkHelper {
             }
         }
         return Long.valueOf(str.toString());
+    }
+
+
+    public void loginListener(Context context, BroadcastReceiver mReceiver) {
+        IntentFilter filterLoginAgain = new IntentFilter();
+        filterLoginAgain.addAction(ACTION_LOGIN_AGAIN);
+        context.registerReceiver(mReceiver, filterLoginAgain);
     }
 
 

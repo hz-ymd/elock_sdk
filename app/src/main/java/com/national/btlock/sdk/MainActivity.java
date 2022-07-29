@@ -1,6 +1,9 @@
 package com.national.btlock.sdk;
 
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -16,6 +19,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.national.btlock.sdk.databinding.ActivityMainBinding;
+import com.national.btlock.sdk.utils.PreferencesUtils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -63,6 +67,25 @@ public class MainActivity extends AppCompatActivity implements Constants {
             }
         }
 
+        SdkHelper.getInstance().loginListener(MainActivity.this, new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                SdkHelper.getInstance().loginOut(new SdkHelper.CallBack() {
+                    @Override
+                    public void onSuccess(String jsonStr) {
+                        PreferencesUtils.putBoolean(MainActivity.this, Constants.IS_LOGIN, false);
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                    @Override
+                    public void onError(String errCode, String errMsg) {
+
+                    }
+                });
+            }
+        });
 
     }
 

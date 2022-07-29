@@ -10,7 +10,15 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        SdkHelper.getInstance().init(this, Constants.APPID, Constants.APPSECRET,
+        /**
+         *  Constants.APPID sdk申请appId
+         *  Constants.APPSECRET sdk申请appSecret
+         *  licenseId 百度申请licenseId
+         *  licenseFileName 百度配置文件名称
+         */
+        SdkHelper.getInstance().init(this,
+                Constants.APPID,
+                Constants.APPSECRET,
                 "elock-sdk-demo-face-android",
                 "idl-license.face-android",
                 new SdkHelper.initCallBack() {
@@ -26,7 +34,7 @@ public class MyApp extends Application {
                     }
 
 
-                });
+        });
 
 
 

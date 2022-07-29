@@ -136,6 +136,11 @@ public class AuthListActivity extends BaseActivity implements AppConstants {
         }
     }
 
+    @Override
+    public void onNoDoubleClick(View v) {
+
+    }
+
 
     public void dealAuth(String json) {
         LockAuthListEntity entity = new Gson().fromJson(json, LockAuthListEntity.class);

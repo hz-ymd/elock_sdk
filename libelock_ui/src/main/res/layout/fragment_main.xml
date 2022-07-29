@@ -128,191 +128,206 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/deviders"></View>
-
-
-            <RelativeLayout
-                android:id="@+id/layout_owner_manager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp">
-
-                <LinearLayout
-                    android:id="@+id/layout_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/assignment_auth"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/next_btn_style"
-                        android:padding="5dp"
-                        android:text="权限转让"
-                        android:textColor="@color/white"
-                        android:visibility="gone"></TextView>
-
-                    <TextView
-                        android:id="@+id/assignment_take_back"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/next_btn_style"
-                        android:padding="5dp"
-                        android:text="管理权收回"
-                        android:textColor="@color/white"
-                        android:visibility="gone"></TextView>
-
-
-                    <TextView
-                        android:id="@+id/assignment_extend"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/next_btn_style"
-                        android:padding="5dp"
-                        android:text="@string/auth_date_extend_txt"
-                        android:textColor="@color/white"
-                        android:visibility="gone"></TextView>
-
-                    <TextView
-                        android:id="@+id/assignment_give_back"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/next_btn_style"
-                        android:padding="5dp"
-                        android:text="管理权归还"
-                        android:textColor="@color/white"
-                        android:visibility="gone"></TextView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/layout_btn"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/text_owner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/font_detail"></TextView>
-
-                    <TextView
-                        android:id="@+id/text_manager"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:padding="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/font_detail"></TextView>
-
-
-                    <TextView
-                        android:id="@+id/text_manager_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:padding="5dp"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/font_detail"></TextView>
-                </LinearLayout>
-
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
                 android:background="@color/deviders">
 
             </View>
 
 
-            <LinearLayout
-                android:id="@+id/layout_auth"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:scrollbars="none">
 
-                <TextView
-                    android:id="@+id/auth_app"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/font_detail"></TextView>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
 
-                <View
+                    <RelativeLayout
+                        android:id="@+id/layout_owner_manager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
 
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@color/deviders">
+                        <LinearLayout
+                            android:id="@+id/layout_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
 
-                </View>
+                            <TextView
+                                android:id="@+id/assignment_auth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next_btn_style"
+                                android:padding="5dp"
+                                android:text="权限转让"
+                                android:textColor="@color/white"
+                                android:visibility="gone"></TextView>
 
-                <TextView
-                    android:id="@+id/auth_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/font_detail"></TextView>
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@color/deviders">
-
-                </View>
-
-                <TextView
-                    android:id="@+id/auth_idcard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/font_detail">
-
-                </TextView>
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@color/deviders">
-
-                </View>
-
-                <TextView
-                    android:id="@+id/auth_pwd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/font_detail"></TextView>
+                            <TextView
+                                android:id="@+id/assignment_take_back"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/next_btn_style"
+                                android:padding="5dp"
+                                android:text="管理权收回"
+                                android:textColor="@color/white"
+                                android:visibility="gone"></TextView>
 
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@color/deviders"
-                    android:visibility="gone">
+                            <TextView
+                                android:id="@+id/assignment_extend"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/next_btn_style"
+                                android:padding="5dp"
+                                android:text="@string/auth_date_extend_txt"
+                                android:textColor="@color/white"
+                                android:visibility="gone"></TextView>
 
-                </View>
-            </LinearLayout>
+                            <TextView
+                                android:id="@+id/assignment_give_back"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/next_btn_style"
+                                android:padding="5dp"
+                                android:text="管理权归还"
+                                android:textColor="@color/white"
+                                android:visibility="gone"></TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/layout_btn"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_owner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail"></TextView>
+
+                            <TextView
+                                android:id="@+id/text_manager"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:padding="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail"></TextView>
 
 
+                            <TextView
+                                android:id="@+id/text_manager_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:padding="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail"></TextView>
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/deviders">
+
+                    </View>
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_auth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/auth_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_detail"></TextView>
+
+
+                        <View
+
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/deviders">
+
+                        </View>
+
+                        <TextView
+                            android:id="@+id/auth_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_detail"></TextView>
+
+                        <View
+
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/deviders">
+
+                        </View>
+
+                        <TextView
+                            android:id="@+id/auth_idcard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_detail">
+
+                        </TextView>
+
+                        <View
+
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/deviders">
+
+                        </View>
+
+                        <TextView
+                            android:id="@+id/auth_pwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_detail"></TextView>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/deviders"
+                            android:visibility="gone">
+
+                        </View>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 
 

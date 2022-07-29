@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
@@ -81,6 +82,11 @@ public class BleComunicationInfoActivity extends BaseActivity {
 
     }
 
+    @Override
+    public void onNoDoubleClick(View v) {
+
+    }
+
     private void authIdCard() {
         byte[] bytes = Base64Utils.decode(IntentUtils.getInstance().getBitmap(), Base64Utils.NO_WRAP);
         SDKCoreHelper.authIdcard(lockMac, targetUserId, startData, endData, bytes, new OnProgressUpdateListener() {
@@ -97,18 +103,19 @@ public class BleComunicationInfoActivity extends BaseActivity {
 
                     @Override
                     public void onError(String s, String s1) {
-//                        finish();
-//                        Intent intent = new Intent(BleComunicationInfoActivity.this, OcrActivity.class);
-//                        intent.putExtra("mac", lockMac);
-//                        startActivity(intent);
-                        binding.idReceive.setText("进入拍照识别模式，请根据提示操作");
-                        Toast.makeText(BleComunicationInfoActivity.this, "进入拍照识别模式，请根据提示操作", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(BleComunicationInfoActivity.this, CameraActivity.class);
-                        intent.putExtra(CameraActivity.KEY_NATIVE_ENABLE, false);
-                        IMG_PATH_FRONT = getExternalFilesDir(null).getAbsolutePath() + "idcardFront.jpg";
-                        intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, IMG_PATH_FRONT);
-                        intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
-                        startActivityForResult(intent, REQUEST_IDCARD_FRONT);
+                        if (s.equals("100011")) {
+                            binding.idReceive.setText("进入拍照识别模式，请根据提示操作");
+                            Toast.makeText(BleComunicationInfoActivity.this, "进入拍照识别模式，请根据提示操作", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(BleComunicationInfoActivity.this, CameraActivity.class);
+                            intent.putExtra(CameraActivity.KEY_NATIVE_ENABLE, false);
+                            IMG_PATH_FRONT = getExternalFilesDir(null).getAbsolutePath() + "idcardFront.jpg";
+                            intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, IMG_PATH_FRONT);
+                            intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
+                            startActivityForResult(intent, REQUEST_IDCARD_FRONT);
+                        } else {
+                            Toast.makeText(BleComunicationInfoActivity.this, "身份证授权失败：" + s1, Toast.LENGTH_LONG).show();
+                            finish();
+                        }
                     }
                 }
         );

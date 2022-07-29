@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 
 import com.national.btlock.ui.databinding.ActivitySearchBinding;
+import com.national.btlock.widget.NoDoubleListener;
 
 public class SearchActivity extends BaseActivity {
 
@@ -44,15 +45,20 @@ public class SearchActivity extends BaseActivity {
         });
 
 
-        binding.btnSearch.setOnClickListener(new View.OnClickListener() {
+        binding.btnSearch.setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View view) {
+            public void onNoDoubleClick(View view) {
                 if (TextUtils.isEmpty(key)) {
                     Toast.makeText(SearchActivity.this, "请输入设备名称", Toast.LENGTH_LONG).show();
                 }
                 goLockList(key);
             }
         });
+    }
+
+    @Override
+    public void onNoDoubleClick(View v) {
+
     }
 
     public void goLockList(String key) {

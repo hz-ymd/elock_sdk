@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.gson.Gson;
 import com.national.btlock.adapter.LockListAdapter;
 import com.national.btlock.ui.databinding.ActivityLockListBinding;
+import com.national.btlock.widget.NoDoubleListener;
 import com.national.core.SDKCoreHelper;
 import com.national.btlock.utils.AppConstants;
 import com.national.core.nw.entity.LockListEntity;
@@ -51,9 +52,9 @@ public class LockListActivity extends BaseActivity {
         layout_no_lock = binding.layoutNoLock.getRoot();
 
 
-        layout_no_lock.findViewById(R.id.btn_refresh).setOnClickListener(new View.OnClickListener() {
+        layout_no_lock.findViewById(R.id.btn_refresh).setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View view) {
+            public void onNoDoubleClick(View view) {
                 getLockListByNet();
             }
         });
@@ -84,6 +85,7 @@ public class LockListActivity extends BaseActivity {
                 intent.putExtra("lockMac", lock.getMac());
                 intent.putExtra("lock_auth_endtime", endTime);
                 intent.putExtra("ownerType", lock.getOwnerType());
+                intent.putExtra("authIdcardNeedRealName", lock.getAuthIdcardNeedRealName());
                 startActivity(intent);
             }
 
@@ -146,12 +148,17 @@ public class LockListActivity extends BaseActivity {
 //
 //        });
 
-        binding.imageRefresh.setOnClickListener(new View.OnClickListener() {
+        binding.imageRefresh.setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View view) {
+            public void onNoDoubleClick(View view) {
                 getLockListByNet();
             }
         });
+
+    }
+
+    @Override
+    public void onNoDoubleClick(View v) {
 
     }
 

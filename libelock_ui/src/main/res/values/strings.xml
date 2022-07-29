@@ -573,5 +573,10 @@
     <string name="txt_tmp_invented_pwd_share">访客码授权</string>
     <string name="cancel">退出</string>
 
+    <string name="txt_lock_open_record_list">开门记录查询</string>
+
+    <string name="txt_operate_record_list">数据查询</string>
+
+
 
 </resources>

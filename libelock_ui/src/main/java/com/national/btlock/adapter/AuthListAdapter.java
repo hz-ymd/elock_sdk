@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.national.btlock.ui.R;
 import com.national.btlock.utils.AppConstants;
+import com.national.btlock.widget.NoDoubleListener;
 import com.national.core.nw.entity.LockAuthListEntity;
 
 import java.text.DecimalFormat;
@@ -101,25 +102,26 @@ public class AuthListAdapter extends RecyclerView.Adapter<AuthListAdapter.ViewHo
         holder.validPeriod.setText(validPeriodStr);
 
 
-        holder.btnRewrite.setOnClickListener(new OnClickListener() {
-
+        holder.btnRewrite.setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View v) {
+            public void onNoDoubleClick(View v) {
                 mListener.action(2, item);
             }
+
+
         });
-        holder.btnCheckout.setOnClickListener(new OnClickListener() {
+        holder.btnCheckout.setOnClickListener(new NoDoubleListener() {
 
             @Override
-            public void onClick(View v) {
+            public void onNoDoubleClick(View v) {
                 mListener.action(1, item);
             }
         });
 
-        holder.btnExtend.setOnClickListener(new OnClickListener() {
+        holder.btnExtend.setOnClickListener(new NoDoubleListener() {
 
             @Override
-            public void onClick(View v) {
+            public void onNoDoubleClick(View v) {
                 mListener.action(3, item);
             }
         });

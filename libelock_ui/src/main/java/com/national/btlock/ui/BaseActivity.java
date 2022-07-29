@@ -1,14 +1,16 @@
 package com.national.btlock.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.national.btlock.widget.SimpleProgressDialog;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     SimpleProgressDialog pd;
 
     @Override
@@ -43,4 +45,21 @@ public class BaseActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    public static final int MIN_CLICK_DELAY_TIME = 1000;
+    private static final String TAG = "NoDoubleListener";
+    private long lastClickTime = 0;
+
+    @Override
+    public void onClick(View view) {
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastClickTime > MIN_CLICK_DELAY_TIME) {
+            lastClickTime = currentTime;
+            onNoDoubleClick(view);
+        } else {
+            Log.w(TAG, "点击过快");
+        }
+    }
+
+    public abstract void onNoDoubleClick(View v);
 }

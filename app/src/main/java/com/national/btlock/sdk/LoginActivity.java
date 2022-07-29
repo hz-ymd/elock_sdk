@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.google.gson.Gson;
 import com.national.btlock.sdk.model.LoginResult;
 import com.national.btlock.sdk.utils.PreferencesUtils;
 
@@ -49,25 +50,25 @@ public class LoginActivity extends Activity implements Constants {
             loading.setVisibility(View.VISIBLE);
 
             //第三方登录逻辑
-            SdkHelper.getInstance().login(username, new SdkHelper.CallBack() {
+            SdkHelper.getInstance().login(LoginActivity.this,username, new SdkHelper.CallBack() {
                 @Override
                 public void onSuccess(String jsonStr) {
                     loading.setVisibility(View.GONE);
                     Log.d(TAG, "jsonStr:" + jsonStr);
-//                    LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
-//                    if (result != null) {
-//                        if (result.getData() != null) {
-//                            String isAccountVerified = result.getData().getAccountVerified();
-//                            PreferencesUtils.putBoolean(LoginActivity.this, IS_LOGIN, true);
-//                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                            intent.putExtra("isAccountVerified", isAccountVerified);
-//                            startActivity(intent);
-//                            finish();
-//                        }
-//
-//                    } else {
-//                        Toast.makeText(LoginActivity.this, "数据异常", Toast.LENGTH_LONG).show();
-//                    }
+                    LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
+                    if (result != null) {
+                        if (result.getData() != null) {
+                            String isAccountVerified = result.getData().getAccountVerified();
+                            PreferencesUtils.putBoolean(LoginActivity.this, IS_LOGIN, true);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("isAccountVerified", isAccountVerified);
+                            startActivity(intent);
+                            finish();
+                        }
+
+                    } else {
+                        Toast.makeText(LoginActivity.this, "数据异常", Toast.LENGTH_LONG).show();
+                    }
                 }
 
                 @Override

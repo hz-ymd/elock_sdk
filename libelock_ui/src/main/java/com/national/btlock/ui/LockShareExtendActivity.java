@@ -62,33 +62,60 @@ public class LockShareExtendActivity extends BaseActivity {
 
         }
 
+        binding.idBtnExtend.setOnClickListener(this);
+        binding.idIdcardDateValidPeriodInput.setOnClickListener(this);
 
-        binding.idBtnExtend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boolean isChanged = false;
-                Date start = DateTimeUtil.str2DateTime(oldDateStr);
-                Date end = DateTimeUtil.str2DateTime(tvEndDate.getText().toString());
 
-                if (end != null && start.getTime() != end.getTime()) {
-                    isChanged = true;
-                }
+//        binding.idBtnExtend.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                boolean isChanged = false;
+//                Date start = DateTimeUtil.str2DateTime(oldDateStr);
+//                Date end = DateTimeUtil.str2DateTime(tvEndDate.getText().toString());
+//
+//                if (end != null && start.getTime() != end.getTime()) {
+//                    isChanged = true;
+//                }
+//
+//                if (isChanged) {
+//                    extendAuth();
+//                } else {
+//                    Toast.makeText(LockShareExtendActivity.this, "授权时间无变更", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
+//
+//
+//        binding.idIdcardDateValidPeriodInput.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                customDatePicker2.show(tvEndDate.getText().toString());
+//            }
+//        });
 
-                if (isChanged) {
-                    extendAuth();
-                } else {
-                    Toast.makeText(LockShareExtendActivity.this, "授权时间无变更", Toast.LENGTH_LONG).show();
-                }
+
+    }
+
+    @Override
+    public void onNoDoubleClick(View v) {
+        int id = v.getId();
+        if (id == R.id.id_btn_extend) {
+            boolean isChanged = false;
+            Date start = DateTimeUtil.str2DateTime(oldDateStr);
+            Date end = DateTimeUtil.str2DateTime(tvEndDate.getText().toString());
+
+            if (end != null && start.getTime() != end.getTime()) {
+                isChanged = true;
             }
-        });
 
-
-        binding.idIdcardDateValidPeriodInput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                customDatePicker2.show(tvEndDate.getText().toString());
+            if (isChanged) {
+                extendAuth();
+            } else {
+                Toast.makeText(LockShareExtendActivity.this, "授权时间无变更", Toast.LENGTH_LONG).show();
             }
-        });
+        } else if (id == R.id.id_idcard_date_valid_period_input) {
+            customDatePicker2.show(tvEndDate.getText().toString());
+        }
 
 
     }

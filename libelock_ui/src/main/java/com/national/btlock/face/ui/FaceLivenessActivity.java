@@ -62,6 +62,7 @@ import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.national.btlock.face.ui.utils.CameraPreviewUtils;
 import com.baidu.idl.face.platform.utils.DensityUtils;
 import com.national.btlock.ui.R;
+import com.national.btlock.widget.NoDoubleListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -172,9 +173,9 @@ public class FaceLivenessActivity extends Activity implements
         mSurfaceView.setLayoutParams(cameraFL);
         mFrameLayout.addView(mSurfaceView);
 
-        mRootView.findViewById(R.id.liveness_close).setOnClickListener(new View.OnClickListener() {
+        mRootView.findViewById(R.id.liveness_close).setOnClickListener(new NoDoubleListener() {
             @Override
-            public void onClick(View v) {
+            public void onNoDoubleClick(View v) {
                 onBackPressed();
             }
         });

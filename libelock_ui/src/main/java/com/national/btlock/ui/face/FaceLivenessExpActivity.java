@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.baidu.idl.face.platform.FaceStatusNewEnum;
 import com.baidu.idl.face.platform.model.ImageInfo;
@@ -56,7 +57,13 @@ public class FaceLivenessExpActivity extends FaceLivenessActivity implements
             if (mViewBg != null) {
                 mViewBg.setVisibility(View.VISIBLE);
             }
-            SdkHelper.getInstance().getCallBack().identificationError("100003", "人脸采集超时");
+            if (type.equals("identification") && SdkHelper.getInstance().getCallBack() != null) {
+                SdkHelper.getInstance().getCallBack().identificationError("100003", "人脸采集超时");
+            } else if (type.equals("loginFaceCheck") && SdkHelper.getInstance().getLoginCallBack() != null) {
+                SdkHelper.getInstance().getLoginCallBack().onError("100003", "人脸采集超时");
+            } else {
+                Toast.makeText(FaceLivenessExpActivity.this, "人脸采集超时", Toast.LENGTH_SHORT).show();
+            }
             finish();
             //showMessageDialog();
         }
@@ -151,7 +158,28 @@ public class FaceLivenessExpActivity extends FaceLivenessActivity implements
             } else {
                 SdkHelper.getInstance().getCallBack().identificationError("100002", "人脸采集失败");
             }
-        } else {
+        } else if (type.equals("loginFaceCheck")) {
+            if (!TextUtils.isEmpty(bmpStr)) {
+                byte[] bytes = Base64Utils.decode(bmpStr, Base64Utils.NO_WRAP);
+                SDKCoreHelper.loginFaceCheck(bytes, new OnResultListener() {
+                    @Override
+                    public void onSuccess(String jsonStr) {
+                        //Toast.makeText(FaceLivenessExpActivity.this, "实名认证成功", Toast.LENGTH_LONG).show();
+                        SdkHelper.getInstance().getLoginCallBack().onSuccess(jsonStr);
+                    }
+
+                    @Override
+                    public void onError(String errorCode, String errorMsg) {
+                        //Toast.makeText(FaceLivenessExpActivity.this, "实名认证失败：" + errorMsg, Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "loginFaceCheck=" + errorCode + " errorMsg=" + errorMsg);
+                        SdkHelper.getInstance().getLoginCallBack().onError(errorCode, errorMsg);
+                    }
+                });
+            } else {
+                SdkHelper.getInstance().getLoginCallBack().onError("100002", "人脸采集失败");
+            }
+
+        } else if (type.equals("authIdCard")) {
             IntentUtils.getInstance().setBitmap(bmpStr);
             Intent intent = new Intent();
             setResult(RESULT_OK, intent);

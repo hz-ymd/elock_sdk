@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:id="@+id/rl_listview_room_root"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:background="@android:color/white"--><!--android:descendantFocusability="blocksDescendants"--><!--android:focusable="false"--><!--android:padding="12dp"-->
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:descendantFocusability="blocksDescendants"
+    android:focusable="false"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+
+    <TextView
+        android:id="@+id/id_open_record_item_lock_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_detail" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/id_open_record_item_user_name"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="left"
+            android:text=""
+            android:textColor="@color/text3"
+            android:textSize="@dimen/font_detail" />
+        <!--android:layout_marginLeft="12dp"-->
+        <!--<TextView-->
+        <!--android:id="@+id/id_open_record_item_open_time_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/id_open_record_item_user_name_title"-->
+        <!--android:text="开门时间:"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textColorHint="@color/common_bg_click"-->
+        <!--android:textSize="@dimen/textsize_default" />-->
+        <TextView
+            android:id="@+id/id_open_record_item_open_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_open_record_item_user_name_title"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/id_open_record_item_open_time_title"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:text=""
+            android:textColor="@color/text3"
+            android:textColorHint="@color/common_bg_click"
+            android:textSize="@dimen/font_detail" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/id_open_record_item_open_method_title"-->
+        <!--android:layout_below="@+id/id_open_record_item_open_time_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="开门方式:"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textColorHint="@color/common_bg_click"-->
+        <!--android:textSize="@dimen/textsize_default" />-->
+
+        <TextView
+            android:id="@+id/id_open_record_item_open_method"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_open_record_item_open_time_title"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/id_open_record_item_open_method_title"
+            android:gravity="left"
+            android:text=""
+            android:textColor="@color/text3"
+            android:textColorHint="@color/common_bg_click"
+            android:textSize="@dimen/font_detail" />
+        <!--android:layout_marginRight="12dp"-->
+    </LinearLayout>
+</LinearLayout>

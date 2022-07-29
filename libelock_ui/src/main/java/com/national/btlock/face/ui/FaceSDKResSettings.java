@@ -11,7 +11,6 @@ import com.national.btlock.ui.R;
  * sdk使用Res资源设置功能
  */
 public class FaceSDKResSettings {
-
     /**
      * 初始化Id（新）
      */
