@@ -18,6 +18,7 @@ SDK接入流程
 
 3.使用sdk
 
+
 Add it in your root build.gradle at the end of repositories:
 
 ```
@@ -120,6 +121,14 @@ dependencies {
             android:name="com.national.btlock.ui.LockPwdLongShareListActivity"
             android:launchMode="singleTask">
         </activity>
+```
+
+Tips：测试版本sdk使用http请求，请添加network_config.xml文件，并在manifest文件配置
+```
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
 ```
 
 
