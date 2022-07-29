@@ -37,7 +37,7 @@ dependencies {
           //第三方库，dfu升级库，gson库，ormlite库，eventbus库，
           //如另外有引用，可忽略或不引用
           implementation 'com.github.hz-ymd:CommonLibs:1.0.0'
-	        implementation 'com.github.hz-ymd:elock_sdk:0.0.5'
+	  implementation 'com.github.hz-ymd:elock_sdk:0.0.5'
 	}
 ```
 权限声明
