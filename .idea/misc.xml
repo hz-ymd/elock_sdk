@@ -51,7 +51,7 @@
         <entry key="libelock_ui/src/main/res/layout/activity_face_liveness_v3100.xml" value="0.19375" />
         <entry key="libelock_ui/src/main/res/layout/activity_home.xml" value="0.13020833333333334" />
         <entry key="libelock_ui/src/main/res/layout/activity_lock_detail.xml" value="0.1" />
-        <entry key="libelock_ui/src/main/res/layout/activity_lock_list.xml" value="0.24148418491484186" />
+        <entry key="libelock_ui/src/main/res/layout/activity_lock_list.xml" value="0.1" />
         <entry key="libelock_ui/src/main/res/layout/activity_lock_share.xml" value="0.1921875" />
         <entry key="libelock_ui/src/main/res/layout/activity_ocr.xml" value="0.18489583333333334" />
         <entry key="libelock_ui/src/main/res/layout/activity_open_door.xml" value="0.20516304347826086" />

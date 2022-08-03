@@ -36,7 +36,6 @@ import com.national.btlock.widget.SimpleProgressDialog;
 import com.national.core.SDKCoreHelper;
 import com.national.core.nw.entity.DeviceDetailEntity;
 import com.national.core.nw.entity.LockListEntity;
-import com.national.core.nw.it.OnProgressUpdateListener;
 import com.national.core.nw.it.OnResultListener;
 
 import java.text.SimpleDateFormat;
@@ -191,9 +190,9 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             }
         });
 
-
+        getSysConfig();
         //获取缓存锁列表
-        getOfflineLockList();
+//        getOfflineLockList();
 
         return view;
 
@@ -363,8 +362,8 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 //                layout_no_lock.setVisibility(View.VISIBLE);
                 Log.d(TAG, errorCode + "," + errorMsg);
 
-                Toast.makeText(getActivity(), "设备列表获取失败：" + errorMsg, Toast.LENGTH_LONG).show();
-
+                // Toast.makeText(getActivity(), "设备列表获取失败：" + errorMsg, Toast.LENGTH_LONG).show();
+                getOfflineLockList();
 
             }
         });
@@ -387,22 +386,22 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                         bannerView.showBanner(lockList, false, selection, new ViewFlowAdapter.OnImageClickLinstener() {
                             @Override
                             public void onClick(LockListEntity.Lock entiy) {
-                                SDKCoreHelper.openLock(entiy.getMac(), new OnProgressUpdateListener() {
-                                    @Override
-                                    public void onProgressUpdate(String message) {
-                                        Log.d(TAG, "onProgressUpdate:" + message);
-                                    }
-
-                                    @Override
-                                    public void onSuccess(String jsonStr) {
-                                        Log.d(TAG, "onSuccess:" + jsonStr);
-                                    }
-
-                                    @Override
-                                    public void onError(String errorCode, String errorMsg) {
-                                        Log.d(TAG, "onError:" + errorCode + "," + errorMsg);
-                                    }
-                                });
+//                                SDKCoreHelper.openLock(entiy.getMac(), new OnProgressUpdateListener() {
+//                                    @Override
+//                                    public void onProgressUpdate(String message) {
+//                                        Log.d(TAG, "onProgressUpdate:" + message);
+//                                    }
+//
+//                                    @Override
+//                                    public void onSuccess(String jsonStr) {
+//                                        Log.d(TAG, "onSuccess:" + jsonStr);
+//                                    }
+//
+//                                    @Override
+//                                    public void onError(String errorCode, String errorMsg) {
+//                                        Log.d(TAG, "onError:" + errorCode + "," + errorMsg);
+//                                    }
+//                                });
                             }
                         }, new BannerView.OnChangeListener() {
                             @Override
@@ -422,7 +421,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                         bannerView.setVisibility(View.GONE);
                     }
                 }
-                getSysConfig();
+                //getSysConfig();
 
             }
 
@@ -431,7 +430,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                 sliding_drawer.setVisibility(View.GONE);
                 bannerView.setVisibility(View.GONE);
                 layout_no_lock.setVisibility(View.VISIBLE);
-                getSysConfig();
+                //getSysConfig();
             }
         });
     }
@@ -448,8 +447,9 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
             @Override
             public void onError(String errorCode, String errorMsg) {
-                Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_LONG).show();
+                // Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_LONG).show();
                 dismissProgressDialog();
+                getOfflineLockList();
 
             }
         });
@@ -824,7 +824,8 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == REQUEST_LOCK_DELETE && resultCode == getActivity().RESULT_OK) {
+        if (requestCode == REQUEST_LOCK_DELETE &&
+                resultCode == -1) {
             if (sliding_drawer.isOpened()) {
                 sliding_drawer.close();
             }

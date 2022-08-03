@@ -24,6 +24,7 @@ public class MeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         MeViewModel meViewModel =
                 new ViewModelProvider(this).get(MeViewModel.class);
 
@@ -32,8 +33,6 @@ public class MeFragment extends Fragment {
 
 //        final TextView textView = binding.textMe;
 //        meViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
-
         binding.idBtnVerify.setOnClickListener(view ->
                 SdkHelper.getInstance().identification(getActivity(), "name", "idcardNo", new SdkHelper.identificationCallBack() {
                     @Override

@@ -91,8 +91,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.airbnb.android:lottie:5.2.0'
-    implementation project(path: ':libelock_ui')
-//    implementation 'com.github.hz-ymd:elock_sdk:0.0.5'
+//    implementation project(path: ':libelock_ui')
+    implementation 'com.github.hz-ymd:elock_sdk:0.0.5'
     implementation 'com.github.hz-ymd:baiduFaceLib:1.0.0'
     implementation 'com.github.hz-ymd:CommonLibs:1.0.0'
 
