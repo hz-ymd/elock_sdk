@@ -4,17 +4,13 @@ import com.national.sdkjni.HzbtJni;
 
 public interface AppConstants {
 
+
+
     int MAX_RECONNECT_COUNT = 3;
     String ACTION_UPDATE_DEVICE_LIST_OPEN_LOCK = "com.national.update.device.list.lockopen";
 
     int SUCCESS = 1;
 
-    String UPDATE_BLE_CONFIG = "ble-config.txt";
-    String UPDATE_BLE_FILE = "ble.zip";
-    String UPDATE_MCU_CONFIG = "mcu-config.txt";
-    String UPDATE_MCU_FILE = "mcu.bin";
-    String UPDATE_LORA_CONFIG = "lora-config.txt";
-    String UPDATE_LORA_FILE = "lora.bin";
     String ACTION_SUCCESS = "1";
     String SEED = HzbtJni.getSeed();
     String APP_USER_INFO = "app_user_info";

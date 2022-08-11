@@ -19,8 +19,8 @@ public class MyApp extends Application {
         SdkHelper.getInstance().init(this,
                 Constants.APPID,
                 Constants.APPSECRET,
-                "elock-sdk-demo-face-android",
-                "idl-license.face-android",
+//                "elock-sdk-demo-face-android",
+//                "idl-license.face-android",
                 new SdkHelper.initCallBack() {
                     @Override
                     public void initSuccess() {
@@ -29,7 +29,7 @@ public class MyApp extends Application {
                     }
 
                     @Override
-                    public void initFailure(int errCode, String errMsg) {
+                    public void initFailure(String errCode, String errMsg) {
                         Log.d(TAG, "initFailure:" + errCode + "," + errMsg);
                     }
 

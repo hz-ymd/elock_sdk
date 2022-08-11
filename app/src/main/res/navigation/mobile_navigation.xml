@@ -6,10 +6,12 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
+
         android:id="@+id/navigation_home"
         android:name="com.national.btlock.ui.MainFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_me"

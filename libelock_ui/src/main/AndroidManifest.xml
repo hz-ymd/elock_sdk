@@ -2,6 +2,84 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.national.btlock.ui">
 
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name="com.national.btlock.ui.face.FaceLivenessExpActivity"></activity>
+
+        <service android:name="com.national.core.bt.service.BleServiceM"></service>
+
+        <service android:name="com.national.core.update.CheckLockUpdateService"></service>
+
+        <activity
+            android:name="com.national.btlock.ui.LockShareActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.LockListActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.ElockSdk_NoActionBar"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.AuthListActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.LockShareExtendActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.LockDetailActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+
+            android:name="com.national.btlock.ui.SearchActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.BleComunicationInfoActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ocr.ui.camera.CameraActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.LockPwdShareActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.LockOpenRecordListActivity"
+            android:launchMode="singleTask"></activity>
+        <activity
+            android:name="com.national.btlock.ui.OperateRecordActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.AuthRecordListActivity"
+            android:launchMode="singleTask"></activity>
+
+        <activity
+            android:name="com.national.btlock.ui.LockPwdLongShareListActivity"
+            android:launchMode="singleTask"></activity>
+
+    </application>
+
+
 </manifest>

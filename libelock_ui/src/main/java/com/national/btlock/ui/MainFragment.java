@@ -1,6 +1,8 @@
 package com.national.btlock.ui;
 
 import android.app.AlertDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,6 +33,7 @@ import com.national.btlock.model.AppItem;
 import com.national.btlock.ui.bannerview.BannerView;
 import com.national.btlock.ui.bannerview.ViewFlowAdapter;
 import com.national.btlock.utils.AppConstants;
+import com.national.btlock.utils.StringUtilBle;
 import com.national.btlock.widget.MySlidingDrawer;
 import com.national.btlock.widget.SimpleProgressDialog;
 import com.national.core.SDKCoreHelper;
@@ -55,12 +58,19 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_APPID = "appId";
+    private static final String ARG_APPSECRET = "appSecret";
+    private static final String ARG_LICENSEID = "licenseId";
+    private static final String ARG_LICENSEFILENAME = "licenseFileName";
+    private static final String ARG_USERNAME = "userName";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String appId;
+    private String appSececrt;
+    private String licenseId;
+    private String licenseFileName;
+    private String userName;
+
 
     public MainFragment() {
         // Required empty public constructor
@@ -70,27 +80,48 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment MainFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MainFragment newInstance(String param1, String param2) {
+    public static MainFragment newInstance(String appId,
+                                           String appSecret,
+                                           String licenseid,
+                                           String licenseFileName,
+                                           String userName) {
         MainFragment fragment = new MainFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_APPID, appId);
+        args.putString(ARG_APPSECRET, appSecret);
+        args.putString(ARG_LICENSEID, licenseid);
+        args.putString(ARG_LICENSEFILENAME, licenseFileName);
+        args.putString(ARG_USERNAME, userName);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    boolean isLogin = true;
+    private static final int REQUEST_OPEN_BT_CODE = 2000;
+
+    public void enableBlueTooth() {
+        BluetoothManager bluetoothManager = (BluetoothManager) getActivity().getSystemService(Context.BLUETOOTH_SERVICE);
+        BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
+        if (!bluetoothAdapter.isEnabled()) {
+            Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(intent, REQUEST_OPEN_BT_CODE);
+        }
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            appId = getArguments().getString(ARG_APPID);
+            appSececrt = getArguments().getString(ARG_APPSECRET);
+            licenseId = getArguments().getString(ARG_LICENSEID);
+            licenseFileName = getArguments().getString(ARG_LICENSEFILENAME);
+            userName = getArguments().getString(ARG_USERNAME);
         }
+        enableBlueTooth();
     }
 
     BannerView bannerView;
@@ -115,15 +146,17 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
     SimpleProgressDialog pd;
 
+    TextView idDetailLockName, idDetailMac, idSoftver, idHdver, idAddr, idMcuver, idMcuverTitle;
+    ImageView idLockOwner, idLockManager, idLockUser, idLockPolice, idLockIdcardRealnameNeeded;
+    LinearLayout layout_detail;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-//        loading = view.findViewById(R.id.loading);
         image_list = view.findViewById(R.id.image_list);
         image_search = view.findViewById(R.id.image_search);
 
@@ -136,7 +169,6 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         image_list.setOnClickListener(this);
         image_search.setOnClickListener(this);
         //-------
-
         grid_func = view.findViewById(R.id.grid_func);
         layout_auth = view.findViewById(R.id.layout_auth);
         auth_app = view.findViewById(R.id.auth_app);
@@ -152,10 +184,24 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         assignment_take_back = view.findViewById(R.id.assignment_take_back);
         assignment_extend = view.findViewById(R.id.assignment_extend);
 
-
         content = view.findViewById(R.id.content);
         layout_owner_manager = view.findViewById(R.id.layout_owner_manager);
         layout_owner_manager.setOnClickListener(this);
+
+        layout_detail = view.findViewById(R.id.layout_detail);
+        idDetailLockName = view.findViewById(R.id.id_detail_lock_name);
+        idDetailMac = view.findViewById(R.id.id_detail_mac);
+        idSoftver = view.findViewById(R.id.id_softver);
+        idHdver = view.findViewById(R.id.id_hdver);
+        idAddr = view.findViewById(R.id.id_addr);
+        idMcuver = view.findViewById(R.id.id_mcuver);
+        idMcuverTitle = view.findViewById(R.id.id_mcuver_title);
+        idLockOwner = view.findViewById(R.id.id_lock_owner);
+        idLockManager = view.findViewById(R.id.id_lock_manager);
+        idLockUser = view.findViewById(R.id.id_lock_user);
+        idLockPolice = view.findViewById(R.id.id_lock_police);
+        idLockIdcardRealnameNeeded = view.findViewById(R.id.id_lock_idcard_realname_needed);
+
 
         view.findViewById(R.id.btn_refresh).setOnClickListener(this);
         view.findViewById(R.id.image_refresh).setOnClickListener(this);
@@ -190,7 +236,13 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             }
         });
 
-        getSysConfig();
+        if (isLogin) {
+            getLockList();
+            isLogin = false;
+        } else {
+            getSysConfig();
+        }
+
         //获取缓存锁列表
 //        getOfflineLockList();
 
@@ -216,7 +268,9 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         }
     }
 
+
     public void getLockDetail() {
+        layout_detail.setVisibility(View.GONE);
         layout_auth.setVisibility(View.GONE);
         layout_owner_manager.setVisibility(View.GONE);
 
@@ -228,10 +282,85 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                 dismissProgressDialog();
                 Log.d(TAG, "json:" + jsonStr);
                 deviceDetailEntity = new Gson().fromJson(jsonStr, DeviceDetailEntity.class);
-                if (deviceDetailEntity != null) {
+                if (deviceDetailEntity != null && deviceDetailEntity.getData() != null) {
+                    layout_detail.setVisibility(View.VISIBLE);
+                    idDetailLockName.setText(deviceDetailEntity.getData().getLockName());
+                    idDetailMac.setText(lock.getMac());
+                    idSoftver.setText(getDeviceType(lock));
+
+                    idHdver.setText(getVer(lock.getHdVer()));
+
+                    idAddr.setText(lock.getAddress2());
+
+                    String ownerType = lock.getOwnerType();
+                    if (LockOwnerType.O_M.equalsIgnoreCase(ownerType)) {
+                        idLockOwner.setVisibility(View.VISIBLE);
+                        idLockManager.setVisibility(View.VISIBLE);
+                        idLockUser.setVisibility(View.GONE);
+
+
+                    } else if (LockOwnerType.O.equalsIgnoreCase(ownerType)) {
+                        idLockOwner.setVisibility(View.VISIBLE);
+                        idLockManager.setVisibility(View.GONE);
+                        idLockUser.setVisibility(View.GONE);
+
+                    } else if (LockOwnerType.M.equalsIgnoreCase(ownerType)) {
+                        idLockOwner.setVisibility(View.GONE);
+                        idLockManager.setVisibility(View.VISIBLE);
+                        idLockUser.setVisibility(View.VISIBLE);
+
+
+                    } else if (LockOwnerType.O_U.equalsIgnoreCase(ownerType)) {
+                        idLockOwner.setVisibility(View.VISIBLE);
+                        idLockManager.setVisibility(View.GONE);
+                        idLockUser.setVisibility(View.VISIBLE);
+
+                    } else {
+                        idLockOwner.setVisibility(View.GONE);
+                        idLockManager.setVisibility(View.GONE);
+                        idLockUser.setVisibility(View.VISIBLE);
+                        if (LockOwnerType.V.equalsIgnoreCase(ownerType)) {
+                            idLockUser.setImageResource(R.drawable.icon_lock_visitor);
+                        } else {
+                            idLockUser.setImageResource(R.drawable.icon_lock_user);
+
+                        }
+                    }
+
+                    idLockPolice.setVisibility(View.GONE);
+
+//                    if (("1".equalsIgnoreCase(lock_supervise) || "2".equalsIgnoreCase(lock_supervise))
+//                            && "1".equalsIgnoreCase(authIdcardNeedRealName)
+//                            && (LockOwnerType.O_M.equalsIgnoreCase(ownerType)
+//                            || LockOwnerType.O.equalsIgnoreCase(ownerType)
+//                            || LockOwnerType.O_U.equalsIgnoreCase(ownerType)
+//                            || LockOwnerType.M.equalsIgnoreCase(ownerType))
+//
+//                    ) {
+//                        binding.idLockPolice.setVisibility(View.VISIBLE);
+//                    } else {
+//                        binding.idLockPolice.setVisibility(View.GONE);
+//                    }
+//
+//
+                    if ("1".equalsIgnoreCase(lock.getAuthIdcardNeedRealName())) {
+                        idLockIdcardRealnameNeeded.setVisibility(View.VISIBLE);
+                    } else {
+                        idLockIdcardRealnameNeeded.setVisibility(View.GONE);
+                    }
+
+                    String mcuVer = lock.getMcu();
+                    if (!TextUtils.isEmpty(mcuVer) && !mcuVer.equals("0.00")) {
+                        idMcuver.setVisibility(View.VISIBLE);
+                        idMcuverTitle.setVisibility(View.VISIBLE);
+                        idMcuver.setText(mcuVer);
+                    } else {
+                        idMcuverTitle.setVisibility(View.GONE);
+                        idMcuver.setVisibility(View.GONE);
+                    }
 
                     Log.d(TAG, lock.getLockName() + ":" + lock.getOwnerType());
-                    String ownerType = lock.getOwnerType();
+
                     if (ownerType.equals(LockOwnerType.O_M) || ownerType.equals(LockOwnerType.M)) {
                         layout_auth.setVisibility(View.VISIBLE);
                         auth_app.setText("APP授权人数：" + deviceDetailEntity.getData().getAuthAppCount());
@@ -299,7 +428,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                     if (lockList != null && lockList.size() != 0) {
                         if (lock != null) {
                             for (int i = 0; i < lockList.size(); i++) {
-                                if (lock.getLockId().equals(lockList.get(i).getLockId())) {
+                                if (lock.getMac().equals(lockList.get(i).getMac())) {
                                     selection = i;
                                     break;
                                 }
@@ -600,9 +729,15 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             }
             getLockList();
         } else if (id == R.id.image_list) {
+            if (sliding_drawer.isOpened()) {
+                sliding_drawer.close();
+            }
             Intent intent = new Intent(getActivity(), LockListActivity.class);
             startActivity(intent);
         } else if (id == R.id.image_search) {
+            if (sliding_drawer.isOpened()) {
+                sliding_drawer.close();
+            }
             Intent intent = new Intent(getActivity(), SearchActivity.class);
             startActivity(intent);
         } else if (lock != null) {
@@ -651,7 +786,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
                 Intent intent = new Intent(getActivity(), LockPwdLongShareListActivity.class);
                 intent.putExtra("lock_mac", lock.getMac());
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_LONG_PWD_LIST);
 
 
             }
@@ -690,6 +825,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
     private static final int REQUEST_LOCK_SHARE = 33333;
     private static final int REQ_EXTEND = 44444;
     private static final int REQUEST_LONG_PWD_SET = 55555;
+    private static final int REQUEST_LONG_PWD_LIST = 66666;
 
 
     public void goNext(String actionType) {
@@ -843,7 +979,6 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                 getLockDetail();
             }
         }
-
         if (requestCode == REQUEST_LOCK_AUTH) {
             if (sliding_drawer.isOpened()) {
                 getLockDetail();
@@ -851,6 +986,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         }
 
         if (requestCode == REQUEST_LONG_PWD_SET) {
+            if (sliding_drawer.isOpened()) {
+                getLockDetail();
+            }
+        }
+
+        if (requestCode == REQUEST_LONG_PWD_LIST) {
             if (sliding_drawer.isOpened()) {
                 getLockDetail();
             }
@@ -865,6 +1006,95 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         if (isVisibleToUser) {
             Log.d(TAG, "isVisibleToUser");
         }
+    }
+
+    private String getDeviceType(LockListEntity.Lock lock) {
+        String reuslt = "";
+
+        String lockType = lock.getLockType();
+
+        String lockVer = lock.getLockVer();
+        if (TextUtils.isEmpty(lockType)) {
+            return lockVer;
+        } else {
+
+            byte deviceType = StringUtilBle.hexStringToByte(lockType);
+            byte comType = deviceType;
+            deviceType &= 0xF8;
+            deviceType = (byte) (deviceType >> 3);
+            String deviceTypeStr = String.format("%02d", deviceType);
+            comType &= 0x7;
+            String comTypeStr = String.format("%02d", comType);
+
+            StringBuffer builder = new StringBuffer();
+            builder.append(lockVer);
+
+            if ("01".equalsIgnoreCase(comTypeStr)) {
+                builder.append(" ( 蓝牙");
+            } else if ("02".equalsIgnoreCase(comTypeStr)) {
+                builder.append(" ( 网关");
+            } else if ("03".equalsIgnoreCase(comTypeStr)) {
+                builder.append(" ( NB");
+            } else if ("04".equalsIgnoreCase(comTypeStr)) {
+                builder.append(" ( WIFI");
+            }
+
+            String lockAttribute = lock.getLockAttribute();
+            if (!TextUtils.isEmpty(lockAttribute) && lockAttribute.length() == 8) {
+
+                if (!builder.toString().contains("(")) {
+                    builder.append(" (");
+                }
+
+                if (lockAttribute.substring(7, 8).equalsIgnoreCase("1")) {
+                    builder.append(" 密码");
+                }
+                if (lockAttribute.substring(6, 7).equalsIgnoreCase("1")) {
+                    builder.append(" 指纹");
+                }
+                if (lockAttribute.substring(5, 6).equalsIgnoreCase("1")) {
+                    builder.append(" 指静脉");
+                }
+
+            }
+
+            if ("00".equalsIgnoreCase(deviceTypeStr)) {
+                if (!builder.toString().contains("(")) {
+                    builder.append(" (");
+                }
+                builder.append(" 门锁");
+
+            } else if ("01".equalsIgnoreCase(deviceTypeStr)) {
+                if (!builder.toString().contains("(")) {
+                    builder.append(" (");
+                }
+
+                builder.append(" 门禁");
+            } else {
+
+            }
+            if (builder.toString().contains("(")) {
+                builder.append(" )");
+            }
+
+            reuslt = builder.toString();
+        }
+        return reuslt;
+    }
+
+    public static String getVer(String s) {
+        String ver = "0.00";
+        if (!TextUtils.isEmpty(s) && s.length() == 4) {
+
+            try {
+                ver = Integer.valueOf(s.substring(2, 4)) + "." + String.format("%02d", Integer.valueOf(s.substring(0, 2)));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        return ver;
+
     }
 
 

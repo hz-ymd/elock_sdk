@@ -3,7 +3,6 @@ package com.national.btlock.adapter;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -51,15 +50,13 @@ public class LockPwdLongShareListAdapter extends CCAdapter<LockPwdShareListEntit
         } else {
             String[] result = validPeriod.split("至");
             if (result != null && result.length == 2) {
-
-
                 tvValidPeriod.setText(result[0] + "至\n" + result[1]);
             }
         }
 
 
-        Button btnDelete = viewHolder.getView(R.id.id_list_item_btn_delete);
-        btnDelete.setVisibility(View.GONE);
+        TextView btnDelete = viewHolder.getView(R.id.id_list_item_btn_delete);
+
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +64,7 @@ public class LockPwdLongShareListAdapter extends CCAdapter<LockPwdShareListEntit
             }
         });
 
-        Button btnShare = viewHolder.getView(R.id.id_list_item_btn_share);
+        TextView btnShare = viewHolder.getView(R.id.id_list_item_btn_share);
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

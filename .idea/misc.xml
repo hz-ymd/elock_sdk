@@ -78,7 +78,7 @@
         <entry key="libelock_ui/src/main/res/layout/layout_banner.xml" value="0.1296875" />
         <entry key="libelock_ui/src/main/res/layout/layout_dialog_chkbox.xml" value="0.10572916666666667" />
         <entry key="libelock_ui/src/main/res/layout/layout_no_lock.xml" value="0.23854166666666668" />
-        <entry key="libelock_ui/src/main/res/layout/lock_pwd_long_share_list_item.xml" value="0.1" />
+        <entry key="libelock_ui/src/main/res/layout/lock_pwd_long_share_list_item.xml" value="0.17106382978723406" />
         <entry key="libelock_ui/src/main/res/layout/open_record_list_item.xml" value="0.13994565217391305" />
         <entry key="libelock_ui/src/main/res/layout/setting_toast_layout.xml" value="0.175" />
         <entry key="libelock_ui/src/main/res/layout/simple_progress.xml" value="0.209375" />

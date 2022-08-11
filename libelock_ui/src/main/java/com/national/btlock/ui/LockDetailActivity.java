@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -20,6 +19,7 @@ import com.google.gson.Gson;
 import com.national.btlock.adapter.FunctionGridAdapter;
 import com.national.btlock.model.AppItem;
 import com.national.btlock.ui.databinding.ActivityLockDetailBinding;
+import com.national.btlock.utils.StringUtilBle;
 import com.national.core.SDKCoreHelper;
 import com.national.core.nw.entity.DeviceDetailEntity;
 import com.national.core.nw.it.OnResultListener;
@@ -29,12 +29,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LockDetailActivity extends BaseActivity implements View.OnClickListener {
+public class LockDetailActivity extends BaseActivity implements View.OnClickListener, AppConstants {
     private static final int REQUEST_LOCK_DELETE = 11111;
     private static final int REQUEST_LOCK_AUTH = 22222;
     private static final int REQUEST_LOCK_SHARE = 33333;
     private static final int REQ_EXTEND = 44444;
     private static final int REQUEST_LONG_PWD_SET = 55555;
+    private static final int REQUEST_LONG_PWD_LIST = 66666;
+
     ActivityLockDetailBinding binding;
     GridView grid_func;
     List<AppItem> mList;
@@ -51,6 +53,14 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
     String ownerType;
     String authIdcardNeedRealName;
 
+    String lockType;
+    String lockAttribute;
+    String lockVer;
+    String lockName;
+    String hdVer;
+    String mcuVer;
+    String addr;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,6 +75,22 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
             lockMac = getIntent().getStringExtra("lockMac");
             ownerType = getIntent().getStringExtra("ownerType");
             authIdcardNeedRealName = getIntent().getStringExtra("authIdcardNeedRealName");
+
+
+            lockName = getIntent().getStringExtra("lock_name");
+            lockVer = getIntent().getStringExtra("lock_ver");
+
+            hdVer = getIntent().getStringExtra("lock_hd_ver");
+            lockType = getIntent().getStringExtra("lock_hd_type");
+//            lockSettingsData= getIntent().getStringExtra("lock_settings_data");
+            mcuVer = getIntent().getStringExtra("lock_mcu_ver");
+
+            addr = getIntent().getStringExtra("lock_addr");
+            lockAttribute = getIntent().getStringExtra("lock_attribute");
+
+            if (getIntent().getStringExtra("lock_auth_need_real_name") != null) {
+                authIdcardNeedRealName = getIntent().getStringExtra("lock_auth_need_real_name");
+            }
         }
 
         initView();
@@ -107,6 +133,10 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
         auth_idcard.setOnClickListener(this);
         auth_card.setOnClickListener(this);
         auth_pwd.setOnClickListener(this);
+
+        binding.idBtnDeviceUpdate.setOnClickListener(this);
+        binding.idBtnDeviceUpdateLora.setOnClickListener(this);
+        binding.idBtnDeviceUpdateOutlines.setOnClickListener(this);
         initAppItem();
     }
 
@@ -156,13 +186,24 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
         } else if (id == R.id.auth_card) {
             goAuthList(lockMac, AppConstants.LockType.LOCK_AUTH_CARD_A);
         } else if (id == R.id.auth_pwd) {
-
             Intent intent = new Intent(LockDetailActivity.this, LockPwdLongShareListActivity.class);
             intent.putExtra("lock_mac", lockMac);
-            startActivity(intent);
-
-
+            startActivityForResult(intent, REQUEST_LONG_PWD_LIST);
+        } else if (id == R.id.id_btn_device_update) {
+            goUpdate(lockMac, AppConstants.LockType.LOCK_VER_UPDATE);
+        } else if (id == R.id.id_btn_device_update_outlines) {
+            goUpdate(lockMac, LockType.LOCK_VER_UPDATE_LORA);
+        } else if (id == R.id.id_btn_device_update_lora) {
+            goUpdate(lockMac, LockType.LOCK_VER_UPDATE_OUTLINES);
         }
+    }
+
+    public void goUpdate(String lockMac, String actionType) {
+        Intent intent = new Intent(LockDetailActivity.this, BleComunicationInfoActivity.class);
+        intent.putExtra("lockMac", lockMac);
+        intent.putExtra("action_type", actionType);
+        startActivity(intent);
+
     }
 
     public void goAuthList(String lockMac, String actionType) {
@@ -361,6 +402,7 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
 
     public void getLockDetail() {
         showProgressDialog();
+        binding.layoutDetail.setVisibility(View.GONE);
         layout_auth.setVisibility(View.GONE);
         layout_owner_manager.setVisibility(View.GONE);
         SDKCoreHelper.getLockDetails(lockMac, new OnResultListener() {
@@ -369,7 +411,85 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
 
                 dismissProgressDialog();
                 deviceDetailEntity = new Gson().fromJson(jsonStr, DeviceDetailEntity.class);
-                if (deviceDetailEntity != null) {
+                if (deviceDetailEntity != null && deviceDetailEntity.getData() != null) {
+                    binding.layoutDetail.setVisibility(View.VISIBLE);
+                    binding.idDetailLockName.setText(deviceDetailEntity.getData().getLockName());
+                    binding.idDetailMac.setText(lockMac);
+                    binding.idSoftver.setText(getDeviceType());
+                    binding.idHdver.setText(getVer(hdVer));
+                    binding.idAddr.setText(addr);
+
+
+                    if (LockOwnerType.O_M.equalsIgnoreCase(ownerType)) {
+                        binding.idLockOwner.setVisibility(View.VISIBLE);
+                        binding.idLockManager.setVisibility(View.VISIBLE);
+                        binding.idLockUser.setVisibility(View.GONE);
+
+
+                    } else if (LockOwnerType.O.equalsIgnoreCase(ownerType)) {
+                        binding.idLockOwner.setVisibility(View.VISIBLE);
+                        binding.idLockManager.setVisibility(View.GONE);
+                        binding.idLockUser.setVisibility(View.GONE);
+
+                    } else if (LockOwnerType.M.equalsIgnoreCase(ownerType)) {
+                        binding.idLockOwner.setVisibility(View.GONE);
+                        binding.idLockManager.setVisibility(View.VISIBLE);
+                        binding.idLockUser.setVisibility(View.VISIBLE);
+
+
+                    } else if (LockOwnerType.O_U.equalsIgnoreCase(ownerType)) {
+                        binding.idLockOwner.setVisibility(View.VISIBLE);
+                        binding.idLockManager.setVisibility(View.GONE);
+                        binding.idLockUser.setVisibility(View.VISIBLE);
+
+                    } else {
+                        binding.idLockOwner.setVisibility(View.GONE);
+                        binding.idLockManager.setVisibility(View.GONE);
+                        binding.idLockUser.setVisibility(View.VISIBLE);
+
+
+                        if (LockOwnerType.V.equalsIgnoreCase(ownerType)) {
+                            binding.idLockUser.setImageResource(R.drawable.icon_lock_visitor);
+                        } else {
+                            binding.idLockUser.setImageResource(R.drawable.icon_lock_user);
+
+                        }
+
+                    }
+
+                    binding.idLockPolice.setVisibility(View.GONE);
+
+
+//                    if (("1".equalsIgnoreCase(lock_supervise) || "2".equalsIgnoreCase(lock_supervise))
+//                            && "1".equalsIgnoreCase(authIdcardNeedRealName)
+//                            && (LockOwnerType.O_M.equalsIgnoreCase(ownerType)
+//                            || LockOwnerType.O.equalsIgnoreCase(ownerType)
+//                            || LockOwnerType.O_U.equalsIgnoreCase(ownerType)
+//                            || LockOwnerType.M.equalsIgnoreCase(ownerType))
+//
+//                    ) {
+//                        binding.idLockPolice.setVisibility(View.VISIBLE);
+//                    } else {
+//                        binding.idLockPolice.setVisibility(View.GONE);
+//                    }
+//
+//
+                    if ("1".equalsIgnoreCase(authIdcardNeedRealName)) {
+                        binding.idLockIdcardRealnameNeeded.setVisibility(View.VISIBLE);
+                    } else {
+                        binding.idLockIdcardRealnameNeeded.setVisibility(View.GONE);
+                    }
+
+
+                    if (!TextUtils.isEmpty(mcuVer) && !mcuVer.equals("0.00")) {
+                        binding.idMcuver.setVisibility(View.VISIBLE);
+                        binding.idMcuverTitle.setVisibility(View.VISIBLE);
+                        binding.idMcuver.setText(mcuVer);
+                    } else {
+                        binding.idMcuverTitle.setVisibility(View.GONE);
+                        binding.idMcuver.setVisibility(View.GONE);
+                    }
+
 
                     if (ownerType.equals(AppConstants.LockOwnerType.O_M) || ownerType.equals(AppConstants.LockOwnerType.M)) {
                         layout_auth.setVisibility(View.VISIBLE);
@@ -402,6 +522,27 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
                     if (ownerType.equals(AppConstants.LockOwnerType.M)) {
                         assignment_give_back.setVisibility(View.VISIBLE);
                     }
+                    binding.idBtnDeviceUpdate.setVisibility(View.GONE);
+                    binding.idBtnDeviceUpdateOutlines.setVisibility(View.GONE);
+                    binding.idBtnDeviceUpdateLora.setVisibility(View.GONE);
+
+//                    if (deviceDetailEntity.getData().isBleUpdate()) {
+//                        binding.idBtnDeviceUpdate.setVisibility(View.VISIBLE);
+//                    } else {
+//                        binding.idBtnDeviceUpdate.setVisibility(View.GONE);
+//                    }
+//
+//                    if (deviceDetailEntity.getData().isMcuUpdate()) {
+//                        binding.idBtnDeviceUpdateOutlines.setVisibility(View.VISIBLE);
+//                    } else {
+//                        binding.idBtnDeviceUpdateOutlines.setVisibility(View.GONE);
+//                    }
+//
+//                    if (deviceDetailEntity.getData().isLoraUpdate()) {
+//                        binding.idBtnDeviceUpdateOutlines.setVisibility(View.VISIBLE);
+//                    } else {
+//                        binding.idBtnDeviceUpdateLora.setVisibility(View.GONE);
+//                    }
                 }
 
 
@@ -413,6 +554,79 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
                 Toast.makeText(LockDetailActivity.this, "获取详情失败" + errorMsg, Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+
+    private String getDeviceType() {
+        String reuslt = "";
+
+
+        if (TextUtils.isEmpty(lockType)) {
+            return lockVer;
+        } else {
+
+            byte deviceType = StringUtilBle.hexStringToByte(lockType);
+            byte comType = deviceType;
+            deviceType &= 0xF8;
+            deviceType = (byte) (deviceType >> 3);
+            String deviceTypeStr = String.format("%02d", deviceType);
+            comType &= 0x7;
+            String comTypeStr = String.format("%02d", comType);
+
+            StringBuffer builder = new StringBuffer();
+            builder.append(lockVer);
+
+            if ("01".equalsIgnoreCase(comTypeStr)) {
+                builder.append(" ( 蓝牙");
+            } else if ("02".equalsIgnoreCase(comTypeStr)) {
+                builder.append(" ( 网关");
+            } else if ("03".equalsIgnoreCase(comTypeStr)) {
+                builder.append(" ( NB");
+            } else if ("04".equalsIgnoreCase(comTypeStr)) {
+                builder.append(" ( WIFI");
+            }
+
+//            String lockAttribute = lockAttribute;
+            if (!TextUtils.isEmpty(lockAttribute) && lockAttribute.length() == 8) {
+
+                if (!builder.toString().contains("(")) {
+                    builder.append(" (");
+                }
+
+                if (lockAttribute.substring(7, 8).equalsIgnoreCase("1")) {
+                    builder.append(" 密码");
+                }
+                if (lockAttribute.substring(6, 7).equalsIgnoreCase("1")) {
+                    builder.append(" 指纹");
+                }
+                if (lockAttribute.substring(5, 6).equalsIgnoreCase("1")) {
+                    builder.append(" 指静脉");
+                }
+
+            }
+
+            if ("00".equalsIgnoreCase(deviceTypeStr)) {
+                if (!builder.toString().contains("(")) {
+                    builder.append(" (");
+                }
+                builder.append(" 门锁");
+
+            } else if ("01".equalsIgnoreCase(deviceTypeStr)) {
+                if (!builder.toString().contains("(")) {
+                    builder.append(" (");
+                }
+
+                builder.append(" 门禁");
+            } else {
+
+            }
+            if (builder.toString().contains("(")) {
+                builder.append(" )");
+            }
+
+            reuslt = builder.toString();
+        }
+        return reuslt;
     }
 
 
@@ -433,8 +647,25 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
         if (requestCode == REQUEST_LOCK_AUTH) {
             getLockDetail();
         }
+        if (requestCode == REQUEST_LONG_PWD_LIST) {
+            getLockDetail();
+        }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
 
+    public static String getVer(String s) {
+        String ver = "0.00";
+        if (!TextUtils.isEmpty(s) && s.length() == 4) {
+
+            try {
+                ver = Integer.valueOf(s.substring(2, 4)) + "." + String.format("%02d", Integer.valueOf(s.substring(0, 2)));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        return ver;
+
+    }
 }

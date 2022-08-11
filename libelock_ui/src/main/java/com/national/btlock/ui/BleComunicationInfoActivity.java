@@ -62,7 +62,12 @@ public class BleComunicationInfoActivity extends BaseActivity {
                 endData = getIntent().getExtras().getString("endData");
             } else if (actionType.equals(AppConstants.LockType.LOCK_SYNC_TIME)) {
                 setTitle("数据同步");
+            } else if (actionType.equals(AppConstants.LockType.LOCK_VER_UPDATE) ||
+                    actionType.equals(AppConstants.LockType.LOCK_VER_UPDATE_OUTLINES) ||
+                    actionType.equals(AppConstants.LockType.LOCK_VER_UPDATE_OUTLINES)) {
+                setTitle("硬件升级");
             }
+
             lockName = getIntent().getStringExtra("lockName");
             lockMac = getIntent().getStringExtra("lockMac");
         }
@@ -78,6 +83,12 @@ public class BleComunicationInfoActivity extends BaseActivity {
             authIdCard();
         } else if (actionType.equals(AppConstants.LockType.LOCK_SYNC_TIME)) {
             sycnData();
+        } else if (actionType.equals(AppConstants.LockType.LOCK_VER_UPDATE)) {
+            updateBle();
+        } else if (actionType.equals(AppConstants.LockType.LOCK_VER_UPDATE_OUTLINES)) {
+            updateMcu();
+        } else if (actionType.equals(AppConstants.LockType.LOCK_VER_UPDATE_LORA)) {
+            updateLora();
         }
 
     }
@@ -85,6 +96,64 @@ public class BleComunicationInfoActivity extends BaseActivity {
     @Override
     public void onNoDoubleClick(View v) {
 
+    }
+
+
+    public void updateBle() {
+        SDKCoreHelper.updateBle(lockMac, new OnProgressUpdateListener() {
+            @Override
+            public void onProgressUpdate(String s) {
+
+            }
+
+            @Override
+            public void onSuccess(String s) {
+
+            }
+
+            @Override
+            public void onError(String s, String s1) {
+
+            }
+        });
+    }
+
+    public void updateMcu() {
+        SDKCoreHelper.updateMcu(lockMac, new OnProgressUpdateListener() {
+            @Override
+            public void onProgressUpdate(String s) {
+
+            }
+
+            @Override
+            public void onSuccess(String s) {
+
+            }
+
+            @Override
+            public void onError(String s, String s1) {
+
+            }
+        });
+    }
+
+    public void updateLora() {
+        SDKCoreHelper.updateLora(lockMac, new OnProgressUpdateListener() {
+            @Override
+            public void onProgressUpdate(String s) {
+
+            }
+
+            @Override
+            public void onSuccess(String s) {
+
+            }
+
+            @Override
+            public void onError(String s, String s1) {
+
+            }
+        });
     }
 
     private void authIdCard() {

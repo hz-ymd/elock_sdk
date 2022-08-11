@@ -16,7 +16,6 @@ import com.national.btlock.utils.AppConstants;
 import com.national.btlock.utils.DlgUtil;
 import com.national.core.SDKCoreHelper;
 import com.national.core.nw.entity.LockPwdShareListEntity;
-import com.national.core.nw.it.OnProgressUpdateListener;
 import com.national.core.nw.it.OnResultListener;
 
 import java.util.ArrayList;
@@ -177,10 +176,12 @@ public class LockPwdLongShareListActivity extends BaseActivity implements AppCon
     }
 
     private void getAuthList() {
+        showProgressDialog();
 
         SDKCoreHelper.getLongLockPwdList(lockMac, new OnResultListener() {
             @Override
             public void onSuccess(String s) {
+                dismissProgressDialog();
                 LockPwdShareListEntity entity = new Gson().fromJson(s, LockPwdShareListEntity.class);
                 if (entity != null && entity.getData() != null) {
                     // String currentUserId = loginEntity.getData().getUserId();
@@ -198,6 +199,7 @@ public class LockPwdLongShareListActivity extends BaseActivity implements AppCon
 
             @Override
             public void onError(String s, String s1) {
+                dismissProgressDialog();
                 DlgUtil.showToast(LockPwdLongShareListActivity.this, s1);
                 tvNoLock.setVisibility(View.VISIBLE);
                 mListView.setVisibility(View.GONE);
@@ -208,6 +210,45 @@ public class LockPwdLongShareListActivity extends BaseActivity implements AppCon
     }
 
     private void deleteLockShare(LockPwdShareListEntity.LockPwdShareData item) {
+        showProgressDialog();
+
+        SDKCoreHelper.deleteVistorPwd(lockMac,item.getLockPwdId(), new OnResultListener() {
+            @Override
+            public void onSuccess(String s) {
+                dismissProgressDialog();
+                DlgUtil.showToast(LockPwdLongShareListActivity.this, "访客码删除成功");
+
+                getAuthList();
+
+                if (item.getType().equals("1")) {
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(LockPwdLongShareListActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                    dlg.setMessage("授权删除成功\n\n本次操作只更新了后台分享数据\n还需要和锁体完成数据同步\n");
+                    dlg.setPositiveButton("数据同步", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            doSyncData();
+                        }
+                    });
+                    dlg.setNegativeButton("稍后再说", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            dialog.dismiss();
+                            LockPwdLongShareListActivity.this.finish();
+                        }
+                    });
+                    dlg.setCancelable(true);
+                    if (!isFinishing()) {
+                        dlg.create().show();
+                    }
+                }
+            }
+
+            @Override
+            public void onError(String s, String s1) {
+                dismissProgressDialog();
+                DlgUtil.showToast(LockPwdLongShareListActivity.this, s1);
+            }
+        });
 //        model = new LoginModel(AuthListActivity.this, getRequestQueue(), AuthListActivity.this);
 //        Map<String, String> requestParams = new HashMap<String, String>();
 ////        requestParams.put("lockId", lockId);
@@ -222,30 +263,10 @@ public class LockPwdLongShareListActivity extends BaseActivity implements AppCon
 
 
     private void doSyncData() {
-//        Intent intent = new Intent(LockPwdLongShareListActivity.this, BleComunicationInfoActivity.class);
-//        intent.putExtra("lock_pwd_list_no", -1);
-//        intent.putExtra("action_type", LockType.LOCK_SYNC_TIME);
-//        intent.putExtra("lock_mac", lockMac);
-//        intent.putExtra("lock_ver", lockVer);
-//        intent.putExtra("lock_id", lockId);
-//
-//        startActivity(intent);
-        SDKCoreHelper.syncData(lockMac, new OnProgressUpdateListener() {
-            @Override
-            public void onProgressUpdate(String s) {
-
-            }
-
-            @Override
-            public void onSuccess(String s) {
-
-            }
-
-            @Override
-            public void onError(String s, String s1) {
-
-            }
-        });
+        Intent intent = new Intent(LockPwdLongShareListActivity.this, BleComunicationInfoActivity.class);
+        intent.putExtra("action_type", AppConstants.LockType.LOCK_SYNC_TIME);
+        intent.putExtra("lockMac", lockMac);
+        startActivity(intent);
     }
 
 

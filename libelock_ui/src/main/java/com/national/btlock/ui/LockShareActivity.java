@@ -43,7 +43,6 @@ public class LockShareActivity extends BaseActivity {
     String lockMac;
     String targetUserId;
     String startData, endData;
-
     TextView tvStartDate;
     TextView tvEndDate;
     CheckBox chkSameEndTime;

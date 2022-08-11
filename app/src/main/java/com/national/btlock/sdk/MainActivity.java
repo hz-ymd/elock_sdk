@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
         if (getIntent().getExtras() != null) {
             String isAccountVerified = getIntent().getExtras().getString("isAccountVerified");
             if (!TextUtils.isEmpty(isAccountVerified) && !isAccountVerified.equals("1")) {
-                SdkHelper.getInstance().identification(this, "name", "idcardNo",
+                SdkHelper.getInstance().identification(this, Constants.LICENSEID, Constants.LICENSEFILE_NAME, "name", "idcardNo",
                         new SdkHelper.identificationCallBack() {
                             @Override
                             public void identificationSuc() {

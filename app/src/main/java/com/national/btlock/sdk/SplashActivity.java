@@ -18,11 +18,12 @@ public class SplashActivity extends Activity implements Constants {
         boolean is_login = PreferencesUtils.getBoolean(SplashActivity.this, IS_LOGIN, false);
         Intent intent;
         if (is_login) {
-            intent = new Intent(SplashActivity.this, MainActivity.class);
+            intent = new Intent(SplashActivity.this, BaseActivity.class);
         } else {
             intent = new Intent(SplashActivity.this, LoginActivity.class);
         }
         startActivity(intent);
+        finish();
 
 
     }

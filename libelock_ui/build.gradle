@@ -3,7 +3,6 @@ plugins {
     id 'maven-publish'
 }
 
-
 android {
     compileSdkVersion 32
     defaultConfig {
@@ -40,12 +39,18 @@ android {
 
 
 dependencies {
+
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.airbnb.android:lottie:5.2.0'
     compileOnly 'com.github.xuliang27091:baiduFaceLib:1.0.0'
-    compileOnly 'com.github.xuliang27091:CommonLibs:1.0.0'
+    compileOnly 'com.j256.ormlite:ormlite-android:5.1'
+    compileOnly 'com.google.code.gson:gson:2.8.2'
+    compileOnly 'com.github.hz-ymd:eventBus:1.0.1'
+    compileOnly 'no.nordicsemi.android:dfu:1.9.1'
+    compileOnly 'com.github.hz-ymd:CommonLibs:1.0.4'
+    compileOnly 'com.github.hz-ymd:libdfu:1.0.1'
 }
 
 afterEvaluate {

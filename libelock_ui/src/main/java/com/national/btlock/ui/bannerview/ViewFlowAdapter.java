@@ -101,7 +101,7 @@ public class ViewFlowAdapter extends BaseAdapter implements AppConstants {
         }
 
         final LockListEntity.Lock entiy = getItem(position);
-
+        holder.text_open = view.findViewById(R.id.text_open);
         holder.lock_address = view.findViewById(R.id.lock_address);
         holder.lock_name = view.findViewById(R.id.lock_name);
         holder.lock_battery = view.findViewById(R.id.lock_battery);
@@ -215,12 +215,14 @@ public class ViewFlowAdapter extends BaseAdapter implements AppConstants {
                 SDKCoreHelper.openLock(entiy.getMac(), new OnProgressUpdateListener() {
                     @Override
                     public void onProgressUpdate(String message) {
+                        holder.text_open.setText(message);
 //                        Log.d(TAG, "onProgressUpdate:" + message);
                     }
 
                     @Override
                     public void onSuccess(String jsonStr) {
                         holder.image_open.cancelAnimation();
+                        holder.text_open.setText("点击上方开锁");
                         holder.image_open.setProgress(0.9f);
                         Toast.makeText(context, "开门成功", Toast.LENGTH_LONG).show();
                         //Log.d(TAG, "onSuccess:" + jsonStr);
@@ -229,6 +231,7 @@ public class ViewFlowAdapter extends BaseAdapter implements AppConstants {
                     @Override
                     public void onError(String errorCode, String errorMsg) {
                         holder.image_open.cancelAnimation();
+                        holder.text_open.setText("点击上方开锁");
                         holder.image_open.setProgress(0.9f);
                         Toast.makeText(context, "开门失败:" + errorMsg, Toast.LENGTH_LONG).show();
                         // Log.d(TAG, "onError:" + errorCode + "," + errorMsg);
@@ -274,6 +277,8 @@ public class ViewFlowAdapter extends BaseAdapter implements AppConstants {
         ImageView imgvIdcardRealNameNeeded;
 
         TextView text_ver;
+
+        TextView text_open;
     }
 
     /**

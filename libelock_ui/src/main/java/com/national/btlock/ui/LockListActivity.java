@@ -55,7 +55,7 @@ public class LockListActivity extends BaseActivity {
         layout_no_lock.findViewById(R.id.btn_refresh).setOnClickListener(new NoDoubleListener() {
             @Override
             public void onNoDoubleClick(View view) {
-                getLockListByNet();
+                getLockList();
             }
         });
         lockList = new ArrayList<>();
@@ -86,6 +86,23 @@ public class LockListActivity extends BaseActivity {
                 intent.putExtra("lock_auth_endtime", endTime);
                 intent.putExtra("ownerType", lock.getOwnerType());
                 intent.putExtra("authIdcardNeedRealName", lock.getAuthIdcardNeedRealName());
+
+
+                intent.putExtra("lock_name", lock.getLockName());
+                intent.putExtra("lock_ver", lock.getLockVer());
+                intent.putExtra("lock_hd_ver", lock.getHdVer());
+                intent.putExtra("lock_mcu_ver", lock.getMcu());
+                intent.putExtra("lock_auth_list_no", lock.getListNo());
+                intent.putExtra("lock_type", lock.getLockType());
+                intent.putExtra("lock_attribute", lock.getLockAttribute());
+                intent.putExtra("lock_addr", lock.getAddress2());
+
+                String lockType = lock.getLockType();
+
+                String intHexString = "00" + lockType;
+                int len = intHexString.length();
+                String sTemp = intHexString.substring(len - 2, len);
+                intent.putExtra("lock_hd_type", sTemp);
                 startActivity(intent);
             }
 
@@ -151,7 +168,7 @@ public class LockListActivity extends BaseActivity {
         binding.imageRefresh.setOnClickListener(new NoDoubleListener() {
             @Override
             public void onNoDoubleClick(View view) {
-                getLockListByNet();
+                getLockList();
             }
         });
 
@@ -165,7 +182,7 @@ public class LockListActivity extends BaseActivity {
 
     @Override
     protected void onResume() {
-        getLockListByNet();
+        getLockList();
         super.onResume();
     }
 
@@ -201,12 +218,12 @@ public class LockListActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == REQUEST_LOCK_DELETE && resultCode == RESULT_OK) {
-            getLockListByNet();
+            getLockList();
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void getLockListByNet() {
+    private void getLockList() {
         showProgressDialog();
         SDKCoreHelper.getLockList(new OnResultListener() {
             @Override
@@ -225,9 +242,31 @@ public class LockListActivity extends BaseActivity {
 
             @Override
             public void onError(String errorCode, String errorMsg) {
-                dismissProgressDialog();
-                binding.recyLock.setVisibility(View.GONE);
-                layout_no_lock.setVisibility(View.VISIBLE);
+
+//                binding.recyLock.setVisibility(View.GONE);
+//                layout_no_lock.setVisibility(View.VISIBLE);
+                SDKCoreHelper.getOffLineLockList(new OnResultListener() {
+                    @Override
+                    public void onSuccess(String s) {
+                        dismissProgressDialog();
+                        LockListEntity lockListEntity = new Gson().fromJson(s, LockListEntity.class);
+                        if (lockListEntity.getData() != null && lockListEntity.getData().size() != 0) {
+                            getLockList(lockListEntity.getData());
+                        } else {
+                            binding.recyLock.setVisibility(View.GONE);
+                            layout_no_lock.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+                    @Override
+                    public void onError(String s, String s1) {
+                        dismissProgressDialog();
+                        binding.recyLock.setVisibility(View.GONE);
+                        layout_no_lock.setVisibility(View.VISIBLE);
+
+                    }
+                });
+
                 Log.d(TAG, errorCode + "," + errorMsg);
             }
         });

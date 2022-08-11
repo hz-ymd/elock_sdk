@@ -14,17 +14,21 @@ import com.baidu.idl.face.platform.FaceEnvironment;
 import com.baidu.idl.face.platform.FaceSDKManager;
 import com.baidu.idl.face.platform.LivenessTypeEnum;
 import com.baidu.idl.face.platform.listener.IInitCallback;
+import com.baidu.idl.main.facesdk.statistic.NetWorkUtil;
 import com.national.btlock.ui.face.FaceLivenessExpActivity;
 import com.national.btlock.ui.face.manager.QualityConfigManager;
 import com.national.btlock.ui.face.model.QualityConfig;
+import com.national.btlock.utils.MD5;
 import com.national.core.SDKCoreHelper;
 import com.national.core.nw.it.OnResultListener;
-import com.national.btlock.utils.MD5;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * @author xuliang
+ */
 public class SdkHelper {
     private static SdkHelper sInstance;
 
@@ -49,20 +53,19 @@ public class SdkHelper {
      * @param licenseFileName 百度配置文件名称
      * @param callBack        初始化回调
      */
-    public void init(Context context,
-                     String appID,
-                     String appSecret,
-                     String licenseId,
-                     String licenseFileName,
-                     initCallBack callBack) {
-        SDKCoreHelper.init(context);
+    public void init(Context context, String appID,
+                     String appSecret, String licenseId,
+                     String licenseFileName, initCallBack callBack) {
+
         this.context = context;
         this.appID = appID;
         this.appSecret = appSecret;
 
+        SDKCoreHelper.init(context);
+
 
         if (!setFaceConfig()) {
-            callBack.initFailure(-6000008, "初始化失败 = json配置文件解析出错");
+            callBack.initFailure("-6000008", "初始化失败 = json配置文件解析出错");
             return;
         }
         // 为了android和ios 区分授权，appId=appname_face_android ,其中appname为申请sdk时的应用名
@@ -77,12 +80,45 @@ public class SdkHelper {
 
             @Override
             public void initFailure(final int errCode, final String errMsg) {
-                callBack.initFailure(errCode, errMsg);
+                callBack.initFailure(errCode + "", errMsg);
 
             }
         });
 
     }
+
+
+    /**
+     * sdk初始化（不初始化人脸识别）
+     *
+     * @param context
+     * @param appID     sdk申请appid
+     * @param appSecret sdk申请appSecret
+     * @param callBack  初始化回调
+     */
+    public void init(Context context, String appID,
+                     String appSecret, initCallBack callBack) {
+
+        this.context = context;
+        this.appID = appID;
+        this.appSecret = appSecret;
+
+        SDKCoreHelper.init(context, new OnResultListener() {
+            @Override
+            public void onSuccess(String jsonStr) {
+                callBack.initSuccess();
+            }
+
+            @Override
+            public void onError(String errorCode, String errorMsg) {
+                callBack.initFailure(errorCode, errorMsg);
+
+            }
+        });
+
+
+    }
+
 
     public static List<LivenessTypeEnum> livenessList = new ArrayList<>();
 
@@ -163,7 +199,7 @@ public class SdkHelper {
     public interface initCallBack {
         void initSuccess();
 
-        void initFailure(final int errCode, final String errMsg);
+        void initFailure(final String errCode, final String errMsg);
     }
 
 
@@ -196,24 +232,49 @@ public class SdkHelper {
     }
 
     /**
-     * 实名认证
+     * 实名认证（添加人脸初始化）
      *
      * @param context
      * @param name     姓名
      * @param idCardNo 身份证号
      * @param callBack
      */
-    public void identification(Context context, String name, String idCardNo, identificationCallBack callBack) {
-        setCallBack(callBack);
-        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(idCardNo)) {
-            callBack.identificationError("100001", "请输入姓名和身份证号");
+    public void identification(Context context, String licenseId,
+                               String licenseFileName,
+                               String name,
+                               String idCardNo,
+                               identificationCallBack callBack) {
+
+        if (!setFaceConfig()) {
+            callBack.identificationError("-6000008", "初始化失败 = json配置文件解析出错");
             return;
         }
-        Intent intent = new Intent(context, FaceLivenessExpActivity.class);
-        intent.putExtra("type", "identification");
-        intent.putExtra("name", name);
-        intent.putExtra("idCardNo", idCardNo);
-        context.startActivity(intent);
+        // 为了android和ios 区分授权，appId=appname_face_android ,其中appname为申请sdk时的应用名
+        // 应用上下文
+        // 申请License取得的APPID
+        // assets目录下License文件名
+        FaceSDKManager.getInstance().initialize(context, licenseId, licenseFileName, new IInitCallback() {
+            @Override
+            public void initSuccess() {
+                setCallBack(callBack);
+                if (TextUtils.isEmpty(name) || TextUtils.isEmpty(idCardNo)) {
+                    callBack.identificationError("100001", "请输入姓名和身份证号");
+                    return;
+                }
+                Intent intent = new Intent(context, FaceLivenessExpActivity.class);
+                intent.putExtra("type", "identification");
+                intent.putExtra("name", name);
+                intent.putExtra("idCardNo", idCardNo);
+                context.startActivity(intent);
+            }
+
+            @Override
+            public void initFailure(final int errCode, final String errMsg) {
+                callBack.identificationError("-6000009", "初始化失败：" + errMsg);
+
+            }
+        });
+
     }
 
 
@@ -241,6 +302,55 @@ public class SdkHelper {
         });
     }
 
+    public interface LoginCallBack {
+        void onSuccess(String jsonStr);
+
+        void onError(final String errCode, final String errMsg);
+
+        void onFaceCheck();
+    }
+
+
+    /**
+     * 登录（旧接口，onError时需判断errorCode是否为LOGIN_IN_OTHER_DEVICE，进行刷脸登录）
+     *
+     * @param userName 手机账号
+     * @param callBack
+     */
+    public void login(Context context, String userName, CallBack callBack) {
+        if (NetWorkUtil.getNetworkState(context) == 0) {
+            SDKCoreHelper.getLoginState(userName, new OnResultListener() {
+                @Override
+                public void onSuccess(String s) {
+                    callBack.onSuccess(s);
+                }
+
+                @Override
+                public void onError(String s, String s1) {
+                    callBack.onError(s, s1);
+                }
+            });
+
+        } else {
+            String time = "" + System.currentTimeMillis();
+            String sign = MD5.md5(appSecret + time);
+            SDKCoreHelper.login(appID, userName, getNum(8) + "", time, sign, new OnResultListener() {
+                @Override
+                public void onSuccess(String jsonStr) {
+
+                    callBack.onSuccess(jsonStr);
+                }
+
+                @Override
+                public void onError(String errorCode, String errorMsg) {
+                    callBack.onError(errorCode, errorMsg);
+                }
+            });
+        }
+
+
+    }
+
 
     /**
      * 登录
@@ -248,27 +358,98 @@ public class SdkHelper {
      * @param userName 手机账号
      * @param callBack
      */
-    public void login(Context context, String userName, CallBack callBack) {
-        String time = "" + System.currentTimeMillis();
-        String sign = MD5.md5(appSecret + time);
-        SDKCoreHelper.login(appID, userName, getNum(8) + "", time, sign, new OnResultListener() {
+    public void login(Context context, String userName, LoginCallBack callBack) {
+        if (NetWorkUtil.getNetworkState(context) == 0) {
+            SDKCoreHelper.getLoginState(userName, new OnResultListener() {
+                @Override
+                public void onSuccess(String s) {
+                    callBack.onSuccess(s);
+                }
+
+                @Override
+                public void onError(String s, String s1) {
+                    callBack.onError(s, s1);
+                }
+            });
+
+        } else {
+            String time = "" + System.currentTimeMillis();
+            String sign = MD5.md5(appSecret + time);
+            SDKCoreHelper.login(appID, userName, getNum(8) + "", time, sign, new OnResultListener() {
+                @Override
+                public void onSuccess(String jsonStr) {
+
+                    callBack.onSuccess(jsonStr);
+                }
+
+                @Override
+                public void onError(String errorCode, String errorMsg) {
+                    if (errorCode.equals(LOGIN_IN_OTHER_DEVICE)) {
+                        callBack.onFaceCheck();
+                    } else {
+                        callBack.onError(errorCode, errorMsg);
+                    }
+                }
+            });
+        }
+
+
+    }
+
+    public static final String LOGIN_IN_OTHER_DEVICE = "6100010";
+    private static final String FACE_INIT_FAIL_JSON_ERROR = "-6000008";
+    private static final String FACE_INIT_FAIL = "-6000009";
+
+
+    public void faceInit(Context context, String licenseId, String licenseFileName, CallBack callBack) {
+        if (!setFaceConfig()) {
+            callBack.onError(FACE_INIT_FAIL_JSON_ERROR, "初始化失败 = json配置文件解析出错");
+            return;
+        }
+        // 为了android和ios 区分授权，appId=appname_face_android ,其中appname为申请sdk时的应用名
+        // 应用上下文
+        // 申请License取得的APPID
+        // assets目录下License文件名
+        FaceSDKManager.getInstance().initialize(context, licenseId, licenseFileName, new IInitCallback() {
             @Override
-            public void onSuccess(String jsonStr) {
-                callBack.onSuccess(jsonStr);
+            public void initSuccess() {
+                callBack.onSuccess("");
             }
 
             @Override
-            public void onError(String errorCode, String errorMsg) {
-                if (errorCode.equals("6100010")) {
-                    setLoginCallBack(callBack);
-                    Intent intent = new Intent(context, FaceLivenessExpActivity.class);
-                    intent.putExtra("type", "loginFaceCheck");
-                    context.startActivity(intent);
-                } else {
-                    callBack.onError(errorCode, errorMsg);
-                }
+            public void initFailure(final int errCode, final String errMsg) {
+                callBack.onError(FACE_INIT_FAIL, "初始化失败：" + errMsg);
+
             }
         });
+    }
+
+    /**
+     * 人脸登录（在其他设备登录后调用）
+     *
+     * @param context
+     * @param licenseId       百度licenseId
+     * @param licenseFileName 百度文件名称
+     * @param callBack
+     */
+    public void faceLogin(Context context, String licenseId, String licenseFileName, CallBack callBack) {
+        faceInit(context, licenseId, licenseFileName, new CallBack() {
+            @Override
+            public void onSuccess(String jsonStr) {
+                setLoginCallBack(callBack);
+                Intent intent = new Intent(context, FaceLivenessExpActivity.class);
+                intent.putExtra("type", "loginFaceCheck");
+                context.startActivity(intent);
+            }
+
+            @Override
+            public void onError(String errCode, String errMsg) {
+                callBack.onError(errCode, errMsg);
+
+            }
+        });
+
+
     }
 
 
@@ -281,7 +462,7 @@ public class SdkHelper {
                 str.append(new Random().nextInt(10));
             }
         }
-        return Long.valueOf(str.toString());
+        return Long.parseLong(str.toString());
     }
 
 
