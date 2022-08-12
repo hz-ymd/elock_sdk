@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: a21e7b7
-# pg_map_hash: SHA-256 a21e7b74454b99266fc24c4419c208abafedad2bb7e0d5d792ccde8c417d1d7f
+# pg_map_id: ef6049a
+# pg_map_hash: SHA-256 ef6049a62bf0ebc1e12e12e5c1511cdfb8db94fed29c437fe26ee7626d531c26
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
     11:11:void <init>() -> <init>
     13:13:androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel) -> read
@@ -20962,16 +20962,16 @@ com.national.btlock.adapter.LockListAdapter$3 -> com.national.btlock.adapter.Loc
 com.national.btlock.adapter.LockListAdapter$ViewHolder -> com.national.btlock.adapter.LockListAdapter$ViewHolder:
     199:214:void <init>(com.national.btlock.adapter.LockListAdapter,android.view.View) -> <init>
 com.national.btlock.adapter.LockPwdLongShareListAdapter -> com.national.btlock.adapter.LockPwdLongShareListAdapter:
-    19:21:void <init>(android.content.Context,java.util.List) -> <init>
-    16:16:void convert(com.national.btlock.adapter.ViewHolder,java.lang.Object) -> convert
-    26:86:void convert(com.national.btlock.adapter.ViewHolder,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> convert
-    90:91:void setOnClickListener(com.national.btlock.adapter.LockPwdLongShareListAdapter$IBtnOnClickListener) -> setOnClickListener
+    18:20:void <init>(android.content.Context,java.util.List) -> <init>
+    15:15:void convert(com.national.btlock.adapter.ViewHolder,java.lang.Object) -> convert
+    25:85:void convert(com.national.btlock.adapter.ViewHolder,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> convert
+    89:90:void setOnClickListener(com.national.btlock.adapter.LockPwdLongShareListAdapter$IBtnOnClickListener) -> setOnClickListener
 com.national.btlock.adapter.LockPwdLongShareListAdapter$1 -> com.national.btlock.adapter.LockPwdLongShareListAdapter$1:
-    61:61:void <init>(com.national.btlock.adapter.LockPwdLongShareListAdapter,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> <init>
-    64:65:void onClick(android.view.View) -> onClick
+    60:60:void <init>(com.national.btlock.adapter.LockPwdLongShareListAdapter,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> <init>
+    63:64:void onClick(android.view.View) -> onClick
 com.national.btlock.adapter.LockPwdLongShareListAdapter$2 -> com.national.btlock.adapter.LockPwdLongShareListAdapter$2:
-    69:69:void <init>(com.national.btlock.adapter.LockPwdLongShareListAdapter,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> <init>
-    72:73:void onClick(android.view.View) -> onClick
+    68:68:void <init>(com.national.btlock.adapter.LockPwdLongShareListAdapter,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> <init>
+    71:72:void onClick(android.view.View) -> onClick
 com.national.btlock.adapter.OpenRecordListAdapter02 -> com.national.btlock.adapter.OpenRecordListAdapter02:
     16:18:void <init>(android.content.Context,java.util.List) -> <init>
     13:13:void convert(com.national.btlock.adapter.ViewHolder,java.lang.Object) -> convert
@@ -21763,11 +21763,11 @@ com.national.btlock.sdk.ui.me.MeFragment -> com.national.btlock.sdk.ui.me.MeFrag
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$zMcvK-khwQ_KdI00pGemYpLGrWw(com.national.btlock.sdk.ui.me.MeFragment,android.view.View) -> $r8$lambda$zMcvK-khwQ_KdI00pGemYpLGrWw
       # {"id":"com.android.tools.r8.synthesized"}
-    21:21:void <init>() -> <init>
-    38:38:void lambda$onCreateView$0(android.view.View) -> lambda$onCreateView$0
-    55:55:void lambda$onCreateView$1(android.view.View) -> lambda$onCreateView$1
-    29:70:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    75:77:void onDestroyView() -> onDestroyView
+    20:20:void <init>() -> <init>
+    37:37:void lambda$onCreateView$0(android.view.View) -> lambda$onCreateView$0
+    54:54:void lambda$onCreateView$1(android.view.View) -> lambda$onCreateView$1
+    28:69:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    74:76:void onDestroyView() -> onDestroyView
 com.national.btlock.sdk.ui.me.MeFragment$$ExternalSyntheticLambda0 -> com.national.btlock.sdk.ui.me.MeFragment$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -21785,13 +21785,13 @@ com.national.btlock.sdk.ui.me.MeFragment$$ExternalSyntheticLambda1 -> com.nation
     void com.national.btlock.sdk.ui.me.MeFragment$$InternalSyntheticLambda$0$80caeb61a68fab6c66c37c327da229f0def8f35e6c520601f1119ae42d422943$1.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.national.btlock.sdk.ui.me.MeFragment$1 -> com.national.btlock.sdk.ui.me.MeFragment$1:
-    38:38:void <init>(com.national.btlock.sdk.ui.me.MeFragment) -> <init>
-    47:49:void identificationError(java.lang.String,java.lang.String) -> identificationError
-    41:42:void identificationSuc() -> identificationSuc
+    37:37:void <init>(com.national.btlock.sdk.ui.me.MeFragment) -> <init>
+    46:48:void identificationError(java.lang.String,java.lang.String) -> identificationError
+    40:41:void identificationSuc() -> identificationSuc
 com.national.btlock.sdk.ui.me.MeFragment$2 -> com.national.btlock.sdk.ui.me.MeFragment$2:
-    55:55:void <init>(com.national.btlock.sdk.ui.me.MeFragment) -> <init>
-    67:67:void onError(java.lang.String,java.lang.String) -> onError
-    58:62:void onSuccess(java.lang.String) -> onSuccess
+    54:54:void <init>(com.national.btlock.sdk.ui.me.MeFragment) -> <init>
+    66:66:void onError(java.lang.String,java.lang.String) -> onError
+    57:61:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.ui.me.MeViewModel -> com.national.btlock.sdk.ui.me.MeViewModel:
     11:14:void <init>() -> <init>
     17:17:androidx.lifecycle.LiveData getText() -> getText
@@ -21967,7 +21967,6 @@ com.national.btlock.ui.BleComunicationInfoActivity$8 -> com.national.btlock.ui.B
     287:288:void onProgressUpdate(java.lang.String) -> onProgressUpdate
     292:295:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BuildConfig -> com.national.btlock.ui.BuildConfig:
-    7:7:void <clinit>() -> <clinit>
     6:6:void <init>() -> <init>
 com.national.btlock.ui.LockDetailActivity -> com.national.btlock.ui.LockDetailActivity:
     void $r8$lambda$O7G_1Q0vT4ZKiLtm3hY3BjkY8u0(android.content.DialogInterface,int) -> $r8$lambda$O7G_1Q0vT4ZKiLtm3hY3BjkY8u0
@@ -21976,24 +21975,24 @@ com.national.btlock.ui.LockDetailActivity -> com.national.btlock.ui.LockDetailAc
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$jjCusbKj_hXzJmanzrqEJOnyen8(com.national.btlock.ui.LockDetailActivity,java.lang.String,android.content.DialogInterface,int) -> $r8$lambda$jjCusbKj_hXzJmanzrqEJOnyen8
       # {"id":"com.android.tools.r8.synthesized"}
-    34:221:void <init>() -> <init>
-    34:34:java.lang.String access$000(com.national.btlock.ui.LockDetailActivity) -> access$000
-    563:631:java.lang.String getDeviceType() -> getDeviceType
-    406:559:void getLockDetail() -> getLockDetail
-    660:670:java.lang.String getVer(java.lang.String) -> getVer
-    384:400:void giveBackManagement(java.lang.String) -> giveBackManagement
-    212:218:void goAuthList(java.lang.String,java.lang.String) -> goAuthList
-    296:359:void goNext(java.lang.String) -> goNext
-    204:209:void goUpdate(java.lang.String,java.lang.String) -> goUpdate
-    225:290:void initAppItem() -> initAppItem
-    106:143:void initView() -> initView
-    260:289:void lambda$initAppItem$0(android.widget.AdapterView,android.view.View,int,long) -> lambda$initAppItem$0
-    370:373:void lambda$show2ndConfirmDlg$1(java.lang.String,android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$1
-    374:374:void lambda$show2ndConfirmDlg$2(android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$2
-    637:656:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    69:102:void onCreate(android.os.Bundle) -> onCreate
-    150:201:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
-    364:381:void show2ndConfirmDlg(android.view.View,java.lang.String) -> show2ndConfirmDlg
+    32:219:void <init>() -> <init>
+    32:32:java.lang.String access$000(com.national.btlock.ui.LockDetailActivity) -> access$000
+    561:629:java.lang.String getDeviceType() -> getDeviceType
+    404:557:void getLockDetail() -> getLockDetail
+    658:668:java.lang.String getVer(java.lang.String) -> getVer
+    382:398:void giveBackManagement(java.lang.String) -> giveBackManagement
+    210:216:void goAuthList(java.lang.String,java.lang.String) -> goAuthList
+    294:357:void goNext(java.lang.String) -> goNext
+    202:207:void goUpdate(java.lang.String,java.lang.String) -> goUpdate
+    223:288:void initAppItem() -> initAppItem
+    104:141:void initView() -> initView
+    258:287:void lambda$initAppItem$0(android.widget.AdapterView,android.view.View,int,long) -> lambda$initAppItem$0
+    368:371:void lambda$show2ndConfirmDlg$1(java.lang.String,android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$1
+    372:372:void lambda$show2ndConfirmDlg$2(android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$2
+    635:654:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    67:100:void onCreate(android.os.Bundle) -> onCreate
+    148:199:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
+    362:379:void show2ndConfirmDlg(android.view.View,java.lang.String) -> show2ndConfirmDlg
 com.national.btlock.ui.LockDetailActivity$$ExternalSyntheticLambda0 -> com.national.btlock.ui.LockDetailActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -22022,13 +22021,13 @@ com.national.btlock.ui.LockDetailActivity$$ExternalSyntheticLambda2 -> com.natio
     void com.national.btlock.ui.LockDetailActivity$$InternalSyntheticLambda$0$ae5b5955dfc3485580a697c9c53c3d9b1afcc8c4c7d4425850d64042b3658182$0.onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.national.btlock.ui.LockDetailActivity$1 -> com.national.btlock.ui.LockDetailActivity$1:
-    384:384:void <init>(com.national.btlock.ui.LockDetailActivity,java.lang.String) -> <init>
-    394:396:void onError(java.lang.String,java.lang.String) -> onError
-    388:390:void onSuccess(java.lang.String) -> onSuccess
+    382:382:void <init>(com.national.btlock.ui.LockDetailActivity,java.lang.String) -> <init>
+    392:394:void onError(java.lang.String,java.lang.String) -> onError
+    386:388:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockDetailActivity$2 -> com.national.btlock.ui.LockDetailActivity$2:
-    410:410:void <init>(com.national.btlock.ui.LockDetailActivity) -> <init>
-    555:557:void onError(java.lang.String,java.lang.String) -> onError
-    414:551:void onSuccess(java.lang.String) -> onSuccess
+    408:408:void <init>(com.national.btlock.ui.LockDetailActivity) -> <init>
+    553:555:void onError(java.lang.String,java.lang.String) -> onError
+    412:549:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockListActivity -> com.national.btlock.ui.LockListActivity:
     void $r8$lambda$vj-FekDIEPFYIFTHY4LWWKu2SJw(com.national.btlock.ui.LockListActivity,android.view.View) -> $r8$lambda$vj-FekDIEPFYIFTHY4LWWKu2SJw
       # {"id":"com.android.tools.r8.synthesized"}
@@ -22109,46 +22108,46 @@ com.national.btlock.ui.LockOpenRecordListActivity$7 -> com.national.btlock.ui.Lo
     329:329:void <init>(com.national.btlock.ui.LockOpenRecordListActivity,com.national.btlock.widget.datepick.DatePickerDialog) -> <init>
     333:340:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.LockPwdLongShareListActivity -> com.national.btlock.ui.LockPwdLongShareListActivity:
-    26:264:void <init>() -> <init>
-    26:26:void access$000(com.national.btlock.ui.LockPwdLongShareListActivity,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> access$000
-    26:26:void access$100(com.national.btlock.ui.LockPwdLongShareListActivity,java.lang.String,java.lang.String) -> access$100
-    26:26:void access$200(com.national.btlock.ui.LockPwdLongShareListActivity) -> access$200
-    26:26:android.widget.ListView access$300(com.national.btlock.ui.LockPwdLongShareListActivity) -> access$300
-    26:26:void access$400(com.national.btlock.ui.LockPwdLongShareListActivity) -> access$400
-    26:26:void access$500(com.national.btlock.ui.LockPwdLongShareListActivity) -> access$500
-    215:261:void deleteLockShare(com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> deleteLockShare
-    268:272:void doSyncData() -> doSyncData
-    181:212:void getAuthList() -> getAuthList
-    111:152:void initActivity() -> initActivity
-    177:177:boolean isStrongSecurity() -> isStrongSecurity
-    170:172:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    41:79:void onCreate(android.os.Bundle) -> onCreate
-    89:92:void onDestroy() -> onDestroy
-    96:97:void onNewIntent(android.content.Intent) -> onNewIntent
-    84:84:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
-    101:103:void onResume() -> onResume
-    155:164:void sendSysMsg(java.lang.String,java.lang.String) -> sendSysMsg
-    277:284:void updateList() -> updateList
+    24:262:void <init>() -> <init>
+    24:24:void access$000(com.national.btlock.ui.LockPwdLongShareListActivity,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> access$000
+    24:24:void access$100(com.national.btlock.ui.LockPwdLongShareListActivity,java.lang.String,java.lang.String) -> access$100
+    24:24:void access$200(com.national.btlock.ui.LockPwdLongShareListActivity) -> access$200
+    24:24:android.widget.ListView access$300(com.national.btlock.ui.LockPwdLongShareListActivity) -> access$300
+    24:24:void access$400(com.national.btlock.ui.LockPwdLongShareListActivity) -> access$400
+    24:24:void access$500(com.national.btlock.ui.LockPwdLongShareListActivity) -> access$500
+    213:259:void deleteLockShare(com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> deleteLockShare
+    266:270:void doSyncData() -> doSyncData
+    179:210:void getAuthList() -> getAuthList
+    109:150:void initActivity() -> initActivity
+    175:175:boolean isStrongSecurity() -> isStrongSecurity
+    168:170:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    39:77:void onCreate(android.os.Bundle) -> onCreate
+    87:90:void onDestroy() -> onDestroy
+    94:95:void onNewIntent(android.content.Intent) -> onNewIntent
+    82:82:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
+    99:101:void onResume() -> onResume
+    153:162:void sendSysMsg(java.lang.String,java.lang.String) -> sendSysMsg
+    275:282:void updateList() -> updateList
 com.national.btlock.ui.LockPwdLongShareListActivity$1 -> com.national.btlock.ui.LockPwdLongShareListActivity$1:
-    117:117:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity) -> <init>
-    122:145:void action(int,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> action
+    115:115:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity) -> <init>
+    120:143:void action(int,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> action
 com.national.btlock.ui.LockPwdLongShareListActivity$1$1 -> com.national.btlock.ui.LockPwdLongShareListActivity$1$1:
-    127:127:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity$1,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> <init>
-    130:132:void onClick(android.content.DialogInterface,int) -> onClick
+    125:125:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity$1,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> <init>
+    128:130:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.LockPwdLongShareListActivity$2 -> com.national.btlock.ui.LockPwdLongShareListActivity$2:
-    183:183:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity) -> <init>
-    204:210:void onError(java.lang.String,java.lang.String) -> onError
-    186:200:void onSuccess(java.lang.String) -> onSuccess
+    181:181:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity) -> <init>
+    202:208:void onError(java.lang.String,java.lang.String) -> onError
+    184:198:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockPwdLongShareListActivity$3 -> com.national.btlock.ui.LockPwdLongShareListActivity$3:
-    217:217:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> <init>
-    250:252:void onError(java.lang.String,java.lang.String) -> onError
-    220:246:void onSuccess(java.lang.String) -> onSuccess
+    215:215:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity,com.national.core.nw.entity.LockPwdShareListEntity$LockPwdShareData) -> <init>
+    248:250:void onError(java.lang.String,java.lang.String) -> onError
+    218:244:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockPwdLongShareListActivity$3$1 -> com.national.btlock.ui.LockPwdLongShareListActivity$3$1:
-    228:228:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity$3) -> <init>
-    231:232:void onClick(android.content.DialogInterface,int) -> onClick
+    226:226:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity$3) -> <init>
+    229:230:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.LockPwdLongShareListActivity$3$2 -> com.national.btlock.ui.LockPwdLongShareListActivity$3$2:
-    234:234:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity$3) -> <init>
-    237:239:void onClick(android.content.DialogInterface,int) -> onClick
+    232:232:void <init>(com.national.btlock.ui.LockPwdLongShareListActivity$3) -> <init>
+    235:237:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.LockPwdShareActivity -> com.national.btlock.ui.LockPwdShareActivity:
     51:890:void <init>() -> <init>
     51:51:void access$000(com.national.btlock.ui.LockPwdShareActivity) -> access$000

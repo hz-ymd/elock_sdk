@@ -1,6 +1,7 @@
 # elock_sdk
 SDK接入流程
 -
+
 1.用户移动应用注册
 
 客户在e锁开放平台创建相关移动应用，平台会生成AppID和AppSecret，用于校验用户身份有效性。
@@ -37,90 +38,14 @@ dependencies {
           implementation 'com.github.hz-ymd:baiduFaceLib:1.0.0'
           //第三方库，dfu升级库，gson库，ormlite库，eventbus库，
           //如另外有引用，可忽略或不引用
-          implementation 'com.github.hz-ymd:CommonLibs:1.0.0'
-	  implementation 'com.github.hz-ymd:elock_sdk:0.0.5'
+          implementation 'com.j256.ormlite:ormlite-android:5.1'
+          implementation 'com.google.code.gson:gson:2.8.2'
+          implementation 'com.github.hz-ymd:eventBus:1.0.1'
+          implementation 'no.nordicsemi.android:dfu:1.9.1'
+          implementation 'com.github.hz-ymd:CommonLibs:1.0.4'
+          implementation 'com.github.hz-ymd:libdfu:1.0.1'
+	      implementation 'com.github.hz-ymd:elock_sdk:0.0.7'
 	}
-```
-权限声明
-```
-<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-<uses-permission android:name="android.permission.BLUETOOTH" />
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> 
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> 
-<uses-permission android:name="android.permission.CAMERA" />
-```
-
-类声明
-
-```
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-
-        <activity android:name="com.national.btlock.ui.face.FaceLivenessExpActivity"></activity>
-
-        <service android:name="com.national.core.bt.service.BleServiceM"></service>
-
-        <service android:name="com.national.core.update.CheckLockUpdateService"></service>
-
-        <activity
-            android:name="com.national.btlock.ui.LockShareActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.LockListActivity"
-            android:launchMode="singleTask"
-            android:theme="@style/Theme.ElockSdk_NoActionBar"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.AuthListActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.LockShareExtendActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.LockDetailActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-
-            android:name="com.national.btlock.ui.SearchActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.BleComunicationInfoActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ocr.ui.camera.CameraActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.LockPwdShareActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.LockOpenRecordListActivity"
-            android:launchMode="singleTask"></activity>
-        <activity
-            android:name="com.national.btlock.ui.OperateRecordActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.AuthRecordListActivity"
-            android:launchMode="singleTask"></activity>
-
-        <activity
-            android:name="com.national.btlock.ui.LockPwdLongShareListActivity"
-            android:launchMode="singleTask">
-        </activity>
 ```
 
 Tips：测试版本sdk使用http请求，请添加network_config.xml文件，并在manifest文件配置
@@ -135,22 +60,19 @@ Tips：测试版本sdk使用http请求，请添加network_config.xml文件，并
 4.接入使用
 从百度申请下载授权文件license，复制到app/src/main/assets目录下
 
-4.1sdk初始化
+4.1.sdk初始化
+Tips：初始化请在Application或者集成com.national.btlock.ui.MainFragment的页面中完成
 | 参数        | 备注   | 
 | --------   | -----:  | 
 | context | 上下文   
 | appId | sdk申请appId   
-| appSecret | sdk申请appSecret  
-| licenseId | 百度申请licenseId   
-| licenseFileName |百度配置文件名称 
-
+| appSecret | sdk申请appSecret
 
 ```
-        SdkHelper.getInstance().init(context,
-                appId,
-               appSecret,
-               licenseId,
-               licenseFileName,
+ SdkHelper.getInstance().init(this,
+                Constants.APPID,
+                Constants.APPSECRET,
+
                 new SdkHelper.initCallBack() {
                     @Override
                     public void initSuccess() {
@@ -159,7 +81,7 @@ Tips：测试版本sdk使用http请求，请添加network_config.xml文件，并
                     }
 
                     @Override
-                    public void initFailure(int errCode, String errMsg) {
+                    public void initFailure(String errCode, String errMsg) {
                         Log.d(TAG, "initFailure:" + errCode + "," + errMsg);
                     }
 
@@ -171,39 +93,105 @@ Tips：测试版本sdk使用http请求，请添加network_config.xml文件，并
 | 参数        | 备注   | 
 | --------   | -----:  | 
 | context | 上下文  
-| username | 用户手机号   
+| username | 用户手机号
+| LoginCallBack|登录返回回调
 
 ```
-SdkHelper.getInstance().login(context,username, new SdkHelper.CallBack() {
-                @Override
-                public void onSuccess(String jsonStr) {
-                    loading.setVisibility(View.GONE);
-                    Log.d(TAG, "jsonStr:" + jsonStr);
-                    LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
-                    if (result != null) {
-                        if (result.getData() != null) {
-                            String isAccountVerified = result.getData().getAccountVerified();
-                            PreferencesUtils.putBoolean(LoginActivity.this, IS_LOGIN, true);
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            intent.putExtra("isAccountVerified", isAccountVerified);
-                            startActivity(intent);
-                            finish();
+//登录
+SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(BaseActivity.this, Constants.USER_NAME), new SdkHelper.LoginCallBack() {
+            @Override
+            public void onSuccess(String jsonStr) {
+                Log.d(TAG, "jsonStr:" + jsonStr);
+                LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
+                if (result != null) {
+                    if (result.getData() != null) {
+                       //登录成功，返回是否已实名 
+                        String isAccountVerified = result.getData().getAccountVerified();
+                        Intent intent = new Intent(BaseActivity.this, MainActivity.class);
+                        intent.putExtra("isAccountVerified", isAccountVerified);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                } else {
+                    Toast.makeText(BaseActivity.this, "数据异常", Toast.LENGTH_LONG).show();
+                }
+            }
+          
+           //在其他设备登录，需刷脸登录
+            @Override
+            public void onFaceCheck() {
+                SdkHelper.getInstance().faceLogin(BaseActivity.this, Constants.LICENSEID, Constants.LICENSEFILE_NAME, new SdkHelper.CallBack() {
+                    @Override
+                    public void onSuccess(String jsonStr) {
+                        LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
+                        if (result != null) {
+                            if (result.getData() != null) {
+                                String isAccountVerified = result.getData().getAccountVerified();
+                                Intent intent = new Intent(BaseActivity.this, MainActivity.class);
+                                intent.putExtra("isAccountVerified", isAccountVerified);
+                                startActivity(intent);
+                                finish();
+                            }
+
+                        } else {
+                            Toast.makeText(BaseActivity.this, "数据异常", Toast.LENGTH_LONG).show();
                         }
 
-                    } else {
-                        Toast.makeText(LoginActivity.this, "数据异常", Toast.LENGTH_LONG).show();
                     }
-                }
 
-                @Override
-                public void onError(String errorCode, String errorMsg) {
-                    loading.setVisibility(View.GONE);
-                    Log.d(TAG, "error:" + errorCode + ",errorMsg:" + errorMsg);
-                }
-            });
+                    @Override
+                    public void onError(String errCode, String errMsg) {
+
+                    }
+                });
+
+            }
+
+            @Override
+            public void onError(String errorCode, String errorMsg) {
+                Toast.makeText(BaseActivity.this, "登录失败：" + errorMsg, Toast.LENGTH_LONG).show();
+            }
         });
 ```
-4.3 退出登录
+
+4.3 刷脸登录
+| 参数        | 备注   |
+| --------   | -----:  |
+| context | 上下文  
+| licenseId | 百度licenseId
+| licensefileName|百度文件名称
+
+```
+SdkHelper.getInstance().faceLogin(BaseActivity.this, Constants.LICENSEID, Constants.LICENSEFILE_NAME, new SdkHelper.CallBack() {
+                    @Override
+                    public void onSuccess(String jsonStr) {
+                        LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
+                        if (result != null) {
+                            if (result.getData() != null) {
+                                String isAccountVerified = result.getData().getAccountVerified();
+                                Intent intent = new Intent(BaseActivity.this, MainActivity.class);
+                                intent.putExtra("isAccountVerified", isAccountVerified);
+                                startActivity(intent);
+                                finish();
+                            }
+
+                        } else {
+                            Toast.makeText(BaseActivity.this, "数据异常", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(String errCode, String errMsg) {
+
+                    }
+                });
+```
+
+
+
+4.4 退出登录
 ```
 SdkHelper.getInstance().loginOut(new SdkHelper.CallBack() {
                     @Override
@@ -220,14 +208,17 @@ SdkHelper.getInstance().loginOut(new SdkHelper.CallBack() {
                     }
                 })
  ```
- 4.4 实名认证
+ 4.5 实名认证
  | 参数        | 备注   | 
 | --------   | -----:  | 
 | context       | 上下文
+ |licenseId | 百度licenseId
+ | licensefileName|百度文件名称
 | name       | 姓名
-| idcardNo   | 身份证号
+| idcardNo   | 身份证号 
+
 ```
-SdkHelper.getInstance().identification(context, name, idcardNo, new SdkHelper.identificationCallBack() {
+SdkHelper.getInstance().identification(context,Constants.LICENSEID, Constants.LICENSEFILE_NAME,  name, idcardNo, new SdkHelper.identificationCallBack() {
                     @Override
                     public void identificationSuc() {
                         Toast.makeText(getActivity(), "实名认证成功", Toast.LENGTH_LONG).show();
@@ -241,10 +232,10 @@ SdkHelper.getInstance().identification(context, name, idcardNo, new SdkHelper.id
                     }
                 })
  ```     
-4.5 首页
+4.6 首页
 将com.national.btlock.ui.MainFragment集成到对应页面中
 
-4.6 其他设备登录监听
+4.7 其他设备登录监听
 
 ```
  SdkHelper.getInstance().loginListener(MainActivity.this, new BroadcastReceiver() {
