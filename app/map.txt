@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: ef6049a
-# pg_map_hash: SHA-256 ef6049a62bf0ebc1e12e12e5c1511cdfb8db94fed29c437fe26ee7626d531c26
+# pg_map_id: 1fe05c4
+# pg_map_hash: SHA-256 1fe05c4d81c81f24ca22df2462ab69df198921f97629267888a25dfe5ce2f8c2
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
     11:11:void <init>() -> <init>
     13:13:androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel) -> read
@@ -21611,17 +21611,12 @@ com.national.btlock.ocr.ui.util.ImageUtil -> com.national.btlock.ocr.ui.util.Ima
     28:43:byte[] readStream(java.lang.String) -> readStream
 com.national.btlock.sdk.BaseActivity -> com.national.btlock.sdk.BaseActivity:
     15:15:void <init>() -> <init>
-    26:94:void init() -> init
+    26:67:void init() -> init
     20:22:void onCreate(android.os.Bundle) -> onCreate
 com.national.btlock.sdk.BaseActivity$1 -> com.national.btlock.sdk.BaseActivity$1:
     26:26:void <init>(com.national.btlock.sdk.BaseActivity) -> <init>
-    76:77:void onError(java.lang.String,java.lang.String) -> onError
-    47:72:void onFaceCheck() -> onFaceCheck
+    49:50:void onError(java.lang.String,java.lang.String) -> onError
     29:43:void onSuccess(java.lang.String) -> onSuccess
-com.national.btlock.sdk.BaseActivity$1$1 -> com.national.btlock.sdk.BaseActivity$1$1:
-    47:47:void <init>(com.national.btlock.sdk.BaseActivity$1) -> <init>
-    69:69:void onError(java.lang.String,java.lang.String) -> onError
-    50:64:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.BuildConfig -> com.national.btlock.sdk.BuildConfig:
     7:7:void <clinit>() -> <clinit>
     6:6:void <init>() -> <init>
@@ -21658,70 +21653,66 @@ com.national.btlock.sdk.MainActivity$2$1 -> com.national.btlock.sdk.MainActivity
     76:80:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.MyApp -> com.national.btlock.sdk.MyApp:
     7:7:void <init>() -> <init>
-    12:48:void onCreate() -> onCreate
+    12:41:void onCreate() -> onCreate
 com.national.btlock.sdk.MyApp$1 -> com.national.btlock.sdk.MyApp$1:
     24:24:void <init>(com.national.btlock.sdk.MyApp) -> <init>
-    33:34:void initFailure(java.lang.String,java.lang.String) -> initFailure
-    27:29:void initSuccess() -> initSuccess
+    34:35:void initFailure(java.lang.String,java.lang.String) -> initFailure
+    27:30:void initSuccess() -> initSuccess
 com.national.btlock.sdk.SdkHelper -> com.national.btlock.sdk.SdkHelper:
-    123:123:void <clinit>() -> <clinit>
+    146:146:void <clinit>() -> <clinit>
     32:32:void <init>() -> <init>
-    405:425:void faceInit(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$CallBack) -> faceInit
-    436:453:void faceLogin(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$CallBack) -> faceLogin
-    220:220:com.national.btlock.sdk.SdkHelper$identificationCallBack getCallBack() -> getCallBack
+    420:440:void faceInit(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceInit
+    449:466:void faceLogin(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceLogin
+    243:243:com.national.btlock.sdk.SdkHelper$identificationCallBack getCallBack() -> getCallBack
     36:39:com.national.btlock.sdk.SdkHelper getInstance() -> getInstance
-    231:231:com.national.btlock.sdk.SdkHelper$CallBack getLoginCallBack() -> getLoginCallBack
-    457:465:long getNum(int) -> getNum
-    248:278:void identification(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$identificationCallBack) -> identification
+    107:107:java.lang.String getLicenseFileName() -> getLicenseFileName
+    99:99:java.lang.String getLicenseId() -> getLicenseId
+    254:254:com.national.btlock.sdk.SdkHelper$CallBack getLoginCallBack() -> getLoginCallBack
+    470:478:long getNum(int) -> getNum
+    270:300:void identification(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$identificationCallBack) -> identification
     60:88:void init(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
-    102:120:void init(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
-    321:352:void login(android.content.Context,java.lang.String,com.national.btlock.sdk.SdkHelper$CallBack) -> login
-    362:397:void login(android.content.Context,java.lang.String,com.national.btlock.sdk.SdkHelper$LoginCallBack) -> login
-    470:473:void loginListener(android.content.Context,android.content.BroadcastReceiver) -> loginListener
-    291:303:void loginOut(com.national.btlock.sdk.SdkHelper$CallBack) -> loginOut
-    216:217:void setCallBack(com.national.btlock.sdk.SdkHelper$identificationCallBack) -> setCallBack
-    126:195:boolean setFaceConfig() -> setFaceConfig
-    227:228:void setLoginCallBack(com.national.btlock.sdk.SdkHelper$CallBack) -> setLoginCallBack
+    125:143:void init(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
+    377:412:void login(android.content.Context,java.lang.String,com.national.btlock.sdk.SdkHelper$CallBack) -> login
+    483:486:void loginListener(android.content.Context,android.content.BroadcastReceiver) -> loginListener
+    313:325:void loginOut(com.national.btlock.sdk.SdkHelper$CallBack) -> loginOut
+    94:96:void setBaiduFaceConfig(java.lang.String,java.lang.String) -> setBaiduFaceConfig
+    239:240:void setCallBack(com.national.btlock.sdk.SdkHelper$identificationCallBack) -> setCallBack
+    149:218:boolean setFaceConfig() -> setFaceConfig
+    111:112:void setLicenseFileName(java.lang.String) -> setLicenseFileName
+    103:104:void setLicenseId(java.lang.String) -> setLicenseId
+    250:251:void setLoginCallBack(com.national.btlock.sdk.SdkHelper$CallBack) -> setLoginCallBack
 com.national.btlock.sdk.SdkHelper$1 -> com.national.btlock.sdk.SdkHelper$1:
     75:75:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
     83:85:void initFailure(int,java.lang.String) -> initFailure
     78:79:void initSuccess() -> initSuccess
-com.national.btlock.sdk.SdkHelper$10 -> com.national.btlock.sdk.SdkHelper$10:
-    436:436:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
-    447:449:void onError(java.lang.String,java.lang.String) -> onError
-    439:443:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$2 -> com.national.btlock.sdk.SdkHelper$2:
-    106:106:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
-    114:116:void onError(java.lang.String,java.lang.String) -> onError
-    109:110:void onSuccess(java.lang.String) -> onSuccess
+    129:129:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
+    137:139:void onError(java.lang.String,java.lang.String) -> onError
+    132:133:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$3 -> com.national.btlock.sdk.SdkHelper$3:
-    256:256:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$identificationCallBack,java.lang.String,java.lang.String,android.content.Context) -> <init>
-    273:275:void initFailure(int,java.lang.String) -> initFailure
-    259:269:void initSuccess() -> initSuccess
+    278:278:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$identificationCallBack,java.lang.String,java.lang.String,android.content.Context) -> <init>
+    295:297:void initFailure(int,java.lang.String) -> initFailure
+    281:291:void initSuccess() -> initSuccess
 com.national.btlock.sdk.SdkHelper$4 -> com.national.btlock.sdk.SdkHelper$4:
-    291:291:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    299:301:void onError(java.lang.String,java.lang.String) -> onError
-    294:295:void onSuccess(java.lang.String) -> onSuccess
+    313:313:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
+    321:323:void onError(java.lang.String,java.lang.String) -> onError
+    316:317:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$5 -> com.national.btlock.sdk.SdkHelper$5:
-    322:322:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    330:331:void onError(java.lang.String,java.lang.String) -> onError
-    325:326:void onSuccess(java.lang.String) -> onSuccess
+    378:378:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
+    386:387:void onError(java.lang.String,java.lang.String) -> onError
+    381:382:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$6 -> com.national.btlock.sdk.SdkHelper$6:
-    337:337:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    346:347:void onError(java.lang.String,java.lang.String) -> onError
-    341:342:void onSuccess(java.lang.String) -> onSuccess
+    393:393:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
+    402:407:void onError(java.lang.String,java.lang.String) -> onError
+    397:398:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$7 -> com.national.btlock.sdk.SdkHelper$7:
-    363:363:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$LoginCallBack) -> <init>
-    371:372:void onError(java.lang.String,java.lang.String) -> onError
-    366:367:void onSuccess(java.lang.String) -> onSuccess
+    428:428:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
+    436:438:void initFailure(int,java.lang.String) -> initFailure
+    431:432:void initSuccess() -> initSuccess
 com.national.btlock.sdk.SdkHelper$8 -> com.national.btlock.sdk.SdkHelper$8:
-    378:378:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$LoginCallBack) -> <init>
-    387:392:void onError(java.lang.String,java.lang.String) -> onError
-    382:383:void onSuccess(java.lang.String) -> onSuccess
-com.national.btlock.sdk.SdkHelper$9 -> com.national.btlock.sdk.SdkHelper$9:
-    413:413:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    421:423:void initFailure(int,java.lang.String) -> initFailure
-    416:417:void initSuccess() -> initSuccess
+    449:449:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
+    460:462:void onError(java.lang.String,java.lang.String) -> onError
+    452:456:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SplashActivity -> com.national.btlock.sdk.SplashActivity:
     12:12:void <init>() -> <init>
     15:29:void onCreate(android.os.Bundle) -> onCreate
@@ -21967,6 +21958,7 @@ com.national.btlock.ui.BleComunicationInfoActivity$8 -> com.national.btlock.ui.B
     287:288:void onProgressUpdate(java.lang.String) -> onProgressUpdate
     292:295:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BuildConfig -> com.national.btlock.ui.BuildConfig:
+    7:7:void <clinit>() -> <clinit>
     6:6:void <init>() -> <init>
 com.national.btlock.ui.LockDetailActivity -> com.national.btlock.ui.LockDetailActivity:
     void $r8$lambda$O7G_1Q0vT4ZKiLtm3hY3BjkY8u0(android.content.DialogInterface,int) -> $r8$lambda$O7G_1Q0vT4ZKiLtm3hY3BjkY8u0
@@ -22218,26 +22210,26 @@ com.national.btlock.ui.LockShareActivity -> com.national.btlock.ui.LockShareActi
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$LKvQoWhu0s2vAHFm6XIi07smsa4(com.national.btlock.ui.LockShareActivity,android.content.DialogInterface,int) -> $r8$lambda$LKvQoWhu0s2vAHFm6XIi07smsa4
       # {"id":"com.android.tools.r8.synthesized"}
-    41:462:void <init>() -> <init>
-    41:41:java.lang.String access$000(com.national.btlock.ui.LockShareActivity) -> access$000
-    41:41:java.lang.String access$100(com.national.btlock.ui.LockShareActivity) -> access$100
-    299:318:void authApp() -> authApp
-    264:295:void authManagement() -> authManagement
-    443:444:android.graphics.Bitmap base64ToBitmap(java.lang.String) -> base64ToBitmap
-    322:326:java.lang.String getDefaultEndDate() -> getDefaultEndDate
-    401:401:java.lang.String getMaxDateText() -> getMaxDateText
-    334:378:void initDatePicker() -> initDatePicker
-    449:458:void initPermission() -> initPermission
-    152:259:void initView() -> initView
-    186:238:void lambda$initView$0(android.view.View) -> lambda$initView$0
-    409:411:void lambda$show2ndConfirmDlg$1(android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$1
-    412:412:void lambda$show2ndConfirmDlg$2(android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$2
-    425:440:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    58:142:void onCreate(android.os.Bundle) -> onCreate
-    147:147:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
-    475:497:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    465:469:void requestPermission() -> requestPermission
-    405:419:void show2ndConfirmDlg() -> show2ndConfirmDlg
+    43:476:void <init>() -> <init>
+    43:43:java.lang.String access$000(com.national.btlock.ui.LockShareActivity) -> access$000
+    43:43:java.lang.String access$100(com.national.btlock.ui.LockShareActivity) -> access$100
+    313:332:void authApp() -> authApp
+    278:309:void authManagement() -> authManagement
+    457:458:android.graphics.Bitmap base64ToBitmap(java.lang.String) -> base64ToBitmap
+    336:340:java.lang.String getDefaultEndDate() -> getDefaultEndDate
+    415:415:java.lang.String getMaxDateText() -> getMaxDateText
+    348:392:void initDatePicker() -> initDatePicker
+    463:472:void initPermission() -> initPermission
+    166:273:void initView() -> initView
+    200:252:void lambda$initView$0(android.view.View) -> lambda$initView$0
+    423:425:void lambda$show2ndConfirmDlg$1(android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$1
+    426:426:void lambda$show2ndConfirmDlg$2(android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$2
+    439:454:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    60:156:void onCreate(android.os.Bundle) -> onCreate
+    161:161:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
+    489:511:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    479:483:void requestPermission() -> requestPermission
+    419:433:void show2ndConfirmDlg() -> show2ndConfirmDlg
 com.national.btlock.ui.LockShareActivity$$ExternalSyntheticLambda0 -> com.national.btlock.ui.LockShareActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -22265,37 +22257,41 @@ com.national.btlock.ui.LockShareActivity$$ExternalSyntheticLambda2 -> com.nation
     void com.national.btlock.ui.LockShareActivity$$InternalSyntheticLambda$0$e75b39a5160f5130d11dbd1c129afbc2ac02b71044460e00251c7b3ffdf9d517$0.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.national.btlock.ui.LockShareActivity$1 -> com.national.btlock.ui.LockShareActivity$1:
-    114:114:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    117:121:void onClick(android.content.DialogInterface,int) -> onClick
+    116:116:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    120:135:void onClick(android.content.DialogInterface,int) -> onClick
+com.national.btlock.ui.LockShareActivity$1$1 -> com.national.btlock.ui.LockShareActivity$1$1:
+    121:121:void <init>(com.national.btlock.ui.LockShareActivity$1) -> <init>
+    131:132:void onError(java.lang.String,java.lang.String) -> onError
+    124:127:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockShareActivity$10 -> com.national.btlock.ui.LockShareActivity$10:
-    381:381:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    384:396:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+    395:395:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    398:410:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
 com.national.btlock.ui.LockShareActivity$2 -> com.national.btlock.ui.LockShareActivity$2:
-    123:123:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    126:128:void onClick(android.content.DialogInterface,int) -> onClick
+    137:137:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    140:142:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.LockShareActivity$3 -> com.national.btlock.ui.LockShareActivity$3:
-    163:163:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    166:181:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+    177:177:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    180:195:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
 com.national.btlock.ui.LockShareActivity$4 -> com.national.btlock.ui.LockShareActivity$4:
-    243:243:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    246:247:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
+    257:257:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    260:261:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
 com.national.btlock.ui.LockShareActivity$5 -> com.national.btlock.ui.LockShareActivity$5:
-    251:251:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    254:256:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
+    265:265:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    268:270:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
 com.national.btlock.ui.LockShareActivity$6 -> com.national.btlock.ui.LockShareActivity$6:
-    279:279:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    291:293:void onError(java.lang.String,java.lang.String) -> onError
-    282:287:void onSuccess(java.lang.String) -> onSuccess
+    293:293:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    305:307:void onError(java.lang.String,java.lang.String) -> onError
+    296:301:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockShareActivity$7 -> com.national.btlock.ui.LockShareActivity$7:
-    300:300:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    312:316:void onError(java.lang.String,java.lang.String) -> onError
-    303:308:void onSuccess(java.lang.String) -> onSuccess
+    314:314:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    326:330:void onError(java.lang.String,java.lang.String) -> onError
+    317:322:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockShareActivity$8 -> com.national.btlock.ui.LockShareActivity$8:
-    350:350:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    353:356:void handle(java.lang.String) -> handle
+    364:364:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    367:370:void handle(java.lang.String) -> handle
 com.national.btlock.ui.LockShareActivity$9 -> com.national.btlock.ui.LockShareActivity$9:
-    361:361:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
-    365:374:void handle(java.lang.String) -> handle
+    375:375:void <init>(com.national.btlock.ui.LockShareActivity) -> <init>
+    379:388:void handle(java.lang.String) -> handle
 com.national.btlock.ui.LockShareExtendActivity -> com.national.btlock.ui.LockShareExtendActivity:
     29:177:void <init>() -> <init>
     124:174:void extendAuth() -> extendAuth

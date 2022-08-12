@@ -77,6 +77,7 @@ Tips：初始化请在Application或者集成com.national.btlock.ui.MainFragment
                     @Override
                     public void initSuccess() {
                         Log.d(TAG, "initSuccess");
+                        SdkHelper.getInstance().setBaiduFaceConfig(Constants.LICENSEID, Constants.LICENSEFILE_NAME);
 
                     }
 
@@ -88,24 +89,31 @@ Tips：初始化请在Application或者集成com.national.btlock.ui.MainFragment
 
         });
 ```
-4.2登录
+4.2百度人脸初始化参数配置（在登录，实名认证，身份证授权人脸采集中用到，确保在这些操作前实现；推荐在sdk初始化成功后实现）
+| 参数        | 备注   |
+| --------   | -----:  |
+| licenseId | 百度licenseId
+| licensefileName|百度文件名称
+```
+SdkHelper.getInstance().setBaiduFaceConfig(Constants.LICENSEID, Constants.LICENSEFILE_NAME);
+```
 
+4.3登录（确保以配置百度人脸初始化参数，其他设备登录使用）
 | 参数        | 备注   | 
 | --------   | -----:  | 
 | context | 上下文  
 | username | 用户手机号
-| LoginCallBack|登录返回回调
+| CallBack|登录返回回调
 
 ```
 //登录
-SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(BaseActivity.this, Constants.USER_NAME), new SdkHelper.LoginCallBack() {
+ SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(BaseActivity.this, Constants.USER_NAME), new SdkHelper.CallBack() {
             @Override
             public void onSuccess(String jsonStr) {
                 Log.d(TAG, "jsonStr:" + jsonStr);
                 LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
                 if (result != null) {
                     if (result.getData() != null) {
-                       //登录成功，返回是否已实名 
                         String isAccountVerified = result.getData().getAccountVerified();
                         Intent intent = new Intent(BaseActivity.this, MainActivity.class);
                         intent.putExtra("isAccountVerified", isAccountVerified);
@@ -117,36 +125,8 @@ SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(Base
                     Toast.makeText(BaseActivity.this, "数据异常", Toast.LENGTH_LONG).show();
                 }
             }
-          
-           //在其他设备登录，需刷脸登录
-            @Override
-            public void onFaceCheck() {
-                SdkHelper.getInstance().faceLogin(BaseActivity.this, Constants.LICENSEID, Constants.LICENSEFILE_NAME, new SdkHelper.CallBack() {
-                    @Override
-                    public void onSuccess(String jsonStr) {
-                        LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
-                        if (result != null) {
-                            if (result.getData() != null) {
-                                String isAccountVerified = result.getData().getAccountVerified();
-                                Intent intent = new Intent(BaseActivity.this, MainActivity.class);
-                                intent.putExtra("isAccountVerified", isAccountVerified);
-                                startActivity(intent);
-                                finish();
-                            }
 
-                        } else {
-                            Toast.makeText(BaseActivity.this, "数据异常", Toast.LENGTH_LONG).show();
-                        }
 
-                    }
-
-                    @Override
-                    public void onError(String errCode, String errMsg) {
-
-                    }
-                });
-
-            }
 
             @Override
             public void onError(String errorCode, String errorMsg) {
@@ -155,39 +135,6 @@ SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(Base
         });
 ```
 
-4.3 刷脸登录
-| 参数        | 备注   |
-| --------   | -----:  |
-| context | 上下文  
-| licenseId | 百度licenseId
-| licensefileName|百度文件名称
-
-```
-SdkHelper.getInstance().faceLogin(BaseActivity.this, Constants.LICENSEID, Constants.LICENSEFILE_NAME, new SdkHelper.CallBack() {
-                    @Override
-                    public void onSuccess(String jsonStr) {
-                        LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
-                        if (result != null) {
-                            if (result.getData() != null) {
-                                String isAccountVerified = result.getData().getAccountVerified();
-                                Intent intent = new Intent(BaseActivity.this, MainActivity.class);
-                                intent.putExtra("isAccountVerified", isAccountVerified);
-                                startActivity(intent);
-                                finish();
-                            }
-
-                        } else {
-                            Toast.makeText(BaseActivity.this, "数据异常", Toast.LENGTH_LONG).show();
-                        }
-
-                    }
-
-                    @Override
-                    public void onError(String errCode, String errMsg) {
-
-                    }
-                });
-```
 
 
 
@@ -208,17 +155,15 @@ SdkHelper.getInstance().loginOut(new SdkHelper.CallBack() {
                     }
                 })
  ```
- 4.5 实名认证
+ 4.5 实名认证（确保已配置百度人脸初始化参数）
  | 参数        | 备注   | 
 | --------   | -----:  | 
 | context       | 上下文
- |licenseId | 百度licenseId
- | licensefileName|百度文件名称
 | name       | 姓名
 | idcardNo   | 身份证号 
 
 ```
-SdkHelper.getInstance().identification(context,Constants.LICENSEID, Constants.LICENSEFILE_NAME,  name, idcardNo, new SdkHelper.identificationCallBack() {
+SdkHelper.getInstance().identification(context, name, idcardNo, new SdkHelper.identificationCallBack() {
                     @Override
                     public void identificationSuc() {
                         Toast.makeText(getActivity(), "实名认证成功", Toast.LENGTH_LONG).show();
@@ -232,7 +177,7 @@ SdkHelper.getInstance().identification(context,Constants.LICENSEID, Constants.LI
                     }
                 })
  ```     
-4.6 首页
+4.6 首页（百度人脸初始化参数，身份证授权人脸采集使用）
 将com.national.btlock.ui.MainFragment集成到对应页面中
 
 4.7 其他设备登录监听

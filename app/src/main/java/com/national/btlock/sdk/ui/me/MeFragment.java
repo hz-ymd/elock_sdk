@@ -34,7 +34,7 @@ public class MeFragment extends Fragment {
 //        final TextView textView = binding.textMe;
 //        meViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         binding.idBtnVerify.setOnClickListener(view ->
-                SdkHelper.getInstance().identification(getActivity(), Constants.LICENSEID, Constants.LICENSEFILE_NAME, "name", "idcardNo", new SdkHelper.identificationCallBack() {
+                SdkHelper.getInstance().identification(getActivity(), "name", "idcardNo", new SdkHelper.identificationCallBack() {
                     @Override
                     public void identificationSuc() {
                         Toast.makeText(getActivity(), "实名认证成功", Toast.LENGTH_LONG).show();

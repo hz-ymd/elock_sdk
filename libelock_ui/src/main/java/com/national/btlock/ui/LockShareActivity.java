@@ -23,6 +23,7 @@ import androidx.core.app.ActivityCompat;
 import com.baidu.idl.face.platform.FaceSDKManager;
 import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.baidu.idl.face.platform.utils.DensityUtils;
+import com.national.btlock.sdk.SdkHelper;
 import com.national.btlock.ui.databinding.ActivityLockShareBinding;
 import com.national.btlock.ui.face.FaceLivenessExpActivity;
 import com.national.btlock.utils.TimeUtil;
@@ -114,10 +115,22 @@ public class LockShareActivity extends BaseActivity {
                 dlg.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(final DialogInterface dialog, int whichButton) {
+
                         dialog.dismiss();
-                        Intent in = new Intent(LockShareActivity.this, FaceLivenessExpActivity.class);
-                        in.putExtra("type", "authIdCard");
-                        startActivityForResult(in, REQUEST_FACE);
+                        SdkHelper.getInstance().faceInit(LockShareActivity.this, new SdkHelper.CallBack() {
+                            @Override
+                            public void onSuccess(String jsonStr) {
+                                Intent in = new Intent(LockShareActivity.this, FaceLivenessExpActivity.class);
+                                in.putExtra("type", "authIdCard");
+                                startActivityForResult(in, REQUEST_FACE);
+                            }
+
+                            @Override
+                            public void onError(String errCode, String errMsg) {
+                                Toast.makeText(LockShareActivity.this, "人脸识别初始化失败：" + errMsg, Toast.LENGTH_LONG).show();
+                            }
+                        });
+
                     }
                 });
                 dlg.setNegativeButton(getString(R.string.btn_next_time), new DialogInterface.OnClickListener() {

@@ -88,6 +88,29 @@ public class SdkHelper {
     }
 
 
+    String licenseId, licenseFileName;
+
+    public void setBaiduFaceConfig(String licenseId, String licenseFileName) {
+        this.licenseId = licenseId;
+        this.licenseFileName = licenseFileName;
+    }
+
+    public String getLicenseId() {
+        return licenseId;
+    }
+
+    public void setLicenseId(String licenseId) {
+        this.licenseId = licenseId;
+    }
+
+    public String getLicenseFileName() {
+        return licenseFileName;
+    }
+
+    public void setLicenseFileName(String licenseFileName) {
+        this.licenseFileName = licenseFileName;
+    }
+
     /**
      * sdk初始化（不初始化人脸识别）
      *
@@ -239,8 +262,7 @@ public class SdkHelper {
      * @param idCardNo 身份证号
      * @param callBack
      */
-    public void identification(Context context, String licenseId,
-                               String licenseFileName,
+    public void identification(Context context,
                                String name,
                                String idCardNo,
                                identificationCallBack callBack) {
@@ -270,7 +292,7 @@ public class SdkHelper {
 
             @Override
             public void initFailure(final int errCode, final String errMsg) {
-                callBack.identificationError("-6000009", "初始化失败：" + errMsg);
+                callBack.identificationError("-6000009", "人脸识别初始化失败：" + errMsg);
 
             }
         });
@@ -302,17 +324,51 @@ public class SdkHelper {
         });
     }
 
-    public interface LoginCallBack {
-        void onSuccess(String jsonStr);
-
-        void onError(final String errCode, final String errMsg);
-
-        void onFaceCheck();
-    }
-
 
     /**
      * 登录（旧接口，onError时需判断errorCode是否为LOGIN_IN_OTHER_DEVICE，进行刷脸登录）
+     *
+     * @param userName 手机账号
+     * @param callBack
+     */
+//    public void login(Context context, String userName, CallBack callBack) {
+//        if (NetWorkUtil.getNetworkState(context) == 0) {
+//            SDKCoreHelper.getLoginState(userName, new OnResultListener() {
+//                @Override
+//                public void onSuccess(String s) {
+//                    callBack.onSuccess(s);
+//                }
+//
+//                @Override
+//                public void onError(String s, String s1) {
+//                    callBack.onError(s, s1);
+//                }
+//            });
+//
+//        } else {
+//            String time = "" + System.currentTimeMillis();
+//            String sign = MD5.md5(appSecret + time);
+//            SDKCoreHelper.login(appID, userName, getNum(8) + "", time, sign,
+//                    new OnResultListener() {
+//                @Override
+//                public void onSuccess(String jsonStr) {
+//
+//                    callBack.onSuccess(jsonStr);
+//                }
+//
+//                @Override
+//                public void onError(String errorCode, String errorMsg) {
+//                    callBack.onError(errorCode, errorMsg);
+//                }
+//            });
+//        }
+//
+//
+//    }
+
+
+    /**
+     * 登录
      *
      * @param userName 手机账号
      * @param callBack
@@ -343,49 +399,8 @@ public class SdkHelper {
 
                 @Override
                 public void onError(String errorCode, String errorMsg) {
-                    callBack.onError(errorCode, errorMsg);
-                }
-            });
-        }
-
-
-    }
-
-
-    /**
-     * 登录
-     *
-     * @param userName 手机账号
-     * @param callBack
-     */
-    public void login(Context context, String userName, LoginCallBack callBack) {
-        if (NetWorkUtil.getNetworkState(context) == 0) {
-            SDKCoreHelper.getLoginState(userName, new OnResultListener() {
-                @Override
-                public void onSuccess(String s) {
-                    callBack.onSuccess(s);
-                }
-
-                @Override
-                public void onError(String s, String s1) {
-                    callBack.onError(s, s1);
-                }
-            });
-
-        } else {
-            String time = "" + System.currentTimeMillis();
-            String sign = MD5.md5(appSecret + time);
-            SDKCoreHelper.login(appID, userName, getNum(8) + "", time, sign, new OnResultListener() {
-                @Override
-                public void onSuccess(String jsonStr) {
-
-                    callBack.onSuccess(jsonStr);
-                }
-
-                @Override
-                public void onError(String errorCode, String errorMsg) {
                     if (errorCode.equals(LOGIN_IN_OTHER_DEVICE)) {
-                        callBack.onFaceCheck();
+                        faceLogin(context, callBack);
                     } else {
                         callBack.onError(errorCode, errorMsg);
                     }
@@ -401,7 +416,7 @@ public class SdkHelper {
     private static final String FACE_INIT_FAIL = "-6000009";
 
 
-    public void faceInit(Context context, String licenseId, String licenseFileName, CallBack callBack) {
+    public void faceInit(Context context, CallBack callBack) {
         if (!setFaceConfig()) {
             callBack.onError(FACE_INIT_FAIL_JSON_ERROR, "初始化失败 = json配置文件解析出错");
             return;
@@ -428,12 +443,10 @@ public class SdkHelper {
      * 人脸登录（在其他设备登录后调用）
      *
      * @param context
-     * @param licenseId       百度licenseId
-     * @param licenseFileName 百度文件名称
      * @param callBack
      */
-    public void faceLogin(Context context, String licenseId, String licenseFileName, CallBack callBack) {
-        faceInit(context, licenseId, licenseFileName, new CallBack() {
+    public void faceLogin(Context context, CallBack callBack) {
+        faceInit(context,  new CallBack() {
             @Override
             public void onSuccess(String jsonStr) {
                 setLoginCallBack(callBack);

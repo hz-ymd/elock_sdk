@@ -25,6 +25,7 @@ public class MyApp extends Application {
                     @Override
                     public void initSuccess() {
                         Log.d(TAG, "initSuccess");
+                        SdkHelper.getInstance().setBaiduFaceConfig(Constants.LICENSEID, Constants.LICENSEFILE_NAME);
 
                     }
 
@@ -34,15 +35,7 @@ public class MyApp extends Application {
                     }
 
 
-        });
-
-
-
-
-
-
-
-
+                });
 
 
     }

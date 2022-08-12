@@ -23,7 +23,7 @@ public class BaseActivity extends AppCompatActivity {
 
     public void init() {
         //第三方登录逻辑
-        SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(BaseActivity.this, Constants.USER_NAME), new SdkHelper.LoginCallBack() {
+        SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(BaseActivity.this, Constants.USER_NAME), new SdkHelper.CallBack() {
             @Override
             public void onSuccess(String jsonStr) {
                 Log.d(TAG, "jsonStr:" + jsonStr);
@@ -42,34 +42,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
             }
 
-            @Override
-            public void onFaceCheck() {
-                SdkHelper.getInstance().faceLogin(BaseActivity.this, Constants.LICENSEID, Constants.LICENSEFILE_NAME, new SdkHelper.CallBack() {
-                    @Override
-                    public void onSuccess(String jsonStr) {
-                        LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
-                        if (result != null) {
-                            if (result.getData() != null) {
-                                String isAccountVerified = result.getData().getAccountVerified();
-                                Intent intent = new Intent(BaseActivity.this, MainActivity.class);
-                                intent.putExtra("isAccountVerified", isAccountVerified);
-                                startActivity(intent);
-                                finish();
-                            }
 
-                        } else {
-                            Toast.makeText(BaseActivity.this, "数据异常", Toast.LENGTH_LONG).show();
-                        }
-
-                    }
-
-                    @Override
-                    public void onError(String errCode, String errMsg) {
-
-                    }
-                });
-
-            }
 
             @Override
             public void onError(String errorCode, String errorMsg) {
