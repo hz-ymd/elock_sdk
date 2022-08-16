@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@mipmap/national_left_00" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_01" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_02" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_03" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_04" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_05" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_06" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_07" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_08" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_09" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_10" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_11" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_12" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_13" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_14" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_15" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_16" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_17" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_18" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_19" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_20" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_21" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_22" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_23" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_24" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_25" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_26" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_27" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_28" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_29" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_30" android:duration="50"/>
+    <item android:drawable="@mipmap/national_left_31" android:duration="50"/>
+</animation-list>

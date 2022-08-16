@@ -155,7 +155,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_national_main, container, false);
 
         image_list = view.findViewById(R.id.image_list);
         image_search = view.findViewById(R.id.image_search);
@@ -320,9 +320,9 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                         idLockManager.setVisibility(View.GONE);
                         idLockUser.setVisibility(View.VISIBLE);
                         if (LockOwnerType.V.equalsIgnoreCase(ownerType)) {
-                            idLockUser.setImageResource(R.drawable.icon_lock_visitor);
+                            idLockUser.setImageResource(R.drawable.national_icon_lock_visitor);
                         } else {
-                            idLockUser.setImageResource(R.drawable.icon_lock_user);
+                            idLockUser.setImageResource(R.drawable.national_icon_lock_user);
 
                         }
                     }
@@ -593,22 +593,22 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         AppItem item = null;
         item = new AppItem();
         item.setAppName(getString(R.string.share_user));
-        item.setResId(R.drawable.icon_lock_share);
+        item.setResId(R.drawable.national_icon_lock_share);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_card));
-        item.setResId(R.drawable.icon_card_a);
+        item.setResId(R.drawable.national_icon_card_a);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_pwd));
-        item.setResId(R.drawable.icon_auth_visitor);
+        item.setResId(R.drawable.national_icon_auth_visitor);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_idcard));
-        item.setResId(R.drawable.icon_auth_idcard);
+        item.setResId(R.drawable.national_icon_auth_idcard);
         mList.add(item);
 
 //        item = new AppItem();
@@ -669,22 +669,22 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
         AppItem item = null;
         item = new AppItem();
         item.setAppName(getString(R.string.share_user));
-        item.setResId(R.drawable.icon_lock_share);
+        item.setResId(R.drawable.national_icon_lock_share);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_card));
-        item.setResId(R.drawable.icon_card_a);
+        item.setResId(R.drawable.national_icon_card_a);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_pwd));
-        item.setResId(R.drawable.icon_auth_visitor);
+        item.setResId(R.drawable.national_icon_auth_visitor);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_idcard));
-        item.setResId(R.drawable.icon_auth_idcard);
+        item.setResId(R.drawable.national_icon_auth_idcard);
         mList.add(item);
 
 //        item = new AppItem();
@@ -695,7 +695,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
         item = new AppItem();
         item.setAppName(getString(R.string.device_data));
-        item.setResId(R.drawable.icon_user_guiders);
+        item.setResId(R.drawable.national_icon_user_guiders);
         mList.add(item);
         adapter.notifyDataSetChanged();
 
@@ -745,7 +745,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                 //removeFlg 0:不删除 1:删除
                 actionType = 2;
                 LayoutInflater inflater = LayoutInflater.from(getActivity());
-                View layout = inflater.inflate(R.layout.layout_dialog_chkbox, null);
+                View layout = inflater.inflate(R.layout.layout_national_dialog_chkbox, null);
                 chkBoxDeleteAll = (CheckBox) layout.findViewById(R.id.chk_manager_give_back);//注意这一句
                 chkBoxDeleteAll.setChecked(true);
                 show2ndConfirmDlg(lock, layout, getString(R.string.auth_get_back_txt));
@@ -755,7 +755,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
             } else if (id == R.id.assignment_give_back) {
                 actionType = 1;
                 LayoutInflater inflater = LayoutInflater.from(getActivity());
-                View layout = inflater.inflate(R.layout.layout_dialog_chkbox, null);
+                View layout = inflater.inflate(R.layout.layout_national_dialog_chkbox, null);
                 chkBoxDeleteAll = (CheckBox) layout.findViewById(R.id.chk_manager_give_back);//注意这一句
                 chkBoxDeleteAll.setChecked(true);
                 show2ndConfirmDlg(lock, layout, getString(R.string.auth_give_back_management_txt));

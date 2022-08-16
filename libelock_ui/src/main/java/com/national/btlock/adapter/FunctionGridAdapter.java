@@ -81,7 +81,7 @@ public class FunctionGridAdapter extends BaseAdapter {
 		
 		if (null == convertView) {
 			holder = new Holder();
-			convertView = layoutInflater.inflate(R.layout.app_thirdpart_app_gridview_item, null);
+			convertView = layoutInflater.inflate(R.layout.app_national_thirdpart_app_gridview_item, null);
 
 
 			holder.imgvIcon = (ImageView) convertView.findViewById(R.id.id_gridview_item_icon);

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.national.btlock.utils.AppConstants;
-import com.national.btlock.widget.NoDoubleListener;
 
 
 public class OperateRecordActivity extends BaseActivity implements AppConstants {
@@ -17,7 +16,7 @@ public class OperateRecordActivity extends BaseActivity implements AppConstants 
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_operate_record_main);
+        setContentView(R.layout.activity_national_operate_record_main);
         setTitle(getString(R.string.txt_operate_record_list));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initActivity();

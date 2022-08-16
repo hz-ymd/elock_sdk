@@ -37,7 +37,7 @@ public class TimeoutDialog extends Dialog implements View.OnClickListener {
 
     private void initView() {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.dialog_time_out, null);
+        View view = inflater.inflate(R.layout.national_dialog_time_out, null);
         setContentView(view);
         Window dialogWindow = getWindow();
         dialogWindow.setGravity(Gravity.CENTER_HORIZONTAL);

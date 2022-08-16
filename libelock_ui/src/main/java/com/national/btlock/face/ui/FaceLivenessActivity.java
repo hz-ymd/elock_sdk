@@ -133,7 +133,7 @@ public class FaceLivenessActivity extends Activity implements
         super.onCreate(savedInstanceState);
         setScreenBright();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        setContentView(R.layout.activity_face_liveness_v3100);
+        setContentView(R.layout.activity_national_face_liveness_v3100);
         mContext = FaceLivenessActivity.this;
         DisplayMetrics dm = new DisplayMetrics();
         Display display = this.getWindowManager().getDefaultDisplay();
@@ -185,13 +185,13 @@ public class FaceLivenessActivity extends Activity implements
         mCloseView = (ImageView) mRootView.findViewById(R.id.liveness_close);
         mSoundView = (ImageView) mRootView.findViewById(R.id.liveness_sound);
         mSoundView.setImageResource(mIsEnableSound ?
-                R.mipmap.icon_titlebar_voice2 : R.drawable.collect_image_voice_selector);
+                R.mipmap.national_icon_titlebar_voice2 : R.drawable.national_collect_image_voice_selector);
         mSoundView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIsEnableSound = !mIsEnableSound;
                 mSoundView.setImageResource(mIsEnableSound ?
-                        R.mipmap.icon_titlebar_voice2 : R.drawable.collect_image_voice_selector);
+                        R.mipmap.national_icon_titlebar_voice2 : R.drawable.national_collect_image_voice_selector);
                 if (mILivenessStrategy != null) {
                     mILivenessStrategy.setLivenessStrategySoundEnable(mIsEnableSound);
                 }
@@ -326,8 +326,9 @@ public class FaceLivenessActivity extends Activity implements
         dlg.setCancelable(false);
         dlg.setCanceledOnTouchOutside(false);
 
-        if (!isFinishing())
+        if (!isFinishing()) {
             dlg.show();
+        }
 
     }
 
@@ -385,7 +386,7 @@ public class FaceLivenessActivity extends Activity implements
                 int cv = am.getStreamVolume(AudioManager.STREAM_MUSIC);
                 mIsEnableSound = cv > 0;
                 mSoundView.setImageResource(mIsEnableSound
-                        ? R.mipmap.icon_titlebar_voice2 : R.mipmap.icon_titlebar_voice1);
+                        ? R.mipmap.national_icon_titlebar_voice2 : R.mipmap.national_icon_titlebar_voice1);
                 if (mILivenessStrategy != null) {
                     mILivenessStrategy.setLivenessStrategySoundEnable(mIsEnableSound);
                 }
@@ -702,25 +703,25 @@ public class FaceLivenessActivity extends Activity implements
         if (mLivenessType != null) {
             switch (mLivenessType) {
                 case Eye:
-                    mImageAnim.setBackgroundResource(R.drawable.anim_eye);
+                    mImageAnim.setBackgroundResource(R.drawable.national_anim_eye);
                     break;
 //                case HeadLeftOrRight:
 //                    mImageAnim.setBackgroundResource(R.drawable.anim_shake);
 //                    break;
                 case HeadLeft:
-                    mImageAnim.setBackgroundResource(R.drawable.anim_left);
+                    mImageAnim.setBackgroundResource(R.drawable.national_anim_left);
                     break;
                 case HeadRight:
-                    mImageAnim.setBackgroundResource(R.drawable.anim_right);
+                    mImageAnim.setBackgroundResource(R.drawable.national_anim_right);
                     break;
                 case HeadDown:
-                    mImageAnim.setBackgroundResource(R.drawable.anim_down);
+                    mImageAnim.setBackgroundResource(R.drawable.national_anim_down);
                     break;
                 case HeadUp:
-                    mImageAnim.setBackgroundResource(R.drawable.anim_up);
+                    mImageAnim.setBackgroundResource(R.drawable.national_anim_up);
                     break;
                 case Mouth:
-                    mImageAnim.setBackgroundResource(R.drawable.anim_mouth);
+                    mImageAnim.setBackgroundResource(R.drawable.national_anim_mouth);
                     break;
                 default:
                     break;

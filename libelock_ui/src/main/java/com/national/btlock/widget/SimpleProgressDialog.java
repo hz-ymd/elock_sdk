@@ -21,7 +21,7 @@ public class SimpleProgressDialog extends ProgressDialog {
 	@Override
 	public void show() {
 		super.show();
-		this.setContentView(R.layout.simple_progress);
+		this.setContentView(R.layout.national_simple_progress);
 
 	}
 

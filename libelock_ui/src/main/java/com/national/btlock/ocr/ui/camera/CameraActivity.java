@@ -80,7 +80,7 @@ public class CameraActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bd_ocr_activity_camera);
+        setContentView(R.layout.national_bd_ocr_activity_camera);
         System.out.println("#CameraActivity onCreate()");
         takePictureContainer = (OCRCameraLayout) findViewById(R.id.take_picture_container);
         confirmResultContainer = (OCRCameraLayout) findViewById(R.id.confirm_result_container);
@@ -246,9 +246,9 @@ public class CameraActivity extends Activity {
     private void updateFlashMode() {
         int flashMode = cameraView.getCameraControl().getFlashMode();
         if (flashMode == ICameraControl.FLASH_MODE_TORCH) {
-            lightButton.setImageResource(R.drawable.bd_ocr_light_on);
+            lightButton.setImageResource(R.drawable.national_bd_ocr_light_on);
         } else {
-            lightButton.setImageResource(R.drawable.bd_ocr_light_off);
+            lightButton.setImageResource(R.drawable.national_bd_ocr_light_off);
         }
     }
 

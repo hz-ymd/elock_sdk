@@ -11,8 +11,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler.Callback;
-import android.os.Message;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 
@@ -32,7 +30,6 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 
 import com.google.gson.Gson;
-import com.national.btlock.model.StringResult;
 import com.national.btlock.utils.AppConstants;
 import com.national.btlock.utils.DateTimeUtil;
 import com.national.btlock.utils.DlgUtil;
@@ -190,7 +187,7 @@ public class LockPwdShareActivity extends BaseActivity implements AppConstants, 
 //        setActionBarVisiblity(false);
 
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.app_acitivity_lock_pwd_share);
+        this.setContentView(R.layout.activity_national_lock_pwd_share);
 
         setTitle("设备详情");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

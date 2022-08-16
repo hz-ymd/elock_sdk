@@ -36,7 +36,7 @@ public class CollectionSuccessActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collect_success);
+        setContentView(R.layout.activity_national_collect_success);
         initView();
         initData();
     }

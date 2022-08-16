@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.gson.Gson;
 import com.national.btlock.adapter.AuthListAdapter;
-import com.national.btlock.ui.databinding.ActivityAuthListBinding;
+import com.national.btlock.ui.databinding.ActivityNationalAuthListBinding;
 import com.national.btlock.utils.DlgUtil;
 import com.national.core.SDKCoreHelper;
 import com.national.btlock.utils.AppConstants;
@@ -26,7 +26,7 @@ import java.util.List;
 
 public class AuthListActivity extends BaseActivity implements AppConstants {
 
-    ActivityAuthListBinding binding;
+    ActivityNationalAuthListBinding binding;
     String lockMac;
 
     List<LockAuthListEntity.LockAuthItem> lockAuths;
@@ -40,7 +40,7 @@ public class AuthListActivity extends BaseActivity implements AppConstants {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityAuthListBinding.inflate(getLayoutInflater());
+        binding = ActivityNationalAuthListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getIntent().getExtras() != null) {

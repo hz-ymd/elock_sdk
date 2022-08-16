@@ -108,7 +108,7 @@ public class FaceDetectActivity extends Activity implements
         super.onCreate(savedInstanceState);
         setScreenBright();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        setContentView(R.layout.activity_face_detect_v3100);
+        setContentView(R.layout.activity_national_face_detect_v3100);
         DisplayMetrics dm = new DisplayMetrics();
         Display display = this.getWindowManager().getDefaultDisplay();
         display.getMetrics(dm);
@@ -159,13 +159,13 @@ public class FaceDetectActivity extends Activity implements
         mCloseView = (ImageView) mRootView.findViewById(R.id.detect_close);
         mSoundView = (ImageView) mRootView.findViewById(R.id.detect_sound);
         mSoundView.setImageResource(mIsEnableSound ?
-                R.mipmap.icon_titlebar_voice2 : R.drawable.collect_image_voice_selector);
+                R.mipmap.national_icon_titlebar_voice2 : R.drawable.national_collect_image_voice_selector);
         mSoundView.setOnClickListener(new NoDoubleListener() {
             @Override
             public void onNoDoubleClick(View v) {
                 mIsEnableSound = !mIsEnableSound;
                 mSoundView.setImageResource(mIsEnableSound ?
-                        R.mipmap.icon_titlebar_voice2 : R.drawable.collect_image_voice_selector);
+                        R.mipmap.national_icon_titlebar_voice2 : R.drawable.national_collect_image_voice_selector);
                 if (mIDetectStrategy != null) {
                     mIDetectStrategy.setDetectStrategySoundEnable(mIsEnableSound);
                 }
@@ -233,7 +233,7 @@ public class FaceDetectActivity extends Activity implements
                 int cv = am.getStreamVolume(AudioManager.STREAM_MUSIC);
                 mIsEnableSound = cv > 0;
                 mSoundView.setImageResource(mIsEnableSound
-                        ? R.mipmap.icon_titlebar_voice2 : R.mipmap.icon_titlebar_voice1);
+                        ? R.mipmap.national_icon_titlebar_voice2 : R.mipmap.national_icon_titlebar_voice1);
                 if (mIDetectStrategy != null) {
                     mIDetectStrategy.setDetectStrategySoundEnable(mIsEnableSound);
                 }

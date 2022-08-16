@@ -13,7 +13,7 @@ import java.util.List;
 public class OpenRecordListAdapter02 extends CCAdapter<OpenRecordListEntity.OpenRecord> {
 
     public OpenRecordListAdapter02(Context context, List<OpenRecordListEntity.OpenRecord> list) {
-        super(context, list, R.layout.open_record_list_item);
+        super(context, list, R.layout.national_open_record_list_item);
 
     }
 

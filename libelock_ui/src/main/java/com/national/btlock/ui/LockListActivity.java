@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.gson.Gson;
 import com.national.btlock.adapter.LockListAdapter;
-import com.national.btlock.ui.databinding.ActivityLockListBinding;
+import com.national.btlock.ui.databinding.ActivityNationalLockListBinding;
 import com.national.btlock.widget.NoDoubleListener;
 import com.national.core.SDKCoreHelper;
 import com.national.btlock.utils.AppConstants;
@@ -28,7 +28,7 @@ public class LockListActivity extends BaseActivity {
 
     private static final String TAG = "LockListActivity";
 
-    ActivityLockListBinding binding;
+    ActivityNationalLockListBinding binding;
     List<LockListEntity.Lock> lockList;
     LockListAdapter adapter;
 
@@ -45,7 +45,7 @@ public class LockListActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityLockListBinding.inflate(getLayoutInflater());
+        binding = ActivityNationalLockListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 

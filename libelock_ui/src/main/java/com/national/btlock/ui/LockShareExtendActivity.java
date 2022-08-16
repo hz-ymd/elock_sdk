@@ -12,9 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
-import com.national.btlock.ui.databinding.ActivityShareExtendBinding;
+import com.national.btlock.ui.databinding.ActivityNationalShareExtendBinding;
 import com.national.btlock.utils.AppConstants;
-import com.national.btlock.utils.DlgUtil;
 import com.national.btlock.utils.TimeUtil;
 import com.national.btlock.widget.datepick.CustomDatePicker;
 import com.national.core.SDKCoreHelper;
@@ -27,7 +26,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class LockShareExtendActivity extends BaseActivity {
-    ActivityShareExtendBinding binding;
+    ActivityNationalShareExtendBinding binding;
     String oldDateStr;
     private CustomDatePicker //customDatePicker1,
             customDatePicker2;
@@ -41,7 +40,7 @@ public class LockShareExtendActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityShareExtendBinding.inflate(getLayoutInflater());
+        binding = ActivityNationalShareExtendBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

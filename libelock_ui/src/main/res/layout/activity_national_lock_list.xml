@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed">
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/national_back_top"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/text_my_house"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我的房屋"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_title" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_my_house"
+            android:text="欢迎回家"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_detail" />
+
+
+        <ImageView
+            android:id="@+id/image_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/national_icon_category"></ImageView>
+
+
+        <ImageView
+            android:id="@+id/image_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/image_grid"
+            android:background="@drawable/national_icon_search"
+            android:visibility="gone"></ImageView>
+
+        <ImageView
+            android:id="@+id/image_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/image_search"
+            android:background="@drawable/national_icon_add"
+            android:visibility="gone"></ImageView>
+
+        <ImageView
+            android:id="@+id/image_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/image_search"
+            android:background="@drawable/national_icon_refresh"></ImageView>
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recy_lock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/national_bg_lock"
+        android:padding="5dp"
+        android:visibility="gone"></androidx.recyclerview.widget.RecyclerView>
+
+
+    <include
+        android:id="@+id/layout_no_lock"
+        layout="@layout/national_view_no_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"></include>
+
+</RelativeLayout>

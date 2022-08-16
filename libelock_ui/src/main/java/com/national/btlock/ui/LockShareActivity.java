@@ -24,7 +24,7 @@ import com.baidu.idl.face.platform.FaceSDKManager;
 import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.baidu.idl.face.platform.utils.DensityUtils;
 import com.national.btlock.sdk.SdkHelper;
-import com.national.btlock.ui.databinding.ActivityLockShareBinding;
+import com.national.btlock.ui.databinding.ActivityNationalLockShareBinding;
 import com.national.btlock.ui.face.FaceLivenessExpActivity;
 import com.national.btlock.utils.TimeUtil;
 import com.national.btlock.widget.NoDoubleListener;
@@ -40,7 +40,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class LockShareActivity extends BaseActivity {
-    ActivityLockShareBinding binding;
+    ActivityNationalLockShareBinding binding;
     String lockMac;
     String targetUserId;
     String startData, endData;
@@ -58,7 +58,7 @@ public class LockShareActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityLockShareBinding.inflate(getLayoutInflater());
+        binding = ActivityNationalLockShareBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initView();

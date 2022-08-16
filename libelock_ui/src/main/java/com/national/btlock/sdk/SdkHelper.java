@@ -1,6 +1,5 @@
 package com.national.btlock.sdk;
 
-
 import static com.national.btlock.utils.AppConstants.ACTION_LOGIN_AGAIN;
 
 import android.content.BroadcastReceiver;
@@ -121,10 +120,11 @@ public class SdkHelper {
      */
     public void init(Context context, String appID,
                      String appSecret, initCallBack callBack) {
-
         this.context = context;
         this.appID = appID;
         this.appSecret = appSecret;
+
+//        SDKCoreHelper.init(context);
 
         SDKCoreHelper.init(context, new OnResultListener() {
             @Override
@@ -367,6 +367,7 @@ public class SdkHelper {
 //    }
 
 
+
     /**
      * 登录
      *
@@ -374,6 +375,7 @@ public class SdkHelper {
      * @param callBack
      */
     public void login(Context context, String userName, CallBack callBack) {
+
         if (NetWorkUtil.getNetworkState(context) == 0) {
             SDKCoreHelper.getLoginState(userName, new OnResultListener() {
                 @Override
@@ -393,7 +395,6 @@ public class SdkHelper {
             SDKCoreHelper.login(appID, userName, getNum(8) + "", time, sign, new OnResultListener() {
                 @Override
                 public void onSuccess(String jsonStr) {
-
                     callBack.onSuccess(jsonStr);
                 }
 
@@ -446,7 +447,7 @@ public class SdkHelper {
      * @param callBack
      */
     public void faceLogin(Context context, CallBack callBack) {
-        faceInit(context,  new CallBack() {
+        faceInit(context, new CallBack() {
             @Override
             public void onSuccess(String jsonStr) {
                 setLoginCallBack(callBack);

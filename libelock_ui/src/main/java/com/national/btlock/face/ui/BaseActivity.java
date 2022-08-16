@@ -73,7 +73,7 @@ public class BaseActivity extends Activity {
      */
     public void showCustomToast(String message) {
         LayoutInflater layoutInflater = getLayoutInflater();
-        View inflate = layoutInflater.inflate(R.layout.setting_toast_layout,
+        View inflate = layoutInflater.inflate(R.layout.national_setting_toast_layout,
                 (ViewGroup) findViewById(R.id.toast_layout));
         TextView toastTxt = (TextView) inflate.findViewById(R.id.toast_txt);
         toastTxt.setText(message);

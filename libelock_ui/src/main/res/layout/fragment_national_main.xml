@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed"
+    tools:context=".MainFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/national_back_top"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="34dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hi,欢迎回来"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_title" />
+
+
+        <ImageView
+            android:id="@+id/image_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/national_icon_list"></ImageView>
+
+
+        <ImageView
+            android:id="@+id/image_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/image_list"
+            android:background="@drawable/national_icon_search"></ImageView>
+
+        <ImageView
+            android:id="@+id/image_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/image_search"
+            android:background="@drawable/national_icon_refresh"></ImageView>
+
+    </RelativeLayout>
+
+
+    <com.national.btlock.ui.bannerview.BannerView
+        android:id="@+id/banner_locks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="180dp"
+        android:visibility="gone"></com.national.btlock.ui.bannerview.BannerView>
+
+
+    <include
+        android:id="@+id/layout_no_lock"
+        layout="@layout/national_view_no_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"></include>
+
+
+    <com.national.btlock.widget.MySlidingDrawer
+        android:id="@+id/sliding_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top"
+        android:bottomOffset="-50dp"
+        android:content="@id/content"
+        android:handle="@id/handle"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/handle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/national_shape_bottom"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:id="@+id/view_handler"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="2dp"
+                    android:layout_centerInParent="true"
+                    android:background="#ededed"></View>
+
+            </RelativeLayout>
+
+
+            <GridView
+                android:id="@+id/grid_func"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="2.0dp"
+                android:listSelector="@null"
+                android:numColumns="4"></GridView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/deviders"></View>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/layout_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_lock_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/id_detail_lock_name_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="锁名称："
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+                            <!--android:textColor="@android:color/black"-->
+
+                            <TextView
+                                android:id="@+id/id_detail_lock_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBaseline="@+id/id_detail_lock_name_title"
+                                android:layout_toRightOf="@+id/id_detail_lock_name_title"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="left"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+
+
+                            <ImageView
+                                android:id="@+id/id_rewrite_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:layout_toRightOf="@+id/id_detail_lock_name"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:src="@drawable/national_icon_rewrite_name"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_lock_mac"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/id_detail_mac_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_lock_name"
+
+                                android:text="MAC："
+                                android:textColor="@color/black"
+
+                                android:textSize="@dimen/font_detail" />
+                            <!--android:textColor="@android:color/black"-->
+                            <TextView
+                                android:id="@+id/id_detail_mac"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_lock_name"
+                                android:layout_alignBaseline="@+id/id_detail_mac_title"
+                                android:layout_toRightOf="@+id/id_detail_mac_title"
+                                android:focusable="false"
+                                android:gravity="left"
+                                android:maxLines="2"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_lock_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/id_detail_mac"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <!--android:layout_below="@+id/id_listview_lock_name_title"-->
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="权限："
+                                android:textColor="@color/ctid_black"
+                                android:textSize="@dimen/font_detail" />
+                            <!--android:id="@+id/id_listview_lock_type_title"-->
+                            <!--android:textColor="@android:color/black" -->
+
+                            <ImageView
+                                android:id="@+id/id_lock_owner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="6dp"
+                                android:src="@drawable/national_icon_lock_owner" />
+                            <!--android:layout_toRightOf="@+id/id_listview_lock_type_title"-->
+                            <!--android:layout_below="@+id/id_listview_lock_name_title"-->
+
+                            <ImageView
+                                android:id="@+id/id_lock_manager"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="6dp"
+                                android:src="@drawable/national_icon_lock_manager" />
+
+                            <ImageView
+                                android:id="@+id/id_lock_user"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="6dp"
+                                android:src="@drawable/national_icon_lock_user" />
+
+                            <ImageView
+                                android:id="@+id/id_lock_idcard_realname_needed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="6dp"
+                                android:src="@drawable/national_icon_idcard_realname_needed" />
+
+                            <ImageView
+                                android:id="@+id/id_lock_police"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="6dp"
+                                android:src="@drawable/national_icon_police" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_lock_soft"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/id_detail_mac"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/id_softver_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_lock_type"
+                                android:text="锁体版本："
+                                android:textColor="@color/black"
+
+                                android:textSize="@dimen/font_detail" />
+                            <!--android:textColor="@android:color/black"-->
+                            <TextView
+                                android:id="@+id/id_softver"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/id_detail_mac_title"
+                                android:layout_alignBaseline="@+id/id_softver_title"
+                                android:layout_toRightOf="@+id/id_softver_title"
+                                android:focusable="false"
+                                android:gravity="left"
+                                android:maxLines="2"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_lock_hd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/id_detail_mac"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/id_hdver_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/id_softver_title"
+
+                                android:text="硬件版本："
+                                android:textColor="@color/black"
+
+                                android:textSize="@dimen/font_detail" />
+                            <!--android:textColor="@android:color/black"-->
+                            <TextView
+                                android:id="@+id/id_hdver"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/id_softver_title"
+                                android:layout_alignBaseline="@+id/id_hdver_title"
+                                android:layout_toRightOf="@+id/id_hdver_title"
+                                android:focusable="false"
+                                android:gravity="left"
+                                android:maxLines="2"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_lock_mcu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/id_detail_mac"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/id_mcuver_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/id_hdver_title"
+
+                                android:text="MCU版本："
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+                            <!--android:textColor="@android:f/black"-->
+                            <TextView
+                                android:id="@+id/id_mcuver"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/id_hdver_title"
+                                android:layout_alignBaseline="@+id/id_mcuver_title"
+                                android:layout_toRightOf="@+id/id_mcuver_title"
+                                android:focusable="false"
+                                android:gravity="left"
+                                android:maxLines="2"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_lock_addr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/id_detail_mac"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/id_addr_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/id_mcuver_title"
+                                android:text="安装地址："
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+
+
+                            <TextView
+                                android:id="@+id/id_addr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/id_mcuver_title"
+                                android:layout_alignBaseline="@+id/id_addr_title"
+                                android:layout_toRightOf="@+id/id_addr_title"
+                                android:focusable="false"
+                                android:gravity="left"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/deviders">
+
+                    </View>
+
+
+                    <RelativeLayout
+                        android:id="@+id/layout_owner_manager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:id="@+id/layout_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/assignment_auth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/national_next_btn_style"
+                                android:padding="5dp"
+                                android:text="权限转让"
+                                android:textColor="@color/white"
+                                android:visibility="gone"></TextView>
+
+                            <TextView
+                                android:id="@+id/assignment_take_back"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/national_next_btn_style"
+                                android:padding="5dp"
+                                android:text="管理权收回"
+                                android:textColor="@color/white"
+                                android:visibility="gone"></TextView>
+
+
+                            <TextView
+                                android:id="@+id/assignment_extend"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/national_next_btn_style"
+                                android:padding="5dp"
+                                android:text="@string/auth_date_extend_txt"
+                                android:textColor="@color/white"
+                                android:visibility="gone"></TextView>
+
+                            <TextView
+                                android:id="@+id/assignment_give_back"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/national_next_btn_style"
+                                android:padding="5dp"
+                                android:text="管理权归还"
+                                android:textColor="@color/white"
+                                android:visibility="gone"></TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/layout_btn"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_owner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail"></TextView>
+
+                            <TextView
+                                android:id="@+id/text_manager"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:padding="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail"></TextView>
+
+
+                            <TextView
+                                android:id="@+id/text_manager_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:padding="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_detail"></TextView>
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/deviders">
+
+                    </View>
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_auth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/auth_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_detail"></TextView>
+
+
+                        <View
+
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/deviders">
+
+                        </View>
+
+                        <TextView
+                            android:id="@+id/auth_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_detail"></TextView>
+
+                        <View
+
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/deviders">
+
+                        </View>
+
+                        <TextView
+                            android:id="@+id/auth_idcard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_detail">
+
+                        </TextView>
+
+                        <View
+
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/deviders">
+
+                        </View>
+
+                        <TextView
+                            android:id="@+id/auth_pwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_detail"></TextView>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/deviders"
+                            android:visibility="gone">
+
+                        </View>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+
+    </com.national.btlock.widget.MySlidingDrawer>
+
+
+    <!--    <ProgressBar-->
+    <!--        android:id="@+id/loading"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="64dp"-->
+    <!--        android:layout_marginBottom="64dp"-->
+    <!--        android:visibility="gone" />-->
+
+
+</RelativeLayout>

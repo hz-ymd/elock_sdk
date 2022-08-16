@@ -17,26 +17,26 @@ public class FaceSDKResSettings {
     public static void initializeResId() {
         // Sound Res Id
         FaceEnvironment.setSoundId(FaceStatusNewEnum.DetectRemindCodeNoFaceDetected,
-                R.raw.detect_face_in);
+                R.raw.national_detect_face_in);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.DetectRemindCodeBeyondPreviewFrame,
-                R.raw.detect_face_in);
+                R.raw.national_detect_face_in);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.DetectRemindCodeNoFaceDetected,
-                R.raw.detect_face_in);
+                R.raw.national_detect_face_in);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.FaceLivenessActionTypeLiveEye,
-                R.raw.liveness_eye);
+                R.raw.national_liveness_eye);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.FaceLivenessActionTypeLiveMouth,
-                R.raw.liveness_mouth);
+                R.raw.national_liveness_mouth);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.FaceLivenessActionTypeLivePitchUp,
-                R.raw.liveness_head_up);
+                R.raw.national_liveness_head_up);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.FaceLivenessActionTypeLivePitchDown,
-                R.raw.liveness_head_down);
+                R.raw.national_liveness_head_down);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.FaceLivenessActionTypeLiveYawLeft,
-                R.raw.liveness_head_left);
+                R.raw.national_liveness_head_left);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.FaceLivenessActionTypeLiveYawRight,
-                R.raw.liveness_head_right);
+                R.raw.national_liveness_head_right);
         FaceEnvironment.setSoundId(FaceStatusNewEnum.FaceLivenessActionComplete,
-                R.raw.face_good);
-        FaceEnvironment.setSoundId(FaceStatusNewEnum.OK, R.raw.face_good);
+                R.raw.national_face_good);
+        FaceEnvironment.setSoundId(FaceStatusNewEnum.OK, R.raw.national_face_good);
 
         // Tips Res Id
         FaceEnvironment.setTipsId(FaceStatusNewEnum.DetectRemindCodeNoFaceDetected,

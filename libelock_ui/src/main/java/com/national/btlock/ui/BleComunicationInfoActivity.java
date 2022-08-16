@@ -17,7 +17,7 @@ import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.google.gson.Gson;
 import com.national.btlock.face.ui.utils.IntentUtils;
 import com.national.btlock.ocr.ui.camera.CameraActivity;
-import com.national.btlock.ui.databinding.ActivityOpenDoorBinding;
+import com.national.btlock.ui.databinding.ActivityNationalOpenDoorBinding;
 import com.national.btlock.utils.AppConstants;
 import com.national.btlock.utils.DlgUtil;
 import com.national.core.SDKCoreHelper;
@@ -27,7 +27,7 @@ import com.national.core.nw.it.OnResultListener;
 
 public class BleComunicationInfoActivity extends BaseActivity {
     private static final String TAG = "BleComunicationInfo";
-    ActivityOpenDoorBinding binding;
+    ActivityNationalOpenDoorBinding binding;
     Animation animation;
     String lockName;
     String lockMac;
@@ -41,7 +41,7 @@ public class BleComunicationInfoActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityOpenDoorBinding.inflate(getLayoutInflater());
+        binding = ActivityNationalOpenDoorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 
@@ -71,7 +71,7 @@ public class BleComunicationInfoActivity extends BaseActivity {
             lockName = getIntent().getStringExtra("lockName");
             lockMac = getIntent().getStringExtra("lockMac");
         }
-        animation = AnimationUtils.loadAnimation(BleComunicationInfoActivity.this, R.anim.exlore_line_move2);
+        animation = AnimationUtils.loadAnimation(BleComunicationInfoActivity.this, R.anim.national_exlore_line_move2);
         animation.setInterpolator(new LinearInterpolator());
         binding.imageView1.setAnimation(animation);
         binding.idLockName.setText(lockName);

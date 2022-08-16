@@ -86,7 +86,7 @@ public class LockOpenRecordListActivity extends BaseActivity implements AppConst
 //        setActionBarVisiblity(false);
 
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.acitivity_lock_open_record_list);
+        this.setContentView(R.layout.activity_national_lock_open_record_list);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(getString(R.string.txt_lock_open_record_list));
 

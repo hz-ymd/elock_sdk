@@ -38,7 +38,7 @@ public class LockPwdLongShareListActivity extends BaseActivity implements AppCon
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_pwd_auth_list);
+        setContentView(R.layout.activity_national_pwd_auth_list);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

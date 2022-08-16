@@ -26,14 +26,12 @@ public class MyApp extends Application {
                     public void initSuccess() {
                         Log.d(TAG, "initSuccess");
                         SdkHelper.getInstance().setBaiduFaceConfig(Constants.LICENSEID, Constants.LICENSEFILE_NAME);
-
                     }
 
                     @Override
                     public void initFailure(String errCode, String errMsg) {
                         Log.d(TAG, "initFailure:" + errCode + "," + errMsg);
                     }
-
 
                 });
 

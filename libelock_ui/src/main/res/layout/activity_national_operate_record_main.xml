@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_black_b2"
+    android:paddingBottom="6dp"
+
+    >
+
+
+    <LinearLayout
+        android:id="@+id/ll_me_lock_open_record_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <!--<ImageView-->
+        <!--android:id="@+id/id_me_delete_by_blescan_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/icon_app_version_check" />-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/national_white_rectangle_bg"
+            android:drawableRight="@drawable/national_bg_right_arrow"
+            android:gravity="center_vertical"
+            android:text="@string/txt_lock_open_record_list"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_detail" />
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/ll_me_lock_open_record_search"
+        android:background="@color/deviders"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_auth_record_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view3"
+
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:paddingLeft="20dp"
+
+        android:paddingRight="20dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/national_white_rectangle_bg"
+            android:drawableRight="@drawable/national_bg_right_arrow"
+            android:gravity="center_vertical"
+            android:text="@string/txt_auth_record_list"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_detail" />
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/ll_auth_record_search"
+        android:layout_marginTop="12dp"
+        android:background="@color/deviders"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_tabs_record_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/view4"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+
+        android:paddingRight="20dp"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/national_white_rectangle_bg"
+            android:drawableRight="@drawable/national_bg_right_arrow"
+            android:gravity="center_vertical"
+            android:text="数据Tabhost"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_detail" />
+    </LinearLayout>
+
+
+</RelativeLayout>

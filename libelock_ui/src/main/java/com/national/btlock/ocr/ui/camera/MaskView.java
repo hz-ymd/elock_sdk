@@ -88,11 +88,11 @@ public class MaskView extends View {
         switch (maskType) {
             case MASK_TYPE_ID_CARD_FRONT:
                 locatorDrawable = ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.bd_ocr_id_card_locator_front, null);
+                        R.drawable.national_bd_ocr_id_card_locator_front, null);
                 break;
             case MASK_TYPE_ID_CARD_BACK:
                 locatorDrawable = ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.bd_ocr_id_card_locator_back, null);
+                        R.drawable.national_bd_ocr_id_card_locator_back, null);
                 break;
             case MASK_TYPE_BANK_CARD:
                 break;
@@ -126,7 +126,7 @@ public class MaskView extends View {
     }
 
     private void init() {
-        locatorDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.bd_ocr_id_card_locator_front, null);
+        locatorDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.national_bd_ocr_id_card_locator_front, null);
     }
 
     @Override

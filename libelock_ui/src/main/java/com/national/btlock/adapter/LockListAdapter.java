@@ -36,7 +36,7 @@ public class LockListAdapter extends RecyclerView.Adapter<LockListAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
-        view = LayoutInflater.from(context).inflate(R.layout.item_lock_list, parent, false);
+        view = LayoutInflater.from(context).inflate(R.layout.national_item_lock_list, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -94,10 +94,10 @@ public class LockListAdapter extends RecyclerView.Adapter<LockListAdapter.ViewHo
 
             if (AppConstants.LockOwnerType.V.equalsIgnoreCase(entiy.getOwnerType())) {
 //                holder.imgvLockUser.setBackground(R.drawable.icon_lock_visitor);
-                holder.imgvLockUser.setImageResource(R.drawable.icon_lock_visitor);
+                holder.imgvLockUser.setImageResource(R.drawable.national_icon_lock_visitor);
             } else {
 //                holder.imgvLockUser.setBackgroundResource(R.drawable.icon_lock_user);
-                holder.imgvLockUser.setImageResource(R.drawable.icon_lock_user);
+                holder.imgvLockUser.setImageResource(R.drawable.national_icon_lock_user);
 
             }
         }

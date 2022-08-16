@@ -15,7 +15,7 @@ import java.util.List;
 public class LockPwdLongShareListAdapter extends CCAdapter<LockPwdShareListEntity.LockPwdShareData> {
 
     public LockPwdLongShareListAdapter(Context context, List<LockPwdShareListEntity.LockPwdShareData> list) {
-        super(context, list, R.layout.lock_pwd_long_share_list_item);
+        super(context, list, R.layout.national_lock_pwd_long_share_list_item);
 
     }
 

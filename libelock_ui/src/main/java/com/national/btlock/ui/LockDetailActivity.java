@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 import com.google.gson.Gson;
 import com.national.btlock.adapter.FunctionGridAdapter;
 import com.national.btlock.model.AppItem;
-import com.national.btlock.ui.databinding.ActivityLockDetailBinding;
+import com.national.btlock.ui.databinding.ActivityNationalLockDetailBinding;
 import com.national.btlock.utils.StringUtilBle;
 import com.national.core.SDKCoreHelper;
 import com.national.core.nw.entity.DeviceDetailEntity;
@@ -37,7 +37,7 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
     private static final int REQUEST_LONG_PWD_SET = 55555;
     private static final int REQUEST_LONG_PWD_LIST = 66666;
 
-    ActivityLockDetailBinding binding;
+    ActivityNationalLockDetailBinding binding;
     GridView grid_func;
     List<AppItem> mList;
     FunctionGridAdapter adapter;
@@ -65,7 +65,7 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityLockDetailBinding.inflate(getLayoutInflater());
+        binding = ActivityNationalLockDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setTitle("设备详情");
@@ -150,19 +150,17 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
             //removeFlg 0:不删除 1:删除
             actionType = 2;
             LayoutInflater inflater = LayoutInflater.from(LockDetailActivity.this);
-            View layout = inflater.inflate(R.layout.layout_dialog_chkbox, null);
-            chkBoxDeleteAll = (CheckBox) layout.findViewById(R.id.chk_manager_give_back);//注意这一句
+            View layout = inflater.inflate(R.layout.layout_national_dialog_chkbox, null);
+            chkBoxDeleteAll = layout.findViewById(R.id.chk_manager_give_back);//注意这一句
             chkBoxDeleteAll.setChecked(true);
             show2ndConfirmDlg(layout, getString(R.string.auth_get_back_txt));
-
         } else if (id == R.id.assignment_give_back) {
             actionType = 1;
             LayoutInflater inflater = LayoutInflater.from(LockDetailActivity.this);
-            View layout = inflater.inflate(R.layout.layout_dialog_chkbox, null);
+            View layout = inflater.inflate(R.layout.layout_national_dialog_chkbox, null);
             chkBoxDeleteAll = (CheckBox) layout.findViewById(R.id.chk_manager_give_back);//注意这一句
             chkBoxDeleteAll.setChecked(true);
             show2ndConfirmDlg(layout, getString(R.string.auth_give_back_management_txt));
-
         } else if (id == R.id.assignment_extend) {
             //管理权授权调整
             Intent intent = new Intent(LockDetailActivity.this, LockShareExtendActivity.class);
@@ -223,22 +221,22 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
         AppItem item = null;
         item = new AppItem();
         item.setAppName(getString(R.string.share_user));
-        item.setResId(R.drawable.icon_lock_share);
+        item.setResId(R.drawable.national_icon_lock_share);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_card));
-        item.setResId(R.drawable.icon_card_a);
+        item.setResId(R.drawable.national_icon_card_a);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_pwd));
-        item.setResId(R.drawable.icon_auth_visitor);
+        item.setResId(R.drawable.national_icon_auth_visitor);
         mList.add(item);
 
         item = new AppItem();
         item.setAppName(getString(R.string.share_idcard));
-        item.setResId(R.drawable.icon_auth_idcard);
+        item.setResId(R.drawable.national_icon_auth_idcard);
         mList.add(item);
 
 //        item = new AppItem();
@@ -249,7 +247,7 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
 
         item = new AppItem();
         item.setAppName(getString(R.string.device_data));
-        item.setResId(R.drawable.icon_user_guiders);
+        item.setResId(R.drawable.national_icon_user_guiders);
         mList.add(item);
         adapter.notifyDataSetChanged();
         adapter.notifyDataSetChanged();
@@ -449,9 +447,9 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
 
 
                         if (LockOwnerType.V.equalsIgnoreCase(ownerType)) {
-                            binding.idLockUser.setImageResource(R.drawable.icon_lock_visitor);
+                            binding.idLockUser.setImageResource(R.drawable.national_icon_lock_visitor);
                         } else {
-                            binding.idLockUser.setImageResource(R.drawable.icon_lock_user);
+                            binding.idLockUser.setImageResource(R.drawable.national_icon_lock_user);
 
                         }
 

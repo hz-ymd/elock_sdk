@@ -17,7 +17,7 @@ public class AuthRecordListAdapter extends CCAdapter<AuthRecordListEntity.Record
     static String MSG_TXT = "%s[%s]给%s[%s]操作门锁【%s】的【%s】，有效期：%s至%s";
 
     public AuthRecordListAdapter(Context context, List<AuthRecordListEntity.Record> list) {
-        super(context, list, R.layout.auth_record_list_item);
+        super(context, list, R.layout.national_auth_record_list_item);
 
     }
 

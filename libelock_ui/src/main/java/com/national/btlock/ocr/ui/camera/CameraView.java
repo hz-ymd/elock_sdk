@@ -195,20 +195,20 @@ public class CameraView extends FrameLayout {
         maskView.setVisibility(VISIBLE);
         hintView.setVisibility(VISIBLE);
 
-        int hintResourceId = R.drawable.bd_ocr_hint_align_id_card;
+        int hintResourceId = R.drawable.national_bd_ocr_hint_align_id_card;
         this.maskType = maskType;
         boolean isNeedSetImage = true;
         switch (maskType) {
             case MaskView.MASK_TYPE_ID_CARD_FRONT:
-                hintResourceId = R.drawable.bd_ocr_round_corner;
+                hintResourceId = R.drawable.national_bd_ocr_round_corner;
                 isNeedSetImage = false;
                 break;
             case MaskView.MASK_TYPE_ID_CARD_BACK:
                 isNeedSetImage = false;
-                hintResourceId = R.drawable.bd_ocr_round_corner;
+                hintResourceId = R.drawable.national_bd_ocr_round_corner;
                 break;
             case MaskView.MASK_TYPE_BANK_CARD:
-                hintResourceId = R.drawable.bd_ocr_hint_align_bank_card;
+                hintResourceId = R.drawable.national_bd_ocr_hint_align_bank_card;
                 break;
             case MaskView.MASK_TYPE_NONE:
             default:
@@ -461,7 +461,7 @@ public class CameraView extends FrameLayout {
 
         lp.gravity = Gravity.CENTER;
         hintViewText = new TextView(getContext());
-        hintViewText.setBackgroundResource(R.drawable.bd_ocr_round_corner);
+        hintViewText.setBackgroundResource(R.drawable.national_bd_ocr_round_corner);
         hintViewText.setAlpha(0.5f);
         hintViewText.setPadding(DimensionUtil.dpToPx(10), 0, DimensionUtil.dpToPx(10), 0);
         hintViewTextWrapper.addView(hintViewText, lp);

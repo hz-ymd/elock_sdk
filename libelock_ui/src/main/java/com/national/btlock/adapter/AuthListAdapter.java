@@ -4,7 +4,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,7 +34,7 @@ public class AuthListAdapter extends RecyclerView.Adapter<AuthListAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
-        view = LayoutInflater.from(context).inflate(R.layout.auth_list_item, parent, false);
+        view = LayoutInflater.from(context).inflate(R.layout.national_auth_list_item, parent, false);
         AuthListAdapter.ViewHolder holder = new AuthListAdapter.ViewHolder(view);
         return holder;
     }

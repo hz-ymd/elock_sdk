@@ -90,7 +90,7 @@ public class ViewFlowAdapter extends BaseAdapter implements AppConstants {
         final ViewHolder holder;
         if (view == null) {
 
-            view = LayoutInflater.from(container.getContext()).inflate(R.layout.item_lock_grid, container, false);
+            view = LayoutInflater.from(container.getContext()).inflate(R.layout.national_item_lock_grid, container, false);
             holder = new ViewHolder();
 //            holder.imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 //            view = holder.imageView = new SimpleDraweeView(context);
@@ -167,10 +167,10 @@ public class ViewFlowAdapter extends BaseAdapter implements AppConstants {
 
             if (LockOwnerType.V.equalsIgnoreCase(entiy.getOwnerType())) {
 //                holder.imgvLockUser.setBackground(R.drawable.icon_lock_visitor);
-                holder.imgvLockUser.setImageResource(R.drawable.icon_lock_visitor);
+                holder.imgvLockUser.setImageResource(R.drawable.national_icon_lock_visitor);
             } else {
 //                holder.imgvLockUser.setBackgroundResource(R.drawable.icon_lock_user);
-                holder.imgvLockUser.setImageResource(R.drawable.icon_lock_user);
+                holder.imgvLockUser.setImageResource(R.drawable.national_icon_lock_user);
 
             }
 

@@ -22,7 +22,7 @@ public class BannerView extends RelativeLayout {
         super(context, attrs);
         this.context = context;
 
-        LayoutInflater.from(context).inflate(R.layout.layout_banner, this, true);
+        LayoutInflater.from(context).inflate(R.layout.layout_national_banner, this, true);
         mViewFlow = (ViewFlow) findViewById(R.id.viewflow);
         mFlowIndicator = (CircleFlowIndicator) findViewById(R.id.viewflowindic);
     }

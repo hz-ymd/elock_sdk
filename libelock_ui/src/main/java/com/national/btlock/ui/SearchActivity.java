@@ -9,18 +9,18 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 
-import com.national.btlock.ui.databinding.ActivitySearchBinding;
+import com.national.btlock.ui.databinding.ActivityNationalSearchBinding;
 import com.national.btlock.widget.NoDoubleListener;
 
 public class SearchActivity extends BaseActivity {
 
-    ActivitySearchBinding binding;
+    ActivityNationalSearchBinding binding;
     String key;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySearchBinding.inflate(getLayoutInflater());
+        binding = ActivityNationalSearchBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("搜索");

@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewStub;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -91,7 +90,7 @@ public class AuthRecordListActivity extends BaseActivity implements AppConstants
 //        setActionBarVisiblity(false);
 
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.acitivity_auth_record_list);
+        this.setContentView(R.layout.activity_national_auth_record_list);
         setTitle(getString(R.string.txt_auth_record_list));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getIntent().getExtras() != null) {
