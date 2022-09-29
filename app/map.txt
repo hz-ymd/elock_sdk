@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 15cd4ed
-# pg_map_hash: SHA-256 15cd4ed1b86b42eca4916be349689f08d1b978908c9afeae2ce436903c1c1968
+# pg_map_id: e12a5c1
+# pg_map_hash: SHA-256 e12a5c1228be4f3098f330b39b6181ed380efbb0b482e581edb9db2cac6d8144
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
     11:11:void <init>() -> <init>
     13:13:androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel) -> read
@@ -20216,31 +20216,31 @@ com.national.K -> com.national.K:
     295:297:void onProgressChanged(java.lang.String,int,float,float,int,int) -> onProgressChanged
 com.national.L -> com.national.L:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    709:709:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
-    712:743:void w() -> w
+    708:708:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
+    711:742:void w() -> w
 com.national.M -> com.national.M:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    749:749:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
-    752:776:void w() -> w
+    748:748:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
+    751:775:void w() -> w
 com.national.N -> com.national.N:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    906:906:void <init>(com.national.core.bt.service.BleServiceM,com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo) -> <init>
-    906:906:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-    911:1978:java.lang.String i() -> i
-    906:2942:void onPostExecute(java.lang.Object) -> onPostExecute
+    905:905:void <init>(com.national.core.bt.service.BleServiceM,com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo) -> <init>
+    905:905:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+    910:1977:java.lang.String i() -> i
+    905:2941:void onPostExecute(java.lang.Object) -> onPostExecute
 com.national.O -> com.national.O:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    1689:1689:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
-    1699:1757:void onStartFailure(int) -> onStartFailure
-    1692:1695:void onStartSuccess(android.bluetooth.le.AdvertiseSettings) -> onStartSuccess
+    1688:1688:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
+    1698:1756:void onStartFailure(int) -> onStartFailure
+    1691:1694:void onStartSuccess(android.bluetooth.le.AdvertiseSettings) -> onStartSuccess
 com.national.P -> com.national.P:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    1725:1725:void <init>(com.national.O) -> <init>
-    1728:1731:void run() -> run
+    1724:1724:void <init>(com.national.O) -> <init>
+    1727:1730:void run() -> run
 com.national.Q -> com.national.Q:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    1742:1742:void <init>(com.national.O) -> <init>
-    1745:2110:void run() -> run
+    1741:1741:void <init>(com.national.O) -> <init>
+    1744:2110:void run() -> run
 com.national.R -> com.national.R:
 # {"id":"sourceFile","fileName":"SourceFile"}
     29:30:void <clinit>() -> <clinit>
@@ -20332,7 +20332,7 @@ com.national.aC -> com.national.aC:
 com.national.aD -> com.national.aD:
 # {"id":"sourceFile","fileName":"SourceFile"}
     8:9:void <clinit>() -> <clinit>
-    13:52:java.lang.String m(byte[]) -> m
+    13:52:java.lang.String l(byte[]) -> l
 com.national.aE -> com.national.aE:
 # {"id":"sourceFile","fileName":"SourceFile"}
     19:23:void <init>(com.national.aE$a,long,long) -> <init>
@@ -20371,11 +20371,11 @@ com.national.aH -> com.national.aH:
     308:6104:java.lang.String ag() -> ag
     367:399:void ah() -> ah
     404:413:com.national.aq ai() -> ai
+    45:51:com.national.aH f(android.content.Context) -> f
     419:13117:void f(java.lang.String,java.lang.String) -> f
-    45:51:com.national.aH g(android.content.Context) -> g
+    136:136:java.lang.String g(android.content.Context) -> g
     117:120:java.lang.String getLatitude() -> getLatitude
     102:106:java.lang.String getLontitude() -> getLontitude
-    136:136:java.lang.String h(android.content.Context) -> h
     124:128:void setLatitude(java.lang.String) -> setLatitude
     110:114:void setLontitude(java.lang.String) -> setLontitude
     144:149:java.lang.String z(java.lang.String) -> z
@@ -20418,10 +20418,10 @@ com.national.aM -> com.national.aM:
     83:87:java.lang.String g(int) -> g
     328:330:byte h(int) -> h
     335:340:byte[] i(int) -> i
-    224:229:java.lang.String n(byte[]) -> n
-    253:6217:int o(byte[]) -> o
-    373:377:int p(byte[]) -> p
-    382:383:int q(byte[]) -> q
+    224:229:java.lang.String m(byte[]) -> m
+    253:6217:int n(byte[]) -> n
+    373:377:int o(byte[]) -> o
+    382:383:int p(byte[]) -> p
 com.national.aN -> com.national.aN:
 # {"id":"sourceFile","fileName":"SourceFile"}
     26:30:void <clinit>() -> <clinit>
@@ -20600,58 +20600,58 @@ com.national.ar -> com.national.ar:
     298:309:java.lang.String s(java.lang.String) -> s
 com.national.as -> com.national.as:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    70:70:void <clinit>() -> <clinit>
-    67:2078:void <init>(android.content.Context) -> <init>
-    765:12096:void T() -> T
-    809:820:void U() -> U
-    741:748:void a(int,java.lang.String) -> a
+    69:69:void <clinit>() -> <clinit>
+    66:2077:void <init>(android.content.Context) -> <init>
+    764:12096:void T() -> T
+    808:819:void U() -> U
+    740:747:void a(int,java.lang.String) -> a
     1155:1257:java.util.ArrayList a(java.lang.String,java.util.ArrayList) -> a
     1264:26095:void a(java.lang.String,java.util.List) -> a
     1506:38134:void a(com.national.ao) -> a
-    84:85:void c() -> c
-    89:99:boolean checkEnv(com.national.core.nw.it.OnResultListener) -> checkEnv
-    857:866:java.lang.String f(android.content.Context) -> f
-    871:17116:boolean handleMessage(android.os.Message) -> handleMessage
+    83:84:void c() -> c
+    88:98:boolean checkEnv(com.national.core.nw.it.OnResultListener) -> checkEnv
+    834:851:java.lang.String encryptionMD5(byte[]) -> encryptionMD5
+    856:865:java.lang.String getSignMd5Str(android.content.Context) -> getSignMd5Str
+    870:17116:boolean handleMessage(android.os.Message) -> handleMessage
     1338:34113:boolean hasListStored() -> hasListStored
     1519:1524:com.national.ao j(java.lang.String) -> j
-    835:852:java.lang.String l(byte[]) -> l
-    347:356:void requestAddLocationV2(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAddLocationV2
-    379:393:void requestAuthApp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthApp
-    398:409:void requestAuthAppDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthAppDelete
-    413:422:void requestAuthAppList(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthAppList
+    346:355:void requestAddLocationV2(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAddLocationV2
+    378:392:void requestAuthApp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthApp
+    397:408:void requestAuthAppDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthAppDelete
+    412:421:void requestAuthAppList(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthAppList
     1395:37168:void requestAuthIdCardByOcr(java.lang.String,com.national.p,com.national.core.nw.it.OnResultListener) -> requestAuthIdCardByOcr
-    426:436:void requestAuthIdcardDelete(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthIdcardDelete
-    441:453:void requestAuthIdcardList(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthIdcardList
-    492:508:void requestAuthManagement(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthManagement
-    471:487:void requestAuthWx(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthWx
-    457:466:void requestAuthWxList(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthWxList
-    528:4052:void requestBindLock(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestBindLock
-    202:215:void requestChangeLockSettings(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestChangeLockSettings
-    284:292:void requestCity(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestCity
-    322:330:void requestCommunity(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestCommunity
+    425:435:void requestAuthIdcardDelete(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthIdcardDelete
+    440:452:void requestAuthIdcardList(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthIdcardList
+    491:507:void requestAuthManagement(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthManagement
+    470:486:void requestAuthWx(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthWx
+    456:465:void requestAuthWxList(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthWxList
+    527:4052:void requestBindLock(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestBindLock
+    201:214:void requestChangeLockSettings(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestChangeLockSettings
+    283:291:void requestCity(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestCity
+    321:329:void requestCommunity(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestCommunity
     1446:1454:void requestDeleteLockShare(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestDeleteLockShare
-    296:305:void requestDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestDistrict
-    222:235:void requestExtendAuth(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestExtendAuth
-    239:251:void requestFaceCompare(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestFaceCompare
-    512:524:void requestGiveBackManagement(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestGiveBackManagement
-    128:145:void requestLockAuthRecord(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockAuthRecord
-    184:196:void requestLockDetails(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockDetails
-    650:659:void requestLockList(com.national.core.nw.it.OnResultListener) -> requestLockList
-    108:123:void requestLockOpenRecord(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockOpenRecord
-    586:7345:void requestLogin(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLogin
-    569:4066:void requestLoginByFace(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLoginByFace
-    556:562:void requestLoginOut(com.national.core.nw.it.OnResultListener) -> requestLoginOut
+    295:304:void requestDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestDistrict
+    221:234:void requestExtendAuth(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestExtendAuth
+    238:250:void requestFaceCompare(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestFaceCompare
+    511:523:void requestGiveBackManagement(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestGiveBackManagement
+    127:144:void requestLockAuthRecord(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockAuthRecord
+    183:195:void requestLockDetails(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockDetails
+    649:658:void requestLockList(com.national.core.nw.it.OnResultListener) -> requestLockList
+    107:122:void requestLockOpenRecord(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockOpenRecord
+    585:7345:void requestLogin(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLogin
+    568:4066:void requestLoginByFace(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLoginByFace
+    555:561:void requestLoginOut(com.national.core.nw.it.OnResultListener) -> requestLoginOut
     1470:1479:void requestLongLockPwdList(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLongLockPwdList
-    684:11024:void requestOffLineLockList(com.national.core.nw.it.OnResultListener) -> requestOffLineLockList
-    255:269:void requestPidComfirm(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestPidComfirm
-    273:280:void requestProvince(com.national.core.nw.it.OnResultListener) -> requestProvince
+    683:11024:void requestOffLineLockList(com.national.core.nw.it.OnResultListener) -> requestOffLineLockList
+    254:268:void requestPidComfirm(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestPidComfirm
+    272:279:void requestProvince(com.national.core.nw.it.OnResultListener) -> requestProvince
     1427:1441:void requestShareLongLockPwd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestShareLongLockPwd
-    309:318:void requestStreet(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestStreet
-    334:343:void requestSubDistrictByDivision(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestSubDistrictByDivision
-    626:9066:void requestSysConfig(com.national.core.nw.it.OnResultListener) -> requestSysConfig
-    362:374:void requestUnbindLock(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUnbindLock
-    166:180:void requestUpdateCardName(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateCardName
-    150:162:void requestUpdateLockName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateLockName
+    308:317:void requestStreet(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestStreet
+    333:342:void requestSubDistrictByDivision(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestSubDistrictByDivision
+    625:9066:void requestSysConfig(com.national.core.nw.it.OnResultListener) -> requestSysConfig
+    361:373:void requestUnbindLock(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUnbindLock
+    165:179:void requestUpdateCardName(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateCardName
+    149:161:void requestUpdateLockName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateLockName
     1458:1465:void requestUpdateLongLockPwdStatus(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateLongLockPwdStatus
 com.national.at -> com.national.at:
 # {"id":"sourceFile","fileName":"SourceFile"}
@@ -21640,24 +21640,56 @@ com.national.btlock.ocr.ui.util.ImageUtil -> com.national.btlock.ocr.ui.util.Ima
     193:204:int pack(byte[],int,int,boolean) -> pack
     20:20:android.graphics.Bitmap readFromFile(java.lang.String) -> readFromFile
     28:43:byte[] readStream(java.lang.String) -> readStream
+com.national.btlock.sdk.AccountVerifiedActivity -> com.national.btlock.sdk.AccountVerifiedActivity:
+    18:18:void <init>() -> <init>
+    26:71:void onCreate(android.os.Bundle) -> onCreate
+    75:81:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+com.national.btlock.sdk.AccountVerifiedActivity$1 -> com.national.btlock.sdk.AccountVerifiedActivity$1:
+    36:36:void <init>(com.national.btlock.sdk.AccountVerifiedActivity) -> <init>
+    39:67:void onClick(android.view.View) -> onClick
+com.national.btlock.sdk.AccountVerifiedActivity$1$1 -> com.national.btlock.sdk.AccountVerifiedActivity$1$1:
+    50:50:void <init>(com.national.btlock.sdk.AccountVerifiedActivity$1) -> <init>
+    62:64:void identificationError(java.lang.String,java.lang.String) -> identificationError
+    53:58:void identificationSuc() -> identificationSuc
 com.national.btlock.sdk.BaseActivity -> com.national.btlock.sdk.BaseActivity:
+    void $r8$lambda$fksLJtPx85_Iy5jrlJABzCxYrek(com.national.btlock.sdk.BaseActivity,android.view.View) -> $r8$lambda$fksLJtPx85_Iy5jrlJABzCxYrek
+      # {"id":"com.android.tools.r8.synthesized"}
     19:19:void <init>() -> <init>
-    42:83:void init() -> init
-    25:29:void onCreate(android.os.Bundle) -> onCreate
+    37:64:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
+    81:147:void login() -> login
+    26:67:void onCreate(android.os.Bundle) -> onCreate
+com.national.btlock.sdk.BaseActivity$$ExternalSyntheticLambda0 -> com.national.btlock.sdk.BaseActivity$$ExternalSyntheticLambda0:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    com.national.btlock.sdk.BaseActivity com.national.btlock.sdk.BaseActivity$$InternalSyntheticLambda$0$2ee40465821bb4defa3aebd76336d77b1b487607eba985a6101e05e902a86330$0.f$0 -> f$0
+    void com.national.btlock.sdk.BaseActivity$$InternalSyntheticLambda$0$2ee40465821bb4defa3aebd76336d77b1b487607eba985a6101e05e902a86330$0.<init>(com.national.btlock.sdk.BaseActivity) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void com.national.btlock.sdk.BaseActivity$$InternalSyntheticLambda$0$2ee40465821bb4defa3aebd76336d77b1b487607eba985a6101e05e902a86330$0.onClick(android.view.View) -> onClick
+      # {"id":"com.android.tools.r8.synthesized"}
 com.national.btlock.sdk.BaseActivity$1 -> com.national.btlock.sdk.BaseActivity$1:
-    42:42:void <init>(com.national.btlock.sdk.BaseActivity) -> <init>
-    65:66:void onError(java.lang.String,java.lang.String) -> onError
-    45:59:void onSuccess(java.lang.String) -> onSuccess
+    50:50:void <init>(com.national.btlock.sdk.BaseActivity) -> <init>
+    60:61:void initFailure(java.lang.String,java.lang.String) -> initFailure
+    53:56:void initSuccess() -> initSuccess
+com.national.btlock.sdk.BaseActivity$2 -> com.national.btlock.sdk.BaseActivity$2:
+    81:81:void <init>(com.national.btlock.sdk.BaseActivity) -> <init>
+    103:130:void onError(java.lang.String,java.lang.String) -> onError
+    84:98:void onSuccess(java.lang.String) -> onSuccess
+com.national.btlock.sdk.BaseActivity$2$1 -> com.national.btlock.sdk.BaseActivity$2$1:
+    106:106:void <init>(com.national.btlock.sdk.BaseActivity$2) -> <init>
+    109:112:void onClick(android.content.DialogInterface,int) -> onClick
+com.national.btlock.sdk.BaseActivity$2$2 -> com.national.btlock.sdk.BaseActivity$2$2:
+    115:115:void <init>(com.national.btlock.sdk.BaseActivity$2) -> <init>
+    118:119:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.sdk.BuildConfig -> com.national.btlock.sdk.BuildConfig:
     7:7:void <clinit>() -> <clinit>
     6:6:void <init>() -> <init>
 com.national.btlock.sdk.LoginActivity -> com.national.btlock.sdk.LoginActivity:
     void $r8$lambda$KRi77Qkx1wBAVubzKScuMCJ2VpY(com.national.btlock.sdk.LoginActivity,android.view.View) -> $r8$lambda$KRi77Qkx1wBAVubzKScuMCJ2VpY
       # {"id":"com.android.tools.r8.synthesized"}
-    17:17:void <init>() -> <init>
-    32:58:void initActivity() -> initActivity
-    38:55:void lambda$initActivity$0(android.view.View) -> lambda$initActivity$0
-    26:29:void onCreate(android.os.Bundle) -> onCreate
+    20:20:void <init>() -> <init>
+    36:86:void initActivity() -> initActivity
+    61:83:void lambda$initActivity$0(android.view.View) -> lambda$initActivity$0
+    30:33:void onCreate(android.os.Bundle) -> onCreate
 com.national.btlock.sdk.LoginActivity$$ExternalSyntheticLambda0 -> com.national.btlock.sdk.LoginActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -21666,76 +21698,76 @@ com.national.btlock.sdk.LoginActivity$$ExternalSyntheticLambda0 -> com.national.
       # {"id":"com.android.tools.r8.synthesized"}
     void com.national.btlock.sdk.LoginActivity$$InternalSyntheticLambda$0$02972b7a29516be55ad4919d3c021e1be91a80fef778b0d074c0b1443c8962f2$0.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
+com.national.btlock.sdk.LoginActivity$1 -> com.national.btlock.sdk.LoginActivity$1:
+    48:48:void <init>(com.national.btlock.sdk.LoginActivity) -> <init>
+    51:52:void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    57:57:void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
 com.national.btlock.sdk.MainActivity -> com.national.btlock.sdk.MainActivity:
-    27:27:void <init>() -> <init>
-    94:112:java.lang.String encryptionMD5(byte[]) -> encryptionMD5
-    122:131:java.lang.String getSignMd5Str() -> getSignMd5Str
-    35:90:void onCreate(android.os.Bundle) -> onCreate
+    31:31:void <init>() -> <init>
+    153:171:java.lang.String encryptionMD5(byte[]) -> encryptionMD5
+    181:190:java.lang.String getSignMd5Str() -> getSignMd5Str
+    39:112:void onCreate(android.os.Bundle) -> onCreate
+    116:150:void onResume() -> onResume
 com.national.btlock.sdk.MainActivity$1 -> com.national.btlock.sdk.MainActivity$1:
-    55:55:void <init>(com.national.btlock.sdk.MainActivity) -> <init>
-    64:64:void identificationError(java.lang.String,java.lang.String) -> identificationError
-    59:59:void identificationSuc() -> identificationSuc
+    91:91:void <init>(com.national.btlock.sdk.MainActivity) -> <init>
+    94:108:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.national.btlock.sdk.MainActivity$1$1 -> com.national.btlock.sdk.MainActivity$1$1:
+    94:94:void <init>(com.national.btlock.sdk.MainActivity$1) -> <init>
+    106:106:void onError(java.lang.String,java.lang.String) -> onError
+    97:101:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.MainActivity$2 -> com.national.btlock.sdk.MainActivity$2:
-    70:70:void <init>(com.national.btlock.sdk.MainActivity) -> <init>
-    73:87:void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.national.btlock.sdk.MainActivity$2$1 -> com.national.btlock.sdk.MainActivity$2$1:
-    73:73:void <init>(com.national.btlock.sdk.MainActivity$2) -> <init>
-    85:85:void onError(java.lang.String,java.lang.String) -> onError
-    76:80:void onSuccess(java.lang.String) -> onSuccess
+    120:120:void <init>(com.national.btlock.sdk.MainActivity) -> <init>
+    123:125:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.sdk.MyApp -> com.national.btlock.sdk.MyApp:
-    7:7:void <init>() -> <init>
-    12:39:void onCreate() -> onCreate
-com.national.btlock.sdk.MyApp$1 -> com.national.btlock.sdk.MyApp$1:
-    24:24:void <init>(com.national.btlock.sdk.MyApp) -> <init>
-    33:34:void initFailure(java.lang.String,java.lang.String) -> initFailure
-    27:29:void initSuccess() -> initSuccess
+    5:5:void <init>() -> <init>
+    10:36:void onCreate() -> onCreate
 com.national.btlock.sdk.SdkHelper -> com.national.btlock.sdk.SdkHelper:
-    152:152:void <clinit>() -> <clinit>
-    37:37:void <init>() -> <init>
-    427:447:void faceInit(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceInit
+    147:147:void <clinit>() -> <clinit>
+    32:32:void <init>() -> <init>
+    422:447:void faceInit(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceInit
     456:473:void faceLogin(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceLogin
-    249:249:com.national.btlock.sdk.SdkHelper$identificationCallBack getCallBack() -> getCallBack
-    41:44:com.national.btlock.sdk.SdkHelper getInstance() -> getInstance
-    112:112:java.lang.String getLicenseFileName() -> getLicenseFileName
-    104:104:java.lang.String getLicenseId() -> getLicenseId
-    260:260:com.national.btlock.sdk.SdkHelper$CallBack getLoginCallBack() -> getLoginCallBack
+    244:244:com.national.btlock.sdk.SdkHelper$identificationCallBack getCallBack() -> getCallBack
+    36:39:com.national.btlock.sdk.SdkHelper getInstance() -> getInstance
+    107:107:java.lang.String getLicenseFileName() -> getLicenseFileName
+    99:99:java.lang.String getLicenseId() -> getLicenseId
+    255:255:com.national.btlock.sdk.SdkHelper$CallBack getLoginCallBack() -> getLoginCallBack
     477:485:long getNum(int) -> getNum
-    276:306:void identification(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$identificationCallBack) -> identification
-    65:93:void init(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
-    129:149:void init(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
-    385:419:void login(android.content.Context,java.lang.String,com.national.btlock.sdk.SdkHelper$CallBack) -> login
+    271:301:void identification(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$identificationCallBack) -> identification
+    60:88:void init(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
+    124:144:void init(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
+    379:413:void login(android.content.Context,java.lang.String,com.national.btlock.sdk.SdkHelper$CallBack) -> login
     490:493:void loginListener(android.content.Context,android.content.BroadcastReceiver) -> loginListener
-    319:331:void loginOut(com.national.btlock.sdk.SdkHelper$CallBack) -> loginOut
-    99:101:void setBaiduFaceConfig(java.lang.String,java.lang.String) -> setBaiduFaceConfig
-    245:246:void setCallBack(com.national.btlock.sdk.SdkHelper$identificationCallBack) -> setCallBack
-    155:224:boolean setFaceConfig() -> setFaceConfig
-    116:117:void setLicenseFileName(java.lang.String) -> setLicenseFileName
-    108:109:void setLicenseId(java.lang.String) -> setLicenseId
-    256:257:void setLoginCallBack(com.national.btlock.sdk.SdkHelper$CallBack) -> setLoginCallBack
+    314:326:void loginOut(com.national.btlock.sdk.SdkHelper$CallBack) -> loginOut
+    94:96:void setBaiduFaceConfig(java.lang.String,java.lang.String) -> setBaiduFaceConfig
+    240:241:void setCallBack(com.national.btlock.sdk.SdkHelper$identificationCallBack) -> setCallBack
+    150:219:boolean setFaceConfig() -> setFaceConfig
+    111:112:void setLicenseFileName(java.lang.String) -> setLicenseFileName
+    103:104:void setLicenseId(java.lang.String) -> setLicenseId
+    251:252:void setLoginCallBack(com.national.btlock.sdk.SdkHelper$CallBack) -> setLoginCallBack
 com.national.btlock.sdk.SdkHelper$1 -> com.national.btlock.sdk.SdkHelper$1:
-    80:80:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
-    88:90:void initFailure(int,java.lang.String) -> initFailure
-    83:84:void initSuccess() -> initSuccess
+    75:75:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
+    83:85:void initFailure(int,java.lang.String) -> initFailure
+    78:79:void initSuccess() -> initSuccess
 com.national.btlock.sdk.SdkHelper$2 -> com.national.btlock.sdk.SdkHelper$2:
-    135:135:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
-    143:145:void onError(java.lang.String,java.lang.String) -> onError
-    138:139:void onSuccess(java.lang.String) -> onSuccess
+    130:130:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
+    138:140:void onError(java.lang.String,java.lang.String) -> onError
+    133:134:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$3 -> com.national.btlock.sdk.SdkHelper$3:
-    284:284:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$identificationCallBack,java.lang.String,java.lang.String,android.content.Context) -> <init>
-    301:303:void initFailure(int,java.lang.String) -> initFailure
-    287:297:void initSuccess() -> initSuccess
+    279:279:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$identificationCallBack,java.lang.String,java.lang.String,android.content.Context) -> <init>
+    296:298:void initFailure(int,java.lang.String) -> initFailure
+    282:292:void initSuccess() -> initSuccess
 com.national.btlock.sdk.SdkHelper$4 -> com.national.btlock.sdk.SdkHelper$4:
-    319:319:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    327:329:void onError(java.lang.String,java.lang.String) -> onError
-    322:323:void onSuccess(java.lang.String) -> onSuccess
+    314:314:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
+    322:324:void onError(java.lang.String,java.lang.String) -> onError
+    317:318:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$5 -> com.national.btlock.sdk.SdkHelper$5:
-    386:386:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    394:395:void onError(java.lang.String,java.lang.String) -> onError
-    389:390:void onSuccess(java.lang.String) -> onSuccess
+    380:380:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
+    388:389:void onError(java.lang.String,java.lang.String) -> onError
+    383:384:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$6 -> com.national.btlock.sdk.SdkHelper$6:
-    401:401:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
-    409:414:void onError(java.lang.String,java.lang.String) -> onError
-    404:405:void onSuccess(java.lang.String) -> onSuccess
+    395:395:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
+    403:408:void onError(java.lang.String,java.lang.String) -> onError
+    398:399:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$7 -> com.national.btlock.sdk.SdkHelper$7:
     435:435:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
     443:445:void initFailure(int,java.lang.String) -> initFailure
@@ -21745,15 +21777,35 @@ com.national.btlock.sdk.SdkHelper$8 -> com.national.btlock.sdk.SdkHelper$8:
     467:469:void onError(java.lang.String,java.lang.String) -> onError
     459:463:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SplashActivity -> com.national.btlock.sdk.SplashActivity:
-    12:12:void <init>() -> <init>
-    15:29:void onCreate(android.os.Bundle) -> onCreate
-com.national.btlock.sdk.databinding.ActivityLoginBinding -> com.national.btlock.sdk.databinding.ActivityLoginBinding:
-    41:48:void <init>(androidx.constraintlayout.widget.ConstraintLayout,androidx.constraintlayout.widget.ConstraintLayout,android.widget.ProgressBar,android.widget.Button,android.widget.EditText,android.widget.EditText) -> <init>
-    77:107:com.national.btlock.sdk.databinding.ActivityLoginBinding bind(android.view.View) -> bind
+    14:14:void <init>() -> <init>
+    14:14:void access$000(com.national.btlock.sdk.SplashActivity) -> access$000
+    43:70:void init() -> init
+    19:35:void onCreate(android.os.Bundle) -> onCreate
+com.national.btlock.sdk.SplashActivity$1 -> com.national.btlock.sdk.SplashActivity$1:
+    56:56:void <init>(com.national.btlock.sdk.SplashActivity) -> <init>
+    66:67:void initFailure(java.lang.String,java.lang.String) -> initFailure
+    59:62:void initSuccess() -> initSuccess
+com.national.btlock.sdk.databinding.ActivityAccountVerifiedBinding -> com.national.btlock.sdk.databinding.ActivityAccountVerifiedBinding:
+    41:48:void <init>(androidx.constraintlayout.widget.ConstraintLayout,android.widget.Button,android.widget.EditText,android.widget.EditText,android.widget.LinearLayout,android.widget.LinearLayout) -> <init>
+    77:111:com.national.btlock.sdk.databinding.ActivityAccountVerifiedBinding bind(android.view.View) -> bind
     20:20:android.view.View getRoot() -> getRoot
     53:53:androidx.constraintlayout.widget.ConstraintLayout getRoot() -> getRoot
-    58:58:com.national.btlock.sdk.databinding.ActivityLoginBinding inflate(android.view.LayoutInflater) -> inflate
-    64:68:com.national.btlock.sdk.databinding.ActivityLoginBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean) -> inflate
+    58:58:com.national.btlock.sdk.databinding.ActivityAccountVerifiedBinding inflate(android.view.LayoutInflater) -> inflate
+    64:68:com.national.btlock.sdk.databinding.ActivityAccountVerifiedBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean) -> inflate
+com.national.btlock.sdk.databinding.ActivityBaseBinding -> com.national.btlock.sdk.databinding.ActivityBaseBinding:
+    25:28:void <init>(android.widget.LinearLayout,android.widget.TextView) -> <init>
+    57:66:com.national.btlock.sdk.databinding.ActivityBaseBinding bind(android.view.View) -> bind
+    18:18:android.view.View getRoot() -> getRoot
+    33:33:android.widget.LinearLayout getRoot() -> getRoot
+    38:38:com.national.btlock.sdk.databinding.ActivityBaseBinding inflate(android.view.LayoutInflater) -> inflate
+    44:48:com.national.btlock.sdk.databinding.ActivityBaseBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean) -> inflate
+com.national.btlock.sdk.databinding.ActivityLoginBinding -> com.national.btlock.sdk.databinding.ActivityLoginBinding:
+    45:53:void <init>(androidx.constraintlayout.widget.ConstraintLayout,androidx.constraintlayout.widget.ConstraintLayout,android.widget.ProgressBar,android.widget.Button,android.widget.EditText,android.widget.Spinner,android.widget.EditText) -> <init>
+    82:118:com.national.btlock.sdk.databinding.ActivityLoginBinding bind(android.view.View) -> bind
+    21:21:android.view.View getRoot() -> getRoot
+    58:58:androidx.constraintlayout.widget.ConstraintLayout getRoot() -> getRoot
+    63:63:com.national.btlock.sdk.databinding.ActivityLoginBinding inflate(android.view.LayoutInflater) -> inflate
+    69:73:com.national.btlock.sdk.databinding.ActivityLoginBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean) -> inflate
 com.national.btlock.sdk.databinding.ActivityMainBinding -> com.national.btlock.sdk.databinding.ActivityMainBinding:
     29:33:void <init>(androidx.constraintlayout.widget.ConstraintLayout,androidx.constraintlayout.widget.ConstraintLayout,com.google.android.material.bottomnavigation.BottomNavigationView) -> <init>
     62:73:com.national.btlock.sdk.databinding.ActivityMainBinding bind(android.view.View) -> bind
@@ -21785,11 +21837,11 @@ com.national.btlock.sdk.ui.me.MeFragment -> com.national.btlock.sdk.ui.me.MeFrag
       # {"id":"com.android.tools.r8.synthesized"}
     void $r8$lambda$zMcvK-khwQ_KdI00pGemYpLGrWw(com.national.btlock.sdk.ui.me.MeFragment,android.view.View) -> $r8$lambda$zMcvK-khwQ_KdI00pGemYpLGrWw
       # {"id":"com.android.tools.r8.synthesized"}
-    20:20:void <init>() -> <init>
-    37:37:void lambda$onCreateView$0(android.view.View) -> lambda$onCreateView$0
-    54:54:void lambda$onCreateView$1(android.view.View) -> lambda$onCreateView$1
-    28:69:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    74:76:void onDestroyView() -> onDestroyView
+    22:22:void <init>() -> <init>
+    46:48:void lambda$onCreateView$0(android.view.View) -> lambda$onCreateView$0
+    52:52:void lambda$onCreateView$1(android.view.View) -> lambda$onCreateView$1
+    28:67:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    72:74:void onDestroyView() -> onDestroyView
 com.national.btlock.sdk.ui.me.MeFragment$$ExternalSyntheticLambda0 -> com.national.btlock.sdk.ui.me.MeFragment$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -21807,13 +21859,9 @@ com.national.btlock.sdk.ui.me.MeFragment$$ExternalSyntheticLambda1 -> com.nation
     void com.national.btlock.sdk.ui.me.MeFragment$$InternalSyntheticLambda$0$80caeb61a68fab6c66c37c327da229f0def8f35e6c520601f1119ae42d422943$1.onClick(android.view.View) -> onClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.national.btlock.sdk.ui.me.MeFragment$1 -> com.national.btlock.sdk.ui.me.MeFragment$1:
-    37:37:void <init>(com.national.btlock.sdk.ui.me.MeFragment) -> <init>
-    46:48:void identificationError(java.lang.String,java.lang.String) -> identificationError
-    40:41:void identificationSuc() -> identificationSuc
-com.national.btlock.sdk.ui.me.MeFragment$2 -> com.national.btlock.sdk.ui.me.MeFragment$2:
-    54:54:void <init>(com.national.btlock.sdk.ui.me.MeFragment) -> <init>
-    66:66:void onError(java.lang.String,java.lang.String) -> onError
-    57:61:void onSuccess(java.lang.String) -> onSuccess
+    52:52:void <init>(com.national.btlock.sdk.ui.me.MeFragment) -> <init>
+    64:64:void onError(java.lang.String,java.lang.String) -> onError
+    55:59:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.ui.me.MeViewModel -> com.national.btlock.sdk.ui.me.MeViewModel:
     11:14:void <init>() -> <init>
     17:17:androidx.lifecycle.LiveData getText() -> getText
@@ -23283,99 +23331,101 @@ com.national.cardreader.User -> com.national.cardreader.User:
     26:27:void setPwd(java.lang.String) -> setPwd
 com.national.core.SDKCoreHelper -> com.national.core.SDKCoreHelper:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    95:1445:void <clinit>() -> <clinit>
-    98:113:void <init>() -> <init>
-    102:105:com.national.core.SDKCoreHelper a() -> a
-    484:509:void a(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> a
-    1002:18201:void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> a
-    1331:1340:com.national.core.nw.entity.LockListEntity$Lock a(java.lang.String,com.national.core.nw.it.OnResultListener) -> a
-    1402:19066:void a(java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> a
-    1077:1092:void authApp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authApp
-    1095:1110:void authAppDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authAppDelete
-    1113:1128:void authAppList(java.lang.String,com.national.core.nw.it.OnResultListener) -> authAppList
-    801:802:void authCardA(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> authCardA
-    807:9995:void authIdcard(java.lang.String,java.lang.String,java.lang.String,java.lang.String,byte[],com.national.core.nw.it.OnProgressUpdateListener) -> authIdcard
-    817:12304:void authIdcardByOcr(java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardByOcr
-    1280:1295:void authIdcardDelete(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardDelete
-    1262:1277:void authIdcardList(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardList
-    1299:1312:void authManagement(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authManagement
-    1168:1182:void authWx(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authWx
-    1150:1165:void authWxDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authWxDelete
-    1131:1146:void authWxList(java.lang.String,com.national.core.nw.it.OnResultListener) -> authWxList
-    133:146:void b() -> b
-    1394:1397:java.lang.String b(java.lang.String) -> b
-    1067:1073:void bindLock(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> bindLock
-    796:797:void c() -> c
-    93:19981:java.lang.String c(java.lang.String) -> c
-    540:548:void compareFace(byte[],com.national.core.nw.it.OnResultListener) -> compareFace
-    551:558:void confirmPID(java.lang.String,java.lang.String,byte[],com.national.core.nw.it.OnResultListener) -> confirmPID
-    1484:1528:boolean d() -> d
-    1208:1221:void deleteVistorPwd(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> deleteVistorPwd
-    93:93:java.lang.String e() -> e
-    513:527:void extendAuth(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> extendAuth
-    93:93:void f() -> f
-    93:19553:java.lang.String g() -> g
-    562:569:void getCity(java.lang.String,com.national.core.nw.it.OnResultListener) -> getCity
-    592:599:void getCommunity(java.lang.String,com.national.core.nw.it.OnResultListener) -> getCommunity
-    572:579:void getDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> getDistrict
-    377:390:void getLockAuthRecordList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockAuthRecordList
-    394:408:void getLockDetails(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockDetails
-    622:628:void getLockList(com.national.core.nw.it.OnResultListener) -> getLockList
-    252:5175:void getLockMac(com.national.core.nw.it.OnResultListener) -> getLockMac
-    1557:1569:java.lang.String getLockNames() -> getLockNames
-    360:373:void getLockOpenRecordList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockOpenRecordList
-    232:4333:void getLoginState(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLoginState
-    1243:1258:void getLongLockPwdList(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLongLockPwdList
-    641:648:void getOffLineLockList(com.national.core.nw.it.OnResultListener) -> getOffLineLockList
-    457:458:boolean getOfficeMode(java.lang.String) -> getOfficeMode
-    470:471:boolean getPowerSavingMode(java.lang.String) -> getPowerSavingMode
-    530:536:void getProvince(com.national.core.nw.it.OnResultListener) -> getProvince
-    582:589:void getStreet(java.lang.String,com.national.core.nw.it.OnResultListener) -> getStreet
-    602:609:void getSubDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> getSubDistrict
-    612:619:void getSubDistrictWithName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getSubDistrictWithName
-    631:637:void getSysConfig(com.national.core.nw.it.OnResultListener) -> getSysConfig
-    1316:1328:void giveBackManagement(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> giveBackManagement
-    93:93:android.location.LocationManager h() -> h
-    153:3056:void init(android.content.Context) -> init
-    198:4056:void init(android.content.Context,com.national.core.nw.it.OnResultListener) -> init
-    183:185:boolean isBleEnable() -> isBleEnable
-    1346:1352:boolean isBleNeedUpdate(java.lang.String) -> isBleNeedUpdate
-    1379:1385:boolean isLoraNeedUpdate(java.lang.String) -> isLoraNeedUpdate
-    1361:1368:boolean isMcuNeedUpdate(java.lang.String) -> isMcuNeedUpdate
-    318:326:void login(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> login
-    306:314:void loginFaceCheck(byte[],com.national.core.nw.it.OnResultListener) -> loginFaceCheck
-    329:337:void loginOut(com.national.core.nw.it.OnResultListener) -> loginOut
-    651:7293:void openLock(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> openLock
-    1537:1549:void release() -> release
-    463:467:void setOfficeMode(java.lang.String,java.lang.String,boolean,com.national.core.nw.it.OnResultListener) -> setOfficeMode
-    476:480:void setPowerSavingMode(java.lang.String,java.lang.String,boolean,com.national.core.nw.it.OnResultListener) -> setPowerSavingMode
-    1186:1205:void shareVistorPwd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> shareVistorPwd
-    751:9122:void syncData(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> syncData
-    341:356:void unbindLock(java.lang.String,com.national.core.nw.it.OnResultListener) -> unbindLock
-    1356:1357:void updateBle(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateBle
-    412:426:void updateCardName(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> updateCardName
-    429:454:void updateLockName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> updateLockName
-    1224:1239:void updateLongLockPwdStatus(java.lang.String,com.national.core.nw.it.OnResultListener) -> updateLongLockPwdStatus
-    1390:1391:void updateLora(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateLora
-    1373:1376:void updateMcu(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateMcu
+    93:1484:void <clinit>() -> <clinit>
+    96:111:void <init>() -> <init>
+    100:103:com.national.core.SDKCoreHelper a() -> a
+    523:548:void a(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> a
+    1041:18201:void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> a
+    1370:1379:com.national.core.nw.entity.LockListEntity$Lock a(java.lang.String,com.national.core.nw.it.OnResultListener) -> a
+    1441:19065:void a(java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> a
+    1116:1131:void authApp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authApp
+    1134:1149:void authAppDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authAppDelete
+    1152:1167:void authAppList(java.lang.String,com.national.core.nw.it.OnResultListener) -> authAppList
+    840:841:void authCardA(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> authCardA
+    846:10034:void authIdcard(java.lang.String,java.lang.String,java.lang.String,java.lang.String,byte[],com.national.core.nw.it.OnProgressUpdateListener) -> authIdcard
+    856:12304:void authIdcardByOcr(java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardByOcr
+    1319:1334:void authIdcardDelete(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardDelete
+    1301:1316:void authIdcardList(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardList
+    1338:1351:void authManagement(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authManagement
+    1207:1221:void authWx(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authWx
+    1189:1204:void authWxDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authWxDelete
+    1170:1185:void authWxList(java.lang.String,com.national.core.nw.it.OnResultListener) -> authWxList
+    143:155:void b() -> b
+    1433:1436:java.lang.String b(java.lang.String) -> b
+    1106:1112:void bindLock(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> bindLock
+    835:836:void c() -> c
+    91:20020:java.lang.String c(java.lang.String) -> c
+    579:587:void compareFace(byte[],com.national.core.nw.it.OnResultListener) -> compareFace
+    590:597:void confirmPID(java.lang.String,java.lang.String,byte[],com.national.core.nw.it.OnResultListener) -> confirmPID
+    1523:1567:boolean d() -> d
+    1247:1260:void deleteVistorPwd(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> deleteVistorPwd
+    91:91:java.lang.String e() -> e
+    199:216:java.lang.String encryptionMD5(byte[]) -> encryptionMD5
+    552:566:void extendAuth(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> extendAuth
+    91:91:void f() -> f
+    91:19590:java.lang.String g() -> g
+    601:608:void getCity(java.lang.String,com.national.core.nw.it.OnResultListener) -> getCity
+    631:638:void getCommunity(java.lang.String,com.national.core.nw.it.OnResultListener) -> getCommunity
+    611:618:void getDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> getDistrict
+    416:429:void getLockAuthRecordList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockAuthRecordList
+    433:447:void getLockDetails(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockDetails
+    661:667:void getLockList(com.national.core.nw.it.OnResultListener) -> getLockList
+    291:5174:void getLockMac(com.national.core.nw.it.OnResultListener) -> getLockMac
+    1594:1606:java.lang.String getLockNames() -> getLockNames
+    399:412:void getLockOpenRecordList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockOpenRecordList
+    271:4333:void getLoginState(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLoginState
+    1282:1297:void getLongLockPwdList(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLongLockPwdList
+    680:687:void getOffLineLockList(com.national.core.nw.it.OnResultListener) -> getOffLineLockList
+    496:497:boolean getOfficeMode(java.lang.String) -> getOfficeMode
+    509:510:boolean getPowerSavingMode(java.lang.String) -> getPowerSavingMode
+    569:575:void getProvince(com.national.core.nw.it.OnResultListener) -> getProvince
+    221:230:java.lang.String getSignMd5Str(android.content.Context) -> getSignMd5Str
+    621:628:void getStreet(java.lang.String,com.national.core.nw.it.OnResultListener) -> getStreet
+    641:648:void getSubDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> getSubDistrict
+    651:658:void getSubDistrictWithName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getSubDistrictWithName
+    670:676:void getSysConfig(com.national.core.nw.it.OnResultListener) -> getSysConfig
+    1355:1367:void giveBackManagement(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> giveBackManagement
+    91:91:android.location.LocationManager h() -> h
+    160:3056:void init(android.content.Context) -> init
+    237:4056:void init(android.content.Context,com.national.core.nw.it.OnResultListener) -> init
+    191:193:boolean isBleEnable() -> isBleEnable
+    1385:1391:boolean isBleNeedUpdate(java.lang.String) -> isBleNeedUpdate
+    1418:1424:boolean isLoraNeedUpdate(java.lang.String) -> isLoraNeedUpdate
+    1400:1407:boolean isMcuNeedUpdate(java.lang.String) -> isMcuNeedUpdate
+    357:365:void login(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> login
+    345:353:void loginFaceCheck(byte[],com.national.core.nw.it.OnResultListener) -> loginFaceCheck
+    368:376:void loginOut(com.national.core.nw.it.OnResultListener) -> loginOut
+    690:7293:void openLock(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> openLock
+    1573:1586:void release() -> release
+    502:506:void setOfficeMode(java.lang.String,java.lang.String,boolean,com.national.core.nw.it.OnResultListener) -> setOfficeMode
+    515:519:void setPowerSavingMode(java.lang.String,java.lang.String,boolean,com.national.core.nw.it.OnResultListener) -> setPowerSavingMode
+    1225:1244:void shareVistorPwd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> shareVistorPwd
+    790:9122:void syncData(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> syncData
+    380:395:void unbindLock(java.lang.String,com.national.core.nw.it.OnResultListener) -> unbindLock
+    1395:1396:void updateBle(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateBle
+    451:465:void updateCardName(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> updateCardName
+    468:493:void updateLockName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> updateLockName
+    1263:1278:void updateLongLockPwdStatus(java.lang.String,com.national.core.nw.it.OnResultListener) -> updateLongLockPwdStatus
+    1429:1430:void updateLora(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateLora
+    1412:1415:void updateMcu(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateMcu
 com.national.core.bt.service.BleServiceM -> com.national.core.bt.service.BleServiceM:
 # {"id":"sourceFile","fileName":"SourceFile"}
     104:3068:void <init>() -> <init>
-    1663:1670:android.bluetooth.le.AdvertiseSettings A() -> A
-    1681:1687:void B() -> B
-    1762:25293:void C() -> C
-    2091:2096:void D() -> D
-    2101:30036:void E() -> E
-    2119:31028:void F() -> F
+    1662:1669:android.bluetooth.le.AdvertiseSettings A() -> A
+    1680:1686:void B() -> B
+    1761:25293:void C() -> C
+    2090:2095:void D() -> D
+    2100:30036:void E() -> E
+    2118:31028:void F() -> F
     104:104:java.lang.Object a(com.national.core.bt.service.BleServiceM) -> a
     104:104:void a(com.national.core.bt.service.BleServiceM,java.lang.String) -> a
-    836:901:boolean a(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
-    906:945:void a(com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo) -> a
-    1336:9384:void a(com.national.vise.baseble.model.BluetoothLeDevice) -> a
-    1401:1417:void a(com.national.W) -> a
-    1472:23676:void a(android.bluetooth.BluetoothDevice,boolean) -> a
-    1793:27112:void a(com.national.vise.baseble.model.BluetoothLeDevice,boolean) -> a
-    2126:31134:void a(com.national.ao) -> a
+    835:900:boolean a(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    905:944:void a(com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo) -> a
+    1335:9383:void a(com.national.vise.baseble.model.BluetoothLeDevice) -> a
+    1400:1416:void a(com.national.W) -> a
+    1471:23675:void a(android.bluetooth.BluetoothDevice,boolean) -> a
+    1792:27112:void a(com.national.vise.baseble.model.BluetoothLeDevice,boolean) -> a
+    2125:31134:void a(com.national.ao) -> a
     104:104:void b(com.national.core.bt.service.BleServiceM) -> b
     104:104:void b(com.national.core.bt.service.BleServiceM,java.lang.String) -> b
     104:104:void c(com.national.core.bt.service.BleServiceM,java.lang.String) -> c
@@ -23387,14 +23437,14 @@ com.national.core.bt.service.BleServiceM -> com.national.core.bt.service.BleServ
       # {"id":"com.android.tools.r8.synthesized"}
     123:130:void e(java.lang.String) -> e
     255:367:void f(java.lang.String) -> f
-    988:1024:java.lang.String g(java.lang.String) -> g
+    987:1023:java.lang.String g(java.lang.String) -> g
     391:410:java.lang.String getMac() -> getMac
-    1420:11110:void h(java.lang.String) -> h
+    1419:11110:void h(java.lang.String) -> h
     417:4384:boolean handleMessage(android.os.Message) -> handleMessage
     void i(java.lang.String,java.lang.String) -> i
       # {"id":"com.android.tools.r8.synthesized"}
-    1779:26293:void i(java.lang.String) -> i
-    2139:2144:com.national.ao j(java.lang.String) -> j
+    1778:26293:void i(java.lang.String) -> i
+    2138:2143:com.national.ao j(java.lang.String) -> j
     689:689:android.os.IBinder onBind(android.content.Intent) -> onBind
     502:4664:void onCreate() -> onCreate
     void onDfuComplete() -> onDfuComplete
@@ -23408,7 +23458,7 @@ com.national.core.bt.service.BleServiceM -> com.national.core.bt.service.BleServ
     564:7064:void onEventMainThread(java.lang.String) -> onEventMainThread
     247:250:void onProgressUpdate(java.lang.String) -> onProgressUpdate
     669:670:int onStartCommand(android.content.Intent,int,int) -> onStartCommand
-    793:8115:boolean onUnbind(android.content.Intent) -> onUnbind
+    792:8114:boolean onUnbind(android.content.Intent) -> onUnbind
     com.goodix.ble.libcomx.ILogger subLogger() -> subLogger
       # {"id":"com.android.tools.r8.synthesized"}
     void v(java.lang.String,java.lang.String) -> v
@@ -23416,8 +23466,8 @@ com.national.core.bt.service.BleServiceM -> com.national.core.bt.service.BleServ
     void w(java.lang.String,java.lang.String) -> w
       # {"id":"com.android.tools.r8.synthesized"}
     675:682:com.national.core.bt.service.BleServiceM x() -> x
-    1458:1466:boolean y() -> y
-    1575:1598:void z() -> z
+    1457:1465:boolean y() -> y
+    1574:1597:void z() -> z
 com.national.core.bt.service.BleServiceM$a -> com.national.core.bt.service.BleServiceM$a:
 # {"id":"sourceFile","fileName":"SourceFile"}
     484:484:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
@@ -24307,31 +24357,32 @@ com.national.core.update.dfu.NotificationActivity -> com.national.core.update.df
     14:27:void onCreate(android.os.Bundle) -> onCreate
 com.national.d -> com.national.d:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    113:113:void <init>(com.national.core.SDKCoreHelper) -> <init>
-    116:4047:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
-    127:128:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+    111:111:void <init>(com.national.core.SDKCoreHelper) -> <init>
+    136:138:void onBindingDied(android.content.ComponentName) -> onBindingDied
+    115:4047:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
+    125:126:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.national.e -> com.national.e:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    173:174:void run() -> run
+    181:182:void run() -> run
 com.national.f -> com.national.f:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    221:222:void run() -> run
+    260:261:void run() -> run
 com.national.g -> com.national.g:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    271:271:void <init>(com.national.core.bt.service.BleServiceM,com.national.core.nw.it.OnResultListener) -> <init>
-    271:3179:java.lang.Object call() -> call
+    310:310:void <init>(com.national.core.bt.service.BleServiceM,com.national.core.nw.it.OnResultListener) -> <init>
+    310:4178:java.lang.Object call() -> call
 com.national.h -> com.national.h:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    851:851:void <init>(java.lang.String,com.national.core.nw.entity.LockListEntity$Lock,com.national.core.nw.it.OnResultListener) -> <init>
-    851:851:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-    854:939:java.lang.String i() -> i
-    851:4164:void onPostExecute(java.lang.Object) -> onPostExecute
+    890:890:void <init>(java.lang.String,com.national.core.nw.entity.LockListEntity$Lock,com.national.core.nw.it.OnResultListener) -> <init>
+    890:890:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+    893:978:java.lang.String i() -> i
+    890:4164:void onPostExecute(java.lang.Object) -> onPostExecute
 com.national.i -> com.national.i:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    1466:1479:void onLocationChanged(android.location.Location) -> onLocationChanged
-    1460:1460:void onProviderDisabled(java.lang.String) -> onProviderDisabled
-    1455:1455:void onProviderEnabled(java.lang.String) -> onProviderEnabled
-    1450:1450:void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
+    1505:1518:void onLocationChanged(android.location.Location) -> onLocationChanged
+    1499:1499:void onProviderDisabled(java.lang.String) -> onProviderDisabled
+    1494:1494:void onProviderEnabled(java.lang.String) -> onProviderEnabled
+    1489:1489:void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
 com.national.j -> com.national.j:
 # {"id":"sourceFile","fileName":"SourceFile"}
     22:42:void <clinit>() -> <clinit>
@@ -24350,8 +24401,8 @@ com.national.m -> com.national.m:
     22:22:android.content.Context a(com.national.m) -> a
     33:38:com.national.m a(android.content.Context) -> a
     22:22:com.national.m$a b(com.national.m) -> b
-    121:123:java.util.List j() -> j
-    128:130:android.bluetooth.le.ScanSettings k() -> k
+    120:122:java.util.List j() -> j
+    127:129:android.bluetooth.le.ScanSettings k() -> k
 com.national.m$a -> com.national.m$a:
 # {"id":"sourceFile","fileName":"SourceFile"}
 com.national.mylibrary.BuildConfig -> com.national.mylibrary.BuildConfig:

@@ -4,7 +4,6 @@
     package="com.national.btlock.sdk">
 
 
-
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -30,6 +29,9 @@
             android:exported="false"
             android:theme="@style/Theme.ElockSdk_NoActionBar" />
 
+        <activity android:name=".AccountVerifiedActivity">
+
+        </activity>
 
         <activity
             android:name=".SplashActivity"

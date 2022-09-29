@@ -367,7 +367,6 @@ public class SdkHelper {
 //    }
 
 
-
     /**
      * 登录
      *
@@ -418,8 +417,14 @@ public class SdkHelper {
 
 
     public void faceInit(Context context, CallBack callBack) {
+
+        if (TextUtils.isEmpty(licenseId) || TextUtils.isEmpty(licenseFileName)) {
+            callBack.onError(FACE_INIT_FAIL_JSON_ERROR, "人脸识别初始化失败 = 参数未配置");
+            return;
+        }
+
         if (!setFaceConfig()) {
-            callBack.onError(FACE_INIT_FAIL_JSON_ERROR, "初始化失败 = json配置文件解析出错");
+            callBack.onError(FACE_INIT_FAIL_JSON_ERROR, "人脸识别初始化失败 = json配置文件解析出错");
             return;
         }
         // 为了android和ios 区分授权，appId=appname_face_android ,其中appname为申请sdk时的应用名

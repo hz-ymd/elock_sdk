@@ -1,8 +1,10 @@
 package com.national.btlock.sdk;
 
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -48,24 +50,41 @@ public class MainActivity extends AppCompatActivity implements Constants {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         Log.d(TAG, "MD5:" + getSignMd5Str().toUpperCase());
-        if (getIntent().getExtras() != null) {
-            String isAccountVerified = getIntent().getExtras().getString("isAccountVerified");
-            if (!TextUtils.isEmpty(isAccountVerified) && !isAccountVerified.equals("1")) {
-                SdkHelper.getInstance().identification(this,  "name", "idcardNo",
-                        new SdkHelper.identificationCallBack() {
-                            @Override
-                            public void identificationSuc() {
-
-                            }
-
-                            @Override
-                            public void identificationError(String errCode, String errMsg) {
-
-                            }
-
-                        });
-            }
-        }
+//        if (getIntent().getExtras() != null) {
+//            String isAccountVerified = getIntent().getExtras().getString("isAccountVerified");
+//            if (!TextUtils.isEmpty(isAccountVerified) && !isAccountVerified.equals("1")) {
+//                AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+//                dlg.setMessage("该账号未实名，前往实名");
+//                dlg.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int whichButton) {
+//                        Intent intent = new Intent(MainActivity.this, AccountVerifiedActivity.class);
+//                        startActivity(intent);
+//                    }
+//                });
+//
+//                dlg.setNegativeButton("取消", null);
+//                dlg.setCancelable(false);
+//
+//                if (!isFinishing()) {
+//                    dlg.create().show();
+//                }
+//
+////                SdkHelper.getInstance().identification(this, "name", "idcardNo",
+////                        new SdkHelper.identificationCallBack() {
+////                            @Override
+////                            public void identificationSuc() {
+////
+////                            }
+////
+////                            @Override
+////                            public void identificationError(String errCode, String errMsg) {
+////
+////                            }
+////
+////                        });
+//            }
+//        }
 
         SdkHelper.getInstance().loginListener(MainActivity.this, new BroadcastReceiver() {
             @Override
@@ -87,8 +106,46 @@ public class MainActivity extends AppCompatActivity implements Constants {
             }
         });
 
+
     }
 
+    @Override
+    protected void onResume() {
+        String isAccountVerified = PreferencesUtils.getString(MainActivity.this, "isAccountVerified");
+        if (!TextUtils.isEmpty(isAccountVerified) && !isAccountVerified.equals("1")) {
+            AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+            dlg.setMessage("该账号未实名，前往实名");
+            dlg.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    Intent intent = new Intent(MainActivity.this, AccountVerifiedActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            dlg.setNegativeButton("取消", null);
+            dlg.setCancelable(false);
+
+            if (!isFinishing()) {
+                dlg.create().show();
+            }
+
+//                SdkHelper.getInstance().identification(this, "name", "idcardNo",
+//                        new SdkHelper.identificationCallBack() {
+//                            @Override
+//                            public void identificationSuc() {
+//
+//                            }
+//
+//                            @Override
+//                            public void identificationError(String errCode, String errMsg) {
+//
+//                            }
+//
+//                        });
+        }
+        super.onResume();
+    }
 
     public static String encryptionMD5(byte[] byteStr) {
         MessageDigest messageDigest = null;

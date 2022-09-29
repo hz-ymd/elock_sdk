@@ -11,12 +11,15 @@
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1095" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.11680053547523427" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.136328125" />
+        <entry key="app/src/main/res/layout/activity_account_verified.xml" value="0.13134057971014493" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.10228271484374993" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2607421875" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.20104166666666667" />
         <entry key="app/src/main/res/layout/fragment_me.xml" value="0.18697916666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.20104166666666667" />
         <entry key="libelock_ui/src/main/res/drawable-v24/anim_down.xml" value="0.1" />
+        <entry key="libelock_ui/src/main/res/drawable-xhdpi/national_bd_ocr_take_photo_selector.xml" value="0.1" />
         <entry key="libelock_ui/src/main/res/drawable/anim_down.xml" value="0.1735" />
         <entry key="libelock_ui/src/main/res/drawable/anim_up.xml" value="0.1" />
         <entry key="libelock_ui/src/main/res/drawable/bg_amount_layout.xml" value="0.1" />
@@ -55,6 +58,7 @@
         <entry key="libelock_ui/src/main/res/layout/activity_lock_share.xml" value="0.1921875" />
         <entry key="libelock_ui/src/main/res/layout/activity_national_auth_list.xml" value="0.14184397163120568" />
         <entry key="libelock_ui/src/main/res/layout/activity_national_face_detect_v3100.xml" value="0.12107396149949341" />
+        <entry key="libelock_ui/src/main/res/layout/activity_national_face_liveness_v3100.xml" value="0.1" />
         <entry key="libelock_ui/src/main/res/layout/activity_ocr.xml" value="0.18489583333333334" />
         <entry key="libelock_ui/src/main/res/layout/activity_open_door.xml" value="0.20516304347826086" />
         <entry key="libelock_ui/src/main/res/layout/activity_operate_record_main.xml" value="0.13994565217391305" />
@@ -82,6 +86,7 @@
         <entry key="libelock_ui/src/main/res/layout/layout_no_lock.xml" value="0.23854166666666668" />
         <entry key="libelock_ui/src/main/res/layout/lock_pwd_long_share_list_item.xml" value="0.17106382978723406" />
         <entry key="libelock_ui/src/main/res/layout/national_custom_date_picker.xml" value="0.14184397163120568" />
+        <entry key="libelock_ui/src/main/res/layout/national_item_lock_list.xml" value="0.1" />
         <entry key="libelock_ui/src/main/res/layout/open_record_list_item.xml" value="0.13994565217391305" />
         <entry key="libelock_ui/src/main/res/layout/setting_toast_layout.xml" value="0.175" />
         <entry key="libelock_ui/src/main/res/layout/simple_progress.xml" value="0.209375" />
