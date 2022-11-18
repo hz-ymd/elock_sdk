@@ -72,7 +72,6 @@ public class LoginActivity extends Activity implements Constants {
 
             loading.setVisibility(View.VISIBLE);
             loading.setVisibility(View.GONE);
-
 //            PreferencesUtils.putBoolean(LoginActivity.this, IS_LOGIN, true);
             PreferencesUtils.putString(LoginActivity.this, USER_NAME, username);
             Intent intent = new Intent(LoginActivity.this, BaseActivity.class);

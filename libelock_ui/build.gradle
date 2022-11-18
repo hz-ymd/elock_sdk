@@ -44,6 +44,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.airbnb.android:lottie:5.2.0'
+    implementation files('libs/elock-sdk-v1.2.6.jar')
+
+    //implementation files('libs/elock-sdk-v1.2.0-132.jar')
     compileOnly 'com.github.xuliang27091:baiduFaceLib:1.0.0'
     compileOnly 'com.j256.ormlite:ormlite-android:5.1'
     compileOnly 'com.google.code.gson:gson:2.8.2'

@@ -237,12 +237,10 @@ public class LockListActivity extends BaseActivity {
                     binding.recyLock.setVisibility(View.GONE);
                     layout_no_lock.setVisibility(View.VISIBLE);
                 }
-
             }
 
             @Override
             public void onError(String errorCode, String errorMsg) {
-
 //                binding.recyLock.setVisibility(View.GONE);
 //                layout_no_lock.setVisibility(View.VISIBLE);
                 SDKCoreHelper.getOffLineLockList(new OnResultListener() {

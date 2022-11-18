@@ -1,6 +1,7 @@
 package com.national.btlock.sdk;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ public class BaseActivity extends AppCompatActivity {
     private static final int PERMISSIONS_EXTERNAL_STORAGE = 801;
     TextView text_start;
 
+    ProgressDialog pd;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,8 @@ public class BaseActivity extends AppCompatActivity {
         text_start = findViewById(R.id.text_start);
 
         text_start.setOnClickListener(view -> {
+            pd = new ProgressDialog(BaseActivity.this);
+            pd.show();
             String appid;
             String appSecret;
 
@@ -56,6 +61,10 @@ public class BaseActivity extends AppCompatActivity {
 
                         @Override
                         public void initFailure(String errCode, String errMsg) {
+                            if (pd != null) {
+                                pd.dismiss();
+                                pd = null;
+                            }
                             Log.d(TAG, "initFailure:" + errCode + "," + errMsg);
                         }
 
@@ -80,6 +89,10 @@ public class BaseActivity extends AppCompatActivity {
         SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(BaseActivity.this, Constants.USER_NAME), new SdkHelper.CallBack() {
             @Override
             public void onSuccess(String jsonStr) {
+                if (pd != null) {
+                    pd.dismiss();
+                    pd = null;
+                }
                 Log.d(TAG, "jsonStr:" + jsonStr);
                 LoginResult result = new Gson().fromJson(jsonStr, LoginResult.class);
                 if (result != null) {
@@ -99,6 +112,10 @@ public class BaseActivity extends AppCompatActivity {
 
             @Override
             public void onError(String errorCode, String errorMsg) {
+                if (pd != null) {
+                    pd.dismiss();
+                    pd = null;
+                }
                 if (errorCode.equals("6100011")) {
                     AlertDialog.Builder dlg = new AlertDialog.Builder(BaseActivity.this, AlertDialog.THEME_HOLO_LIGHT);
                     dlg.setMessage("该账号未实名，无法切换设备登录，请实名后重试");
