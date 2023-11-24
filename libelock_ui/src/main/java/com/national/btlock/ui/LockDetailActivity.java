@@ -267,6 +267,7 @@ public class LockDetailActivity extends BaseActivity implements View.OnClickList
                     goNext(AppConstants.LockType.LOCK_AUTH_CARD_A);
                     break;
                 case "身份证授权":
+
                     goNext(AppConstants.LockType.LOCK_AUTH_IDCARD);
                     break;
                 case "访客码授权":

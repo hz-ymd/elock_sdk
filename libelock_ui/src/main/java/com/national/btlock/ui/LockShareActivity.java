@@ -108,7 +108,7 @@ public class LockShareActivity extends BaseActivity {
             llAssignmentType.setVisibility(View.GONE);
             binding.idBtnRegister.setText(R.string.next);
             authIdcardNeedRealName = getIntent().getExtras().getString("authIdcardNeedRealName");
-            if (authIdcardNeedRealName.equals("1")) {
+//            if (authIdcardNeedRealName.equals("1")) {
                 binding.llIdcardAliasInput.setVisibility(View.GONE);
                 AlertDialog.Builder dlg = new AlertDialog.Builder(LockShareActivity.this, AlertDialog.THEME_HOLO_LIGHT);
                 dlg.setMessage("请被授权人本人进行刷脸操作");//确定解除绑定？
@@ -145,11 +145,11 @@ public class LockShareActivity extends BaseActivity {
                 if (!isFinishing()) {
                     dlg.create().show();
                 }
-            } else {
-                binding.llIdcardAliasInput.setVisibility(View.VISIBLE);
-                binding.idIdcardAliasInputTitle.setText(R.string.lock_share_idcard_alias_title);
-                binding.idIdcardAliasInput.setHint(R.string.error_lock_share_idcard_alias_input_none);
-            }
+//            } else {
+//                binding.llIdcardAliasInput.setVisibility(View.VISIBLE);
+//                binding.idIdcardAliasInputTitle.setText(R.string.lock_share_idcard_alias_title);
+//                binding.idIdcardAliasInput.setHint(R.string.error_lock_share_idcard_alias_input_none);
+//            }
         }
 //        initPermission();
     }
@@ -201,14 +201,14 @@ public class LockShareActivity extends BaseActivity {
             endData = tvEndDate.getText().toString();
 
             if (action_type.equals(AppConstants.LockType.LOCK_AUTH_IDCARD)) {
-                if (authIdcardNeedRealName.equals("1") && TextUtils.isEmpty(bmpStr)) {
+                if ( TextUtils.isEmpty(bmpStr)) {
                     Toast.makeText(LockShareActivity.this, "请先采集人脸照片", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if (!authIdcardNeedRealName.equals("1") && TextUtils.isEmpty(targetUserId)) {
-                    Toast.makeText(LockShareActivity.this, getString(R.string.error_lock_share_idcard_alias_input_none), Toast.LENGTH_LONG).show();
-                    return;
-                }
+//                if (!authIdcardNeedRealName.equals("1") && TextUtils.isEmpty(targetUserId)) {
+//                    Toast.makeText(LockShareActivity.this, getString(R.string.error_lock_share_idcard_alias_input_none), Toast.LENGTH_LONG).show();
+//                    return;
+//                }
                 Intent intent = new Intent(LockShareActivity.this, BleComunicationInfoActivity.class);
                 intent.putExtra("action_type", action_type);
                 intent.putExtra("lockMac", lockMac);

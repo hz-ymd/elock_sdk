@@ -585,6 +585,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
     }
 
+    int request_image = 1;
 
     public void initAppItem() {
 
@@ -640,7 +641,22 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                     goNext(LockType.LOCK_AUTH_CARD_A);
                     break;
                 case "身份证授权":
+//                    SdkHelper.getInstance().faceInit(getActivity(), new SdkHelper.CallBack() {
+//                        @Override
+//                        public void onSuccess(String jsonStr) {
+//                            Intent intent = new Intent(getActivity(), FaceLivenessExpActivity.class);
+//                            intent.putExtra("type", "authIdCard");
+//                            startActivityForResult(intent, request_image);
+//                        }
+//
+//                        @Override
+//                        public void onError(String errCode, String errMsg) {
+//                            Toast.makeText(getActivity(), errMsg, Toast.LENGTH_LONG).show();
+//                        }
+//                    });
+
                     goNext(LockType.LOCK_AUTH_IDCARD);
+
                     break;
                 case "访客码授权":
                     goNext(LockType.LOCK_LONG_PWD_SET);
@@ -661,6 +677,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 
         });
     }
+
 
 
     public void addAppItem() {
@@ -996,6 +1013,10 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
                 getLockDetail();
             }
         }
+//        if (requestCode == request_image && resultCode == -1) {
+//            goNext(LockType.LOCK_AUTH_IDCARD);
+//        }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 

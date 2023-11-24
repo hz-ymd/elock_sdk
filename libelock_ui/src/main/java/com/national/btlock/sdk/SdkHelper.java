@@ -135,13 +135,11 @@ public class SdkHelper {
             @Override
             public void onError(String errorCode, String errorMsg) {
                 callBack.initFailure(errorCode, errorMsg);
-
             }
         });
 
 
     }
-
 
     public static List<LivenessTypeEnum> livenessList = new ArrayList<>();
 
@@ -150,9 +148,7 @@ public class SdkHelper {
         // SDK初始化已经设置完默认参数（推荐参数），也可以根据实际需求进行数值调整
         // 质量等级（0：正常、1：宽松、2：严格、3：自定义）
         // 获取保存的质量等级
-
         int qualityLevel = 0;
-
         // 根据质量等级获取相应的质量值（注：第二个参数要与质量等级的set方法参数一致）
         QualityConfigManager manager = QualityConfigManager.getInstance();
         manager.readQualityFile(context.getApplicationContext(), qualityLevel);
@@ -327,7 +323,6 @@ public class SdkHelper {
 
     /**
      * 登录（旧接口，onError时需判断errorCode是否为LOGIN_IN_OTHER_DEVICE，进行刷脸登录）
-     *
      * @param userName 手机账号
      * @param callBack
      */
@@ -369,7 +364,6 @@ public class SdkHelper {
 
     /**
      * 登录
-     *
      * @param userName 手机账号
      * @param callBack
      */
@@ -447,7 +441,6 @@ public class SdkHelper {
 
     /**
      * 人脸登录（在其他设备登录后调用）
-     *
      * @param context
      * @param callBack
      */
@@ -464,12 +457,14 @@ public class SdkHelper {
             @Override
             public void onError(String errCode, String errMsg) {
                 callBack.onError(errCode, errMsg);
-
             }
         });
 
-
     }
+
+
+
+
 
 
     public static long getNum(int digit) {

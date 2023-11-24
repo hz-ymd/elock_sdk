@@ -76,15 +76,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
     public void login() {
-        //        if (ActivityCompat.checkSelfPermission(BaseActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
-        //                != PackageManager.PERMISSION_GRANTED) {
-        //            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-        //                ActivityCompat.requestPermissions(BaseActivity.this,
-        //                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-        //                        PERMISSIONS_EXTERNAL_STORAGE);
-        //                return;
-        //            }
-        //        }
+
         //第三方登录逻辑
         SdkHelper.getInstance().login(BaseActivity.this, PreferencesUtils.getString(BaseActivity.this, Constants.USER_NAME), new SdkHelper.CallBack() {
             @Override

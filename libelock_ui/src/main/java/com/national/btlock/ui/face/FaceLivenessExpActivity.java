@@ -164,13 +164,11 @@ public class FaceLivenessExpActivity extends FaceLivenessActivity implements
                 SDKCoreHelper.loginFaceCheck(bytes, new OnResultListener() {
                     @Override
                     public void onSuccess(String jsonStr) {
-                        //Toast.makeText(FaceLivenessExpActivity.this, "实名认证成功", Toast.LENGTH_LONG).show();
                         SdkHelper.getInstance().getLoginCallBack().onSuccess(jsonStr);
                     }
 
                     @Override
                     public void onError(String errorCode, String errorMsg) {
-                        //Toast.makeText(FaceLivenessExpActivity.this, "实名认证失败：" + errorMsg, Toast.LENGTH_LONG).show();
                         Log.e(TAG, "loginFaceCheck=" + errorCode + " errorMsg=" + errorMsg);
                         SdkHelper.getInstance().getLoginCallBack().onError(errorCode, errorMsg);
                     }

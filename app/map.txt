@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 19bb534
-# pg_map_hash: SHA-256 19bb5347e94fb91fe683c56fb2790f873cc4fcf5b51649bac83600af39e67e0b
+# pg_map_id: 2cc7fd6
+# pg_map_hash: SHA-256 2cc7fd6aa26dc35586115fb465bd4bfbd7afc36e5ef23d6b7db2ae895d4549e2
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
     11:11:void <init>() -> <init>
     13:13:androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel) -> read
@@ -4711,6 +4711,12 @@ androidx.core.app.NotificationCompatJellybean -> androidx.core.app.NotificationC
     254:271:android.os.Bundle getBundleForAction(androidx.core.app.NotificationCompat$Action) -> getBundleForAction
     293:308:android.os.Bundle toBundle(androidx.core.app.RemoteInput) -> toBundle
     323:330:android.os.Bundle[] toBundleArray(androidx.core.app.RemoteInput[]) -> toBundleArray
+androidx.core.app.NotificationManagerCompat -> androidx.core.app.NotificationManagerCompat:
+    103:112:void <clinit>() -> <clinit>
+    162:166:void <init>(android.content.Context) -> <init>
+    231:232:boolean areNotificationsEnabled() -> areNotificationsEnabled
+    159:159:androidx.core.app.NotificationManagerCompat from(android.content.Context) -> from
+    650:669:java.util.Set getEnabledListenerPackages(android.content.Context) -> getEnabledListenerPackages
 androidx.core.app.Person -> androidx.core.app.Person:
     197:197:androidx.core.graphics.drawable.IconCompat getIcon() -> getIcon
     224:224:java.lang.String getKey() -> getKey
@@ -12908,8 +12914,6 @@ com.baidu.vis.unified.license.LicenseReaderUtils -> com.baidu.vis.unified.licens
     113:157:boolean write_license_content(android.content.Context,java.lang.String,java.util.ArrayList) -> write_license_content
 com.baidu.vis.unified.license.ReadStatusCode -> com.baidu.vis.unified.license.ReadStatusCode:
     7:7:void <init>() -> <init>
-com.goodix.ble.libcomx.ILogger -> com.goodix.ble.libcomx.ILogger:
-    20:20:com.goodix.ble.libcomx.ILogger subLogger() -> subLogger
 com.google.android.material.animation.AnimationUtils -> com.google.android.material.animation.AnimationUtils:
     37:44:void <clinit>() -> <clinit>
     48:48:float lerp(float,float,float) -> lerp
@@ -17783,6 +17787,242 @@ com.google.gson.stream.MalformedJsonException -> com.google.gson.stream.Malforme
     29:30:void <init>(java.lang.String) -> <init>
     33:37:void <init>(java.lang.String,java.lang.Throwable) -> <init>
     39:43:void <init>(java.lang.Throwable) -> <init>
+com.hjq.permissions.AndroidVersion -> com.hjq.permissions.AndroidVersion:
+    50:50:boolean isAndroid10() -> isAndroid10
+    43:43:boolean isAndroid11() -> isAndroid11
+    36:36:boolean isAndroid12() -> isAndroid12
+    92:92:boolean isAndroid4_3() -> isAndroid4_3
+    85:85:boolean isAndroid5() -> isAndroid5
+    78:78:boolean isAndroid5_1() -> isAndroid5_1
+    71:71:boolean isAndroid6() -> isAndroid6
+    64:64:boolean isAndroid8() -> isAndroid8
+    57:57:boolean isAndroid9() -> isAndroid9
+com.hjq.permissions.IPermissionInterceptor -> com.hjq.permissions.IPermissionInterceptor:
+    41:45:void deniedPermissions(android.app.Activity,java.util.List,java.util.List,boolean,com.hjq.permissions.OnPermissionCallback) -> deniedPermissions
+    29:33:void grantedPermissions(android.app.Activity,java.util.List,java.util.List,boolean,com.hjq.permissions.OnPermissionCallback) -> grantedPermissions
+    20:21:void requestPermissions(android.app.Activity,com.hjq.permissions.OnPermissionCallback,java.util.List) -> requestPermissions
+com.hjq.permissions.OnPermissionCallback -> com.hjq.permissions.OnPermissionCallback:
+    27:27:void onDenied(java.util.List,boolean) -> onDenied
+com.hjq.permissions.Permission -> com.hjq.permissions.Permission:
+    16:16:void <init>() -> <init>
+com.hjq.permissions.PermissionApi -> com.hjq.permissions.PermissionApi:
+    22:35:void <clinit>() -> <clinit>
+    62:71:boolean containsSpecialPermission(java.util.List) -> containsSpecialPermission
+    115:121:java.util.List getDeniedPermissions(android.content.Context,java.util.List) -> getDeniedPermissions
+    146:153:java.util.List getDeniedPermissions(java.util.List,int[]) -> getDeniedPermissions
+    102:108:java.util.List getGrantedPermissions(android.content.Context,java.util.List) -> getGrantedPermissions
+    163:170:java.util.List getGrantedPermissions(java.util.List,int[]) -> getGrantedPermissions
+    55:55:android.content.Intent getPermissionIntent(android.content.Context,java.lang.String) -> getPermissionIntent
+    41:41:boolean isGrantedPermission(android.content.Context,java.lang.String) -> isGrantedPermission
+    85:95:boolean isGrantedPermissions(android.content.Context,java.util.List) -> isGrantedPermissions
+    48:48:boolean isPermissionPermanentDenied(android.app.Activity,java.lang.String) -> isPermissionPermanentDenied
+    131:136:boolean isPermissionPermanentDenied(android.app.Activity,java.util.List) -> isPermissionPermanentDenied
+    78:78:boolean isSpecialPermission(java.lang.String) -> isSpecialPermission
+com.hjq.permissions.PermissionChecker -> com.hjq.permissions.PermissionChecker:
+    33:61:boolean checkActivityStatus(android.app.Activity,boolean) -> checkActivityStatus
+    228:270:void checkLocationPermission(android.content.Context,java.util.List) -> checkLocationPermission
+    385:415:void checkManifestPermission(java.util.HashMap,java.lang.String,int) -> checkManifestPermission
+    316:374:void checkManifestPermissions(android.content.Context,java.util.List) -> checkManifestPermissions
+    120:141:void checkMediaLocationPermission(java.util.List) -> checkMediaLocationPermission
+    72:112:boolean checkPermissionArgument(java.util.List,boolean) -> checkPermissionArgument
+    150:220:void checkStoragePermission(android.content.Context,java.util.List) -> checkStoragePermission
+    280:308:void checkTargetSdkVersion(android.content.Context,java.util.List) -> checkTargetSdkVersion
+    424:462:void optimizeDeprecatedPermission(java.util.List) -> optimizeDeprecatedPermission
+com.hjq.permissions.PermissionDelegate -> com.hjq.permissions.PermissionDelegate:
+    94:96:android.content.Intent getApplicationDetailsIntent(android.content.Context) -> getApplicationDetailsIntent
+    100:100:android.net.Uri getPackageNameUri(android.content.Context) -> getPackageNameUri
+    61:61:boolean isGrantedDangerPermission(android.content.Context,java.lang.String) -> isGrantedDangerPermission
+    43:53:boolean isSpecialPermission(java.lang.String) -> isSpecialPermission
+    72:87:boolean shouldShowRequestPermissionRationale(android.content.Context,java.lang.String) -> shouldShowRequestPermissionRationale
+com.hjq.permissions.PermissionDelegateImplV14 -> com.hjq.permissions.PermissionDelegateImplV14:
+    21:21:void <init>() -> <init>
+    113:122:android.content.Intent getNotificationListenerIntent(android.content.Context) -> getNotificationListenerIntent
+    85:94:android.content.Intent getNotifyPermissionIntent(android.content.Context) -> getNotifyPermissionIntent
+    149:161:android.content.Intent getPackagePermissionIntent(android.content.Context) -> getPackagePermissionIntent
+    55:71:android.content.Intent getPermissionIntent(android.content.Context,java.lang.String) -> getPermissionIntent
+    175:179:android.content.Intent getVpnPermissionIntent(android.content.Context) -> getVpnPermissionIntent
+    101:105:boolean isGrantedNotificationListenerPermission(android.content.Context) -> isGrantedNotificationListenerPermission
+    78:78:boolean isGrantedNotifyPermission(android.content.Context) -> isGrantedNotifyPermission
+    129:142:boolean isGrantedPackagePermission(android.content.Context) -> isGrantedPackagePermission
+    26:45:boolean isGrantedPermission(android.content.Context,java.lang.String) -> isGrantedPermission
+    168:168:boolean isGrantedVpnPermission(android.content.Context) -> isGrantedVpnPermission
+    50:50:boolean isPermissionPermanentDenied(android.content.Context,java.lang.String) -> isPermissionPermanentDenied
+com.hjq.permissions.PermissionDelegateImplV23 -> com.hjq.permissions.PermissionDelegateImplV23:
+    18:18:void <init>() -> <init>
+    269:279:android.content.Intent getIgnoreBatteryPermissionIntent(android.content.Context) -> getIgnoreBatteryPermissionIntent
+    241:255:android.content.Intent getNotDisturbPermissionIntent(android.content.Context) -> getNotDisturbPermissionIntent
+    167:183:android.content.Intent getPermissionIntent(android.content.Context,java.lang.String) -> getPermissionIntent
+    222:227:android.content.Intent getSettingPermissionIntent(android.content.Context) -> getSettingPermissionIntent
+    197:205:android.content.Intent getWindowPermissionIntent(android.content.Context) -> getWindowPermissionIntent
+    262:262:boolean isGrantedIgnoreBatteryPermission(android.content.Context) -> isGrantedIgnoreBatteryPermission
+    234:234:boolean isGrantedNotDisturbPermission(android.content.Context) -> isGrantedNotDisturbPermission
+    23:97:boolean isGrantedPermission(android.content.Context,java.lang.String) -> isGrantedPermission
+    212:215:boolean isGrantedSettingPermission(android.content.Context) -> isGrantedSettingPermission
+    190:190:boolean isGrantedWindowPermission(android.content.Context) -> isGrantedWindowPermission
+    102:162:boolean isPermissionPermanentDenied(android.content.Context,java.lang.String) -> isPermissionPermanentDenied
+com.hjq.permissions.PermissionDelegateImplV26 -> com.hjq.permissions.PermissionDelegateImplV26:
+    17:17:void <init>() -> <init>
+    58:63:android.content.Intent getInstallPermissionIntent(android.content.Context) -> getInstallPermissionIntent
+    41:44:android.content.Intent getPermissionIntent(android.content.Context,java.lang.String) -> getPermissionIntent
+    51:51:boolean isGrantedInstallPermission(android.content.Context) -> isGrantedInstallPermission
+    22:36:boolean isGrantedPermission(android.content.Context,java.lang.String) -> isGrantedPermission
+com.hjq.permissions.PermissionDelegateImplV29 -> com.hjq.permissions.PermissionDelegateImplV29:
+    14:14:void <init>() -> <init>
+    18:23:boolean isGrantedPermission(android.content.Context,java.lang.String) -> isGrantedPermission
+    29:43:boolean isPermissionPermanentDenied(android.content.Context,java.lang.String) -> isPermissionPermanentDenied
+com.hjq.permissions.PermissionDelegateImplV30 -> com.hjq.permissions.PermissionDelegateImplV30:
+    17:17:void <init>() -> <init>
+    37:40:android.content.Intent getPermissionIntent(android.content.Context,java.lang.String) -> getPermissionIntent
+    54:64:android.content.Intent getStoragePermissionIntent(android.content.Context) -> getStoragePermissionIntent
+    22:32:boolean isGrantedPermission(android.content.Context,java.lang.String) -> isGrantedPermission
+    47:47:boolean isGrantedStoragePermission() -> isGrantedStoragePermission
+com.hjq.permissions.PermissionDelegateImplV31 -> com.hjq.permissions.PermissionDelegateImplV31:
+    17:17:void <init>() -> <init>
+    50:55:android.content.Intent getAlarmPermissionIntent(android.content.Context) -> getAlarmPermissionIntent
+    30:33:android.content.Intent getPermissionIntent(android.content.Context,java.lang.String) -> getPermissionIntent
+    40:43:boolean isGrantedAlarmPermission(android.content.Context) -> isGrantedAlarmPermission
+    22:25:boolean isGrantedPermission(android.content.Context,java.lang.String) -> isGrantedPermission
+com.hjq.permissions.PermissionFragment -> com.hjq.permissions.PermissionFragment:
+    void $r8$lambda$csL0LS2Wa9Q6y1GOfKqezLI3SqM(android.view.View) -> $r8$lambda$csL0LS2Wa9Q6y1GOfKqezLI3SqM
+      # {"id":"com.android.tools.r8.synthesized"}
+    53:53:void <clinit>() -> <clinit>
+    38:38:void <init>() -> <init>
+    38:38:void access$000(com.hjq.permissions.PermissionFragment,android.app.Activity,java.util.List,java.util.List,com.hjq.permissions.OnPermissionCallback) -> access$000
+    157:158:void attachActivity(android.app.Activity) -> attachActivity
+    61:121:void beginRequest(android.app.Activity,java.util.ArrayList,com.hjq.permissions.IPermissionInterceptor,com.hjq.permissions.OnPermissionCallback) -> beginRequest
+    164:165:void detachActivity(android.app.Activity) -> detachActivity
+    552:561:java.lang.String getPermissionHint(android.content.Context,java.util.List) -> getPermissionHint
+    97:101:void lambda$beginRequest$0(android.view.View) -> lambda$beginRequest$0
+    473:487:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    191:204:void onAttach(android.content.Context) -> onAttach
+    220:223:void onDestroy() -> onDestroy
+    208:216:void onDetach() -> onDetach
+    410:469:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    227:243:void onResume() -> onResume
+    291:340:void requestDangerousPermission() -> requestDangerousPermission
+    249:285:void requestSpecialPermission() -> requestSpecialPermission
+    494:499:void run() -> run
+    171:172:void setCallBack(com.hjq.permissions.OnPermissionCallback) -> setCallBack
+    185:186:void setInterceptor(com.hjq.permissions.IPermissionInterceptor) -> setInterceptor
+    178:179:void setRequestFlag(boolean) -> setRequestFlag
+    503:549:void showPermissionSettingDialog(android.app.Activity,java.util.List,java.util.List,com.hjq.permissions.OnPermissionCallback) -> showPermissionSettingDialog
+    348:406:void splitTwiceRequestPermission(android.app.Activity,java.util.ArrayList,java.util.ArrayList,int) -> splitTwiceRequestPermission
+com.hjq.permissions.PermissionFragment$$ExternalSyntheticLambda0 -> com.hjq.permissions.PermissionFragment$$ExternalSyntheticLambda0:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    com.hjq.permissions.PermissionFragment$$InternalSyntheticLambda$0$d76999111613739e7f8bdca8bb379f1e4ae78769893edd163d96592df117a87e$0 com.hjq.permissions.PermissionFragment$$InternalSyntheticLambda$0$d76999111613739e7f8bdca8bb379f1e4ae78769893edd163d96592df117a87e$0.INSTANCE -> INSTANCE
+    void com.hjq.permissions.PermissionFragment$$InternalSyntheticLambda$0$d76999111613739e7f8bdca8bb379f1e4ae78769893edd163d96592df117a87e$0.<clinit>() -> <clinit>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void com.hjq.permissions.PermissionFragment$$InternalSyntheticLambda$0$d76999111613739e7f8bdca8bb379f1e4ae78769893edd163d96592df117a87e$0.<init>() -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void com.hjq.permissions.PermissionFragment$$InternalSyntheticLambda$0$d76999111613739e7f8bdca8bb379f1e4ae78769893edd163d96592df117a87e$0.onClick(android.view.View) -> onClick
+      # {"id":"com.android.tools.r8.synthesized"}
+com.hjq.permissions.PermissionFragment$1 -> com.hjq.permissions.PermissionFragment$1:
+    107:107:void <init>(android.app.Activity,android.view.View) -> <init>
+    110:117:void run() -> run
+com.hjq.permissions.PermissionFragment$2 -> com.hjq.permissions.PermissionFragment$2:
+    353:353:void <init>(com.hjq.permissions.PermissionFragment) -> <init>
+com.hjq.permissions.PermissionFragment$3 -> com.hjq.permissions.PermissionFragment$3:
+    354:354:void <init>(com.hjq.permissions.PermissionFragment,android.app.Activity,java.util.ArrayList,java.util.ArrayList,int) -> <init>
+    396:404:void onDenied(java.util.List,boolean) -> onDenied
+    358:392:void onGranted(java.util.List,boolean) -> onGranted
+com.hjq.permissions.PermissionFragment$3$1 -> com.hjq.permissions.PermissionFragment$3$1:
+    362:362:void <init>(com.hjq.permissions.PermissionFragment$3) -> <init>
+com.hjq.permissions.PermissionFragment$3$2 -> com.hjq.permissions.PermissionFragment$3$2:
+    363:363:void <init>(com.hjq.permissions.PermissionFragment$3) -> <init>
+    379:390:void onDenied(java.util.List,boolean) -> onDenied
+    367:375:void onGranted(java.util.List,boolean) -> onGranted
+com.hjq.permissions.PermissionFragment$4 -> com.hjq.permissions.PermissionFragment$4:
+    522:522:void <init>(com.hjq.permissions.PermissionFragment,android.app.Activity,java.util.List,com.hjq.permissions.OnPermissionCallback,java.util.List) -> <init>
+    525:546:void onClick(android.content.DialogInterface,int) -> onClick
+com.hjq.permissions.PermissionFragment$4$1 -> com.hjq.permissions.PermissionFragment$4$1:
+    531:531:void <init>(com.hjq.permissions.PermissionFragment$4) -> <init>
+    542:544:void onDenied() -> onDenied
+    534:538:void onGranted() -> onGranted
+com.hjq.permissions.PermissionFragment$5 -> com.hjq.permissions.PermissionFragment$5:
+    512:512:void <init>(com.hjq.permissions.PermissionFragment) -> <init>
+    515:520:void onClick(android.content.DialogInterface,int) -> onClick
+com.hjq.permissions.PermissionNameConvert -> com.hjq.permissions.PermissionNameConvert:
+    20:20:java.lang.String getPermissionString(android.content.Context,java.util.List) -> getPermissionString
+    27:40:java.lang.String listToString(java.util.List) -> listToString
+    48:258:java.util.List permissionsToStrings(android.content.Context,java.util.List) -> permissionsToStrings
+com.hjq.permissions.PermissionPageFragment -> com.hjq.permissions.PermissionPageFragment:
+    18:18:void <init>() -> <init>
+    54:55:void attachActivity(android.app.Activity) -> attachActivity
+    27:39:void beginRequest(android.app.Activity,java.util.ArrayList,com.hjq.permissions.OnPermissionPageCallback) -> beginRequest
+    61:62:void detachActivity(android.app.Activity) -> detachActivity
+    105:120:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    66:87:void onResume() -> onResume
+    127:153:void run() -> run
+    93:94:void setCallBack(com.hjq.permissions.OnPermissionPageCallback) -> setCallBack
+    100:101:void setRequestFlag(boolean) -> setRequestFlag
+com.hjq.permissions.PermissionUtils -> com.hjq.permissions.PermissionUtils:
+    39:39:void <clinit>() -> <clinit>
+    375:375:boolean areActivityIntent(android.content.Context,android.content.Intent) -> areActivityIntent
+    201:208:java.util.ArrayList asArrayList(java.lang.Object[]) -> asArrayList
+    228:236:android.app.Activity findActivity(android.content.Context) -> findActivity
+    245:263:int findApkPathCookie(android.content.Context) -> findApkPathCookie
+    78:78:java.lang.String getAndroidNamespace() -> getAndroidNamespace
+    92:138:java.util.HashMap getManifestPermissions(android.content.Context) -> getManifestPermissions
+    385:402:android.content.Intent getSmartPermissionIntent(android.content.Context,java.util.List) -> getSmartPermissionIntent
+    355:367:boolean isActivityReverse(android.app.Activity) -> isActivityReverse
+    85:85:boolean isDebugMode(android.content.Context) -> isDebugMode
+    309:318:boolean isScopedStorage(android.content.Context) -> isScopedStorage
+    329:347:void lockActivityOrientation(android.app.Activity) -> lockActivityOrientation
+    145:190:void optimizePermissionResults(android.app.Activity,java.lang.String[],int[]) -> optimizePermissionResults
+    270:301:android.content.res.XmlResourceParser parseAndroidManifest(android.content.Context) -> parseAndroidManifest
+    46:72:void postActivityResult(java.util.List,java.lang.Runnable) -> postActivityResult
+com.hjq.permissions.XXPermissions -> com.hjq.permissions.XXPermissions:
+    99:101:void <init>(android.content.Context) -> <init>
+    235:235:java.util.List getDenied(android.content.Context,java.util.List) -> getDenied
+    69:73:com.hjq.permissions.IPermissionInterceptor getInterceptor() -> getInterceptor
+    107:107:com.hjq.permissions.XXPermissions permission(java.lang.String[]) -> permission
+    115:129:com.hjq.permissions.XXPermissions permission(java.util.List) -> permission
+    152:206:void request(com.hjq.permissions.OnPermissionCallback) -> request
+    336:337:void startPermissionActivity(android.app.Activity,java.util.List,com.hjq.permissions.OnPermissionPageCallback) -> startPermissionActivity
+    42:42:com.hjq.permissions.XXPermissions with(android.content.Context) -> with
+com.hjq.permissions.XXPermissions$1 -> com.hjq.permissions.XXPermissions$1:
+    70:70:void <init>() -> <init>
+com.hjq.xtoast.ActivityLifecycle -> com.hjq.xtoast.ActivityLifecycle:
+    19:22:void <init>(com.hjq.xtoast.XToast,android.app.Activity) -> <init>
+    55:55:void onActivityCreated(android.app.Activity,android.os.Bundle) -> onActivityCreated
+    80:91:void onActivityDestroyed(android.app.Activity) -> onActivityDestroyed
+    66:70:void onActivityPaused(android.app.Activity) -> onActivityPaused
+    61:61:void onActivityResumed(android.app.Activity) -> onActivityResumed
+    76:76:void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivitySaveInstanceState
+    58:58:void onActivityStarted(android.app.Activity) -> onActivityStarted
+    73:73:void onActivityStopped(android.app.Activity) -> onActivityStopped
+    28:37:void register() -> register
+    43:52:void unregister() -> unregister
+com.hjq.xtoast.WindowLayout -> com.hjq.xtoast.WindowLayout:
+    20:21:void <init>(android.content.Context) -> <init>
+    41:44:boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
+    14:14:android.view.ViewGroup$LayoutParams generateDefaultLayoutParams() -> generateDefaultLayoutParams
+    33:33:android.widget.FrameLayout$LayoutParams generateDefaultLayoutParams() -> generateDefaultLayoutParams
+    50:51:void setOnTouchListener(android.view.View$OnTouchListener) -> setOnTouchListener
+com.hjq.xtoast.XToast -> com.hjq.xtoast.XToast:
+    41:41:void <clinit>() -> <clinit>
+    67:78:void <init>(android.app.Activity) -> <init>
+    94:109:void <init>(android.content.Context) -> <init>
+    229:231:com.hjq.xtoast.XToast addWindowFlags(int) -> addWindowFlags
+    687:716:void cancel() -> cancel
+    752:752:boolean isShowing() -> isShowing
+    939:939:boolean postAtTime(java.lang.Runnable,long) -> postAtTime
+    928:931:boolean postDelayed(java.lang.Runnable,long) -> postDelayed
+    733:746:void recycle() -> recycle
+    946:947:void removeCallbacks(java.lang.Runnable) -> removeCallbacks
+    1018:1019:void run() -> run
+    503:552:com.hjq.xtoast.XToast setContentView(android.view.View) -> setContentView
+    471:476:com.hjq.xtoast.XToast setDuration(int) -> setDuration
+    149:151:com.hjq.xtoast.XToast setGravity(int) -> setGravity
+    171:173:com.hjq.xtoast.XToast setXOffset(int) -> setXOffset
+    180:182:com.hjq.xtoast.XToast setYOffset(int) -> setYOffset
+    629:681:void show() -> show
+    722:727:void update() -> update
+com.hjq.xtoast.XToast$OnLifecycle -> com.hjq.xtoast.XToast$OnLifecycle:
+    1067:1067:void onDismiss(com.hjq.xtoast.XToast) -> onDismiss
+    1072:1072:void onRecycler(com.hjq.xtoast.XToast) -> onRecycler
+    1062:1062:void onShow(com.hjq.xtoast.XToast) -> onShow
 com.j256.ormlite.android.AndroidCompiledStatement -> com.j256.ormlite.android.AndroidCompiledStatement:
     31:34:void <clinit>() -> <clinit>
     48:54:void <init>(java.lang.String,android.database.sqlite.SQLiteDatabase,com.j256.ormlite.stmt.StatementBuilder$StatementType,boolean,boolean) -> <init>
@@ -20145,46 +20385,38 @@ com.j256.ormlite.table.TableUtils -> com.j256.ormlite.table.TableUtils:
     137:143:java.util.List getCreateTableStatements(com.j256.ormlite.support.ConnectionSource,com.j256.ormlite.table.DatabaseTableConfig) -> getCreateTableStatements
 com.national.A -> com.national.A:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    353:353:void <init>(com.national.x) -> <init>
-    356:392:void w() -> w
+    748:748:void <init>(com.national.z) -> <init>
+    751:752:void run() -> run
 com.national.B -> com.national.B:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    725:725:void <init>(com.national.x,android.os.Looper) -> <init>
-    728:6156:void handleMessage(android.os.Message) -> handleMessage
+    761:761:void <init>(com.national.z) -> <init>
+    764:765:void run() -> run
 com.national.C -> com.national.C:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    748:748:void <init>(com.national.B) -> <init>
-    751:752:void run() -> run
+    916:916:void <init>(com.national.z) -> <init>
+    919:921:void run() -> run
 com.national.D -> com.national.D:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    761:761:void <init>(com.national.B) -> <init>
-    764:765:void run() -> run
+    932:932:void <init>(com.national.z) -> <init>
+    935:937:void run() -> run
 com.national.E -> com.national.E:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    916:916:void <init>(com.national.B) -> <init>
-    919:921:void run() -> run
+    942:942:void <init>(com.national.z) -> <init>
+    946:949:void run() -> run
 com.national.F -> com.national.F:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    932:932:void <init>(com.national.B) -> <init>
-    935:937:void run() -> run
-com.national.G -> com.national.G:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    942:942:void <init>(com.national.B) -> <init>
-    946:949:void run() -> run
-com.national.H -> com.national.H:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    1078:1078:void <init>(com.national.x) -> <init>
-    1179:4143:void onCharacteristicChanged(byte[]) -> onCharacteristicChanged
+    1078:1078:void <init>(com.national.v) -> <init>
+    1179:7143:void onCharacteristicChanged(byte[]) -> onCharacteristicChanged
     1146:1174:void onCharacteristicWrite(int) -> onCharacteristicWrite
     1798:1802:void onConnectFailure(com.national.vise.baseble.exception.BleException) -> onConnectFailure
-    1768:4850:void onConnectSuccess(android.bluetooth.BluetoothGatt,int) -> onConnectSuccess
+    1768:9253:void onConnectSuccess(android.bluetooth.BluetoothGatt,int) -> onConnectSuccess
     1082:2147:void onDescriptorRead(int) -> onDescriptorRead
     1807:1826:void onDisconnect(int) -> onDisconnect
-com.national.I -> com.national.I:
+com.national.G -> com.national.G:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    1982:1982:void <init>(com.national.x) -> <init>
+    1982:1982:void <init>(com.national.v) -> <init>
     1985:1986:void run() -> run
-com.national.J -> com.national.J:
+com.national.H -> com.national.H:
 # {"id":"sourceFile","fileName":"SourceFile"}
     133:133:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
     142:147:void onDeviceConnected(java.lang.String) -> onDeviceConnected
@@ -20199,7 +20431,7 @@ com.national.J -> com.national.J:
     229:243:void onError(java.lang.String,int,int,java.lang.String) -> onError
     181:184:void onFirmwareValidating(java.lang.String) -> onFirmwareValidating
     173:176:void onProgressChanged(java.lang.String,int,float,float,int,int) -> onProgressChanged
-com.national.K -> com.national.K:
+com.national.I -> com.national.I:
 # {"id":"sourceFile","fileName":"SourceFile"}
     255:255:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
     266:269:void onDeviceConnected(java.lang.String) -> onDeviceConnected
@@ -20214,61 +20446,49 @@ com.national.K -> com.national.K:
     349:362:void onError(java.lang.String,int,int,java.lang.String) -> onError
     302:304:void onFirmwareValidating(java.lang.String) -> onFirmwareValidating
     295:297:void onProgressChanged(java.lang.String,int,float,float,int,int) -> onProgressChanged
-com.national.L -> com.national.L:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    708:708:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
-    711:742:void w() -> w
-com.national.M -> com.national.M:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    748:748:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
-    751:775:void w() -> w
-com.national.N -> com.national.N:
+com.national.J -> com.national.J:
 # {"id":"sourceFile","fileName":"SourceFile"}
     905:905:void <init>(com.national.core.bt.service.BleServiceM,com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo) -> <init>
     905:905:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-    910:1977:java.lang.String i() -> i
+    910:1977:java.lang.String h() -> h
     905:2941:void onPostExecute(java.lang.Object) -> onPostExecute
-com.national.O -> com.national.O:
+com.national.K -> com.national.K:
 # {"id":"sourceFile","fileName":"SourceFile"}
     1688:1688:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
-    1698:1756:void onStartFailure(int) -> onStartFailure
+    1698:3465:void onStartFailure(int) -> onStartFailure
     1691:1694:void onStartSuccess(android.bluetooth.le.AdvertiseSettings) -> onStartSuccess
-com.national.P -> com.national.P:
+com.national.L -> com.national.L:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    1724:1724:void <init>(com.national.O) -> <init>
+    1724:1724:void <init>(com.national.K) -> <init>
     1727:1730:void run() -> run
-com.national.Q -> com.national.Q:
+com.national.M -> com.national.M:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    1741:1741:void <init>(com.national.O) -> <init>
+    1741:1741:void <init>(com.national.K) -> <init>
     1744:2110:void run() -> run
-com.national.R -> com.national.R:
+com.national.N -> com.national.N:
 # {"id":"sourceFile","fileName":"SourceFile"}
     29:30:void <clinit>() -> <clinit>
     22:173:void <init>() -> <init>
-    76:76:int G() -> G
-    84:85:void H() -> H
     50:51:void a(android.bluetooth.BluetoothDevice) -> a
-    133:142:boolean a(android.bluetooth.BluetoothGattCharacteristic,byte[]) -> a
     156:171:void a(android.bluetooth.BluetoothGatt) -> a
-    224:245:boolean a(java.util.UUID,java.util.UUID) -> a
-    249:255:boolean a(android.bluetooth.BluetoothGattCharacteristic) -> a
-    259:265:boolean b(android.bluetooth.BluetoothGattCharacteristic) -> b
     55:55:void disconnect() -> disconnect
     206:210:void onCharacteristicChanged(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic) -> onCharacteristicChanged
     198:202:void onCharacteristicRead(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic,int) -> onCharacteristicRead
     190:194:void onCharacteristicWrite(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic,int) -> onCharacteristicWrite
     105:107:void onDescriptorRead(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattDescriptor,int) -> onDescriptorRead
     177:186:void onDescriptorWrite(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattDescriptor,int) -> onDescriptorWrite
-com.national.S -> com.national.S:
+    76:76:int v() -> v
+    84:85:void w() -> w
+com.national.O -> com.national.O:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    178:178:void <init>(com.national.R,android.bluetooth.BluetoothGattDescriptor) -> <init>
+    178:178:void <init>(com.national.N,android.bluetooth.BluetoothGattDescriptor) -> <init>
     181:184:void run() -> run
-com.national.T -> com.national.T:
+com.national.P -> com.national.P:
 # {"id":"sourceFile","fileName":"SourceFile"}
     30:180:void <init>(android.content.Context) -> <init>
-    28:28:java.lang.String a(com.national.T) -> a
+    28:28:java.lang.String a(com.national.P) -> a
+    41:48:com.national.P a(android.content.Context) -> a
     56:66:void a(android.bluetooth.BluetoothDevice) -> a
-    41:48:com.national.T b(android.content.Context) -> b
     71:97:void disconnect() -> disconnect
     200:205:void onCharacteristicChanged(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic) -> onCharacteristicChanged
     219:228:void onCharacteristicRead(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic,int) -> onCharacteristicRead
@@ -20277,140 +20497,68 @@ com.national.T -> com.national.T:
     209:215:void onDescriptorRead(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattDescriptor,int) -> onDescriptorRead
     170:178:void onServicesDiscovered(android.bluetooth.BluetoothGatt,int) -> onServicesDiscovered
     152:164:boolean refreshDeviceCache() -> refreshDeviceCache
+com.national.Q -> com.national.Q:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    77:77:void <init>(com.national.P) -> <init>
+    81:93:void run() -> run
+com.national.R -> com.national.R:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    180:180:void <init>(com.national.P,android.os.Looper) -> <init>
+    183:184:void handleMessage(android.os.Message) -> handleMessage
+com.national.S -> com.national.S:
+# {"id":"sourceFile","fileName":"SourceFile"}
+com.national.T -> com.national.T:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    18:120:void <init>(byte[],byte[]) -> <init>
+    79:116:boolean i(byte[]) -> i
 com.national.U -> com.national.U:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    77:77:void <init>(com.national.T) -> <init>
-    81:93:void run() -> run
+    26:36:void <init>(android.content.Context) -> <init>
+    58:68:void a(com.j256.ormlite.support.ConnectionSource) -> a
+    72:78:void b(com.j256.ormlite.support.ConnectionSource) -> b
+    142:152:com.national.U b(android.content.Context) -> b
+    94:100:void c(com.j256.ormlite.support.ConnectionSource) -> c
+    178:185:void close() -> close
+    158:169:com.j256.ormlite.dao.Dao getDao(java.lang.Class) -> getDao
+    40:54:void onCreate(android.database.sqlite.SQLiteDatabase,com.j256.ormlite.support.ConnectionSource) -> onCreate
+    107:1088:void onUpgrade(android.database.sqlite.SQLiteDatabase,com.j256.ormlite.support.ConnectionSource,int,int) -> onUpgrade
 com.national.V -> com.national.V:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    180:180:void <init>(com.national.T,android.os.Looper) -> <init>
-    183:184:void handleMessage(android.os.Message) -> handleMessage
+    21:28:void <init>(android.content.Context) -> <init>
+    41:47:int a(java.util.List) -> a
+    74:85:boolean i(java.lang.String) -> i
+    90:97:java.util.List j(java.lang.String) -> j
 com.national.W -> com.national.W:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    41:389:void <init>(android.content.Context,java.lang.String,java.lang.String,byte[]) -> <init>
-    69:70:com.national.volley.RequestQueue L() -> L
-    221:227:void disconnect() -> disconnect
-    230:2383:void i(byte[]) -> i
-    143:159:java.lang.String q() -> q
-    165:2068:void run() -> run
-    372:3088:int t() -> t
+    21:29:void <init>(android.content.Context) -> <init>
+    56:62:void a(com.national.ab) -> a
+    65:73:java.util.List x() -> x
 com.national.X -> com.national.X:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    84:84:void <init>(com.national.W) -> <init>
-    88:94:void w() -> w
+    23:34:void <init>(android.content.Context) -> <init>
+    104:115:com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo a(java.lang.String,java.lang.String,java.lang.String) -> a
+    82:87:void b(com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo) -> b
 com.national.Y -> com.national.Y:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    101:101:void <init>(com.national.W) -> <init>
-    104:133:void w() -> w
+    22:31:void <init>(android.content.Context) -> <init>
+    58:64:void a(com.national.ac) -> a
+    90:101:com.national.ac k(java.lang.String) -> k
 com.national.Z -> com.national.Z:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    237:237:void <init>(com.national.W) -> <init>
-    272:275:void onCharacteristicChanged(byte[]) -> onCharacteristicChanged
-    266:267:void onCharacteristicWrite(int) -> onCharacteristicWrite
-    314:317:void onConnectFailure(com.national.vise.baseble.exception.BleException) -> onConnectFailure
-    282:1364:void onConnectSuccess(android.bluetooth.BluetoothGatt,int) -> onConnectSuccess
-    242:261:void onDescriptorRead(int) -> onDescriptorRead
-    321:340:void onDisconnect(int) -> onDisconnect
+    22:30:void <init>(android.content.Context) -> <init>
+    34:39:void a(com.national.ae) -> a
+    42:55:com.national.ae y() -> y
 com.national.a -> com.national.a:
 # {"id":"sourceFile","fileName":"SourceFile"}
     83:83:void <init>(com.national.blelib.BleService,int) -> <init>
     83:1097:java.lang.Object call() -> call
 com.national.aA -> com.national.aA:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    14:1042:void <init>(android.content.Context,com.national.core.nw.entity.LockListEntity$Lock) -> <init>
-com.national.aB -> com.national.aB:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    55:1068:void <clinit>() -> <clinit>
-    37:38:void <init>() -> <init>
-    44:52:com.national.aB Z() -> Z
-    99:127:boolean a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
-    288:298:java.lang.String w(java.lang.String) -> w
-com.national.aC -> com.national.aC:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    32:57:java.lang.String c(byte[],byte[]) -> c
-    123:150:byte[] d(java.lang.String,byte[]) -> d
-com.national.aD -> com.national.aD:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    8:9:void <clinit>() -> <clinit>
-    13:52:java.lang.String l(byte[]) -> l
-com.national.aE -> com.national.aE:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    19:23:void <init>(com.national.aE$a,long,long) -> <init>
-    27:28:void onFinish() -> onFinish
-    32:32:void onTick(long) -> onTick
-com.national.aE$a -> com.national.aE$a:
-# {"id":"sourceFile","fileName":"SourceFile"}
-com.national.aF -> com.national.aF:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    42:45:java.lang.String a(long) -> a
-    80:98:int e(java.lang.String,java.lang.String) -> e
-    57:67:java.util.Date x(java.lang.String) -> x
-com.national.aG -> com.national.aG:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    39:39:void <clinit>() -> <clinit>
-    28:125:void <init>() -> <init>
-    109:1034:void a(android.content.Context,java.lang.String) -> a
-    43:51:com.national.aG aa() -> aa
-    71:76:java.lang.String f(int) -> f
-    136:146:void y(java.lang.String) -> y
-com.national.aH -> com.national.aH:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    42:42:void <clinit>() -> <clinit>
-    36:208:void <init>(android.content.Context) -> <init>
-    283:5119:java.lang.String A(java.lang.String) -> A
-    299:304:void B(java.lang.String) -> B
-    317:322:void C(java.lang.String) -> C
-    335:339:void D(java.lang.String) -> D
-    350:354:void E(java.lang.String) -> E
-    489:506:java.lang.String a(android.content.Context,java.lang.String,int) -> a
-    157:2070:void ab() -> ab
-    186:2113:java.lang.String ac() -> ac
-    196:2122:java.lang.String ad() -> ad
-    236:262:java.lang.String ae() -> ae
-    271:3095:java.lang.String af() -> af
-    308:6104:java.lang.String ag() -> ag
-    367:399:void ah() -> ah
-    404:413:com.national.aq ai() -> ai
-    45:51:com.national.aH f(android.content.Context) -> f
-    419:13117:void f(java.lang.String,java.lang.String) -> f
-    136:136:java.lang.String g(android.content.Context) -> g
-    117:120:java.lang.String getLatitude() -> getLatitude
-    102:106:java.lang.String getLontitude() -> getLontitude
-    124:128:void setLatitude(java.lang.String) -> setLatitude
-    110:114:void setLontitude(java.lang.String) -> setLontitude
-    144:149:java.lang.String z(java.lang.String) -> z
-com.national.aH$a -> com.national.aH$a:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    518:519:void <init>(java.lang.String) -> <init>
-com.national.aI -> com.national.aI:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    32:1058:java.lang.String F(java.lang.String) -> F
-com.national.aJ -> com.national.aJ:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    25:61:void <clinit>() -> <clinit>
-    54:56:void aj() -> aj
-    64:64:boolean ak() -> ak
-    68:1051:void g(java.lang.String,java.lang.String) -> g
-    78:83:void h(java.lang.String,java.lang.String) -> h
-    88:99:void i(java.lang.String,java.lang.String) -> i
-    103:108:void j(java.lang.String,java.lang.String) -> j
-    111:115:void k(java.lang.String,java.lang.String) -> k
-com.national.aK -> com.national.aK:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    12:15:boolean a(android.content.Context,java.lang.String,java.lang.String) -> a
-    53:57:boolean a(android.content.Context,java.lang.String,boolean) -> a
-    19:20:java.lang.String b(android.content.Context,java.lang.String) -> b
-    81:82:boolean c(android.content.Context,java.lang.String) -> c
-com.national.aL -> com.national.aL:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    9:9:java.lang.String b(android.content.Context,java.lang.String) -> b
-com.national.aM -> com.national.aM:
-# {"id":"sourceFile","fileName":"SourceFile"}
     220:220:void <clinit>() -> <clinit>
-    73:76:boolean G(java.lang.String) -> G
-    167:2217:byte H(java.lang.String) -> H
-    197:4217:byte[] I(java.lang.String) -> I
-    233:5217:int J(java.lang.String) -> J
+    73:76:boolean D(java.lang.String) -> D
+    167:2217:byte E(java.lang.String) -> E
+    197:4217:byte[] F(java.lang.String) -> F
+    233:5217:int G(java.lang.String) -> G
     138:138:int a(byte,byte) -> a
     275:275:java.lang.String a(byte) -> a
     355:360:byte[] b(long) -> b
@@ -20418,34 +20566,33 @@ com.national.aM -> com.national.aM:
     83:87:java.lang.String g(int) -> g
     328:330:byte h(int) -> h
     335:340:byte[] i(int) -> i
-    224:229:java.lang.String m(byte[]) -> m
-    253:6217:int n(byte[]) -> n
-    373:377:int o(byte[]) -> o
-    382:383:int p(byte[]) -> p
-com.national.aN -> com.national.aN:
+    224:229:java.lang.String k(byte[]) -> k
+    253:6217:int l(byte[]) -> l
+    373:377:int m(byte[]) -> m
+com.national.aB -> com.national.aB:
 # {"id":"sourceFile","fileName":"SourceFile"}
     26:30:void <clinit>() -> <clinit>
+    24:24:java.lang.Object V() -> V
+    24:24:android.widget.Toast W() -> W
     24:24:android.widget.Toast a(android.widget.Toast) -> a
-    24:24:java.lang.Object al() -> al
-    24:24:android.widget.Toast am() -> am
     34:1058:void d(android.content.Context,java.lang.String) -> d
-com.national.aO -> com.national.aO:
+com.national.aC -> com.national.aC:
 # {"id":"sourceFile","fileName":"SourceFile"}
     58:58:void <init>(java.lang.CharSequence,android.content.Context) -> <init>
     61:70:void run() -> run
-com.national.aP -> com.national.aP:
+com.national.aD -> com.national.aD:
 # {"id":"sourceFile","fileName":"SourceFile"}
     96:96:void <init>(com.national.vise.baseble.ViseBluetooth,android.os.Looper) -> <init>
     99:114:void handleMessage(android.os.Message) -> handleMessage
-com.national.aQ -> com.national.aQ:
+com.national.aE -> com.national.aE:
 # {"id":"sourceFile","fileName":"SourceFile"}
     940:940:void <init>(com.national.vise.baseble.ViseBluetooth,com.national.vise.baseble.callback.data.ICharacteristicCallback) -> <init>
     943:945:void run() -> run
-com.national.aR -> com.national.aR:
+com.national.aF -> com.national.aF:
 # {"id":"sourceFile","fileName":"SourceFile"}
     1053:1053:void <init>(com.national.vise.baseble.ViseBluetooth,com.national.vise.baseble.callback.data.IBleCallback) -> <init>
     1056:1058:void run() -> run
-com.national.aS -> com.national.aS:
+com.national.aG -> com.national.aG:
 # {"id":"sourceFile","fileName":"SourceFile"}
     120:120:void <init>(com.national.vise.baseble.ViseBluetooth) -> <init>
     265:273:void onCharacteristicChanged(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic) -> onCharacteristicChanged
@@ -20456,170 +20603,140 @@ com.national.aS -> com.national.aS:
     316:337:void onDescriptorWrite(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattDescriptor,int) -> onDescriptorWrite
     348:369:void onReadRemoteRssi(android.bluetooth.BluetoothGatt,int,int) -> onReadRemoteRssi
     165:191:void onServicesDiscovered(android.bluetooth.BluetoothGatt,int) -> onServicesDiscovered
+com.national.aH -> com.national.aH:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    142:142:void <init>(com.national.aG,int,android.bluetooth.BluetoothGatt) -> <init>
+    145:150:void run() -> run
+com.national.aI -> com.national.aI:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    172:172:void <init>(com.national.aG,android.bluetooth.BluetoothGatt,int) -> <init>
+    175:176:void run() -> run
+com.national.aJ -> com.national.aJ:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    183:183:void <init>(com.national.aG,android.bluetooth.BluetoothGatt,int) -> <init>
+    186:187:void run() -> run
+com.national.aK -> com.national.aK:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    208:208:void <init>(com.national.aG,int,android.bluetooth.BluetoothGattCharacteristic) -> <init>
+    211:221:void run() -> run
+com.national.aL -> com.national.aL:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    240:240:void <init>(com.national.aG,int,android.bluetooth.BluetoothGattCharacteristic) -> <init>
+    243:253:void run() -> run
+com.national.aM -> com.national.aM:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    265:265:void <init>(com.national.aG,android.bluetooth.BluetoothGattCharacteristic) -> <init>
+    268:271:void run() -> run
+com.national.aN -> com.national.aN:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    290:290:void <init>(com.national.aG,int,android.bluetooth.BluetoothGattDescriptor) -> <init>
+    293:303:void run() -> run
+com.national.aO -> com.national.aO:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    322:322:void <init>(com.national.aG,int,android.bluetooth.BluetoothGattDescriptor) -> <init>
+    325:335:void run() -> run
+com.national.aP -> com.national.aP:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    354:354:void <init>(com.national.aG,int,int) -> <init>
+    357:367:void run() -> run
+com.national.aQ -> com.national.aQ:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    575:575:void <init>(com.national.vise.baseble.ViseBluetooth,java.lang.String,boolean,com.national.vise.baseble.callback.IConnectCallback) -> <init>
+    578:585:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
+    589:601:void scanTimeout() -> scanTimeout
+com.national.aR -> com.national.aR:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    579:579:void <init>(com.national.aQ,com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
+    582:583:void run() -> run
+com.national.aS -> com.national.aS:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    593:593:void <init>(com.national.aQ) -> <init>
+    596:599:void run() -> run
 com.national.aT -> com.national.aT:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    142:142:void <init>(com.national.aS,int,android.bluetooth.BluetoothGatt) -> <init>
-    145:150:void run() -> run
+    616:616:void <init>(com.national.vise.baseble.ViseBluetooth,java.lang.String,boolean,com.national.vise.baseble.callback.IConnectCallback) -> <init>
+    619:626:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
+    630:642:void scanTimeout() -> scanTimeout
 com.national.aU -> com.national.aU:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    172:172:void <init>(com.national.aS,android.bluetooth.BluetoothGatt,int) -> <init>
-    175:176:void run() -> run
+    620:620:void <init>(com.national.aT,com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
+    623:624:void run() -> run
 com.national.aV -> com.national.aV:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    183:183:void <init>(com.national.aS,android.bluetooth.BluetoothGatt,int) -> <init>
-    186:187:void run() -> run
+    634:634:void <init>(com.national.aT) -> <init>
+    637:640:void run() -> run
 com.national.aW -> com.national.aW:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    208:208:void <init>(com.national.aS,int,android.bluetooth.BluetoothGattCharacteristic) -> <init>
-    211:221:void run() -> run
+    660:660:void <init>(com.national.vise.baseble.ViseBluetooth,boolean,com.national.vise.baseble.callback.IConnectCallback) -> <init>
+    663:670:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
+    674:686:void scanTimeout() -> scanTimeout
 com.national.aX -> com.national.aX:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    240:240:void <init>(com.national.aS,int,android.bluetooth.BluetoothGattCharacteristic) -> <init>
-    243:253:void run() -> run
+    664:664:void <init>(com.national.aW,com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
+    667:668:void run() -> run
 com.national.aY -> com.national.aY:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    265:265:void <init>(com.national.aS,android.bluetooth.BluetoothGattCharacteristic) -> <init>
-    268:271:void run() -> run
+    678:678:void <init>(com.national.aW) -> <init>
+    681:684:void run() -> run
 com.national.aZ -> com.national.aZ:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    290:290:void <init>(com.national.aS,int,android.bluetooth.BluetoothGattDescriptor) -> <init>
-    293:303:void run() -> run
+    707:707:void <init>(com.national.vise.baseble.ViseBluetooth,boolean,com.national.vise.baseble.callback.IConnectCallback) -> <init>
+    710:717:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
+    721:733:void scanTimeout() -> scanTimeout
 com.national.aa -> com.national.aa:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    25:96:void <init>(android.content.Context,java.lang.String,byte[]) -> <init>
-    100:1092:void I() -> I
-    109:1183:void J() -> J
-    117:119:void K() -> K
-    191:197:boolean handleMessage(android.os.Message) -> handleMessage
-    124:150:void j(byte[]) -> j
+    145:146:void <init>() -> <init>
 com.national.ab -> com.national.ab:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    27:71:void <init>(android.content.Context,java.lang.String,byte[]) -> <init>
-    119:1112:void I() -> I
-    127:130:void J() -> J
-    136:139:void K() -> K
-    76:1068:void M() -> M
-    193:224:void N() -> N
-    229:235:boolean handleMessage(android.os.Message) -> handleMessage
-    144:1220:void j(byte[]) -> j
+    148:149:void <init>() -> <init>
 com.national.ac -> com.national.ac:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    29:74:void <init>(android.content.Context,java.lang.String,byte[]) -> <init>
-    123:1116:void I() -> I
-    130:133:void J() -> J
-    138:140:void K() -> K
-    79:1068:void M() -> M
-    194:225:void N() -> N
-    230:236:boolean handleMessage(android.os.Message) -> handleMessage
-    145:1214:void j(byte[]) -> j
+    114:116:void <init>() -> <init>
 com.national.ad -> com.national.ad:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    18:120:void <init>(byte[],byte[]) -> <init>
-    123:124:byte[] getPackageCmd() -> getPackageCmd
-    79:116:boolean k(byte[]) -> k
+    122:123:void <init>() -> <init>
 com.national.ae -> com.national.ae:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    20:1159:void <init>(java.lang.String,java.lang.String,byte[],byte[]) -> <init>
-    226:227:byte[] getPackageCmd() -> getPackageCmd
-    172:211:boolean packSubData(byte[],byte) -> packSubData
-com.national.af -> com.national.af:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    31:1160:void <init>(java.lang.String,java.lang.String,byte[],byte[]) -> <init>
-    220:221:byte[] getPackageCmd() -> getPackageCmd
-    167:204:boolean packSubData(byte[],byte) -> packSubData
-com.national.ag -> com.national.ag:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    26:36:void <init>(android.content.Context) -> <init>
-    58:68:void a(com.j256.ormlite.support.ConnectionSource) -> a
-    72:78:void b(com.j256.ormlite.support.ConnectionSource) -> b
-    94:100:void c(com.j256.ormlite.support.ConnectionSource) -> c
-    142:152:com.national.ag c(android.content.Context) -> c
-    178:185:void close() -> close
-    158:169:com.j256.ormlite.dao.Dao getDao(java.lang.Class) -> getDao
-    40:54:void onCreate(android.database.sqlite.SQLiteDatabase,com.j256.ormlite.support.ConnectionSource) -> onCreate
-    107:1088:void onUpgrade(android.database.sqlite.SQLiteDatabase,com.j256.ormlite.support.ConnectionSource,int,int) -> onUpgrade
-com.national.ah -> com.national.ah:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    21:28:void <init>(android.content.Context) -> <init>
-    41:47:int a(java.util.List) -> a
-    74:85:boolean k(java.lang.String) -> k
-    90:97:java.util.List l(java.lang.String) -> l
-com.national.ai -> com.national.ai:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    21:29:void <init>(android.content.Context) -> <init>
-    65:73:java.util.List O() -> O
-    56:62:void a(com.national.an) -> a
-com.national.aj -> com.national.aj:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    23:34:void <init>(android.content.Context) -> <init>
-    104:115:com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo a(java.lang.String,java.lang.String,java.lang.String) -> a
-    82:87:void b(com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo) -> b
-com.national.ak -> com.national.ak:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    22:31:void <init>(android.content.Context) -> <init>
-    58:64:void b(com.national.ao) -> b
-    90:101:com.national.ao m(java.lang.String) -> m
-com.national.al -> com.national.al:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    22:30:void <init>(android.content.Context) -> <init>
-    42:55:com.national.aq P() -> P
-    34:39:void a(com.national.aq) -> a
-com.national.am -> com.national.am:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    145:146:void <init>() -> <init>
-com.national.an -> com.national.an:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    148:149:void <init>() -> <init>
-com.national.ao -> com.national.ao:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    114:116:void <init>() -> <init>
-com.national.ap -> com.national.ap:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    122:123:void <init>() -> <init>
-com.national.aq -> com.national.aq:
-# {"id":"sourceFile","fileName":"SourceFile"}
     77:83:void <init>() -> <init>
-    131:132:void Q() -> Q
-com.national.ar -> com.national.ar:
+    131:132:void z() -> z
+com.national.af -> com.national.af:
 # {"id":"sourceFile","fileName":"SourceFile"}
     26:26:void <clinit>() -> <clinit>
     28:29:void <init>() -> <init>
-    32:35:com.national.ar R() -> R
-    93:97:java.util.ArrayList S() -> S
+    32:35:com.national.af A() -> A
+    93:97:java.util.ArrayList B() -> B
     124:242:java.util.ArrayList a(java.lang.String,java.util.ArrayList) -> a
     351:2104:boolean a(com.national.core.nw.entity.LockListEntity$Lock) -> a
     102:120:void b(java.util.List) -> b
     248:258:com.national.core.nw.entity.LockListEntity$Lock b(java.lang.String,java.lang.String) -> b
-    315:318:boolean d(android.content.Context) -> d
-    335:1331:java.lang.String e(android.content.Context) -> e
-    39:45:boolean n(java.lang.String) -> n
-    50:56:boolean o(java.lang.String) -> o
-    63:76:java.lang.String p(java.lang.String) -> p
-    266:276:com.national.core.nw.entity.LockListEntity$Lock q(java.lang.String) -> q
-    282:292:com.national.core.nw.entity.LockListEntity$Lock r(java.lang.String) -> r
-    298:309:java.lang.String s(java.lang.String) -> s
-com.national.as -> com.national.as:
+    315:318:boolean c(android.content.Context) -> c
+    335:1331:java.lang.String d(android.content.Context) -> d
+    39:45:boolean l(java.lang.String) -> l
+    63:76:java.lang.String m(java.lang.String) -> m
+    266:276:com.national.core.nw.entity.LockListEntity$Lock n(java.lang.String) -> n
+    282:292:com.national.core.nw.entity.LockListEntity$Lock o(java.lang.String) -> o
+com.national.ag -> com.national.ag:
 # {"id":"sourceFile","fileName":"SourceFile"}
     69:69:void <clinit>() -> <clinit>
     66:2077:void <init>(android.content.Context) -> <init>
-    764:12096:void T() -> T
-    808:819:void U() -> U
-    740:747:void a(int,java.lang.String) -> a
-    1158:1260:java.util.ArrayList a(java.lang.String,java.util.ArrayList) -> a
-    1267:26095:void a(java.lang.String,java.util.List) -> a
-    1509:38134:void a(com.national.ao) -> a
-    83:84:void c() -> c
+    765:13096:void C() -> C
+    809:820:void D() -> D
+    741:748:void a(int,java.lang.String) -> a
+    1160:1262:java.util.ArrayList a(java.lang.String,java.util.ArrayList) -> a
+    1269:27095:void a(java.lang.String,java.util.List) -> a
+    83:84:void b() -> b
+    1511:39134:void b(com.national.ac) -> b
     88:98:boolean checkEnv(com.national.core.nw.it.OnResultListener) -> checkEnv
-    834:851:java.lang.String encryptionMD5(byte[]) -> encryptionMD5
-    856:865:java.lang.String getSignMd5Str(android.content.Context) -> getSignMd5Str
-    870:17116:boolean handleMessage(android.os.Message) -> handleMessage
-    1341:34113:boolean hasListStored() -> hasListStored
-    1522:1527:com.national.ao j(java.lang.String) -> j
+    835:852:java.lang.String encryptionMD5(byte[]) -> encryptionMD5
+    857:866:java.lang.String getSignMd5Str(android.content.Context) -> getSignMd5Str
+    871:18116:boolean handleMessage(android.os.Message) -> handleMessage
+    1343:35113:boolean hasListStored() -> hasListStored
+    1524:1529:com.national.ac p(java.lang.String) -> p
     346:355:void requestAddLocationV2(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAddLocationV2
     378:392:void requestAuthApp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthApp
     397:408:void requestAuthAppDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthAppDelete
     412:421:void requestAuthAppList(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthAppList
-    1398:37168:void requestAuthIdCardByOcr(java.lang.String,com.national.p,com.national.core.nw.it.OnResultListener) -> requestAuthIdCardByOcr
+    1400:38168:void requestAuthIdCardByOcr(java.lang.String,com.national.o,com.national.core.nw.it.OnResultListener) -> requestAuthIdCardByOcr
     425:435:void requestAuthIdcardDelete(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthIdcardDelete
     440:452:void requestAuthIdcardList(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthIdcardList
     491:507:void requestAuthManagement(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestAuthManagement
@@ -20629,176 +20746,228 @@ com.national.as -> com.national.as:
     201:214:void requestChangeLockSettings(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestChangeLockSettings
     283:291:void requestCity(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestCity
     321:329:void requestCommunity(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestCommunity
-    1449:1457:void requestDeleteLockShare(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestDeleteLockShare
+    1451:1459:void requestDeleteLockShare(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestDeleteLockShare
     295:304:void requestDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestDistrict
     221:234:void requestExtendAuth(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestExtendAuth
     238:250:void requestFaceCompare(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestFaceCompare
     511:523:void requestGiveBackManagement(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestGiveBackManagement
     127:144:void requestLockAuthRecord(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockAuthRecord
     183:195:void requestLockDetails(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockDetails
-    649:658:void requestLockList(com.national.core.nw.it.OnResultListener) -> requestLockList
+    650:659:void requestLockList(com.national.core.nw.it.OnResultListener) -> requestLockList
     107:122:void requestLockOpenRecord(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLockOpenRecord
-    585:7345:void requestLogin(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLogin
+    585:8343:void requestLogin(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLogin
     568:4066:void requestLoginByFace(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLoginByFace
     555:561:void requestLoginOut(com.national.core.nw.it.OnResultListener) -> requestLoginOut
-    1473:1482:void requestLongLockPwdList(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLongLockPwdList
-    683:11024:void requestOffLineLockList(com.national.core.nw.it.OnResultListener) -> requestOffLineLockList
+    1475:1484:void requestLongLockPwdList(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestLongLockPwdList
+    684:12024:void requestOffLineLockList(com.national.core.nw.it.OnResultListener) -> requestOffLineLockList
     254:268:void requestPidComfirm(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestPidComfirm
     272:279:void requestProvince(com.national.core.nw.it.OnResultListener) -> requestProvince
-    1430:1444:void requestShareLongLockPwd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestShareLongLockPwd
+    1432:1446:void requestShareLongLockPwd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestShareLongLockPwd
     308:317:void requestStreet(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestStreet
     333:342:void requestSubDistrictByDivision(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestSubDistrictByDivision
-    625:9066:void requestSysConfig(com.national.core.nw.it.OnResultListener) -> requestSysConfig
+    626:10066:void requestSysConfig(com.national.core.nw.it.OnResultListener) -> requestSysConfig
     361:373:void requestUnbindLock(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUnbindLock
     165:179:void requestUpdateCardName(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateCardName
     149:161:void requestUpdateLockName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateLockName
-    1461:1468:void requestUpdateLongLockPwdStatus(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateLongLockPwdStatus
-com.national.at -> com.national.at:
+    1463:1470:void requestUpdateLongLockPwdStatus(java.lang.String,com.national.core.nw.it.OnResultListener) -> requestUpdateLongLockPwdStatus
+com.national.ah -> com.national.ah:
 # {"id":"sourceFile","fileName":"SourceFile"}
     13:17:void <clinit>() -> <clinit>
     22:122:void <init>() -> <init>
-    78:82:com.national.volley.RequestQueue L() -> L
-    26:29:com.national.at V() -> V
+    26:29:com.national.ah E() -> E
+    78:82:com.national.volley.RequestQueue F() -> F
     92:94:void a(boolean) -> a
-com.national.au -> com.national.au:
+com.national.ai -> com.national.ai:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    262:262:void <init>(com.national.core.nw.NwModel,int,java.lang.Class,java.util.Map) -> <init>
-    262:1268:void onResponse(java.lang.Object) -> onResponse
-com.national.av -> com.national.av:
+    264:264:void <init>(com.national.core.nw.NwModel,int,java.lang.Class,java.util.Map) -> <init>
+    264:1270:void onResponse(java.lang.Object) -> onResponse
+com.national.aj -> com.national.aj:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    273:273:void <init>(com.national.core.nw.NwModel,int,java.util.Map,java.util.Map,java.util.Map) -> <init>
-    276:277:void onErrorResponse(com.national.volley.VolleyError) -> onErrorResponse
-com.national.aw -> com.national.aw:
+    275:275:void <init>(com.national.core.nw.NwModel,int,java.util.Map,java.util.Map,java.util.Map) -> <init>
+    278:279:void onErrorResponse(com.national.volley.VolleyError) -> onErrorResponse
+com.national.ak -> com.national.ak:
 # {"id":"sourceFile","fileName":"SourceFile"}
     526:526:void <init>(com.national.core.nw.NwModel,int,java.util.Map,java.util.Map,java.util.Map,java.lang.String) -> <init>
     526:1560:void onResponse(java.lang.Object) -> onResponse
-com.national.ax -> com.national.ax:
+com.national.al -> com.national.al:
 # {"id":"sourceFile","fileName":"SourceFile"}
     565:565:void <init>(com.national.core.nw.NwModel,java.lang.String,int,java.util.Map,java.util.Map,java.util.Map) -> <init>
     568:575:void onErrorResponse(com.national.volley.VolleyError) -> onErrorResponse
-com.national.ay -> com.national.ay:
+com.national.am -> com.national.am:
 # {"id":"sourceFile","fileName":"SourceFile"}
     60:62:void <clinit>() -> <clinit>
     26:340:void <init>() -> <init>
-    35:50:com.national.ay W() -> W
-    320:320:boolean X() -> X
-    359:364:java.lang.String Y() -> Y
+    35:50:com.national.am G() -> G
+    320:320:boolean H() -> H
+    359:364:java.lang.String I() -> I
     324:326:void b(boolean) -> b
     135:145:boolean c(java.lang.String,java.lang.String) -> c
     336:338:void c(boolean) -> c
     242:266:void d(java.lang.String,java.lang.String) -> d
     309:309:java.lang.String getUid() -> getUid
+    198:237:java.lang.String q(java.lang.String) -> q
+    271:271:java.lang.String r(java.lang.String) -> r
+    352:354:void s(java.lang.String) -> s
     313:315:void setUid(java.lang.String) -> setUid
-    198:237:java.lang.String t(java.lang.String) -> t
-    271:271:java.lang.String u(java.lang.String) -> u
-    352:354:void v(java.lang.String) -> v
-com.national.az -> com.national.az:
+com.national.an -> com.national.an:
 # {"id":"sourceFile","fileName":"SourceFile"}
     76:76:void <init>(com.national.core.update.CheckLockUpdateService) -> <init>
     84:85:void onError(java.lang.String,java.lang.String) -> onError
     79:80:void onSuccess(java.lang.String) -> onSuccess
+com.national.ao -> com.national.ao:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    14:1042:void <init>(android.content.Context,com.national.core.nw.entity.LockListEntity$Lock) -> <init>
+com.national.ap -> com.national.ap:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    55:1068:void <clinit>() -> <clinit>
+    37:38:void <init>() -> <init>
+    44:52:com.national.ap J() -> J
+    99:127:boolean a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    288:298:java.lang.String t(java.lang.String) -> t
+com.national.aq -> com.national.aq:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    32:57:java.lang.String c(byte[],byte[]) -> c
+com.national.ar -> com.national.ar:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    8:9:void <clinit>() -> <clinit>
+    13:52:java.lang.String j(byte[]) -> j
+com.national.as -> com.national.as:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    19:23:void <init>(com.national.as$a,long,long) -> <init>
+    27:28:void onFinish() -> onFinish
+    32:32:void onTick(long) -> onTick
+com.national.as$a -> com.national.as$a:
+# {"id":"sourceFile","fileName":"SourceFile"}
+com.national.at -> com.national.at:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    42:45:java.lang.String a(long) -> a
+    80:98:int e(java.lang.String,java.lang.String) -> e
+    57:67:java.util.Date u(java.lang.String) -> u
+com.national.au -> com.national.au:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    39:39:void <clinit>() -> <clinit>
+    28:125:void <init>() -> <init>
+    43:51:com.national.au K() -> K
+    109:1034:void a(android.content.Context,java.lang.String) -> a
+    71:76:java.lang.String f(int) -> f
+    136:146:void v(java.lang.String) -> v
+com.national.av -> com.national.av:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    42:42:void <clinit>() -> <clinit>
+    36:207:void <init>(android.content.Context) -> <init>
+    333:337:void A(java.lang.String) -> A
+    348:352:void B(java.lang.String) -> B
+    156:2070:void L() -> L
+    185:2113:java.lang.String M() -> M
+    195:2122:java.lang.String N() -> N
+    235:261:java.lang.String O() -> O
+    269:3095:java.lang.String P() -> P
+    306:6104:java.lang.String Q() -> Q
+    364:393:void R() -> R
+    398:407:com.national.ae S() -> S
+    483:500:java.lang.String a(android.content.Context,java.lang.String,int) -> a
+    45:51:com.national.av e(android.content.Context) -> e
+    136:136:java.lang.String f(android.content.Context) -> f
+    413:13117:void f(java.lang.String,java.lang.String) -> f
+    117:120:java.lang.String getLatitude() -> getLatitude
+    102:106:java.lang.String getLontitude() -> getLontitude
+    124:128:void setLatitude(java.lang.String) -> setLatitude
+    110:114:void setLontitude(java.lang.String) -> setLontitude
+    144:149:java.lang.String w(java.lang.String) -> w
+    281:5119:java.lang.String x(java.lang.String) -> x
+    297:302:void y(java.lang.String) -> y
+    315:320:void z(java.lang.String) -> z
+com.national.av$a -> com.national.av$a:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    512:513:void <init>(java.lang.String) -> <init>
+com.national.aw -> com.national.aw:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    32:1058:java.lang.String C(java.lang.String) -> C
+com.national.ax -> com.national.ax:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    25:61:void <clinit>() -> <clinit>
+    54:56:void T() -> T
+    64:64:boolean U() -> U
+    68:1051:void g(java.lang.String,java.lang.String) -> g
+    78:83:void h(java.lang.String,java.lang.String) -> h
+    88:99:void i(java.lang.String,java.lang.String) -> i
+    103:108:void j(java.lang.String,java.lang.String) -> j
+    111:115:void k(java.lang.String,java.lang.String) -> k
+com.national.ay -> com.national.ay:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    12:15:boolean a(android.content.Context,java.lang.String,java.lang.String) -> a
+    53:57:boolean a(android.content.Context,java.lang.String,boolean) -> a
+    19:20:java.lang.String b(android.content.Context,java.lang.String) -> b
+    81:82:boolean c(android.content.Context,java.lang.String) -> c
+com.national.az -> com.national.az:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    9:9:java.lang.String b(android.content.Context,java.lang.String) -> b
 com.national.b -> com.national.b:
 # {"id":"sourceFile","fileName":"SourceFile"}
     559:559:void <init>(com.national.cardreader.CardReader) -> <init>
     563:645:void run() -> run
-com.national.bA -> com.national.bA:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    8:9:void <init>() -> <init>
-com.national.bB -> com.national.bB:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    26:26:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-    28:28:com.national.vise.baseble.model.BluetoothLeDevice createFromParcel(android.os.Parcel) -> createFromParcel
-    26:26:java.lang.Object[] newArray(int) -> newArray
-    32:32:com.national.vise.baseble.model.BluetoothLeDevice[] newArray(int) -> newArray
-com.national.bC -> com.national.bC:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    49:49:void <init>(com.national.vise.baseble.model.BluetoothLeDeviceStore) -> <init>
-    49:49:int compare(java.lang.Object,java.lang.Object) -> compare
-    53:53:int compare(com.national.vise.baseble.model.BluetoothLeDevice,com.national.vise.baseble.model.BluetoothLeDevice) -> compare
-com.national.bD -> com.national.bD:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    44:44:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-    46:46:com.national.vise.baseble.model.adrecord.AdRecord createFromParcel(android.os.Parcel) -> createFromParcel
-    44:44:java.lang.Object[] newArray(int) -> newArray
-    50:50:com.national.vise.baseble.model.adrecord.AdRecord[] newArray(int) -> newArray
-com.national.bE -> com.national.bE:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    16:16:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-    18:18:com.national.vise.baseble.model.adrecord.AdRecordStore createFromParcel(android.os.Parcel) -> createFromParcel
-    16:16:java.lang.Object[] newArray(int) -> newArray
-    22:22:com.national.vise.baseble.model.adrecord.AdRecordStore[] newArray(int) -> newArray
-com.national.bF -> com.national.bF:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    8:110:java.lang.String resolveDeviceClass(int) -> resolveDeviceClass
-    115:139:java.lang.String resolveMajorDeviceClass(int) -> resolveMajorDeviceClass
-com.national.bG -> com.national.bG:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    21:24:java.lang.String getRecordDataAsString(com.national.vise.baseble.model.adrecord.AdRecord) -> getRecordDataAsString
-    28:35:byte[] getServiceData(com.national.vise.baseble.model.adrecord.AdRecord) -> getServiceData
-    39:49:int getServiceDataUuid(com.national.vise.baseble.model.adrecord.AdRecord) -> getServiceDataUuid
-    56:77:java.util.List parseScanRecordAsList(byte[]) -> parseScanRecordAsList
-    81:102:java.util.Map parseScanRecordAsMap(byte[]) -> parseScanRecordAsMap
-    106:127:android.util.SparseArray parseScanRecordAsSparseArray(byte[]) -> parseScanRecordAsSparseArray
-com.national.bH -> com.national.bH:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    16:26:boolean doesArrayBeginWith(byte[],byte[]) -> doesArrayBeginWith
-    36:43:int getIntFrom2ByteArray(byte[]) -> getIntFrom2ByteArray
-    55:55:int getIntFromByte(byte) -> getIntFromByte
-    65:65:int getIntFromByteArray(byte[]) -> getIntFromByteArray
-    75:75:long getLongFromByteArray(byte[]) -> getLongFromByteArray
-    85:93:void invertArray(byte[]) -> invertArray
 com.national.ba -> com.national.ba:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    322:322:void <init>(com.national.aS,int,android.bluetooth.BluetoothGattDescriptor) -> <init>
-    325:335:void run() -> run
+    711:711:void <init>(com.national.aZ,com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
+    714:715:void run() -> run
 com.national.bb -> com.national.bb:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    354:354:void <init>(com.national.aS,int,int) -> <init>
-    357:367:void run() -> run
+    725:725:void <init>(com.national.aZ) -> <init>
+    728:731:void run() -> run
 com.national.bc -> com.national.bc:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    575:575:void <init>(com.national.vise.baseble.ViseBluetooth,java.lang.String,boolean,com.national.vise.baseble.callback.IConnectCallback) -> <init>
-    578:585:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
-    589:601:void scanTimeout() -> scanTimeout
+    799:799:void <init>(com.national.vise.baseble.ViseBluetooth,com.national.vise.baseble.callback.data.ICharacteristicCallback) -> <init>
+    802:804:void run() -> run
 com.national.bd -> com.national.bd:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    579:579:void <init>(com.national.bc,com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
-    582:583:void run() -> run
+    836:836:void <init>(com.national.vise.baseble.ViseBluetooth,com.national.vise.baseble.callback.data.IDescriptorCallback) -> <init>
+    839:841:void run() -> run
 com.national.be -> com.national.be:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    593:593:void <init>(com.national.bc) -> <init>
-    596:599:void run() -> run
+    874:874:void <init>(com.national.vise.baseble.ViseBluetooth,com.national.vise.baseble.callback.data.ICharacteristicCallback) -> <init>
+    877:879:void run() -> run
 com.national.bf -> com.national.bf:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    616:616:void <init>(com.national.vise.baseble.ViseBluetooth,java.lang.String,boolean,com.national.vise.baseble.callback.IConnectCallback) -> <init>
-    619:626:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
-    630:642:void scanTimeout() -> scanTimeout
+    79:79:void <init>(com.national.vise.baseble.callback.scan.PeriodLScanCallback) -> <init>
+    82:88:void run() -> run
 com.national.bg -> com.national.bg:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    620:620:void <init>(com.national.bf,com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
-    623:624:void run() -> run
+    55:55:void <init>(com.national.vise.baseble.callback.scan.PeriodScanCallback) -> <init>
+    58:64:void run() -> run
 com.national.bh -> com.national.bh:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    634:634:void <init>(com.national.bf) -> <init>
-    637:640:void run() -> run
+    4:1004:void <clinit>() -> <clinit>
+    4:4:void <init>(java.lang.String,int) -> <init>
+    4:4:com.national.bh valueOf(java.lang.String) -> valueOf
+    4:4:com.national.bh[] values() -> values
 com.national.bi -> com.national.bi:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    660:660:void <init>(com.national.vise.baseble.ViseBluetooth,boolean,com.national.vise.baseble.callback.IConnectCallback) -> <init>
-    663:670:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
-    674:686:void scanTimeout() -> scanTimeout
+    6:1006:void <clinit>() -> <clinit>
+    19:21:void <init>(java.lang.String,int,int) -> <init>
+    24:24:int getCode() -> getCode
+    6:6:com.national.bi valueOf(java.lang.String) -> valueOf
+    6:6:com.national.bi[] values() -> values
 com.national.bj -> com.national.bj:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    664:664:void <init>(com.national.bi,com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
-    667:668:void run() -> run
+    4:1004:void <clinit>() -> <clinit>
+    16:18:void <init>(java.lang.String,int,int) -> <init>
+    21:21:int getCode() -> getCode
+    4:4:com.national.bj valueOf(java.lang.String) -> valueOf
+    4:4:com.national.bj[] values() -> values
 com.national.bk -> com.national.bk:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    678:678:void <init>(com.national.bi) -> <init>
-    681:684:void run() -> run
+    13:16:void <init>(android.bluetooth.BluetoothGatt,int) -> <init>
+    28:28:android.bluetooth.BluetoothGatt getBluetoothGatt() -> getBluetoothGatt
+    19:19:int getGattStatus() -> getGattStatus
+    32:33:com.national.bk setBluetoothGatt(android.bluetooth.BluetoothGatt) -> setBluetoothGatt
+    23:24:com.national.bk setGattStatus(int) -> setGattStatus
+    38:41:java.lang.String toString() -> toString
 com.national.bl -> com.national.bl:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    707:707:void <init>(com.national.vise.baseble.ViseBluetooth,boolean,com.national.vise.baseble.callback.IConnectCallback) -> <init>
-    710:717:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
-    721:733:void scanTimeout() -> scanTimeout
+    9:11:void <init>(int) -> <init>
+    14:14:int getGattStatus() -> getGattStatus
+    18:19:com.national.bl setGattStatus(int) -> setGattStatus
+    24:26:java.lang.String toString() -> toString
 com.national.blelib.Base64 -> com.national.blelib.Base64:
 # {"id":"sourceFile","fileName":"SourceFile"}
     5:5:void <clinit>() -> <clinit>
@@ -20890,38 +21059,40 @@ com.national.blelib.PackageSendYisu -> com.national.blelib.PackageSendYisu:
     60:101:boolean packSubData(byte[],byte) -> packSubData
 com.national.bm -> com.national.bm:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    711:711:void <init>(com.national.bl,com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
-    714:715:void run() -> run
+    7:8:void <init>() -> <init>
 com.national.bn -> com.national.bn:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    725:725:void <init>(com.national.bl) -> <init>
-    728:731:void run() -> run
+    7:8:void <init>(java.lang.String) -> <init>
 com.national.bo -> com.national.bo:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    799:799:void <init>(com.national.vise.baseble.ViseBluetooth,com.national.vise.baseble.callback.data.ICharacteristicCallback) -> <init>
-    802:804:void run() -> run
+    8:9:void <init>() -> <init>
 com.national.bp -> com.national.bp:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    836:836:void <init>(com.national.vise.baseble.ViseBluetooth,com.national.vise.baseble.callback.data.IDescriptorCallback) -> <init>
-    839:841:void run() -> run
+    26:26:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+    28:28:com.national.vise.baseble.model.BluetoothLeDevice createFromParcel(android.os.Parcel) -> createFromParcel
+    26:26:java.lang.Object[] newArray(int) -> newArray
+    32:32:com.national.vise.baseble.model.BluetoothLeDevice[] newArray(int) -> newArray
 com.national.bq -> com.national.bq:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    874:874:void <init>(com.national.vise.baseble.ViseBluetooth,com.national.vise.baseble.callback.data.ICharacteristicCallback) -> <init>
-    877:879:void run() -> run
+    49:49:void <init>(com.national.vise.baseble.model.BluetoothLeDeviceStore) -> <init>
+    49:49:int compare(java.lang.Object,java.lang.Object) -> compare
+    53:53:int compare(com.national.vise.baseble.model.BluetoothLeDevice,com.national.vise.baseble.model.BluetoothLeDevice) -> compare
 com.national.br -> com.national.br:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    79:79:void <init>(com.national.vise.baseble.callback.scan.PeriodLScanCallback) -> <init>
-    82:88:void run() -> run
+    44:44:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+    46:46:com.national.vise.baseble.model.adrecord.AdRecord createFromParcel(android.os.Parcel) -> createFromParcel
+    44:44:java.lang.Object[] newArray(int) -> newArray
+    50:50:com.national.vise.baseble.model.adrecord.AdRecord[] newArray(int) -> newArray
 com.national.bs -> com.national.bs:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    55:55:void <init>(com.national.vise.baseble.callback.scan.PeriodScanCallback) -> <init>
-    58:64:void run() -> run
+    16:16:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+    18:18:com.national.vise.baseble.model.adrecord.AdRecordStore createFromParcel(android.os.Parcel) -> createFromParcel
+    16:16:java.lang.Object[] newArray(int) -> newArray
+    22:22:com.national.vise.baseble.model.adrecord.AdRecordStore[] newArray(int) -> newArray
 com.national.bt -> com.national.bt:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    4:9:void <clinit>() -> <clinit>
-    4:4:void <init>(java.lang.String,int) -> <init>
-    4:4:com.national.bt valueOf(java.lang.String) -> valueOf
-    4:4:com.national.bt[] values() -> values
+    8:110:java.lang.String resolveDeviceClass(int) -> resolveDeviceClass
+    115:139:java.lang.String resolveMajorDeviceClass(int) -> resolveMajorDeviceClass
 com.national.btlock.adapter.AuthListAdapter -> com.national.btlock.adapter.AuthListAdapter:
     135:142:void <init>(android.content.Context,java.lang.String,java.util.List,com.national.btlock.adapter.AuthListAdapter$IAuthListBtnClickListener) -> <init>
     132:132:int getItemCount() -> getItemCount
@@ -21656,7 +21827,7 @@ com.national.btlock.sdk.BaseActivity -> com.national.btlock.sdk.BaseActivity:
       # {"id":"com.android.tools.r8.synthesized"}
     19:19:void <init>() -> <init>
     36:72:void lambda$onCreate$0(android.view.View) -> lambda$onCreate$0
-    89:163:void login() -> login
+    81:155:void login() -> login
     28:75:void onCreate(android.os.Bundle) -> onCreate
 com.national.btlock.sdk.BaseActivity$$ExternalSyntheticLambda0 -> com.national.btlock.sdk.BaseActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
@@ -21671,15 +21842,15 @@ com.national.btlock.sdk.BaseActivity$1 -> com.national.btlock.sdk.BaseActivity$1
     64:69:void initFailure(java.lang.String,java.lang.String) -> initFailure
     57:60:void initSuccess() -> initSuccess
 com.national.btlock.sdk.BaseActivity$2 -> com.national.btlock.sdk.BaseActivity$2:
-    89:89:void <init>(com.national.btlock.sdk.BaseActivity) -> <init>
-    115:146:void onError(java.lang.String,java.lang.String) -> onError
-    92:110:void onSuccess(java.lang.String) -> onSuccess
+    81:81:void <init>(com.national.btlock.sdk.BaseActivity) -> <init>
+    107:138:void onError(java.lang.String,java.lang.String) -> onError
+    84:102:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.BaseActivity$2$1 -> com.national.btlock.sdk.BaseActivity$2$1:
-    122:122:void <init>(com.national.btlock.sdk.BaseActivity$2) -> <init>
-    125:128:void onClick(android.content.DialogInterface,int) -> onClick
+    114:114:void <init>(com.national.btlock.sdk.BaseActivity$2) -> <init>
+    117:120:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.sdk.BaseActivity$2$2 -> com.national.btlock.sdk.BaseActivity$2$2:
-    131:131:void <init>(com.national.btlock.sdk.BaseActivity$2) -> <init>
-    134:135:void onClick(android.content.DialogInterface,int) -> onClick
+    123:123:void <init>(com.national.btlock.sdk.BaseActivity$2) -> <init>
+    126:127:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.sdk.BuildConfig -> com.national.btlock.sdk.BuildConfig:
     7:7:void <clinit>() -> <clinit>
     6:6:void <init>() -> <init>
@@ -21722,60 +21893,60 @@ com.national.btlock.sdk.MyApp -> com.national.btlock.sdk.MyApp:
     5:5:void <init>() -> <init>
     10:36:void onCreate() -> onCreate
 com.national.btlock.sdk.SdkHelper -> com.national.btlock.sdk.SdkHelper:
-    146:146:void <clinit>() -> <clinit>
+    144:144:void <clinit>() -> <clinit>
     31:31:void <init>() -> <init>
-    421:446:void faceInit(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceInit
-    455:472:void faceLogin(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceLogin
-    243:243:com.national.btlock.sdk.SdkHelper$identificationCallBack getCallBack() -> getCallBack
+    415:440:void faceInit(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceInit
+    448:463:void faceLogin(android.content.Context,com.national.btlock.sdk.SdkHelper$CallBack) -> faceLogin
+    239:239:com.national.btlock.sdk.SdkHelper$identificationCallBack getCallBack() -> getCallBack
     35:38:com.national.btlock.sdk.SdkHelper getInstance() -> getInstance
     106:106:java.lang.String getLicenseFileName() -> getLicenseFileName
     98:98:java.lang.String getLicenseId() -> getLicenseId
-    254:254:com.national.btlock.sdk.SdkHelper$CallBack getLoginCallBack() -> getLoginCallBack
-    476:484:long getNum(int) -> getNum
-    270:300:void identification(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$identificationCallBack) -> identification
+    250:250:com.national.btlock.sdk.SdkHelper$CallBack getLoginCallBack() -> getLoginCallBack
+    471:479:long getNum(int) -> getNum
+    266:296:void identification(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$identificationCallBack) -> identification
     59:87:void init(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
-    123:143:void init(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
-    378:412:void login(android.content.Context,java.lang.String,com.national.btlock.sdk.SdkHelper$CallBack) -> login
-    489:492:void loginListener(android.content.Context,android.content.BroadcastReceiver) -> loginListener
-    313:325:void loginOut(com.national.btlock.sdk.SdkHelper$CallBack) -> loginOut
+    123:142:void init(android.content.Context,java.lang.String,java.lang.String,com.national.btlock.sdk.SdkHelper$initCallBack) -> init
+    372:406:void login(android.content.Context,java.lang.String,com.national.btlock.sdk.SdkHelper$CallBack) -> login
+    484:487:void loginListener(android.content.Context,android.content.BroadcastReceiver) -> loginListener
+    309:321:void loginOut(com.national.btlock.sdk.SdkHelper$CallBack) -> loginOut
     93:95:void setBaiduFaceConfig(java.lang.String,java.lang.String) -> setBaiduFaceConfig
-    239:240:void setCallBack(com.national.btlock.sdk.SdkHelper$identificationCallBack) -> setCallBack
-    149:218:boolean setFaceConfig() -> setFaceConfig
+    235:236:void setCallBack(com.national.btlock.sdk.SdkHelper$identificationCallBack) -> setCallBack
+    147:214:boolean setFaceConfig() -> setFaceConfig
     110:111:void setLicenseFileName(java.lang.String) -> setLicenseFileName
     102:103:void setLicenseId(java.lang.String) -> setLicenseId
-    250:251:void setLoginCallBack(com.national.btlock.sdk.SdkHelper$CallBack) -> setLoginCallBack
+    246:247:void setLoginCallBack(com.national.btlock.sdk.SdkHelper$CallBack) -> setLoginCallBack
 com.national.btlock.sdk.SdkHelper$1 -> com.national.btlock.sdk.SdkHelper$1:
     74:74:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
     82:84:void initFailure(int,java.lang.String) -> initFailure
     77:78:void initSuccess() -> initSuccess
 com.national.btlock.sdk.SdkHelper$2 -> com.national.btlock.sdk.SdkHelper$2:
     129:129:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$initCallBack) -> <init>
-    137:139:void onError(java.lang.String,java.lang.String) -> onError
+    137:138:void onError(java.lang.String,java.lang.String) -> onError
     132:133:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$3 -> com.national.btlock.sdk.SdkHelper$3:
-    278:278:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$identificationCallBack,java.lang.String,java.lang.String,android.content.Context) -> <init>
-    295:297:void initFailure(int,java.lang.String) -> initFailure
-    281:291:void initSuccess() -> initSuccess
+    274:274:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$identificationCallBack,java.lang.String,java.lang.String,android.content.Context) -> <init>
+    291:293:void initFailure(int,java.lang.String) -> initFailure
+    277:287:void initSuccess() -> initSuccess
 com.national.btlock.sdk.SdkHelper$4 -> com.national.btlock.sdk.SdkHelper$4:
-    313:313:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    321:323:void onError(java.lang.String,java.lang.String) -> onError
-    316:317:void onSuccess(java.lang.String) -> onSuccess
+    309:309:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
+    317:319:void onError(java.lang.String,java.lang.String) -> onError
+    312:313:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$5 -> com.national.btlock.sdk.SdkHelper$5:
-    379:379:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    387:388:void onError(java.lang.String,java.lang.String) -> onError
-    382:383:void onSuccess(java.lang.String) -> onSuccess
+    373:373:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
+    381:382:void onError(java.lang.String,java.lang.String) -> onError
+    376:377:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$6 -> com.national.btlock.sdk.SdkHelper$6:
-    394:394:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
-    402:407:void onError(java.lang.String,java.lang.String) -> onError
-    397:398:void onSuccess(java.lang.String) -> onSuccess
+    388:388:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
+    396:401:void onError(java.lang.String,java.lang.String) -> onError
+    391:392:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SdkHelper$7 -> com.national.btlock.sdk.SdkHelper$7:
-    434:434:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
-    442:444:void initFailure(int,java.lang.String) -> initFailure
-    437:438:void initSuccess() -> initSuccess
+    428:428:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack) -> <init>
+    436:438:void initFailure(int,java.lang.String) -> initFailure
+    431:432:void initSuccess() -> initSuccess
 com.national.btlock.sdk.SdkHelper$8 -> com.national.btlock.sdk.SdkHelper$8:
-    455:455:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
-    466:468:void onError(java.lang.String,java.lang.String) -> onError
-    458:462:void onSuccess(java.lang.String) -> onSuccess
+    448:448:void <init>(com.national.btlock.sdk.SdkHelper,com.national.btlock.sdk.SdkHelper$CallBack,android.content.Context) -> <init>
+    459:460:void onError(java.lang.String,java.lang.String) -> onError
+    451:455:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.sdk.SplashActivity -> com.national.btlock.sdk.SplashActivity:
     14:14:void <init>() -> <init>
     14:14:void access$000(com.national.btlock.sdk.SplashActivity) -> access$000
@@ -21978,64 +22149,85 @@ com.national.btlock.ui.BaseActivity -> com.national.btlock.ui.BaseActivity:
     40:46:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     24:27:void showProgressDialog() -> showProgressDialog
 com.national.btlock.ui.BleComunicationInfoActivity -> com.national.btlock.ui.BleComunicationInfoActivity:
-    28:39:void <init>() -> <init>
-    28:28:void access$000(com.national.btlock.ui.BleComunicationInfoActivity) -> access$000
-    239:256:void authCardA() -> authCardA
-    160:191:void authIdCard() -> authIdCard
-    194:236:void authIdCardByOcr(java.lang.String) -> authIdCardByOcr
-    309:320:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    43:94:void onCreate(android.os.Bundle) -> onCreate
-    99:99:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
-    260:280:void openLock() -> openLock
-    284:304:void sycnData() -> sycnData
-    103:119:void updateBle() -> updateBle
-    141:157:void updateLora() -> updateLora
-    122:138:void updateMcu() -> updateMcu
+    33:44:void <init>() -> <init>
+    33:33:void access$000(com.national.btlock.ui.BleComunicationInfoActivity) -> access$000
+    267:292:void authCardA() -> authCardA
+    179:218:void authIdCard() -> authIdCard
+    221:263:void authIdCardByOcr(java.lang.String) -> authIdCardByOcr
+    165:175:void checkPermissions(com.hjq.permissions.OnPermissionCallback) -> checkPermissions
+    360:371:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    48:99:void onCreate(android.os.Bundle) -> onCreate
+    104:104:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
+    295:323:void openLock() -> openLock
+    327:355:void sycnData() -> sycnData
+    108:124:void updateBle() -> updateBle
+    146:162:void updateLora() -> updateLora
+    127:143:void updateMcu() -> updateMcu
 com.national.btlock.ui.BleComunicationInfoActivity$1 -> com.national.btlock.ui.BleComunicationInfoActivity$1:
-    103:103:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
-    117:117:void onError(java.lang.String,java.lang.String) -> onError
-    107:107:void onProgressUpdate(java.lang.String) -> onProgressUpdate
-    112:112:void onSuccess(java.lang.String) -> onSuccess
+    108:108:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
+    122:122:void onError(java.lang.String,java.lang.String) -> onError
+    112:112:void onProgressUpdate(java.lang.String) -> onProgressUpdate
+    117:117:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BleComunicationInfoActivity$2 -> com.national.btlock.ui.BleComunicationInfoActivity$2:
-    122:122:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
-    136:136:void onError(java.lang.String,java.lang.String) -> onError
-    126:126:void onProgressUpdate(java.lang.String) -> onProgressUpdate
-    131:131:void onSuccess(java.lang.String) -> onSuccess
+    127:127:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
+    141:141:void onError(java.lang.String,java.lang.String) -> onError
+    131:131:void onProgressUpdate(java.lang.String) -> onProgressUpdate
+    136:136:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BleComunicationInfoActivity$3 -> com.national.btlock.ui.BleComunicationInfoActivity$3:
-    141:141:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
-    155:155:void onError(java.lang.String,java.lang.String) -> onError
-    145:145:void onProgressUpdate(java.lang.String) -> onProgressUpdate
-    150:150:void onSuccess(java.lang.String) -> onSuccess
+    146:146:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
+    160:160:void onError(java.lang.String,java.lang.String) -> onError
+    150:150:void onProgressUpdate(java.lang.String) -> onProgressUpdate
+    155:155:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BleComunicationInfoActivity$4 -> com.national.btlock.ui.BleComunicationInfoActivity$4:
-    161:161:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
-    175:188:void onError(java.lang.String,java.lang.String) -> onError
-    164:165:void onProgressUpdate(java.lang.String) -> onProgressUpdate
-    169:171:void onSuccess(java.lang.String) -> onSuccess
+    180:180:void <init>(com.national.btlock.ui.BleComunicationInfoActivity,byte[]) -> <init>
+    void onDenied(java.util.List,boolean) -> onDenied
+      # {"id":"com.android.tools.r8.synthesized"}
+    183:215:void onGranted(java.util.List,boolean) -> onGranted
+com.national.btlock.ui.BleComunicationInfoActivity$4$1 -> com.national.btlock.ui.BleComunicationInfoActivity$4$1:
+    184:184:void <init>(com.national.btlock.ui.BleComunicationInfoActivity$4) -> <init>
+    198:211:void onError(java.lang.String,java.lang.String) -> onError
+    187:188:void onProgressUpdate(java.lang.String) -> onProgressUpdate
+    192:194:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BleComunicationInfoActivity$5 -> com.national.btlock.ui.BleComunicationInfoActivity$5:
-    195:195:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
-    231:234:void onError(java.lang.String,java.lang.String) -> onError
-    198:227:void onSuccess(java.lang.String) -> onSuccess
+    222:222:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
+    258:261:void onError(java.lang.String,java.lang.String) -> onError
+    225:254:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BleComunicationInfoActivity$5$1 -> com.national.btlock.ui.BleComunicationInfoActivity$5$1:
-    205:205:void <init>(com.national.btlock.ui.BleComunicationInfoActivity$5) -> <init>
-    209:210:void onClick(android.content.DialogInterface,int) -> onClick
+    232:232:void <init>(com.national.btlock.ui.BleComunicationInfoActivity$5) -> <init>
+    236:237:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.BleComunicationInfoActivity$5$2 -> com.national.btlock.ui.BleComunicationInfoActivity$5$2:
-    212:212:void <init>(com.national.btlock.ui.BleComunicationInfoActivity$5) -> <init>
-    215:216:void onClick(android.content.DialogInterface,int) -> onClick
+    239:239:void <init>(com.national.btlock.ui.BleComunicationInfoActivity$5) -> <init>
+    242:243:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.BleComunicationInfoActivity$6 -> com.national.btlock.ui.BleComunicationInfoActivity$6:
-    239:239:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
-    253:254:void onError(java.lang.String,java.lang.String) -> onError
-    242:243:void onProgressUpdate(java.lang.String) -> onProgressUpdate
-    247:249:void onSuccess(java.lang.String) -> onSuccess
+    267:267:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
+    void onDenied(java.util.List,boolean) -> onDenied
+      # {"id":"com.android.tools.r8.synthesized"}
+    270:289:void onGranted(java.util.List,boolean) -> onGranted
+com.national.btlock.ui.BleComunicationInfoActivity$6$1 -> com.national.btlock.ui.BleComunicationInfoActivity$6$1:
+    271:271:void <init>(com.national.btlock.ui.BleComunicationInfoActivity$6) -> <init>
+    285:286:void onError(java.lang.String,java.lang.String) -> onError
+    274:275:void onProgressUpdate(java.lang.String) -> onProgressUpdate
+    279:281:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BleComunicationInfoActivity$7 -> com.national.btlock.ui.BleComunicationInfoActivity$7:
-    260:260:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
-    275:278:void onError(java.lang.String,java.lang.String) -> onError
-    263:264:void onProgressUpdate(java.lang.String) -> onProgressUpdate
-    268:271:void onSuccess(java.lang.String) -> onSuccess
+    295:295:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
+    void onDenied(java.util.List,boolean) -> onDenied
+      # {"id":"com.android.tools.r8.synthesized"}
+    298:320:void onGranted(java.util.List,boolean) -> onGranted
+com.national.btlock.ui.BleComunicationInfoActivity$7$1 -> com.national.btlock.ui.BleComunicationInfoActivity$7$1:
+    299:299:void <init>(com.national.btlock.ui.BleComunicationInfoActivity$7) -> <init>
+    314:317:void onError(java.lang.String,java.lang.String) -> onError
+    302:303:void onProgressUpdate(java.lang.String) -> onProgressUpdate
+    307:310:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BleComunicationInfoActivity$8 -> com.national.btlock.ui.BleComunicationInfoActivity$8:
-    284:284:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
-    299:302:void onError(java.lang.String,java.lang.String) -> onError
-    287:288:void onProgressUpdate(java.lang.String) -> onProgressUpdate
-    292:295:void onSuccess(java.lang.String) -> onSuccess
+    327:327:void <init>(com.national.btlock.ui.BleComunicationInfoActivity) -> <init>
+    void onDenied(java.util.List,boolean) -> onDenied
+      # {"id":"com.android.tools.r8.synthesized"}
+    330:352:void onGranted(java.util.List,boolean) -> onGranted
+com.national.btlock.ui.BleComunicationInfoActivity$8$1 -> com.national.btlock.ui.BleComunicationInfoActivity$8$1:
+    331:331:void <init>(com.national.btlock.ui.BleComunicationInfoActivity$8) -> <init>
+    346:349:void onError(java.lang.String,java.lang.String) -> onError
+    334:335:void onProgressUpdate(java.lang.String) -> onProgressUpdate
+    339:342:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.BuildConfig -> com.national.btlock.ui.BuildConfig:
     7:7:void <clinit>() -> <clinit>
     6:6:void <init>() -> <init>
@@ -22048,22 +22240,22 @@ com.national.btlock.ui.LockDetailActivity -> com.national.btlock.ui.LockDetailAc
       # {"id":"com.android.tools.r8.synthesized"}
     32:217:void <init>() -> <init>
     32:32:java.lang.String access$000(com.national.btlock.ui.LockDetailActivity) -> access$000
-    559:627:java.lang.String getDeviceType() -> getDeviceType
-    402:555:void getLockDetail() -> getLockDetail
-    656:666:java.lang.String getVer(java.lang.String) -> getVer
-    380:396:void giveBackManagement(java.lang.String) -> giveBackManagement
+    560:628:java.lang.String getDeviceType() -> getDeviceType
+    403:556:void getLockDetail() -> getLockDetail
+    657:667:java.lang.String getVer(java.lang.String) -> getVer
+    381:397:void giveBackManagement(java.lang.String) -> giveBackManagement
     208:214:void goAuthList(java.lang.String,java.lang.String) -> goAuthList
-    292:355:void goNext(java.lang.String) -> goNext
+    293:356:void goNext(java.lang.String) -> goNext
     200:205:void goUpdate(java.lang.String,java.lang.String) -> goUpdate
-    221:286:void initAppItem() -> initAppItem
+    221:287:void initAppItem() -> initAppItem
     104:141:void initView() -> initView
-    256:285:void lambda$initAppItem$0(android.widget.AdapterView,android.view.View,int,long) -> lambda$initAppItem$0
-    366:369:void lambda$show2ndConfirmDlg$1(java.lang.String,android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$1
-    370:370:void lambda$show2ndConfirmDlg$2(android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$2
-    633:652:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    256:286:void lambda$initAppItem$0(android.widget.AdapterView,android.view.View,int,long) -> lambda$initAppItem$0
+    367:370:void lambda$show2ndConfirmDlg$1(java.lang.String,android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$1
+    371:371:void lambda$show2ndConfirmDlg$2(android.content.DialogInterface,int) -> lambda$show2ndConfirmDlg$2
+    634:653:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     67:100:void onCreate(android.os.Bundle) -> onCreate
     148:197:void onNoDoubleClick(android.view.View) -> onNoDoubleClick
-    360:377:void show2ndConfirmDlg(android.view.View,java.lang.String) -> show2ndConfirmDlg
+    361:378:void show2ndConfirmDlg(android.view.View,java.lang.String) -> show2ndConfirmDlg
 com.national.btlock.ui.LockDetailActivity$$ExternalSyntheticLambda0 -> com.national.btlock.ui.LockDetailActivity$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -22092,13 +22284,13 @@ com.national.btlock.ui.LockDetailActivity$$ExternalSyntheticLambda2 -> com.natio
     void com.national.btlock.ui.LockDetailActivity$$InternalSyntheticLambda$0$ae5b5955dfc3485580a697c9c53c3d9b1afcc8c4c7d4425850d64042b3658182$0.onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.national.btlock.ui.LockDetailActivity$1 -> com.national.btlock.ui.LockDetailActivity$1:
-    380:380:void <init>(com.national.btlock.ui.LockDetailActivity,java.lang.String) -> <init>
-    390:392:void onError(java.lang.String,java.lang.String) -> onError
-    384:386:void onSuccess(java.lang.String) -> onSuccess
+    381:381:void <init>(com.national.btlock.ui.LockDetailActivity,java.lang.String) -> <init>
+    391:393:void onError(java.lang.String,java.lang.String) -> onError
+    385:387:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockDetailActivity$2 -> com.national.btlock.ui.LockDetailActivity$2:
-    406:406:void <init>(com.national.btlock.ui.LockDetailActivity) -> <init>
-    551:553:void onError(java.lang.String,java.lang.String) -> onError
-    410:547:void onSuccess(java.lang.String) -> onSuccess
+    407:407:void <init>(com.national.btlock.ui.LockDetailActivity) -> <init>
+    552:554:void onError(java.lang.String,java.lang.String) -> onError
+    411:548:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.LockListActivity -> com.national.btlock.ui.LockListActivity:
     void $r8$lambda$vj-FekDIEPFYIFTHY4LWWKu2SJw(com.national.btlock.ui.LockListActivity,android.view.View) -> $r8$lambda$vj-FekDIEPFYIFTHY4LWWKu2SJw
       # {"id":"com.android.tools.r8.synthesized"}
@@ -22394,36 +22586,36 @@ com.national.btlock.ui.LockShareExtendActivity$2 -> com.national.btlock.ui.LockS
 com.national.btlock.ui.MainFragment -> com.national.btlock.ui.MainFragment:
     void $r8$lambda$74ZcZkdY7LwUwOYVNhrw93dkKRc(com.national.btlock.ui.MainFragment,android.widget.AdapterView,android.view.View,int,long) -> $r8$lambda$74ZcZkdY7LwUwOYVNhrw93dkKRc
       # {"id":"com.android.tools.r8.synthesized"}
-    75:708:void <init>() -> <init>
-    55:55:void access$000(com.national.btlock.ui.MainFragment) -> access$000
-    55:55:java.lang.String access$100(com.national.btlock.ui.MainFragment,com.national.core.nw.entity.LockListEntity$Lock) -> access$100
-    55:55:void access$200(com.national.btlock.ui.MainFragment) -> access$200
-    55:55:void access$300(com.national.btlock.ui.MainFragment) -> access$300
-    55:55:void access$400(com.national.btlock.ui.MainFragment,com.national.core.nw.entity.LockListEntity$Lock,java.lang.String) -> access$400
-    668:702:void addAppItem() -> addAppItem
-    265:269:void dismissProgressDialog() -> dismissProgressDialog
-    106:112:void enableBlueTooth() -> enableBlueTooth
-    1012:1082:java.lang.String getDeviceType(com.national.core.nw.entity.LockListEntity$Lock) -> getDeviceType
-    273:410:void getLockDetail() -> getLockDetail
-    417:499:void getLockList() -> getLockList
-    503:565:void getOfflineLockList() -> getOfflineLockList
-    569:586:void getSysConfig() -> getSysConfig
-    1086:1096:java.lang.String getVer(java.lang.String) -> getVer
-    939:958:void giveBackManagement(com.national.core.nw.entity.LockListEntity$Lock,java.lang.String) -> giveBackManagement
-    811:816:void goAuthList(java.lang.String,java.lang.String) -> goAuthList
-    832:907:void goNext(java.lang.String) -> goNext
-    592:663:void initAppItem() -> initAppItem
-    628:662:void lambda$initAppItem$0(android.widget.AdapterView,android.view.View,int,long) -> lambda$initAppItem$0
-    91:99:com.national.btlock.ui.MainFragment newInstance(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> newInstance
-    963:1000:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    820:821:void onAttach(android.content.Context) -> onAttach
-    712:794:void onClick(android.view.View) -> onClick
-    116:125:void onCreate(android.os.Bundle) -> onCreate
-    158:249:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    797:807:void setEndTime(com.national.core.nw.entity.LockListEntity$Lock) -> setEndTime
-    1005:1009:void setUserVisibleHint(boolean) -> setUserVisibleHint
-    911:936:void show2ndConfirmDlg(com.national.core.nw.entity.LockListEntity$Lock,android.view.View,java.lang.String) -> show2ndConfirmDlg
-    258:261:void showProgressDialog() -> showProgressDialog
+    77:727:void <init>() -> <init>
+    57:57:void access$000(com.national.btlock.ui.MainFragment) -> access$000
+    57:57:java.lang.String access$100(com.national.btlock.ui.MainFragment,com.national.core.nw.entity.LockListEntity$Lock) -> access$100
+    57:57:void access$200(com.national.btlock.ui.MainFragment) -> access$200
+    57:57:void access$300(com.national.btlock.ui.MainFragment) -> access$300
+    57:57:void access$400(com.national.btlock.ui.MainFragment,com.national.core.nw.entity.LockListEntity$Lock,java.lang.String) -> access$400
+    687:721:void addAppItem() -> addAppItem
+    267:271:void dismissProgressDialog() -> dismissProgressDialog
+    108:114:void enableBlueTooth() -> enableBlueTooth
+    1035:1105:java.lang.String getDeviceType(com.national.core.nw.entity.LockListEntity$Lock) -> getDeviceType
+    275:412:void getLockDetail() -> getLockDetail
+    419:501:void getLockList() -> getLockList
+    505:567:void getOfflineLockList() -> getOfflineLockList
+    571:588:void getSysConfig() -> getSysConfig
+    1109:1119:java.lang.String getVer(java.lang.String) -> getVer
+    958:977:void giveBackManagement(com.national.core.nw.entity.LockListEntity$Lock,java.lang.String) -> giveBackManagement
+    830:835:void goAuthList(java.lang.String,java.lang.String) -> goAuthList
+    851:926:void goNext(java.lang.String) -> goNext
+    595:681:void initAppItem() -> initAppItem
+    631:680:void lambda$initAppItem$0(android.widget.AdapterView,android.view.View,int,long) -> lambda$initAppItem$0
+    93:101:com.national.btlock.ui.MainFragment newInstance(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> newInstance
+    982:1023:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    839:840:void onAttach(android.content.Context) -> onAttach
+    731:813:void onClick(android.view.View) -> onClick
+    118:127:void onCreate(android.os.Bundle) -> onCreate
+    160:251:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    816:826:void setEndTime(com.national.core.nw.entity.LockListEntity$Lock) -> setEndTime
+    1028:1032:void setUserVisibleHint(boolean) -> setUserVisibleHint
+    930:955:void show2ndConfirmDlg(com.national.core.nw.entity.LockListEntity$Lock,android.view.View,java.lang.String) -> show2ndConfirmDlg
+    260:263:void showProgressDialog() -> showProgressDialog
 com.national.btlock.ui.MainFragment$$ExternalSyntheticLambda0 -> com.national.btlock.ui.MainFragment$$ExternalSyntheticLambda0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -22433,49 +22625,49 @@ com.national.btlock.ui.MainFragment$$ExternalSyntheticLambda0 -> com.national.bt
     void com.national.btlock.ui.MainFragment$$InternalSyntheticLambda$0$ab5dd5fa3d83cabaa79622693f4030b8b6b065fcecd9efaecd0ab068c02a4e73$0.onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
       # {"id":"com.android.tools.r8.synthesized"}
 com.national.btlock.ui.MainFragment$1 -> com.national.btlock.ui.MainFragment$1:
-    223:223:void <init>(com.national.btlock.ui.MainFragment) -> <init>
-    226:228:void onDrawerOpened() -> onDrawerOpened
+    225:225:void <init>(com.national.btlock.ui.MainFragment) -> <init>
+    228:230:void onDrawerOpened() -> onDrawerOpened
 com.national.btlock.ui.MainFragment$2 -> com.national.btlock.ui.MainFragment$2:
-    231:231:void <init>(com.national.btlock.ui.MainFragment) -> <init>
-    234:236:void onDrawerClosed() -> onDrawerClosed
+    233:233:void <init>(com.national.btlock.ui.MainFragment) -> <init>
+    236:238:void onDrawerClosed() -> onDrawerClosed
 com.national.btlock.ui.MainFragment$3 -> com.national.btlock.ui.MainFragment$3:
-    279:279:void <init>(com.national.btlock.ui.MainFragment) -> <init>
-    405:408:void onError(java.lang.String,java.lang.String) -> onError
-    282:401:void onSuccess(java.lang.String) -> onSuccess
+    281:281:void <init>(com.national.btlock.ui.MainFragment) -> <init>
+    407:410:void onError(java.lang.String,java.lang.String) -> onError
+    284:403:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.MainFragment$4 -> com.national.btlock.ui.MainFragment$4:
-    420:420:void <init>(com.national.btlock.ui.MainFragment) -> <init>
-    488:497:void onError(java.lang.String,java.lang.String) -> onError
-    423:484:void onSuccess(java.lang.String) -> onSuccess
+    422:422:void <init>(com.national.btlock.ui.MainFragment) -> <init>
+    490:499:void onError(java.lang.String,java.lang.String) -> onError
+    425:486:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.MainFragment$4$1 -> com.national.btlock.ui.MainFragment$4$1:
-    440:440:void <init>(com.national.btlock.ui.MainFragment$4) -> <init>
-    460:460:void onClick(com.national.core.nw.entity.LockListEntity$Lock) -> onClick
+    442:442:void <init>(com.national.btlock.ui.MainFragment$4) -> <init>
+    462:462:void onClick(com.national.core.nw.entity.LockListEntity$Lock) -> onClick
 com.national.btlock.ui.MainFragment$4$2 -> com.national.btlock.ui.MainFragment$4$2:
-    461:461:void <init>(com.national.btlock.ui.MainFragment$4) -> <init>
-    465:473:void onChange(int) -> onChange
+    463:463:void <init>(com.national.btlock.ui.MainFragment$4) -> <init>
+    467:475:void onChange(int) -> onChange
 com.national.btlock.ui.MainFragment$5 -> com.national.btlock.ui.MainFragment$5:
-    504:504:void <init>(com.national.btlock.ui.MainFragment) -> <init>
-    559:563:void onError(java.lang.String,java.lang.String) -> onError
-    507:555:void onSuccess(java.lang.String) -> onSuccess
+    506:506:void <init>(com.national.btlock.ui.MainFragment) -> <init>
+    561:565:void onError(java.lang.String,java.lang.String) -> onError
+    509:557:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.MainFragment$5$1 -> com.national.btlock.ui.MainFragment$5$1:
-    515:515:void <init>(com.national.btlock.ui.MainFragment$5) -> <init>
-    534:534:void onClick(com.national.core.nw.entity.LockListEntity$Lock) -> onClick
+    517:517:void <init>(com.national.btlock.ui.MainFragment$5) -> <init>
+    536:536:void onClick(com.national.core.nw.entity.LockListEntity$Lock) -> onClick
 com.national.btlock.ui.MainFragment$5$2 -> com.national.btlock.ui.MainFragment$5$2:
-    535:535:void <init>(com.national.btlock.ui.MainFragment$5) -> <init>
-    538:545:void onChange(int) -> onChange
+    537:537:void <init>(com.national.btlock.ui.MainFragment$5) -> <init>
+    540:547:void onChange(int) -> onChange
 com.national.btlock.ui.MainFragment$6 -> com.national.btlock.ui.MainFragment$6:
-    570:570:void <init>(com.national.btlock.ui.MainFragment) -> <init>
-    580:583:void onError(java.lang.String,java.lang.String) -> onError
-    573:575:void onSuccess(java.lang.String) -> onSuccess
+    572:572:void <init>(com.national.btlock.ui.MainFragment) -> <init>
+    582:585:void onError(java.lang.String,java.lang.String) -> onError
+    575:577:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.MainFragment$7 -> com.national.btlock.ui.MainFragment$7:
-    916:916:void <init>(com.national.btlock.ui.MainFragment,com.national.core.nw.entity.LockListEntity$Lock,java.lang.String) -> <init>
-    919:922:void onClick(android.content.DialogInterface,int) -> onClick
+    935:935:void <init>(com.national.btlock.ui.MainFragment,com.national.core.nw.entity.LockListEntity$Lock,java.lang.String) -> <init>
+    938:941:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.MainFragment$8 -> com.national.btlock.ui.MainFragment$8:
-    924:924:void <init>(com.national.btlock.ui.MainFragment) -> <init>
-    927:928:void onClick(android.content.DialogInterface,int) -> onClick
+    943:943:void <init>(com.national.btlock.ui.MainFragment) -> <init>
+    946:947:void onClick(android.content.DialogInterface,int) -> onClick
 com.national.btlock.ui.MainFragment$9 -> com.national.btlock.ui.MainFragment$9:
-    940:940:void <init>(com.national.btlock.ui.MainFragment,java.lang.String) -> <init>
-    951:954:void onError(java.lang.String,java.lang.String) -> onError
-    943:947:void onSuccess(java.lang.String) -> onSuccess
+    959:959:void <init>(com.national.btlock.ui.MainFragment,java.lang.String) -> <init>
+    970:973:void onError(java.lang.String,java.lang.String) -> onError
+    962:966:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.OperateRecordActivity -> com.national.btlock.ui.OperateRecordActivity:
     10:10:void <init>() -> <init>
     39:44:void initActivity() -> initActivity
@@ -22577,28 +22769,34 @@ com.national.btlock.ui.bannerview.ViewFlow$AdapterDataSetObserver -> com.nationa
     700:710:void onChanged() -> onChanged
     715:715:void onInvalidated() -> onInvalidated
 com.national.btlock.ui.bannerview.ViewFlowAdapter -> com.national.btlock.ui.bannerview.ViewFlowAdapter:
-    38:61:void <init>(android.content.Context,java.util.List) -> <init>
-    32:32:android.content.Context access$100(com.national.btlock.ui.bannerview.ViewFlowAdapter) -> access$100
-    66:66:int getCount() -> getCount
-    32:32:java.lang.Object getItem(int) -> getItem
-    73:73:com.national.core.nw.entity.LockListEntity$Lock getItem(int) -> getItem
-    302:302:long getItemId(int) -> getItemId
-    84:84:int getPosition(int) -> getPosition
-    91:261:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    288:288:boolean isInfiniteLoop() -> isInfiniteLoop
-    295:296:com.national.btlock.ui.bannerview.ViewFlowAdapter setInfiniteLoop(boolean) -> setInfiniteLoop
-    47:48:void setOnImageClickLinstener(com.national.btlock.ui.bannerview.ViewFlowAdapter$OnImageClickLinstener) -> setOnImageClickLinstener
+    43:66:void <init>(android.content.Context,java.util.List) -> <init>
+    37:37:android.content.Context access$100(com.national.btlock.ui.bannerview.ViewFlowAdapter) -> access$100
+    321:329:void checkPermissions(com.hjq.permissions.OnPermissionCallback) -> checkPermissions
+    71:71:int getCount() -> getCount
+    37:37:java.lang.Object getItem(int) -> getItem
+    78:78:com.national.core.nw.entity.LockListEntity$Lock getItem(int) -> getItem
+    315:315:long getItemId(int) -> getItemId
+    89:89:int getPosition(int) -> getPosition
+    96:274:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    301:301:boolean isInfiniteLoop() -> isInfiniteLoop
+    308:309:com.national.btlock.ui.bannerview.ViewFlowAdapter setInfiniteLoop(boolean) -> setInfiniteLoop
+    52:53:void setOnImageClickLinstener(com.national.btlock.ui.bannerview.ViewFlowAdapter$OnImageClickLinstener) -> setOnImageClickLinstener
 com.national.btlock.ui.bannerview.ViewFlowAdapter$1 -> com.national.btlock.ui.bannerview.ViewFlowAdapter$1:
-    210:210:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter,com.national.btlock.ui.bannerview.ViewFlowAdapter$ViewHolder,com.national.core.nw.entity.LockListEntity$Lock) -> <init>
-    213:241:void onClick(android.view.View) -> onClick
+    215:215:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter,com.national.btlock.ui.bannerview.ViewFlowAdapter$ViewHolder,com.national.core.nw.entity.LockListEntity$Lock) -> <init>
+    218:254:void onClick(android.view.View) -> onClick
 com.national.btlock.ui.bannerview.ViewFlowAdapter$1$1 -> com.national.btlock.ui.bannerview.ViewFlowAdapter$1$1:
-    215:215:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter$1) -> <init>
-    233:238:void onError(java.lang.String,java.lang.String) -> onError
-    218:220:void onProgressUpdate(java.lang.String) -> onProgressUpdate
-    224:229:void onSuccess(java.lang.String) -> onSuccess
+    220:220:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter$1) -> <init>
+    void onDenied(java.util.List,boolean) -> onDenied
+      # {"id":"com.android.tools.r8.synthesized"}
+    223:250:void onGranted(java.util.List,boolean) -> onGranted
+com.national.btlock.ui.bannerview.ViewFlowAdapter$1$1$1 -> com.national.btlock.ui.bannerview.ViewFlowAdapter$1$1$1:
+    224:224:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter$1$1) -> <init>
+    242:247:void onError(java.lang.String,java.lang.String) -> onError
+    227:229:void onProgressUpdate(java.lang.String) -> onProgressUpdate
+    233:238:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.bannerview.ViewFlowAdapter$ViewHolder -> com.national.btlock.ui.bannerview.ViewFlowAdapter$ViewHolder:
-    265:265:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter) -> <init>
-    265:265:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter,com.national.btlock.ui.bannerview.ViewFlowAdapter$1) -> <init>
+    278:278:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter) -> <init>
+    278:278:void <init>(com.national.btlock.ui.bannerview.ViewFlowAdapter,com.national.btlock.ui.bannerview.ViewFlowAdapter$1) -> <init>
 com.national.btlock.ui.databinding.ActivityNationalAuthListBinding -> com.national.btlock.ui.databinding.ActivityNationalAuthListBinding:
     30:34:void <init>(androidx.constraintlayout.widget.ConstraintLayout,androidx.recyclerview.widget.RecyclerView,android.widget.TextView) -> <init>
     63:78:com.national.btlock.ui.databinding.ActivityNationalAuthListBinding bind(android.view.View) -> bind
@@ -22767,6 +22965,13 @@ com.national.btlock.ui.databinding.LayoutNationalNoLockBinding -> com.national.b
     26:26:androidx.constraintlayout.widget.ConstraintLayout getRoot() -> getRoot
     31:31:com.national.btlock.ui.databinding.LayoutNationalNoLockBinding inflate(android.view.LayoutInflater) -> inflate
     37:41:com.national.btlock.ui.databinding.LayoutNationalNoLockBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean) -> inflate
+com.national.btlock.ui.databinding.LayoutToastBinding -> com.national.btlock.ui.databinding.LayoutToastBinding:
+    36:42:void <init>(android.widget.LinearLayout,android.widget.ImageView,android.widget.LinearLayout,android.widget.TextView,android.widget.TextView) -> <init>
+    71:99:com.national.btlock.ui.databinding.LayoutToastBinding bind(android.view.View) -> bind
+    19:19:android.view.View getRoot() -> getRoot
+    47:47:android.widget.LinearLayout getRoot() -> getRoot
+    52:52:com.national.btlock.ui.databinding.LayoutToastBinding inflate(android.view.LayoutInflater) -> inflate
+    58:62:com.national.btlock.ui.databinding.LayoutToastBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean) -> inflate
 com.national.btlock.ui.databinding.NationalAuthListItemBinding -> com.national.btlock.ui.databinding.NationalAuthListItemBinding:
     63:76:void <init>(android.widget.RelativeLayout,android.widget.TextView,android.widget.TextView,android.widget.TextView,android.widget.ImageView,android.widget.TextView,android.widget.TextView,android.widget.TextView,android.widget.TextView,android.widget.LinearLayout,android.widget.LinearLayout,android.widget.LinearLayout) -> <init>
     105:176:com.national.btlock.ui.databinding.NationalAuthListItemBinding bind(android.view.View) -> bind
@@ -22904,13 +23109,13 @@ com.national.btlock.ui.face.CollectionSuccessActivity$1 -> com.national.btlock.u
     104:113:void run() -> run
 com.national.btlock.ui.face.FaceLivenessExpActivity -> com.national.btlock.ui.face.FaceLivenessExpActivity:
     27:27:void <init>() -> <init>
-    202:203:void finish() -> finish
-    80:188:void getBestImage(java.util.HashMap,java.util.HashMap) -> getBestImage
+    200:201:void finish() -> finish
+    80:186:void getBestImage(java.util.HashMap,java.util.HashMap) -> getBestImage
     36:46:void onCreate(android.os.Bundle) -> onCreate
     52:70:void onLivenessCompletion(com.baidu.idl.face.platform.FaceStatusNewEnum,java.lang.String,java.util.HashMap,java.util.HashMap,int) -> onLivenessCompletion
-    207:215:void onRecollect() -> onRecollect
-    219:224:void onReturn() -> onReturn
-    191:198:void showMessageDialog() -> showMessageDialog
+    205:213:void onRecollect() -> onRecollect
+    217:222:void onReturn() -> onReturn
+    189:196:void showMessageDialog() -> showMessageDialog
 com.national.btlock.ui.face.FaceLivenessExpActivity$1 -> com.national.btlock.ui.face.FaceLivenessExpActivity$1:
     84:84:void <init>(com.national.btlock.ui.face.FaceLivenessExpActivity) -> <init>
     84:84:int compare(java.lang.Object,java.lang.Object) -> compare
@@ -22925,8 +23130,8 @@ com.national.btlock.ui.face.FaceLivenessExpActivity$3 -> com.national.btlock.ui.
     148:149:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.face.FaceLivenessExpActivity$4 -> com.national.btlock.ui.face.FaceLivenessExpActivity$4:
     164:164:void <init>(com.national.btlock.ui.face.FaceLivenessExpActivity) -> <init>
-    174:176:void onError(java.lang.String,java.lang.String) -> onError
-    168:169:void onSuccess(java.lang.String) -> onSuccess
+    172:174:void onError(java.lang.String,java.lang.String) -> onError
+    167:168:void onSuccess(java.lang.String) -> onSuccess
 com.national.btlock.ui.face.manager.QualityConfigManager -> com.national.btlock.ui.face.manager.QualityConfigManager:
     37:39:void <init>() -> <init>
     42:42:com.national.btlock.ui.face.model.QualityConfig getConfig() -> getConfig
@@ -23132,6 +23337,7 @@ com.national.btlock.widget.datepick.CustomDatePicker$9 -> com.national.btlock.wi
     444:444:void <init>(com.national.btlock.widget.datepick.CustomDatePicker) -> <init>
     447:448:void run() -> run
 com.national.btlock.widget.datepick.CustomDatePicker$SCROLL_TYPE -> com.national.btlock.widget.datepick.CustomDatePicker$SCROLL_TYPE:
+    32:32:com.national.btlock.widget.datepick.CustomDatePicker$SCROLL_TYPE[] $values() -> $values
     32:34:void <clinit>() -> <clinit>
     36:38:void <init>(java.lang.String,int,int) -> <init>
     32:32:com.national.btlock.widget.datepick.CustomDatePicker$SCROLL_TYPE valueOf(java.lang.String) -> valueOf
@@ -23169,38 +23375,20 @@ com.national.btlock.widget.datepick.DatePickerView$MyTimerTask -> com.national.b
     338:339:void run() -> run
 com.national.bu -> com.national.bu:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    6:15:void <clinit>() -> <clinit>
-    19:21:void <init>(java.lang.String,int,int) -> <init>
-    24:24:int getCode() -> getCode
-    6:6:com.national.bu valueOf(java.lang.String) -> valueOf
-    6:6:com.national.bu[] values() -> values
+    21:24:java.lang.String getRecordDataAsString(com.national.vise.baseble.model.adrecord.AdRecord) -> getRecordDataAsString
+    28:35:byte[] getServiceData(com.national.vise.baseble.model.adrecord.AdRecord) -> getServiceData
+    39:49:int getServiceDataUuid(com.national.vise.baseble.model.adrecord.AdRecord) -> getServiceDataUuid
+    56:77:java.util.List parseScanRecordAsList(byte[]) -> parseScanRecordAsList
+    81:102:java.util.Map parseScanRecordAsMap(byte[]) -> parseScanRecordAsMap
+    106:127:android.util.SparseArray parseScanRecordAsSparseArray(byte[]) -> parseScanRecordAsSparseArray
 com.national.bv -> com.national.bv:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    4:12:void <clinit>() -> <clinit>
-    16:18:void <init>(java.lang.String,int,int) -> <init>
-    21:21:int getCode() -> getCode
-    4:4:com.national.bv valueOf(java.lang.String) -> valueOf
-    4:4:com.national.bv[] values() -> values
-com.national.bw -> com.national.bw:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    13:16:void <init>(android.bluetooth.BluetoothGatt,int) -> <init>
-    28:28:android.bluetooth.BluetoothGatt getBluetoothGatt() -> getBluetoothGatt
-    19:19:int getGattStatus() -> getGattStatus
-    32:33:com.national.bw setBluetoothGatt(android.bluetooth.BluetoothGatt) -> setBluetoothGatt
-    23:24:com.national.bw setGattStatus(int) -> setGattStatus
-    38:41:java.lang.String toString() -> toString
-com.national.bx -> com.national.bx:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    9:11:void <init>(int) -> <init>
-    14:14:int getGattStatus() -> getGattStatus
-    18:19:com.national.bx setGattStatus(int) -> setGattStatus
-    24:26:java.lang.String toString() -> toString
-com.national.by -> com.national.by:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    7:8:void <init>() -> <init>
-com.national.bz -> com.national.bz:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    7:8:void <init>(java.lang.String) -> <init>
+    16:26:boolean doesArrayBeginWith(byte[],byte[]) -> doesArrayBeginWith
+    36:43:int getIntFrom2ByteArray(byte[]) -> getIntFrom2ByteArray
+    55:55:int getIntFromByte(byte) -> getIntFromByte
+    65:65:int getIntFromByteArray(byte[]) -> getIntFromByteArray
+    75:75:long getLongFromByteArray(byte[]) -> getLongFromByteArray
+    85:93:void invertArray(byte[]) -> invertArray
 com.national.c -> com.national.c:
 # {"id":"sourceFile","fileName":"SourceFile"}
     50:95:void <clinit>() -> <clinit>
@@ -23331,165 +23519,126 @@ com.national.cardreader.User -> com.national.cardreader.User:
     26:27:void setPwd(java.lang.String) -> setPwd
 com.national.core.SDKCoreHelper -> com.national.core.SDKCoreHelper:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    93:1483:void <clinit>() -> <clinit>
-    96:111:void <init>() -> <init>
-    100:103:com.national.core.SDKCoreHelper a() -> a
-    522:547:void a(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> a
-    1040:18201:void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> a
-    1369:1378:com.national.core.nw.entity.LockListEntity$Lock a(java.lang.String,com.national.core.nw.it.OnResultListener) -> a
-    1440:19065:void a(java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> a
-    1115:1130:void authApp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authApp
-    1133:1148:void authAppDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authAppDelete
-    1151:1166:void authAppList(java.lang.String,com.national.core.nw.it.OnResultListener) -> authAppList
-    839:840:void authCardA(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> authCardA
-    845:10033:void authIdcard(java.lang.String,java.lang.String,java.lang.String,java.lang.String,byte[],com.national.core.nw.it.OnProgressUpdateListener) -> authIdcard
-    855:12304:void authIdcardByOcr(java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardByOcr
-    1318:1333:void authIdcardDelete(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardDelete
-    1300:1315:void authIdcardList(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardList
-    1337:1350:void authManagement(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authManagement
-    1206:1220:void authWx(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authWx
-    1188:1203:void authWxDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authWxDelete
-    1169:1184:void authWxList(java.lang.String,com.national.core.nw.it.OnResultListener) -> authWxList
-    143:155:void b() -> b
-    1432:1435:java.lang.String b(java.lang.String) -> b
-    1105:1111:void bindLock(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> bindLock
-    834:835:void c() -> c
-    91:20019:java.lang.String c(java.lang.String) -> c
-    578:586:void compareFace(byte[],com.national.core.nw.it.OnResultListener) -> compareFace
-    589:596:void confirmPID(java.lang.String,java.lang.String,byte[],com.national.core.nw.it.OnResultListener) -> confirmPID
-    1522:1566:boolean d() -> d
-    1246:1259:void deleteVistorPwd(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> deleteVistorPwd
-    91:91:java.lang.String e() -> e
-    199:216:java.lang.String encryptionMD5(byte[]) -> encryptionMD5
-    551:565:void extendAuth(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> extendAuth
-    91:91:void f() -> f
-    91:19589:java.lang.String g() -> g
-    600:607:void getCity(java.lang.String,com.national.core.nw.it.OnResultListener) -> getCity
-    630:637:void getCommunity(java.lang.String,com.national.core.nw.it.OnResultListener) -> getCommunity
-    610:617:void getDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> getDistrict
-    415:428:void getLockAuthRecordList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockAuthRecordList
-    432:446:void getLockDetails(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockDetails
-    660:666:void getLockList(com.national.core.nw.it.OnResultListener) -> getLockList
-    290:5174:void getLockMac(com.national.core.nw.it.OnResultListener) -> getLockMac
-    1593:1605:java.lang.String getLockNames() -> getLockNames
-    398:411:void getLockOpenRecordList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockOpenRecordList
-    270:4332:void getLoginState(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLoginState
-    1281:1296:void getLongLockPwdList(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLongLockPwdList
-    679:686:void getOffLineLockList(com.national.core.nw.it.OnResultListener) -> getOffLineLockList
-    495:496:boolean getOfficeMode(java.lang.String) -> getOfficeMode
-    508:509:boolean getPowerSavingMode(java.lang.String) -> getPowerSavingMode
-    568:574:void getProvince(com.national.core.nw.it.OnResultListener) -> getProvince
-    221:230:java.lang.String getSignMd5Str(android.content.Context) -> getSignMd5Str
-    620:627:void getStreet(java.lang.String,com.national.core.nw.it.OnResultListener) -> getStreet
-    640:647:void getSubDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> getSubDistrict
-    650:657:void getSubDistrictWithName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getSubDistrictWithName
-    669:675:void getSysConfig(com.national.core.nw.it.OnResultListener) -> getSysConfig
-    1354:1366:void giveBackManagement(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> giveBackManagement
-    91:91:android.location.LocationManager h() -> h
-    160:3056:void init(android.content.Context) -> init
-    236:4056:void init(android.content.Context,com.national.core.nw.it.OnResultListener) -> init
-    191:193:boolean isBleEnable() -> isBleEnable
-    1384:1390:boolean isBleNeedUpdate(java.lang.String) -> isBleNeedUpdate
-    1417:1423:boolean isLoraNeedUpdate(java.lang.String) -> isLoraNeedUpdate
-    1399:1406:boolean isMcuNeedUpdate(java.lang.String) -> isMcuNeedUpdate
-    356:364:void login(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> login
-    344:352:void loginFaceCheck(byte[],com.national.core.nw.it.OnResultListener) -> loginFaceCheck
-    367:375:void loginOut(com.national.core.nw.it.OnResultListener) -> loginOut
-    689:7293:void openLock(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> openLock
-    1572:1585:void release() -> release
-    501:505:void setOfficeMode(java.lang.String,java.lang.String,boolean,com.national.core.nw.it.OnResultListener) -> setOfficeMode
-    514:518:void setPowerSavingMode(java.lang.String,java.lang.String,boolean,com.national.core.nw.it.OnResultListener) -> setPowerSavingMode
-    1224:1243:void shareVistorPwd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> shareVistorPwd
-    789:9122:void syncData(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> syncData
-    379:394:void unbindLock(java.lang.String,com.national.core.nw.it.OnResultListener) -> unbindLock
-    1394:1395:void updateBle(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateBle
-    450:464:void updateCardName(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> updateCardName
-    467:492:void updateLockName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> updateLockName
-    1262:1277:void updateLongLockPwdStatus(java.lang.String,com.national.core.nw.it.OnResultListener) -> updateLongLockPwdStatus
-    1428:1429:void updateLora(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateLora
-    1411:1414:void updateMcu(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateMcu
+    98:1534:void <clinit>() -> <clinit>
+    101:117:void <init>() -> <init>
+    148:159:void a() -> a
+    560:585:void a(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> a
+    1089:19201:void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> a
+    1420:1429:com.national.core.nw.entity.LockListEntity$Lock a(java.lang.String,com.national.core.nw.it.OnResultListener) -> a
+    1491:20065:void a(java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> a
+    1166:1181:void authApp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authApp
+    1184:1199:void authAppDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authAppDelete
+    1202:1217:void authAppList(java.lang.String,com.national.core.nw.it.OnResultListener) -> authAppList
+    887:888:void authCardA(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> authCardA
+    893:11081:void authIdcard(java.lang.String,java.lang.String,java.lang.String,java.lang.String,byte[],com.national.core.nw.it.OnProgressUpdateListener) -> authIdcard
+    903:13304:void authIdcardByOcr(java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardByOcr
+    1369:1384:void authIdcardDelete(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardDelete
+    1351:1366:void authIdcardList(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authIdcardList
+    1388:1401:void authManagement(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authManagement
+    1257:1271:void authWx(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authWx
+    1239:1254:void authWxDelete(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> authWxDelete
+    1220:1235:void authWxList(java.lang.String,com.national.core.nw.it.OnResultListener) -> authWxList
+    882:883:void b() -> b
+    1483:1486:java.lang.String b(java.lang.String) -> b
+    1156:1162:void bindLock(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> bindLock
+    1573:1615:boolean c() -> c
+    96:21067:java.lang.String c(java.lang.String) -> c
+    616:624:void compareFace(byte[],com.national.core.nw.it.OnResultListener) -> compareFace
+    627:634:void confirmPID(java.lang.String,java.lang.String,byte[],com.national.core.nw.it.OnResultListener) -> confirmPID
+    96:96:java.lang.String d() -> d
+    1297:1310:void deleteVistorPwd(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> deleteVistorPwd
+    96:96:void e() -> e
+    233:250:java.lang.String encryptionMD5(byte[]) -> encryptionMD5
+    589:603:void extendAuth(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> extendAuth
+    96:20639:java.lang.String f() -> f
+    96:96:android.location.LocationManager g() -> g
+    638:645:void getCity(java.lang.String,com.national.core.nw.it.OnResultListener) -> getCity
+    668:675:void getCommunity(java.lang.String,com.national.core.nw.it.OnResultListener) -> getCommunity
+    648:655:void getDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> getDistrict
+    105:108:com.national.core.SDKCoreHelper getInstance() -> getInstance
+    453:466:void getLockAuthRecordList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockAuthRecordList
+    470:484:void getLockDetails(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockDetails
+    698:704:void getLockList(com.national.core.nw.it.OnResultListener) -> getLockList
+    328:6174:void getLockMac(com.national.core.nw.it.OnResultListener) -> getLockMac
+    1643:1655:java.lang.String getLockNames() -> getLockNames
+    436:449:void getLockOpenRecordList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getLockOpenRecordList
+    308:5332:void getLoginState(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLoginState
+    1332:1347:void getLongLockPwdList(java.lang.String,com.national.core.nw.it.OnResultListener) -> getLongLockPwdList
+    717:724:void getOffLineLockList(com.national.core.nw.it.OnResultListener) -> getOffLineLockList
+    533:534:boolean getOfficeMode(java.lang.String) -> getOfficeMode
+    546:547:boolean getPowerSavingMode(java.lang.String) -> getPowerSavingMode
+    606:612:void getProvince(com.national.core.nw.it.OnResultListener) -> getProvince
+    255:264:java.lang.String getSignMd5Str(android.content.Context) -> getSignMd5Str
+    658:665:void getStreet(java.lang.String,com.national.core.nw.it.OnResultListener) -> getStreet
+    678:685:void getSubDistrict(java.lang.String,com.national.core.nw.it.OnResultListener) -> getSubDistrict
+    688:695:void getSubDistrictWithName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> getSubDistrictWithName
+    707:713:void getSysConfig(com.national.core.nw.it.OnResultListener) -> getSysConfig
+    1405:1417:void giveBackManagement(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> giveBackManagement
+    165:3056:void init(android.content.Context) -> init
+    194:4056:void init(android.content.Context,java.lang.String) -> init
+    273:5056:void init(android.content.Context,com.national.core.nw.it.OnResultListener) -> init
+    225:227:boolean isBleEnable() -> isBleEnable
+    1435:1441:boolean isBleNeedUpdate(java.lang.String) -> isBleNeedUpdate
+    1468:1474:boolean isLoraNeedUpdate(java.lang.String) -> isLoraNeedUpdate
+    1450:1457:boolean isMcuNeedUpdate(java.lang.String) -> isMcuNeedUpdate
+    394:402:void login(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> login
+    382:390:void loginFaceCheck(byte[],com.national.core.nw.it.OnResultListener) -> loginFaceCheck
+    405:413:void loginOut(com.national.core.nw.it.OnResultListener) -> loginOut
+    742:8293:void openLock(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> openLock
+    1621:1635:void release() -> release
+    539:543:void setOfficeMode(java.lang.String,java.lang.String,boolean,com.national.core.nw.it.OnResultListener) -> setOfficeMode
+    552:556:void setPowerSavingMode(java.lang.String,java.lang.String,boolean,com.national.core.nw.it.OnResultListener) -> setPowerSavingMode
+    1275:1294:void shareVistorPwd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> shareVistorPwd
+    836:10122:void syncData(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> syncData
+    417:432:void unbindLock(java.lang.String,com.national.core.nw.it.OnResultListener) -> unbindLock
+    1445:1446:void updateBle(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateBle
+    488:502:void updateCardName(java.lang.String,java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> updateCardName
+    505:530:void updateLockName(java.lang.String,java.lang.String,com.national.core.nw.it.OnResultListener) -> updateLockName
+    1313:1328:void updateLongLockPwdStatus(java.lang.String,com.national.core.nw.it.OnResultListener) -> updateLongLockPwdStatus
+    1479:1480:void updateLora(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateLora
+    1462:1465:void updateMcu(java.lang.String,com.national.core.nw.it.OnProgressUpdateListener) -> updateMcu
 com.national.core.bt.service.BleServiceM -> com.national.core.bt.service.BleServiceM:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    104:3068:void <init>() -> <init>
-    1662:1669:android.bluetooth.le.AdvertiseSettings A() -> A
-    1680:1686:void B() -> B
-    1761:25293:void C() -> C
-    2090:2095:void D() -> D
-    2100:30036:void E() -> E
-    2118:31028:void F() -> F
-    104:104:java.lang.Object a(com.national.core.bt.service.BleServiceM) -> a
+    104:2068:void <init>() -> <init>
     104:104:void a(com.national.core.bt.service.BleServiceM,java.lang.String) -> a
     835:900:boolean a(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
     905:944:void a(com.national.core.nw.entity.LockUpdateInfoEntity$UpdateInfo) -> a
-    1335:9383:void a(com.national.vise.baseble.model.BluetoothLeDevice) -> a
-    1400:1416:void a(com.national.W) -> a
-    1471:23675:void a(android.bluetooth.BluetoothDevice,boolean) -> a
-    1792:27112:void a(com.national.vise.baseble.model.BluetoothLeDevice,boolean) -> a
-    2125:31134:void a(com.national.ao) -> a
-    104:104:void b(com.national.core.bt.service.BleServiceM) -> b
     104:104:void b(com.national.core.bt.service.BleServiceM,java.lang.String) -> b
-    104:104:void c(com.national.core.bt.service.BleServiceM,java.lang.String) -> c
-    void d(java.lang.String,java.lang.String) -> d
-      # {"id":"com.android.tools.r8.synthesized"}
-    void e(java.lang.String,java.lang.String) -> e
-      # {"id":"com.android.tools.r8.synthesized"}
-    void e(java.lang.String,java.lang.String,java.lang.Throwable) -> e
-      # {"id":"com.android.tools.r8.synthesized"}
     123:130:void e(java.lang.String) -> e
     255:367:void f(java.lang.String) -> f
     987:1023:java.lang.String g(java.lang.String) -> g
     391:410:java.lang.String getMac() -> getMac
-    1419:11110:void h(java.lang.String) -> h
-    417:4384:boolean handleMessage(android.os.Message) -> handleMessage
-    void i(java.lang.String,java.lang.String) -> i
-      # {"id":"com.android.tools.r8.synthesized"}
-    1778:26293:void i(java.lang.String) -> i
-    2138:2143:com.national.ao j(java.lang.String) -> j
+    1778:9293:void h(java.lang.String) -> h
+    417:5110:boolean handleMessage(android.os.Message) -> handleMessage
     689:689:android.os.IBinder onBind(android.content.Intent) -> onBind
-    502:4664:void onCreate() -> onCreate
-    void onDfuComplete() -> onDfuComplete
-      # {"id":"com.android.tools.r8.synthesized"}
-    void onDfuError(java.lang.String,java.lang.Error) -> onDfuError
-      # {"id":"com.android.tools.r8.synthesized"}
-    void onDfuProgress(int) -> onDfuProgress
-      # {"id":"com.android.tools.r8.synthesized"}
-    void onDfuStart() -> onDfuStart
-      # {"id":"com.android.tools.r8.synthesized"}
-    564:7064:void onEventMainThread(java.lang.String) -> onEventMainThread
+    502:5664:void onCreate() -> onCreate
+    564:8064:void onEventMainThread(java.lang.String) -> onEventMainThread
     247:250:void onProgressUpdate(java.lang.String) -> onProgressUpdate
     669:670:int onStartCommand(android.content.Intent,int,int) -> onStartCommand
-    792:8114:boolean onUnbind(android.content.Intent) -> onUnbind
-    com.goodix.ble.libcomx.ILogger subLogger() -> subLogger
-      # {"id":"com.android.tools.r8.synthesized"}
-    void v(java.lang.String,java.lang.String) -> v
-      # {"id":"com.android.tools.r8.synthesized"}
-    void w(java.lang.String,java.lang.String) -> w
-      # {"id":"com.android.tools.r8.synthesized"}
-    675:682:com.national.core.bt.service.BleServiceM x() -> x
-    1457:1465:boolean y() -> y
-    1574:1597:void z() -> z
+    792:9111:boolean onUnbind(android.content.Intent) -> onUnbind
+    675:682:com.national.core.bt.service.BleServiceM u() -> u
 com.national.core.bt.service.BleServiceM$a -> com.national.core.bt.service.BleServiceM$a:
 # {"id":"sourceFile","fileName":"SourceFile"}
     484:484:void <init>(com.national.core.bt.service.BleServiceM) -> <init>
 com.national.core.nw.NwModel -> com.national.core.nw.NwModel:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    139:519:void <init>(android.content.Context,com.national.volley.RequestQueue,android.os.Handler$Callback) -> <init>
-    508:515:java.lang.String DECODE(int,java.lang.String) -> DECODE
-    489:501:java.lang.String ENCODE(java.lang.String,java.lang.String) -> ENCODE
+    140:518:void <init>(android.content.Context,com.national.volley.RequestQueue,android.os.Handler$Callback) -> <init>
+    509:515:java.lang.String DECODE(int,java.lang.String) -> DECODE
+    491:503:java.lang.String ENCODE(java.lang.String,java.lang.String) -> ENCODE
     588:991:void doRealRequest(java.lang.String,int,java.util.Map,java.util.Map,java.util.Map) -> doRealRequest
-    179:193:void doRequest(int,java.util.Map,java.util.Map,com.national.core.nw.it.OnResultListener) -> doRequest
-    199:4160:void doRequestEncode(int,java.util.Map,java.util.Map,java.util.Map) -> doRequestEncode
-    260:288:void doSpecifiedRequest2(int,java.lang.Class,java.lang.String,int,java.util.Map,java.util.Map,java.util.Map) -> doSpecifiedRequest2
-    467:484:java.lang.String getJsonStrByQueryUrl(java.lang.String) -> getJsonStrByQueryUrl
-    168:168:com.national.core.nw.it.OnResultListener getListener(java.lang.Integer) -> getListener
-    155:155:android.os.Message getMessage() -> getMessage
+    181:195:void doRequest(int,java.util.Map,java.util.Map,com.national.core.nw.it.OnResultListener) -> doRequest
+    201:4160:void doRequestEncode(int,java.util.Map,java.util.Map,java.util.Map) -> doRequestEncode
+    262:290:void doSpecifiedRequest2(int,java.lang.Class,java.lang.String,int,java.util.Map,java.util.Map,java.util.Map) -> doSpecifiedRequest2
+    469:486:java.lang.String getJsonStrByQueryUrl(java.lang.String) -> getJsonStrByQueryUrl
+    170:170:com.national.core.nw.it.OnResultListener getListener(java.lang.Integer) -> getListener
+    157:157:android.os.Message getMessage() -> getMessage
     524:584:void getUrl(java.lang.String,int,java.util.Map,java.util.Map,java.util.Map) -> getUrl
-    351:445:void handleError(com.national.volley.VolleyError,int,java.util.Map,java.util.Map,java.util.Map) -> handleError
-    449:463:void printHeader(int,java.lang.String,java.util.Map,java.util.Map) -> printHeader
-    338:347:void sendError(int,java.lang.String,java.lang.String) -> sendError
-    159:160:void sendMessage(android.os.Message) -> sendMessage
-    163:164:void sendRequest(com.national.volley.Request) -> sendRequest
-    291:333:void stepSucessSdk(int,java.lang.Class,java.lang.String,java.lang.String) -> stepSucessSdk
+    353:447:void handleError(com.national.volley.VolleyError,int,java.util.Map,java.util.Map,java.util.Map) -> handleError
+    451:465:void printHeader(int,java.lang.String,java.util.Map,java.util.Map) -> printHeader
+    340:349:void sendError(int,java.lang.String,java.lang.String) -> sendError
+    161:162:void sendMessage(android.os.Message) -> sendMessage
+    165:166:void sendRequest(com.national.volley.Request) -> sendRequest
+    293:335:void stepSucessSdk(int,java.lang.Class,java.lang.String,java.lang.String) -> stepSucessSdk
 com.national.core.nw.entity.AccessInfo -> com.national.core.nw.entity.AccessInfo:
 # {"id":"sourceFile","fileName":"SourceFile"}
     15:15:com.national.core.nw.entity.AccessInfo$DataBean getData() -> getData
@@ -24357,125 +24506,154 @@ com.national.core.update.dfu.NotificationActivity -> com.national.core.update.df
     14:27:void onCreate(android.os.Bundle) -> onCreate
 com.national.d -> com.national.d:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    111:111:void <init>(com.national.core.SDKCoreHelper) -> <init>
-    136:138:void onBindingDied(android.content.ComponentName) -> onBindingDied
-    115:4047:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
-    125:126:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+    117:117:void <init>(com.national.core.SDKCoreHelper) -> <init>
+    141:143:void onBindingDied(android.content.ComponentName) -> onBindingDied
+    120:1486:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
+    130:131:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.national.e -> com.national.e:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    181:182:void run() -> run
+    185:186:void run() -> run
 com.national.f -> com.national.f:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    259:260:void run() -> run
+    215:216:void run() -> run
 com.national.g -> com.national.g:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    309:309:void <init>(com.national.core.bt.service.BleServiceM,com.national.core.nw.it.OnResultListener) -> <init>
-    309:4178:java.lang.Object call() -> call
+    296:297:void run() -> run
 com.national.h -> com.national.h:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    889:889:void <init>(java.lang.String,com.national.core.nw.entity.LockListEntity$Lock,com.national.core.nw.it.OnResultListener) -> <init>
-    889:889:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-    892:977:java.lang.String i() -> i
-    889:4164:void onPostExecute(java.lang.Object) -> onPostExecute
+    347:347:void <init>(com.national.core.bt.service.BleServiceM,com.national.core.nw.it.OnResultListener) -> <init>
+    347:3178:java.lang.Object call() -> call
 com.national.i -> com.national.i:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    1504:1517:void onLocationChanged(android.location.Location) -> onLocationChanged
-    1498:1498:void onProviderDisabled(java.lang.String) -> onProviderDisabled
-    1493:1493:void onProviderEnabled(java.lang.String) -> onProviderEnabled
-    1488:1488:void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
+    937:937:void <init>(java.lang.String,com.national.core.nw.entity.LockListEntity$Lock,com.national.core.nw.it.OnResultListener) -> <init>
+    937:937:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+    940:1025:java.lang.String h() -> h
+    937:4164:void onPostExecute(java.lang.Object) -> onPostExecute
 com.national.j -> com.national.j:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    21:41:void <clinit>() -> <clinit>
+    1555:1568:void onLocationChanged(android.location.Location) -> onLocationChanged
+    1549:1549:void onProviderDisabled(java.lang.String) -> onProviderDisabled
+    1544:1544:void onProviderEnabled(java.lang.String) -> onProviderEnabled
+    1539:1539:void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
 com.national.k -> com.national.k:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    21:43:void <clinit>() -> <clinit>
+com.national.l -> com.national.l:
 # {"id":"sourceFile","fileName":"SourceFile"}
     17:18:java.lang.String a(java.lang.Object) -> a
     23:24:java.lang.Object a(java.lang.String,java.lang.Class) -> a
-com.national.l -> com.national.l:
+com.national.m -> com.national.m:
 # {"id":"sourceFile","fileName":"SourceFile"}
     13:50:void <init>() -> <init>
     17:50:void <init>(java.lang.String,java.lang.String) -> <init>
     60:63:int d(java.lang.String) -> d
-com.national.m -> com.national.m:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    28:30:void <init>(android.content.Context) -> <init>
-    22:22:android.content.Context a(com.national.m) -> a
-    33:38:com.national.m a(android.content.Context) -> a
-    22:22:com.national.m$a b(com.national.m) -> b
-    120:122:java.util.List j() -> j
-    127:129:android.bluetooth.le.ScanSettings k() -> k
-com.national.m$a -> com.national.m$a:
-# {"id":"sourceFile","fileName":"SourceFile"}
 com.national.mylibrary.BuildConfig -> com.national.mylibrary.BuildConfig:
     6:6:void <init>() -> <init>
 com.national.n -> com.national.n:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    47:47:void <init>(com.national.m) -> <init>
-    86:89:void onDeviceFound(com.national.vise.baseble.model.BluetoothLeDevice) -> onDeviceFound
-    50:77:void onScanFailed(int) -> onScanFailed
-    81:81:void scanTimeout() -> scanTimeout
 com.national.o -> com.national.o:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    57:57:void <init>(com.national.n,android.bluetooth.BluetoothAdapter) -> <init>
-    63:72:void run() -> run
-com.national.p -> com.national.p:
 # {"id":"sourceFile","fileName":"SourceFile"}
     10:259:void <init>() -> <init>
     177:204:void clear() -> clear
-    14:19:com.national.p l() -> l
-com.national.q -> com.national.q:
+    14:19:com.national.o i() -> i
+com.national.p -> com.national.p:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    16:51:void <init>(java.lang.String) -> <init>
-com.national.r -> com.national.r:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    30:37:void <init>(java.lang.String,boolean,byte[]) -> <init>
     30:46:void <init>(byte[],byte[]) -> <init>
     50:63:java.lang.String a(byte[],byte[]) -> a
     69:131:void a(byte[],boolean) -> a
-com.national.s -> com.national.s:
+com.national.q -> com.national.q:
 # {"id":"sourceFile","fileName":"SourceFile"}
     18:89:void <init>() -> <init>
-    66:87:void a(com.national.r) -> a
+    66:87:void a(com.national.p) -> a
     93:101:byte a(byte[]) -> a
-    163:1100:byte[] a(java.lang.String,byte[]) -> a
-    106:113:int b(byte[]) -> b
+    199:226:byte[] a(java.lang.String,byte[]) -> a
     123:1025:byte[] b(byte[],byte[]) -> b
-    199:226:byte[] b(java.lang.String,byte[]) -> b
-    304:333:byte[] c(byte[]) -> c
-    367:394:byte[] c(java.lang.String,byte[]) -> c
+    304:333:byte[] b(byte[]) -> b
+    367:394:byte[] b(java.lang.String,byte[]) -> b
+    338:363:byte[] c(byte[]) -> c
     37:44:void clear() -> clear
-    338:363:byte[] d(byte[]) -> d
-    399:422:byte[] e(byte[]) -> e
-    458:483:byte[] f(byte[]) -> f
-    488:513:byte[] g(byte[]) -> g
-    22:26:com.national.s m() -> m
-    50:55:java.lang.String n() -> n
-com.national.sdkjni.HzbtJni -> com.national.sdkjni.HzbtJni:
-# {"id":"sourceFile","fileName":"SourceFile"}
-    10:11:void <clinit>() -> <clinit>
-com.national.t -> com.national.t:
+    399:422:byte[] d(byte[]) -> d
+    458:483:byte[] e(byte[]) -> e
+    488:513:byte[] f(byte[]) -> f
+    22:26:com.national.q j() -> j
+    50:55:java.lang.String k() -> k
+com.national.r -> com.national.r:
 # {"id":"sourceFile","fileName":"SourceFile"}
     17:1159:void <init>(java.lang.Integer,java.lang.Integer,java.lang.Integer,java.lang.String,byte[]) -> <init>
     164:211:boolean a(byte[],byte) -> a
     220:222:byte[] getPackageCmd() -> getPackageCmd
     227:231:boolean isSendEnd() -> isSendEnd
-com.national.u -> com.national.u:
+com.national.s -> com.national.s:
 # {"id":"sourceFile","fileName":"SourceFile"}
     17:1193:void <init>(java.lang.Integer,java.lang.Integer,java.lang.Integer,java.lang.String,byte[]) -> <init>
+    200:235:boolean g(byte[]) -> g
     245:246:byte[] getPackageCmd() -> getPackageCmd
-    200:235:boolean h(byte[]) -> h
     251:255:boolean isSendEnd() -> isSendEnd
-com.national.v -> com.national.v:
+com.national.sdkjni.HzbtJni -> com.national.sdkjni.HzbtJni:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    10:11:void <clinit>() -> <clinit>
+com.national.t -> com.national.t:
 # {"id":"sourceFile","fileName":"SourceFile"}
     17:128:void <init>(java.lang.String,byte[]) -> <init>
+    91:124:boolean g(byte[]) -> g
     133:134:byte[] getPackageCmd() -> getPackageCmd
-    91:124:boolean h(byte[]) -> h
+com.national.u -> com.national.u:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    14:15:void <init>() -> <init>
+com.national.v -> com.national.v:
+# {"id":"sourceFile","fileName":"SourceFile"}
+    97:3275:void <init>(android.content.Context,java.lang.String,java.lang.String) -> <init>
+    84:84:java.lang.Object a(com.national.v) -> a
+    84:84:java.lang.String a(com.national.v,java.lang.String) -> a
+    84:84:void a(com.national.v,java.lang.String,java.lang.String) -> a
+    84:84:void a(com.national.v,byte[]) -> a
+    2268:13294:void a(java.lang.String,java.lang.String) -> a
+    84:84:com.national.N b(com.national.v) -> b
+    84:27052:void b(com.national.v,java.lang.String) -> b
+    84:84:void c(com.national.v) -> c
+    157:158:void c(int) -> c
+    172:173:void d(int) -> d
+    84:14227:void d(com.national.v) -> d
+    507:513:void disconnect() -> disconnect
+    84:84:android.os.Handler e(com.national.v) -> e
+    604:612:boolean e(int) -> e
+    84:14251:void f(com.national.v) -> f
+    84:14691:void g(com.national.v) -> g
+    516:7138:void h(byte[]) -> h
+    84:17172:void h(com.national.v) -> h
+    1996:10598:boolean handleMessage(android.os.Message) -> handleMessage
+    84:17904:void i(com.national.v) -> i
+    84:17935:void j(com.national.v) -> j
+    84:17970:void k(com.national.v) -> k
+    84:18072:boolean l(com.national.v) -> l
+    90:90:boolean l() -> l
+    84:20134:void m(com.national.v) -> m
+    259:269:void m() -> m
+    427:442:java.lang.String n() -> n
+    84:23036:void n(com.national.v) -> n
+    522:8100:void o() -> o
+    84:23351:void o(com.national.v) -> o
+    661:8646:void p() -> p
+    84:24216:void p(com.national.v) -> p
+    84:84:void q(com.national.v) -> q
+    1857:9088:int q() -> q
+    84:24656:void r(com.national.v) -> r
+    1977:1988:void r() -> r
+    448:6068:void run() -> run
+    84:84:void s(com.national.v) -> s
+    2379:2394:void s() -> s
+    84:26042:void t(com.national.v) -> t
+    84:26263:void u(com.national.v) -> u
+    84:84:boolean v(com.national.v) -> v
+    84:84:void w(com.national.v) -> w
+    84:28041:void x(com.national.v) -> x
 com.national.vise.baseble.ViseBluetooth -> com.national.vise.baseble.ViseBluetooth:
 # {"id":"sourceFile","fileName":"SourceFile"}
     68:373:void <init>() -> <init>
-    776:776:java.util.UUID K(java.lang.String) -> K
+    776:776:java.util.UUID H(java.lang.String) -> H
     56:56:android.bluetooth.BluetoothGatt a(com.national.vise.baseble.ViseBluetooth,android.bluetooth.BluetoothGatt) -> a
-    56:56:com.national.bv a(com.national.vise.baseble.ViseBluetooth) -> a
-    56:56:com.national.bv a(com.national.vise.baseble.ViseBluetooth,com.national.bv) -> a
+    56:56:com.national.bj a(com.national.vise.baseble.ViseBluetooth) -> a
+    56:56:com.national.bj a(com.national.vise.baseble.ViseBluetooth,com.national.bj) -> a
     56:56:boolean a(com.national.vise.baseble.ViseBluetooth,boolean) -> a
     1048:1062:boolean a(boolean,com.national.vise.baseble.callback.data.IBleCallback) -> a
     1070:1077:void a(com.national.vise.baseble.callback.data.IBleCallback,int) -> a
@@ -24507,7 +24685,7 @@ com.national.vise.baseble.ViseBluetooth -> com.national.vise.baseble.ViseBluetoo
     1274:1274:int getOperateTimeout() -> getOperateTimeout
     1310:1310:int getScanTimeout() -> getScanTimeout
     1220:1220:android.bluetooth.BluetoothGattService getService() -> getService
-    1328:1328:com.national.bv getState() -> getState
+    1328:1328:com.national.bj getState() -> getState
     380:385:void init(android.content.Context) -> init
     1106:1109:boolean isConnected() -> isConnected
     1084:1084:boolean isMainThread() -> isMainThread
@@ -24529,7 +24707,7 @@ com.national.vise.baseble.ViseBluetooth -> com.national.vise.baseble.ViseBluetoo
     1283:1284:com.national.vise.baseble.ViseBluetooth setOperateTimeout(int) -> setOperateTimeout
     1319:1320:com.national.vise.baseble.ViseBluetooth setScanTimeout(int) -> setScanTimeout
     1229:1230:com.national.vise.baseble.ViseBluetooth setService(android.bluetooth.BluetoothGattService) -> setService
-    1337:1338:com.national.vise.baseble.ViseBluetooth setState(com.national.bv) -> setState
+    1337:1338:com.national.vise.baseble.ViseBluetooth setState(com.national.bj) -> setState
     394:399:void startLeScan(android.bluetooth.BluetoothAdapter$LeScanCallback) -> startLeScan
     441:446:void startLeScan(android.bluetooth.le.ScanCallback) -> startLeScan
     466:475:void startLeScan(java.util.List,android.bluetooth.le.ScanSettings,android.bluetooth.le.ScanCallback) -> startLeScan
@@ -24600,10 +24778,10 @@ com.national.vise.baseble.callback.scan.PeriodScanCallback -> com.national.vise.
     27:28:com.national.vise.baseble.callback.scan.PeriodScanCallback setViseBluetooth(com.national.vise.baseble.ViseBluetooth) -> setViseBluetooth
 com.national.vise.baseble.exception.BleException -> com.national.vise.baseble.exception.BleException:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    12:15:void <init>(com.national.bt,java.lang.String) -> <init>
-    18:18:com.national.bt getCode() -> getCode
+    12:15:void <init>(com.national.bh,java.lang.String) -> <init>
+    18:18:com.national.bh getCode() -> getCode
     27:27:java.lang.String getDescription() -> getDescription
-    22:23:com.national.vise.baseble.exception.BleException setCode(com.national.bt) -> setCode
+    22:23:com.national.vise.baseble.exception.BleException setCode(com.national.bh) -> setCode
     31:32:com.national.vise.baseble.exception.BleException setDescription(java.lang.String) -> setDescription
     37:37:java.lang.String toString() -> toString
 com.national.vise.baseble.model.BluetoothLeDevice -> com.national.vise.baseble.model.BluetoothLeDevice:
@@ -24612,7 +24790,7 @@ com.national.vise.baseble.model.BluetoothLeDevice -> com.national.vise.baseble.m
     63:71:void <init>(android.bluetooth.BluetoothDevice,int,byte[],long) -> <init>
     78:87:void <init>(com.national.vise.baseble.model.BluetoothLeDevice) -> <init>
     94:105:void <init>(android.os.Parcel) -> <init>
-    275:277:java.util.Map an() -> an
+    275:277:java.util.Map X() -> X
     130:130:int describeContents() -> describeContents
     138:157:boolean equals(java.lang.Object) -> equals
     175:175:java.lang.String getAddress() -> getAddress
@@ -24825,6 +25003,7 @@ com.national.volley.Request$Method -> com.national.volley.Request$Method:
 # {"id":"sourceFile","fileName":"SourceFile"}
 com.national.volley.Request$Priority -> com.national.volley.Request$Priority:
 # {"id":"sourceFile","fileName":"SourceFile"}
+    516:516:com.national.volley.Request$Priority[] $values() -> $values
     516:520:void <clinit>() -> <clinit>
     516:516:void <init>(java.lang.String,int) -> <init>
     516:516:com.national.volley.Request$Priority valueOf(java.lang.String) -> valueOf
@@ -25233,63 +25412,20 @@ com.national.volley.toolbox.WeakRefHandler -> com.national.volley.toolbox.WeakRe
     30:34:void handleMessage(android.os.Message) -> handleMessage
 com.national.w -> com.national.w:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    14:15:void <init>() -> <init>
+    321:321:void <init>(com.national.v) -> <init>
+    325:1087:void t() -> t
 com.national.x -> com.national.x:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    97:3275:void <init>(android.content.Context,java.lang.String,java.lang.String) -> <init>
-    413:417:void <init>(android.content.Context,android.bluetooth.BluetoothDevice,java.lang.String,byte[]) -> <init>
-    84:84:java.lang.Object a(com.national.x) -> a
-    84:84:java.lang.String a(com.national.x,java.lang.String) -> a
-    84:84:void a(com.national.x,java.lang.String,java.lang.String) -> a
-    84:84:void a(com.national.x,byte[]) -> a
-    2268:13294:void a(java.lang.String,java.lang.String) -> a
-    84:84:com.national.R b(com.national.x) -> b
-    84:27052:void b(com.national.x,java.lang.String) -> b
-    84:84:void c(com.national.x) -> c
-    157:158:void c(int) -> c
-    172:173:void d(int) -> d
-    84:14227:void d(com.national.x) -> d
-    507:513:void disconnect() -> disconnect
-    84:84:android.os.Handler e(com.national.x) -> e
-    604:612:boolean e(int) -> e
-    84:14251:void f(com.national.x) -> f
-    84:14691:void g(com.national.x) -> g
-    84:17172:void h(com.national.x) -> h
-    1996:10598:boolean handleMessage(android.os.Message) -> handleMessage
-    84:17904:void i(com.national.x) -> i
-    516:6868:void i(byte[]) -> i
-    84:17935:void j(com.national.x) -> j
-    84:17970:void k(com.national.x) -> k
-    84:18072:boolean l(com.national.x) -> l
-    84:20134:void m(com.national.x) -> m
-    84:23036:void n(com.national.x) -> n
-    90:90:boolean o() -> o
-    84:23351:void o(com.national.x) -> o
-    259:269:void p() -> p
-    84:24216:void p(com.national.x) -> p
-    84:84:void q(com.national.x) -> q
-    427:442:java.lang.String q() -> q
-    84:24656:void r(com.national.x) -> r
-    522:8100:void r() -> r
-    448:6068:void run() -> run
-    84:84:void s(com.national.x) -> s
-    661:8646:void s() -> s
-    1857:9088:int t() -> t
-    84:26042:void t(com.national.x) -> t
-    1977:1988:void u() -> u
-    84:26263:void u(com.national.x) -> u
-    84:84:boolean v(com.national.x) -> v
-    2379:2394:void v() -> v
-    84:84:void w(com.national.x) -> w
-    84:28041:void x(com.national.x) -> x
+    336:336:void <init>(com.national.v) -> <init>
+    340:346:void t() -> t
 com.national.y -> com.national.y:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    321:321:void <init>(com.national.x) -> <init>
-    325:1087:void w() -> w
+    353:353:void <init>(com.national.v) -> <init>
+    356:392:void t() -> t
 com.national.z -> com.national.z:
 # {"id":"sourceFile","fileName":"SourceFile"}
-    336:336:void <init>(com.national.x) -> <init>
-    340:346:void w() -> w
+    725:725:void <init>(com.national.v,android.os.Looper) -> <init>
+    728:6156:void handleMessage(android.os.Message) -> handleMessage
 com.ypy.eventbus.AsyncPoster -> com.ypy.eventbus.AsyncPoster:
     29:32:void <init>(com.ypy.eventbus.EventBus) -> <init>
     35:38:void enqueue(com.ypy.eventbus.Subscription,java.lang.Object) -> enqueue
