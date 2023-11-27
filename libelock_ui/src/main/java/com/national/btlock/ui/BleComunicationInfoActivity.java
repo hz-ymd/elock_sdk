@@ -1,6 +1,5 @@
 package com.national.btlock.ui;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,8 +15,7 @@ import androidx.annotation.Nullable;
 
 import com.baidu.idl.face.platform.utils.Base64Utils;
 import com.google.gson.Gson;
-import com.hjq.permissions.OnPermissionCallback;
-import com.hjq.permissions.XXPermissions;
+
 import com.national.btlock.face.ui.utils.IntentUtils;
 import com.national.btlock.ocr.ui.camera.CameraActivity;
 import com.national.btlock.ui.databinding.ActivityNationalOpenDoorBinding;
@@ -27,8 +25,6 @@ import com.national.core.SDKCoreHelper;
 import com.national.core.nw.entity.CommonEntity;
 import com.national.core.nw.it.OnProgressUpdateListener;
 import com.national.core.nw.it.OnResultListener;
-
-import java.util.List;
 
 public class BleComunicationInfoActivity extends BaseActivity {
     private static final String TAG = "BleComunicationInfo";
@@ -161,59 +157,52 @@ public class BleComunicationInfoActivity extends BaseActivity {
         });
     }
 
-    public void checkPermissions(OnPermissionCallback callback) {
-        Log.e(TAG, "checkPermissions");
-
-        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-            permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT,
-                    Manifest.permission.BLUETOOTH_ADVERTISE};
-        }
-        XXPermissions.with(BleComunicationInfoActivity.this).permission(permissions)
-                .request(callback);
-    }
+//    public void checkPermissions(OnPermissionCallback callback) {
+//        Log.e(TAG, "checkPermissions");
+//
+//        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+//            permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
+//                    Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT,
+//                    Manifest.permission.BLUETOOTH_ADVERTISE};
+//        }
+//        XXPermissions.with(BleComunicationInfoActivity.this).permission(permissions)
+//                .request(callback);
+//    }
 
 
     private void authIdCard() {
         byte[] bytes = Base64Utils.decode(IntentUtils.getInstance().getBitmap(), Base64Utils.NO_WRAP);
-        checkPermissions(new OnPermissionCallback() {
-            @Override
-            public void onGranted(List<String> permissions, boolean all) {
-                if (all) {
-                    SDKCoreHelper.authIdcard(lockMac, targetUserId, startData, endData, bytes, new OnProgressUpdateListener() {
-                                @Override
-                                public void onProgressUpdate(String s) {
-                                    binding.idReceive.setText(s);
-                                }
+        SDKCoreHelper.authIdcard(lockMac, targetUserId, startData, endData, bytes, new OnProgressUpdateListener() {
+                    @Override
+                    public void onProgressUpdate(String s) {
+                        binding.idReceive.setText(s);
+                    }
 
-                                @Override
-                                public void onSuccess(String s) {
-                                    Toast.makeText(BleComunicationInfoActivity.this, "身份证授权成功", Toast.LENGTH_LONG).show();
-                                    finish();
-                                }
+                    @Override
+                    public void onSuccess(String s) {
+                        Toast.makeText(BleComunicationInfoActivity.this, "身份证授权成功", Toast.LENGTH_LONG).show();
+                        finish();
+                    }
 
-                                @Override
-                                public void onError(String s, String s1) {
-                                    if (s.equals("100011")) {
-                                        binding.idReceive.setText("进入拍照识别模式，请根据提示操作");
-                                        Toast.makeText(BleComunicationInfoActivity.this, "进入拍照识别模式，请根据提示操作", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(BleComunicationInfoActivity.this, CameraActivity.class);
-                                        intent.putExtra(CameraActivity.KEY_NATIVE_ENABLE, false);
-                                        IMG_PATH_FRONT = getExternalFilesDir(null).getAbsolutePath() + "idcardFront.jpg";
-                                        intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, IMG_PATH_FRONT);
-                                        intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
-                                        startActivityForResult(intent, REQUEST_IDCARD_FRONT);
-                                    } else {
-                                        Toast.makeText(BleComunicationInfoActivity.this, "身份证授权失败：" + s1, Toast.LENGTH_LONG).show();
-                                        finish();
-                                    }
-                                }
-                            }
-                    );
+                    @Override
+                    public void onError(String s, String s1) {
+                        if (s.equals("100011")) {
+                            binding.idReceive.setText("进入拍照识别模式，请根据提示操作");
+                            Toast.makeText(BleComunicationInfoActivity.this, "进入拍照识别模式，请根据提示操作", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(BleComunicationInfoActivity.this, CameraActivity.class);
+                            intent.putExtra(CameraActivity.KEY_NATIVE_ENABLE, false);
+                            IMG_PATH_FRONT = getExternalFilesDir(null).getAbsolutePath() + "idcardFront.jpg";
+                            intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, IMG_PATH_FRONT);
+                            intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
+                            startActivityForResult(intent, REQUEST_IDCARD_FRONT);
+                        } else {
+                            Toast.makeText(BleComunicationInfoActivity.this, "身份证授权失败：" + s1, Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    }
                 }
-            }
-        });
+        );
 
     }
 
@@ -264,59 +253,45 @@ public class BleComunicationInfoActivity extends BaseActivity {
 
     private void authCardA() {
 
-        checkPermissions(new OnPermissionCallback() {
+        SDKCoreHelper.authCardA(lockMac, targetUserId, startData, endData, new OnProgressUpdateListener() {
             @Override
-            public void onGranted(List<String> permissions, boolean all) {
-                if (all) {
-                    SDKCoreHelper.authCardA(lockMac, targetUserId, startData, endData, new OnProgressUpdateListener() {
-                        @Override
-                        public void onProgressUpdate(String s) {
-                            binding.idReceive.setText(s);
-                        }
+            public void onProgressUpdate(String s) {
+                binding.idReceive.setText(s);
+            }
 
-                        @Override
-                        public void onSuccess(String s) {
-                            Toast.makeText(BleComunicationInfoActivity.this, "钥匙卡授权成功", Toast.LENGTH_LONG).show();
-                            finish();
-                        }
+            @Override
+            public void onSuccess(String s) {
+                Toast.makeText(BleComunicationInfoActivity.this, "钥匙卡授权成功", Toast.LENGTH_LONG).show();
+                finish();
+            }
 
-                        @Override
-                        public void onError(String s, String s1) {
-                            Toast.makeText(BleComunicationInfoActivity.this, "钥匙卡授权失败：" + s1, Toast.LENGTH_LONG).show();
-                        }
-                    });
-                }
+            @Override
+            public void onError(String s, String s1) {
+                Toast.makeText(BleComunicationInfoActivity.this, "钥匙卡授权失败：" + s1, Toast.LENGTH_LONG).show();
             }
         });
 
     }
 
     private void openLock() {
-        checkPermissions(new OnPermissionCallback() {
+        SDKCoreHelper.openLock(lockMac, new OnProgressUpdateListener() {
             @Override
-            public void onGranted(List<String> permissions, boolean all) {
-                if (all) {
-                    SDKCoreHelper.openLock(lockMac, new OnProgressUpdateListener() {
-                        @Override
-                        public void onProgressUpdate(String message) {
-                            binding.idReceive.setText(message);
-                        }
+            public void onProgressUpdate(String message) {
+                binding.idReceive.setText(message);
+            }
 
-                        @Override
-                        public void onSuccess(String jsonStr) {
-                            Toast.makeText(BleComunicationInfoActivity.this, "开门成功", Toast.LENGTH_LONG).show();
-                            finish();
+            @Override
+            public void onSuccess(String jsonStr) {
+                Toast.makeText(BleComunicationInfoActivity.this, "开门成功", Toast.LENGTH_LONG).show();
+                finish();
 
-                        }
+            }
 
-                        @Override
-                        public void onError(String errorCode, String errorMsg) {
-                            Toast.makeText(BleComunicationInfoActivity.this, "开门失败：" + errorMsg, Toast.LENGTH_LONG).show();
-                            finish();
+            @Override
+            public void onError(String errorCode, String errorMsg) {
+                Toast.makeText(BleComunicationInfoActivity.this, "开门失败：" + errorMsg, Toast.LENGTH_LONG).show();
+                finish();
 
-                        }
-                    });
-                }
             }
         });
 
@@ -324,31 +299,24 @@ public class BleComunicationInfoActivity extends BaseActivity {
 
 
     private void sycnData() {
-        checkPermissions(new OnPermissionCallback() {
+        SDKCoreHelper.syncData(lockMac, new OnProgressUpdateListener() {
             @Override
-            public void onGranted(List<String> permissions, boolean all) {
-                if (all) {
-                    SDKCoreHelper.syncData(lockMac, new OnProgressUpdateListener() {
-                        @Override
-                        public void onProgressUpdate(String s) {
-                            binding.idReceive.setText(s);
-                        }
+            public void onProgressUpdate(String s) {
+                binding.idReceive.setText(s);
+            }
 
-                        @Override
-                        public void onSuccess(String s) {
-                            Toast.makeText(BleComunicationInfoActivity.this, "数据同步成功", Toast.LENGTH_LONG).show();
-                            finish();
+            @Override
+            public void onSuccess(String s) {
+                Toast.makeText(BleComunicationInfoActivity.this, "数据同步成功", Toast.LENGTH_LONG).show();
+                finish();
 
-                        }
+            }
 
-                        @Override
-                        public void onError(String s, String s1) {
-                            Toast.makeText(BleComunicationInfoActivity.this, "数据同步失败：" + s1, Toast.LENGTH_LONG).show();
-                            finish();
+            @Override
+            public void onError(String s, String s1) {
+                Toast.makeText(BleComunicationInfoActivity.this, "数据同步失败：" + s1, Toast.LENGTH_LONG).show();
+                finish();
 
-                        }
-                    });
-                }
             }
         });
 

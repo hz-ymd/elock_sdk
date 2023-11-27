@@ -5,7 +5,6 @@
  */
 package com.national.btlock.ui.bannerview;
 
-import android.Manifest;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
@@ -18,11 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.hjq.permissions.OnPermissionCallback;
-import com.hjq.permissions.XXPermissions;
 import com.national.btlock.ui.R;
-import com.national.core.SDKCoreHelper;
 import com.national.btlock.utils.AppConstants;
+import com.national.core.SDKCoreHelper;
 import com.national.core.nw.entity.LockListEntity;
 import com.national.core.nw.it.OnProgressUpdateListener;
 
@@ -215,36 +212,31 @@ public class ViewFlowAdapter extends BaseAdapter implements AppConstants {
             public void onClick(View view) {
                 holder.image_open.setRepeatCount(-1);
                 holder.image_open.playAnimation();
-                checkPermissions(new OnPermissionCallback() {
+
+
+                SDKCoreHelper.openLock(entiy.getMac(), new OnProgressUpdateListener() {
                     @Override
-                    public void onGranted(List<String> permissions, boolean all) {
-                        if (all){
-                            SDKCoreHelper.openLock(entiy.getMac(), new OnProgressUpdateListener() {
-                                @Override
-                                public void onProgressUpdate(String message) {
-                                    holder.text_open.setText(message);
+                    public void onProgressUpdate(String message) {
+                        holder.text_open.setText(message);
 //                        Log.d(TAG, "onProgressUpdate:" + message);
-                                }
+                    }
 
-                                @Override
-                                public void onSuccess(String jsonStr) {
-                                    holder.image_open.cancelAnimation();
-                                    holder.text_open.setText("点击上方开锁");
-                                    holder.image_open.setProgress(0.9f);
-                                    Toast.makeText(context, "开门成功", Toast.LENGTH_LONG).show();
-                                    //Log.d(TAG, "onSuccess:" + jsonStr);
-                                }
+                    @Override
+                    public void onSuccess(String jsonStr) {
+                        holder.image_open.cancelAnimation();
+                        holder.text_open.setText("点击上方开锁");
+                        holder.image_open.setProgress(0.9f);
+                        Toast.makeText(context, "开门成功", Toast.LENGTH_LONG).show();
+                        //Log.d(TAG, "onSuccess:" + jsonStr);
+                    }
 
-                                @Override
-                                public void onError(String errorCode, String errorMsg) {
-                                    holder.image_open.cancelAnimation();
-                                    holder.text_open.setText("点击上方开锁");
-                                    holder.image_open.setProgress(0.9f);
-                                    Toast.makeText(context, "开门失败:" + errorMsg, Toast.LENGTH_LONG).show();
-                                    // Log.d(TAG, "onError:" + errorCode + "," + errorMsg);
-                                }
-                            });
-                        }
+                    @Override
+                    public void onError(String errorCode, String errorMsg) {
+                        holder.image_open.cancelAnimation();
+                        holder.text_open.setText("点击上方开锁");
+                        holder.image_open.setProgress(0.9f);
+                        Toast.makeText(context, "开门失败:" + errorMsg, Toast.LENGTH_LONG).show();
+                        // Log.d(TAG, "onError:" + errorCode + "," + errorMsg);
                     }
                 });
 
@@ -313,17 +305,17 @@ public class ViewFlowAdapter extends BaseAdapter implements AppConstants {
         return arg0;
     }
 
-    public void checkPermissions(OnPermissionCallback callback) {
-
-
-        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-            permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT,
-                    Manifest.permission.BLUETOOTH_ADVERTISE};
-        }
-        XXPermissions.with(context).permission(permissions)
-                .request(callback);
-    }
+//    public void checkPermissions(OnPermissionCallback callback) {
+//
+//
+//        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+//            permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
+//                    Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT,
+//                    Manifest.permission.BLUETOOTH_ADVERTISE};
+//        }
+//        XXPermissions.with(context).permission(permissions)
+//                .request(callback);
+//    }
 
 }
