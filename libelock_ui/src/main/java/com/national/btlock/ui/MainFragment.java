@@ -456,7 +456,6 @@ public class MainFragment extends Fragment implements View.OnClickListener, AppC
 //                                        Log.d(TAG, "onError:" + errorCode + "," + errorMsg);
 //                                    }
 //                                });
-
                             }
                         }, new BannerView.OnChangeListener() {
                             @Override
